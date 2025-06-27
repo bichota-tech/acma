@@ -1,32 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Ejercicio 1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Portafolio</title>
   <link href="style.css" rel="stylesheet">
 </head>
-<body>
-  <img src="imagenes/9d066b333f1020133b28dab89b5356e2.jpg" id= "rizos" 
-    alt="imagen animada de chica con rizos">
-  <h1>Adalid Martínez Álvarez</h1>
-  <div>
-  <a id="#Sobre-mi" href="#Sobre-mi">Sobre mí</a>
-  <a id="#Colabs" href="#Colabs">Sobre mí</a>
-  <a id="#Contacto" href="#Contacto">Contacto</a>
-  </div>
-    <div id="Sobre-mi">
-    <p>Un poco sobre mi:</p>
-  <ol>
-    <li>Mi color favorito es <strong id="azul">AZUL</strong></li>
-    <li>Me encanta el estilo de <em>TRENZADO AFROAMERICANO</em></li> 
-    <li>Soy una persona <s>EMPATICA</s></li>
-    <li>Me gusta el trabajo en <mark>EQUIPO</mark></li>
-  </ol>
-  </div>
-     <form>
-      <label for="Me_gusta"><input id="Me_gusta" type="radio" name="marcar"> Me gusta</label> <br>
-      <label for="No_me_gusta"><input id="No_me_gusta" type="radio" name="marcar"> No me gusta </label>
-     </form>
+  <body>
+    <img src="imagenes/9d066b333f1020133b28dab89b5356e2.jpg" id= "rizos" 
+    alt="imagen animada de chica con rizos" >
+  
+    <div id="inicio">
+      <h1>Adalid Martínez Álvarez</h1>
+      <a id="#Sobre-mi" href="#Sobre-mi">Sobre mí</a>
+      <a id="#Colabs" href="#Colabs">Colaboraciones</a>
+      <a id="#Contacto" href="#Contacto">Contacto</a>
+    </div>  
+    
+    <div id="textos">
+      <p id="Sobre-mi">
+        Soy informática de formación. Actualmente estoy en un proceso de reinicio profesional, enfocándome en el desarrollo web. Gracias a mi experiencia en informática, cuento con una base sólida para entender la lógica y los conceptos técnicos que requiere esta nueva etapa. Mi objetivo es dominar las tecnologías actuales del desarrollo frontend y backend para construir proyectos modernos y funcionales, y así avanzar con confianza en el mundo del desarrollo web.
+      </p>
+    </div>
 
-</body>
+    <img src="imagenes/concepto-de-collage-html-y-css-con-persona.jpg" id="informatica" alt="imagen sobre informatica" width="350px" height="200px" >
+
+    <div id="textos"> 
+      <p id="Colabs">
+        ¿Quieres una página web moderna, funcional y adaptada a tus necesidades? Con una sólida formación en informática, estoy reinventándome como desarrolladora web para ofrecerte soluciones actuales y efectivas. Trabajo con las mejores tecnologías y me enfoco en crear sitios que no solo luzcan bien, sino que también sean rápidos, seguros y fáciles de usar. Confía en mí para darle a tu proyecto la presencia digital que merece. ¡Hagamos crecer tu negocio juntos!
+      </p>
+    </div> 
+
+    <img src="imagenes/cerrar-apreton-de-manos-de-gente-de-negocios.jpg" id="colab" alt="imagen sobre colaboracion" width="350px" height="200px" >
+
+    <div id="textos">
+      <p id="Contacto">No es mi contacto pero necesitaba probar el <a href="https://github.com/bichota-tech" target="_blank" rel="noopener noreferrer">link a github</a></p>
+    </div>
+
+    <form id="opciones">
+      <label for="Me_gusta"><input id="Me_gusta" type="radio" name="marcar"> Me gusta</label> <br>
+      <label for="No_me_gusta"><input id="No_me_gusta" type="radio" name="marcar"> No me gusta </label> <br>
+      <label for="Me_gusta1"><input id="Me_gusta1" type="checkbox"> Me gusta</label> <br>
+      <label for="No_me_gusta1"><input id="No_me_gusta1" type="checkbox"> No me gusta </label> <br>
+      <input type="text" name="campo" placeholder="Deja un comentario bonito" required>
+      <button type="button">Aceptar</button>
+    </form>
+
+  </body>
 </html>

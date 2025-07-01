@@ -1,5 +1,5 @@
 *{
-    background-color: rgb(245, 189, 170);
+    background-color: white;
 }
 #rizos{
     padding: 5px;
@@ -8,7 +8,37 @@
 }
 div{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: transparent;
 }
-#azul{
-    color: blue;
+
+#inicio{
+    flex: auto;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    width: 60%;
+    }
+
+a[name="nav"]{
+    text-decoration: none;
+    color: steelblue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 0 2px;
+}
+
+[type="button"]{
+    background-color: transparent;
+    border: none;
+    color: steelblue;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+[type="radio"], [type="checkbox"]{
+    margin: 6px;    
+}
+
+img[alt]{
+    border-radius: 40%;
 }

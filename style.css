@@ -1,30 +1,53 @@
-*{
-    background-color: white;
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    margin: 0;
 }
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+ul{
+    background-color: lightgray;
+    list-style: none;
+    margin: 0;
+    padding: 0; 
+    
+}
+
+li{
+    color: rgb(52, 52, 52);
+    padding: .3rem .7rem;
+}
+
+li:hover{
+    background-color: rgb(52, 52, 52);
+    color: white;
+}
+
+/* FELXBOX */
+ul{
+   display: flex;
+   justify-content: flex-end;    
+}
+
+@media (width < 1024px){
+   li{
+    flex-grow: 1;
+   }
+}
+
+@media (width < 480px){
+   ul{
+    flex-direction:column;
+   }
+} 
+
 #rizos{
     padding: 5px;
     margin: 20px 15px 10px 5px ;
     border-radius: 47%;
-}
-div{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: transparent;
-}
-
-#inicio{
-    flex: auto;
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    width: 60%;
-    }
-
-a[name="nav"]{
-    text-decoration: none;
-    color: steelblue;
-    font-weight: bold;
-    font-size: 1.2em;
-    margin: 0 2px;
 }
 
 [type="button"]{

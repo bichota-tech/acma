@@ -7,15 +7,21 @@
   <link href="style.css" rel="stylesheet">
 </head>
   <body>
-    <img src="imagenes/9d066b333f1020133b28dab89b5356e2.jpg" id= "rizos" 
+    <nav>
+      <img src="imagenes/9d066b333f1020133b28dab89b5356e2.jpg" id= "rizos" 
     alt="imagen animada de rizos" >
-  
-    <div id="inicio">
-      <h1>Adalid Martínez Álvarez</h1>
-      <button type="button"><a id="#Sobre-mi" name="nav" href="#Sobre-mi">Sobre mí</a></button>
-      <button type="button"><a id="#Colabs" name="nav" href="#Colabs">Colaboraciones</a></button>
-      <button type="button"><a id="#Contacto" name="nav" href="#Contacto">Contacto</a></button>
-    </div>  
+      <ul>
+        <li><a href="#">Experiencia</a></li>
+        <li><a href="#">Portafolio</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav> 
+
+    <div class="contenedor-central">
+      <aside>
+        <h2></h2>
+      </aside>
+    </div>
     
     <div id="textos">
       <p id="Sobre-mi">
@@ -37,7 +43,7 @@
       <p id="Contacto">No es mi contacto pero necesitaba probar el <a href="https://github.com/bichota-tech" target="_blank" rel="noopener noreferrer">link a github</a></p>
     </div>
 
-    <form id="opciones">
+    <form action="#" id="opciones">
       <label for="Me_gusta"><input id="Me_gusta" type="radio" name="marcar"> Me gusta</label> <br>
       <label for="No_me_gusta"><input id="No_me_gusta" type="radio" name="marcar"> No me gusta </label> <br>
       <label for="Me_gusta1"><input id="Me_gusta1" type="checkbox"> Me gusta</label> <br>
@@ -45,6 +51,6 @@
       <input type="text" name="campo" placeholder="Deja un comentario bonito" required>
       <button type="button">Aceptar</button>
     </form>
-
+                                          
   </body>
 </html>

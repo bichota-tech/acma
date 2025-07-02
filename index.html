@@ -1,56 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portafolio</title>
   <link href="style.css" rel="stylesheet">
 </head>
   <body>
-    <nav>
-      <img src="imagenes/9d066b333f1020133b28dab89b5356e2.jpg" id= "rizos" 
-    alt="imagen animada de rizos" >
-      <ul>
-        <li><a href="#">Experiencia</a></li>
-        <li><a href="#">Portafolio</a></li>
-        <li><a href="#">Contacto</a></li>
-      </ul>
-    </nav> 
-
-    <div class="contenedor-central">
-      <aside>
-        <h2></h2>
-      </aside>
-    </div>
-    
-    <div id="textos">
-      <p id="Sobre-mi">
-        Soy informática de formación. Actualmente estoy en un proceso de reinicio profesional, enfocándome en el desarrollo web. Gracias a mi experiencia en informática, cuento con una base sólida para entender la lógica y los conceptos técnicos que requiere esta nueva etapa. Mi objetivo es dominar las tecnologías actuales del desarrollo frontend y backend para construir proyectos modernos y funcionales, y así avanzar con confianza en el mundo del desarrollo web.
-      </p>
-    </div>
-
-    <img src="imagenes/concepto-de-collage-html-y-css-con-persona.jpg" id="informatica" alt="imagen sobre informatica" width="350px" height="200px" >
-
-    <div id="textos"> 
-      <p id="Colabs">
-        ¿Quieres una página web moderna, funcional y adaptada a tus necesidades? Con una sólida formación en informática, estoy reinventándome como desarrolladora web para ofrecerte soluciones actuales y efectivas. Trabajo con las mejores tecnologías y me enfoco en crear sitios que no solo luzcan bien, sino que también sean rápidos, seguros y fáciles de usar. Confía en mí para darle a tu proyecto la presencia digital que merece. ¡Hagamos crecer tu negocio juntos!
-      </p>
-    </div> 
-
-    <img src="imagenes/cerrar-apreton-de-manos-de-gente-de-negocios.jpg" id="colab" alt="imagen sobre colaboracion" width="350px" height="200px" >
-
-    <div id="textos">
-      <p id="Contacto">No es mi contacto pero necesitaba probar el <a href="https://github.com/bichota-tech" target="_blank" rel="noopener noreferrer">link a github</a></p>
-    </div>
-
-    <form action="#" id="opciones">
-      <label for="Me_gusta"><input id="Me_gusta" type="radio" name="marcar"> Me gusta</label> <br>
-      <label for="No_me_gusta"><input id="No_me_gusta" type="radio" name="marcar"> No me gusta </label> <br>
-      <label for="Me_gusta1"><input id="Me_gusta1" type="checkbox"> Me gusta</label> <br>
-      <label for="No_me_gusta1"><input id="No_me_gusta1" type="checkbox"> No me gusta </label> <br>
-      <input type="text" name="campo" placeholder="Deja un comentario bonito" required>
-      <button type="button">Aceptar</button>
-    </form>
-                                          
+    <header>
+      <div class="header-container">
+        <div class="nombre">Adalid Martínez Álvarez</div>
+        <nav class="menu">
+          <a href="#" rel="noopener noreferrer">Experiencia</a>
+          <a href="#" rel="noopener noreferrer">Portafolio</a>
+          <a href="#" rel="noopener noreferrer">Contacto</a>
+        </nav>
+      </div>
+    </header>
+    <main class="main-content">
+      <div class="contenido-izq">
+        <img src="imagenes/9d066b333f1020133b28dab89b5356e2.jpg" id= "rizos" 
+        alt="imagen animada de rizos">
+        <div class="contenido-der">
+          <section class="presentacion">
+            <p>
+           Soy informática de formación. Actualmente estoy en un proceso de reinicio profesional, enfocándome en el desarrollo web. Gracias a mi experiencia en informática, cuento con una base sólida para entender la lógica y los conceptos técnicos que requiere esta nueva etapa. Mi objetivo es dominar las tecnologías actuales del desarrollo frontend y backend para construir proyectos modernos y funcionales, y así avanzar con confianza en el mundo del desarrollo web.
+            </p>
+          </section>
+        </div>
+      </div>
+    </main> 
+          <div class="botones">
+            <nav class="menu">
+              <ul>
+                <li><button type="button"><a href="#" rel="noopener noreferrer">Experiencia</a></button></li>
+                <li><button type="button"><a href="#" rel="noopener noreferrer">Portafolio</a></button></li>
+                <li><button type="button"><a href="#" rel="noopener noreferrer">Contacto</a></button></li>
+              </ul>
+            </nav>
+          </div>
+                         
   </body>
 </html>

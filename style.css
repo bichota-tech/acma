@@ -1,6 +1,7 @@
 *{
     box-sizing: border-box;
     margin: 0;
+<<<<<<< Updated upstream
     padding: 0;
 }
 
@@ -122,4 +123,174 @@ img{
  
 
 
+=======
+    background-color:  whitesmoke;
+}
+
+h1
+{
+    font-size: clamp(2.5em, 3vw, 1em);
+    color: rgba(37, 37, 37, 0.795);
+}
+h2
+{   
+    font-size: 2em;
+    margin: 0;
+    padding: 10px;
+    color:  rgba(37, 37, 37, 0.795);
+}
+h3
+{
+    font-size: 1.5em;
+    margin: 0;
+    padding: 5px;
+    color:  rgba(37, 37, 37, 0.795);
+}
+p{  
+    font-size: 1.2em; 
+    text-align: center;    
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: rgba(37, 37, 37, 0.795);
+}
+
+button{
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 7px 15px;
+    margin-bottom: 20px;
+    border-radius: 7px;
+    border: 1px solid rgb(238, 246, 250);
+    box-shadow: 3px 3px 12px rgba(105, 185, 238, 0.76);
+    color: whitesmoke;
+    background-color:rgb(133, 193, 233);
+}
+
+button:hover{
+    background-color: rgb(91, 178, 236);
+}
+
+a{
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.container{
+    max-width: 1400px;
+    margin: auto;
+}
+
+header{
+    background-color: whitesmoke
+}
+
+header .nombre{
+    font-weight: bold;
+    margin: 0;
+    padding: 25px 30px;
+    color: rgb(20, 154, 243);
+    font-size: 1.5em;
+}
+
+header .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header nav{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+header a{
+    padding: 5px 12px;
+    font-weight: bold;
+    color: rgba(37, 37, 37, 0.795);
+}
+
+header a:hover{
+    color: rgb(20, 154, 243);
+}
+
+.hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: whitesmoke;
+
+}
+
+.hero a{
+    display: flex;
+    flex-direction: row;
+}
+
+section .nav-container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 7px 15px;
+}
+
+.nav-container a{
+    font-size: 1.3em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 10px;
+    font-weight: bold;
+    color: rgba(37, 37, 37, 0.795);
+}
+
+.nav-container a:hover{
+    color: rgb(20, 154, 243);
+}
+
+.exp .container{
+    background-color: rgb(133, 193, 233);
+    color: whitesmoke;
+    height: 80vh;
+}
+
+.color-acento{ color: whitesmoke;}
+
+.exp p{color: whitesmoke;}
+
+.proyectos {
+    padding: 200px 0px;
+    text-align: center;
+
+}
+
+#mis-proyectos p{display: none;}
+
+#mis-proyectos .carta
+{
+
+}
+
+.carta:first-child
+{
+    background-image: linear-gradient
+    (0deg,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+    ), url("imagenes/portafolio.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.carta:nth-child(2){}
+
+.carta:nth-child(3){}
+
+    
+>>>>>>> Stashed changes
 

@@ -5,7 +5,7 @@
 
 body{
     background-color: whitesmoke;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, 'Times New Roman', Times, serif;
 }
 
 html{scroll-behavior: smooth;}
@@ -43,7 +43,7 @@ button{
     font-size: 1.2em;
     font-weight: bold;
     padding: 7px 15px;
-    margin-bottom: 20px;
+    margin: 20px;
     border-radius: 7px;
     border: 1px solid rgb(238, 246, 250);
     box-shadow: 3px 3px 12px rgba(105, 185, 238, 0.76);
@@ -151,21 +151,22 @@ section .nav-container{
 {
     display: flex;
     flex-direction: column;
-    text-align: center;
     padding: 50px 12px;
-    text-align: center;
+    text-align: left;
 
 }
 
 #mis-proyectos p{display: none;} 
+/* #mis-proyectos p{color: whitesmoke;}  */
 
  #mis-proyectos .carta
 {   
     background-position: center;
-    background-size: 100%;
+    background-size: cover;
     padding: 50px;
     margin: 20px;
     border-radius: 12px;
+    text-align: center;
 }
 
 #mis-proyectos .carta:first-child
@@ -186,5 +187,53 @@ section .nav-container{
     rgba(0, 0, 0, 0.5)), url("imagenes/web\ ong.png");
 }
 
-    
+#contacto .container
+{
+    display: flex;
+    flex-direction: column;
+    padding: 50px 12px;
+    text-align: left;
+}
 
+#contacto .formulario
+{
+    font-size: larger;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    margin: 20px;
+}
+
+label 
+{
+   margin-bottom: 5px;
+   margin-top: 10px;
+   display: flex;
+   flex-wrap: wrap;
+
+}
+
+input
+{
+    display: inline-block;
+    text-align: start;
+    text-rendering: auto;
+    cursor: text;
+    letter-spacing: normal;
+    word-spacing: normal;
+}
+
+textarea
+{
+    font-family: monospace;
+    text-rendering: auto;
+    display: inline-block;
+    text-align: start;
+    column-count: initial !important;
+    white-space: pre-wrap;
+}
+
+footer
+{
+    font-size: smaller;
+}

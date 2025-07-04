@@ -5,7 +5,10 @@
 
 body{
     background-color: whitesmoke;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+html{scroll-behavior: smooth;}
 
 h1
 {
@@ -24,8 +27,8 @@ h3
 {
     font-size: 1.5em;
     margin: 0;
-    padding: 5px;
-    color:  rgba(37, 37, 37, 0.795);
+    padding: 10px;
+    color:  whitesmoke;
 }
 p{  
     font-size: 1.2em; 
@@ -144,38 +147,44 @@ section .nav-container{
 
 .color-acento{ color: whitesmoke;}
 
-.proyectos {
+#mis-proyectos .container
+{
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding: 200px 0px;
+    padding: 50px 12px;
     text-align: center;
 
 }
 
-#mis-proyectos p{display: none;}
+#mis-proyectos p{display: none;} 
 
-#mis-proyectos:first-child
-{
-    background-image: linear-gradient
-    (0deg,
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5)
-    ), url("imagenes/portafolio.jpg");
+ #mis-proyectos .carta
+{   
     background-position: center;
-    background-size: auto;
+    background-size: 100%;
+    padding: 50px;
+    margin: 20px;
+    border-radius: 12px;
 }
 
-/* #mis-proyectos .carta
+#mis-proyectos .carta:first-child
 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url("imagenes/portafolio.jpg");
+}
 
-} */
+.carta:nth-child(2)
+{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url("imagenes/restaurante.jpg");
+}
 
-
-
-/* .carta:nth-child(2){}
-
-.carta:nth-child(3){} */
+.carta:nth-child(3)
+{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url("imagenes/web\ ong.png");
+}
 
     
 

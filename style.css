@@ -32,8 +32,7 @@ h3
     color:  whitesmoke;
 }
 p{  
-    font-size: 1.2em; 
-    text-align: center;    
+    font-size: 1.2em;    
     margin: 0;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -68,26 +67,30 @@ a{
 }
 
 header{
-    background-color: whitesmoke
+    background-color: whitesmoke;
+    position: fixed;
+    width: 100%;
 }
 
 
 header .container{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
 }
 
 header nav{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     text-align: center;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    font-size: medium;
 }
 
 header a{
     font-size: larger;
-    padding: 5px 12px;
+    padding: 5px 7px;
     font-weight: bold;
     color: rgba(37, 37, 37, 0.795);
 }
@@ -99,55 +102,58 @@ header a:hover{
 #hero{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; 
     flex-direction: row;
+   
     background-color: whitesmoke;
     padding-top: 80px;
-
 }
 
-
-#hero a{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-section .nav-container{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    font-size: 1em;
-    font-weight: bold;
-    padding: 7px 15px;
-}
-
-.nav-container a{
-    font-size: 1.3em;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding-bottom: 10px;
-    font-weight: bold;
-    color: rgba(37, 37, 37, 0.795);
-}
-
-.nav-container a:hover{
-    color: rgb(20, 154, 243);
-}
-
-.containerexp{
-    display: flex;
-    flex-direction: column;
+#hero .texto{
     text-align: left;
-    background-color: rgb(133, 193, 233);
-    height: 70vh;
-    padding: 50px 12px;
+    padding-left: 40px;
+
 }
 
+#hero .container{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+/*---------------*/
+
+#experiencia .containerexp
+{
+    display: flex;
+    flex-direction: column;
+    padding: 50px 12px;
+    border-radius: 12px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url("imagenes/desarrollador-de-software.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#experiencia p{
+    display: flex;
+    text-align: justify;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#experiencia .texto{
+    background-position: center;
+    background-size: cover;
+    padding: 30px;
+    margin: 10px;
+}
 
 .color-acento{ color: whitesmoke;}
 .colo-pm{color: rgb(133, 193, 233);}
+
+/*----------*/
 
 #mis-proyectos .container
 {
@@ -188,6 +194,8 @@ section .nav-container{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)), url("imagenes/web\ ong.png");
 }
+
+/*-----------*/
 
 #contacto .container
 {
@@ -234,6 +242,8 @@ textarea
     column-count: initial !important;
     white-space: pre-wrap;
 }
+
+/*--------*/
 
 footer
 {

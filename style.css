@@ -19,10 +19,12 @@ html{scroll-behavior: smooth;}
 
 h2
 {   
-    font-size: 2em;
-    margin: 0;
+    display: flex;
+    text-align: left;
+    background-position: center;
+    background-size: contain;
     padding: 10px;
-    color:  rgba(37, 37, 37, 0.795);
+    margin: 10px;
 }
 h3
 {
@@ -34,8 +36,7 @@ h3
 p{  
     font-size: 1.2em;    
     margin: 0;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px;
     color: rgba(37, 37, 37, 0.795);
     
 }
@@ -62,7 +63,12 @@ a{
 }
 
 .container{
-    max-width: 1400px;
+    max-width: 90%;
+    margin: auto;
+}
+
+.containerexp{
+    max-width: 90%;
     margin: auto;
 }
 
@@ -99,12 +105,13 @@ header a:hover{
     color: rgb(20, 154, 243);
 }
 
+/*----------------------*/
+
 #hero{
     display: flex;
     align-items: center;
     justify-content: center; 
     flex-direction: row;
-   
     background-color: whitesmoke;
     padding-top: 80px;
 }
@@ -112,6 +119,7 @@ header a:hover{
 #hero .texto{
     text-align: left;
     padding-left: 40px;
+    
 
 }
 
@@ -127,31 +135,23 @@ header a:hover{
 {
     display: flex;
     flex-direction: column;
-    padding: 50px 12px;
-    border-radius: 12px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5)), url("imagenes/desarrollador-de-software.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-
-#experiencia p{
-    display: flex;
-    text-align: justify;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 40px 12px;
+    text-align: left;  
 }
 
 #experiencia .texto{
     background-position: center;
     background-size: cover;
     padding: 30px;
-    margin: 10px;
-}
+    margin: 20px;
+    border-radius: 12px;
+    text-align: left;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url("imagenes/desarrollador-de-software.jpg");
+    }
 
 .color-acento{ color: whitesmoke;}
-.colo-pm{color: rgb(133, 193, 233);}
+
 
 /*----------*/
 
@@ -161,7 +161,6 @@ header a:hover{
     flex-direction: column;
     padding: 50px 12px;
     text-align: left;
-
 }
 
 #mis-proyectos p{display: none;} 
@@ -201,17 +200,18 @@ header a:hover{
 {
     display: flex;
     flex-direction: column;
-    padding: 20px 12px;
     text-align: left;
 }
 
 #contacto .formulario
 {
     font-size: larger;
+    width: 500px;
     display: flex;
     flex-direction: column;
-    padding: 50px;
-    margin: 20px;
+    padding: 20px;
+    margin: 20px 60px 20px 20px;
+
 }
 
 label 
@@ -225,7 +225,7 @@ label
 
 input
 {
-    display: inline-block;
+    display: flex;
     text-align: start;
     text-rendering: auto;
     cursor: text;
@@ -249,6 +249,10 @@ footer
 {
     font-size: smaller;
 }
+
+/* footer p{
+    text-align: center;
+} */
 
 /* css para pantallas desktop*/
 @media(min-width:720px)
@@ -279,7 +283,7 @@ footer
     }
 
     #hero .texto{
-        width: 50%;
+        width: 60%;
         text-align: initial;
         display: flex;
         flex-direction: column;
@@ -294,5 +298,18 @@ footer
     width: 250px;
     margin: 20px;
     border-radius: 45%;
+    }
+
+    #experiencia .containerexp{
+        display: flex;
+        
+        
+    }
+
+    #experiencia .texto{
+        width: fit-content;
+        text-align: justify;
+        display: flex;
+        flex-direction: column;
     }
 }

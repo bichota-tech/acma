@@ -1,6 +1,7 @@
 *{
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
 
 body{
@@ -8,7 +9,16 @@ body{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, 'Times New Roman', Times, serif;
 }
 
-html{scroll-behavior: smooth;}
+html
+{
+    scroll-behavior: smooth;
+    scroll-padding-top: 60px;
+}
+
+section {
+  margin-bottom: 0;
+}
+
 
 /* h1
 {
@@ -73,9 +83,11 @@ a{
 }
 
 header{
-    background-color: whitesmoke;
     position: fixed;
     width: 100%;
+    top: 0;
+    height: 60px;
+    z-index: 1000;
 }
 
 
@@ -83,20 +95,20 @@ header .container{
     display: flex;
     flex-direction: row;
     align-items: center;
+    background-color: whitesmoke;
 }
 
 header nav{
     display: flex;
     flex-direction: row;
     text-align: center;
-    padding-top: 10px;
-    padding-bottom: 15px;
+    padding: 10px 20px 15px 20px;
     font-size: medium;
 }
 
 header a{
     font-size: larger;
-    padding: 5px 7px;
+    padding-right:5px;
     font-weight: bold;
     color: rgba(37, 37, 37, 0.795);
 }
@@ -135,7 +147,7 @@ header a:hover{
 {
     display: flex;
     flex-direction: column;
-    padding: 40px 12px;
+    padding: 0;
     text-align: left;  
 }
 
@@ -143,7 +155,6 @@ header a:hover{
     background-position: center;
     background-size: cover;
     padding: 30px;
-    margin: 20px;
     border-radius: 12px;
     text-align: left;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),
@@ -159,7 +170,6 @@ header a:hover{
 {
     display: flex;
     flex-direction: column;
-    padding: 50px 12px;
     text-align: left;
 }
 
@@ -171,9 +181,12 @@ header a:hover{
     background-position: center;
     background-size: cover;
     padding: 50px;
-    margin: 20px;
     border-radius: 12px;
     text-align: center;
+}
+#mis-proyectos .carta:not(:last-child)
+{
+    margin-bottom: 20px;
 }
 
 #mis-proyectos .carta:first-child
@@ -206,11 +219,11 @@ header a:hover{
 #contacto .formulario
 {
     font-size: larger;
-    width: 500px;
+    width: 300px;
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    margin: 20px 60px 20px 20px;
+    padding: 10px;
+    margin: 20px;
 
 }
 
@@ -301,15 +314,33 @@ footer
     }
 
     #experiencia .containerexp{
-        display: flex;
-        
-        
+        display: flex;  
     }
 
     #experiencia .texto{
-        width: fit-content;
+        width: auto;
         text-align: justify;
         display: flex;
         flex-direction: column;
     }
+
+    #mis-proyectos .container{
+        display: flex;  
+    }
+
+    #mis-proyectos .carta{
+        width: auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #contacto .formulario{
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        margin: 20px 60px 20px 20px;
+    }
+
 }

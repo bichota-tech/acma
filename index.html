@@ -11,6 +11,8 @@
     <header>
       <div class="container">
         <p class="nombre"><a id="acma" href="#hero" rel="noopener noreferrer">ACMA <a></p>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for ="menu-toggle" class="menu-icon">&#9776;</label>
         <nav class="menu">
           <a href="#experiencia" rel="noopener noreferrer">Experiencia</a>
           <a href="#mis-proyectos" rel="noopener noreferrer">Proyectos</a>
@@ -21,7 +23,7 @@
     
     <section id="hero">
       <div class="container">
-        <div class="img-container"></div>
+        <div class="img-container"> <img id="rizos" src="imagenes/9d066b333f1020133b28dab89b5356e2.jpg"></div>
         <div class="texto">
           <h2>Hola, soy Adalid</h2>
           <p>Soy informática de formación. Actualmente estoy en un proceso de reinicio profesional, enfocándome en el desarrollo web. Gracias a mi experiencia en informática, cuento con una base sólida para entender la lógica y los conceptos técnicos que requiere esta nueva etapa. Mi objetivo es dominar las tecnologías actuales del desarrollo frontend y backend para construir proyectos modernos y funcionales, y así avanzar con confianza en el mundo del desarrollo web.</p>
@@ -51,13 +53,13 @@
           <div class="carta">
             <h3>Menu-Restaurante</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus perferendis odio voluptas quo nisi, iure eos aspernatur optio doloribus? Illum dignissimos beatae, sit voluptatibus delectus dolore? Saepe cumque nesciunt tenetur?</p>
-            <button>+ Info</button>
+            <form action="#" target="_blank"><button>+ Info</button></form>
           </div>
         
           <div class="carta">
             <h3>Naturpaz</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus perferendis odio voluptas quo nisi, iure eos aspernatur optio doloribus? Illum dignissimos beatae, sit voluptatibus delectus dolore? Saepe cumque nesciunt tenetur?</p>
-            <button>+ Info</button>
+            <form action="#" target="_blank"><button>+ Info</button></form> 
           </div>
         </div>
       </div>
@@ -73,6 +75,8 @@
             <input type="text" id="name" name="name" autocomplete="family-name" required>
             <label for="email">Correo electrónico:</label>
             <input type="email" id="email" name="email" autocomplete="off" required>
+            <label for="asunto">Asunto:</label>
+            <input type="text" id="asunto" name="asunto" autocomplete="off" required>
             <label for="message">Mensaje:</label>
             <textarea id="message" name="message" rows="4" required>
             </textarea>

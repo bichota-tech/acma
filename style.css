@@ -35,10 +35,10 @@ h2
     text-align: left;
     background-position: center;
     padding: 10px;
-    margin: 10px;
     font-size: clamp(1.5em, 3vw, 2em);
     color: rgba(37, 37, 37, 0.795);
 }
+
 h3
 {
     font-size: clamp(1.2em, 3vw, 1.7em);
@@ -252,6 +252,11 @@ header a{
     text-align: left;
     padding: 0;
 }
+#mis-proyectos h2
+{
+    margin: 10px;
+    
+}
 
 #mis-proyectos p{display: none;} 
 /* #mis-proyectos p{color: whitesmoke;}  */
@@ -293,6 +298,9 @@ header a{
 {
     display: flex;
     flex-direction: column;
+    text-align: left;
+    padding: 0;
+    
 }
 
 #contacto .formulario
@@ -301,12 +309,18 @@ header a{
     width: 300px;
     display: flex;
     flex-direction: column;
-    padding: 10px;
-    margin: 20px;
+    background-position: center;
+    padding: 0px 50px 0px 50px;
+    text-align: center;
 
 }
 
-#contacto label 
+#contacto h2
+{
+    margin: 10px;
+}
+
+.formulario label 
 {
    margin-bottom: 5px;
    margin-top: 10px;
@@ -314,9 +328,7 @@ header a{
    flex-wrap: wrap;
 }
 
-
-
-#contacto input
+.formulario input
 {
     display: flex;
     text-align: right;

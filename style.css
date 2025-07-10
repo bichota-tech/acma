@@ -4,9 +4,9 @@
 }
 
 body{
-    background-color: whitesmoke;
+    background-color: rgb(245, 245, 245);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, 'Times New Roman', Times, serif;
-    margin: 0;
+    margin:0; /* Espacio para el header fijo */
     padding: 0;
 }
 
@@ -48,9 +48,7 @@ h3
 }
 p{  
     font-size: clamp(1.08em, 3vw, 1.5em);   
-    margin: 0;
-    padding: 10px;
-    
+    margin: 0; 
 }
 
 button{
@@ -74,34 +72,29 @@ a{
     font-size: clamp(1.1em, 3vw, 1.5em);
 }
 
-.container{
-    max-width: 90%;
-    margin: auto;
-}
-
-.containerexp{
-    max-width: 90%;
-    margin: auto;
-}
 
 /*-------------------------------------------*/
+
+.container{
+    margin: auto;
+    max-width: 100%;
+    padding: 0 20px;
+}
+
 header{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding: 1rem;
-    width: 100%;
-    height: 60px;
+    max-width: 100%;
     background-color: whitesmoke;
     margin-top: 0; /* Espacio para el header fijo */;
-    z-index: 1000;
+    margin-bottom: 0;
+    
 }
 header .container{
     display: flex;
     flex-direction: row;
-    width: 100%;
+    max-width: 100%;
     position: fixed;
-    height: 60px;
     background-color: whitesmoke;
     top: 0;
     left: 0;
@@ -112,111 +105,90 @@ header .container{
 }
 
 .nombre a{
-    font-size: clamp(1.2em, 3vw, 1.7em);
+    font-size: clamp(1.2em, 3vw, 1.5em);
     font-weight: bold;
-    padding-left: 20px;
+    padding-right: 20px;
     color: rgba(37, 37, 37, 0.795);
     text-align: left;
     text-decoration: none;
 }
 
-.menu-icon {
-    font-size:  clamp(1.8em, 5vw, 3em);
-    cursor: pointer;
-    display: block; /* Mostrar el icono del menú por defecto */
-    padding-right: 10px;
-    color: rgba(37, 37, 37, 0.795);
-    text-align: center;
-    align-items: center;
-    
-
-}
-
-.menu-toggle {
-    display: none; /* Ocultar el menú por defecto */
-}
-
-.menu {
-    position: fixed;
-    top: 70px; /* Ajustar la posición para que esté debajo del header */
-    right: -300px; /* Ocultar el menú fuera de la pantalla inicialmente */
-    background-color: whitesmoke;
-    width: 250px;
-    height: 30vh; /* Ocupa parte de la altura de la ventana */
+nav .menu{
     display: flex;
-    flex-direction: column;
-    padding-top: 0;
-    transition: left 0.3s ease; /* Transición suave al mostrar el menú */
-    z-index: 999; /* Asegurarse de que el menú esté por encima de otros elementos */
-    box-shadow: -2px 2px 12px rgba(105, 185, 238, 0.76);
+    flex-direction: row;
+    text-align: right;
+    padding-right: 20px;
+    justify-content: flex-end;
 }
 
-.menu a {
-    padding: 10px 20px;
-    color: rgba(37, 37, 37, 0.795);
-    text-decoration: none;
+.menu a{
+    font-size: clamp(0.9em, 4vw, 1.3em);
+    padding-right:5px;
     font-weight: bold;
-    display: flex;    
-}
-
-.menu a:last-child {
-    border-bottom: none; /* Eliminar el borde del último enlace */
-}
-
-.menu-toggle:checked + .menu-icon + .menu {
-    right: 0; /* Mostrar el menú al hacer clic en el icono */
+    color: rgba(37, 37, 37, 0.795);
 }
 
 header a:hover{
     color: rgb(20, 154, 243);
 }
 
-/* header nav{
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    padding: 10px 20px 15px 20px;
-    font-size: medium;
-
-
-}
-
-header a{
-    font-size: larger;
-    padding-right:5px;
-    font-weight: bold;
-    color: rgba(37, 37, 37, 0.795);
-} */
-
 /*----------------------*/
+
+.containerhero{
+    max-width: 90%;
+    margin: auto;
+}
 
 #hero{
     display: flex;
-    align-items: center;
-    justify-content: space-between; 
-    flex-direction: column;
+    align-items: left;
+    justify-content: center; 
+    flex-direction: row;
     background-color: whitesmoke;
+    height: 55vh;
+    margin-top: 50px;
     
 }
 
-#rizos{
-    height: 280px;
-    width: 260px;
-    margin: 20px;
+.img-container #rizos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 260px;
+    width: 225px;
+    padding-bottom: 15px;
     border-radius: 45%;
+    
 }
 
-#hero p{display: none;} 
-
-#hero .texto{
-    justify-content: center;
-    text-align: left;
-    padding-left: 40px;
+#hero .texto p{
+    font-size: clamp(1.08em, 3vw, 1.5em);
+    color: rgba(37, 37, 37, 0.795);
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    text-align: justify;
+    padding-left: 10px;
+    padding-right: 15px;
+    
     }
 
+#hero h2{
+    font-size: clamp(1.5em, 3vw, 1.7em);
+    color: rgba(37, 37, 37, 0.795);
+    margin: 0;
+    text-align: left;
+    justify-content: left;
+}
 
 
 /*---------------*/
+
+.containerexp{
+    max-width: 90%;
+    margin: auto;
+}
 
 #experiencia .containerexp
 {
@@ -231,7 +203,8 @@ header a{
     background-size: cover;
     padding: 10px;
     border-radius: 12px;
-    text-align: left;
+    justify-content: left;
+    text-align: justify;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)), url("imagenes/desarrollador-de-software.jpg");
     }
@@ -240,10 +213,22 @@ header a{
     margin: 0;
 }
 
+.texto p{
+    color: whitesmoke;
+    font-size: clamp(1.08em, 3vw, 1.5em);
+    margin: 0;
+    padding: 10px;
+}
+
 .color-acento{ color: whitesmoke;}
 
 
 /*----------*/
+
+.containerpro{
+    max-width: 90%;
+    margin: auto;
+}
 
 #mis-proyectos .container
 {
@@ -293,6 +278,11 @@ header a{
 }
 
 /*-----------*/
+
+.containercontacto{
+    max-width: 90%;
+    margin: auto;
+}
 
 #contacto .container
 {
@@ -360,15 +350,111 @@ footer
 } */
 
 /* css para pantallas desktop*/
-@media(min-width:400px)
+@media(min-width:780px)
 {
-    header {
+    header{
         position:fixed;
-        width: 100%;
+        max-width: 100%;
         top: 0;
         left: 0;
         height: 60px;
     }
+
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 20px;
+    }
+
+    #hero .containerhero{
+        display: flex;
+        flex-direction: row;
+        width: 60%;
+    }
+
+    #hero .texto{
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        text-align: justify;
+        padding-top: 50px;
+        padding-left: 40px;
+    }
+
+    #hero .img-container{
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #hero .img-container #rizos{
+        height: 350px;
+        width: 300px;
+        padding-bottom: 0;
+        border-radius: 45%;
+    }
+
+    #experiencia .containerexp{
+        display: flex;  
+        width: 70%;
+        padding-bottom: 60px;
+    }
+
+    #experiencia .texto{
+        width: auto;
+        text-align: justify;
+        display: flex;
+        padding: 20px 50px;
+        flex-direction: column;
+    }
+
+    #mis-proyectos .containerpro{
+        display: flex;  
+        width: 70%;
+        flex-direction: column;
+    }
+
+    #mis-proyectos .carta{
+        width: auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #contacto .containercontacto{
+        display: flex;
+        flex-direction: row;
+        width: 70%;
+        justify-content: left;
+        align-items: left;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    #contacto .formulario{
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        margin: 20px 60px 20px 20px;
+        padding-top: 50px;
+    }
+
+
+
+     
+  
+  
+}  
+  
+    /*  header {
+        position:fixed;
+        max-width: 100%;
+        top: 0;
+        left: 0;
+        height: 60px;
+    }
+
     header .container{
         flex-direction: row;
         justify-content: space-between;
@@ -395,14 +481,16 @@ footer
     }
 
     #hero .img-container{
-        background-image: linear-gradient(0deg,rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.2)), url("imagenes/9d066b333f1020133b28dab89b5356e2.jpg");
-    background-size: cover;
-    background-position: center center;
-    height: 300px;
-    width: 250px;
-    margin: 20px;
-    border-radius: 45%;
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #hero .img-container #rizos{
+        height: 350px;
+        width: 300px;
+        padding-bottom: 0;
+        border-radius: 50%;
     }
 
     #experiencia .containerexp{
@@ -434,5 +522,4 @@ footer
         padding: 20px;
         margin: 20px 60px 20px 20px;
     }
-
-}
+*/

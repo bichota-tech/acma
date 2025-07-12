@@ -93,7 +93,7 @@ header{
 header .container{
     display: flex;
     flex-direction: row;
-    max-width: 100%;
+    width: 100%;
     position: fixed;
     background-color: whitesmoke;
     top: 0;
@@ -145,7 +145,7 @@ header a:hover{
     justify-content: center; 
     flex-direction: row;
     background-color: whitesmoke;
-    height: 55vh;
+    height: 75vh;
     margin-top: 50px;
     
 }

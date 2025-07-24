@@ -347,6 +347,13 @@ footer {
         height: 4dvh;
     }
 
+    .menu{
+        padding-right: 2rem;
+    }
+
+    .nombre a{
+        padding-left: 2rem;
+    }
     
 
     div.containerhero {
@@ -395,8 +402,9 @@ footer {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 70%;
+        width: 60%;
     }
 
+    
     
 }

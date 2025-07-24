@@ -28,7 +28,7 @@
           alt="chica con rizos"></div>
       <div class="texto">
         <h2>Hola, soy Adalid</h2>
-        <p>Soy informática de formación, en un proceso de reinicio 
+        <p>Soy informática de formación, en un proceso de reinicio
           profesional, actualmente estoy enfocada en el desarrollo web.
           Mi objetivo es dominar las tecnologías actuales del desarrollo
           frontend y backend para construir proyectos modernos
@@ -53,7 +53,7 @@
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora perspiciatis quibusdam cupiditate porro
             optio rem aliquam maiores fugiat dolor asperiores eaque fugit provident eum impedit enim, cum sapiente nemo
             laborum! Quis distinctio doloremque voluptas earum mollitia ipsam dolorum sint quibusdam.Lorem ipsum, dolor
-            sit amet consectetur adipisicing elit. 
+            sit amet consectetur adipisicing elit.
           </span>
         </p>
       </div>
@@ -92,20 +92,26 @@
   </section>
 
   <section id="contacto">
-    <div class="containercontacto">
-      <div class="img-container"></div>
-      <h2>Contacto</h2>
+    <h2>Contacto</h2>
+    <div class="containercont">
       <div class="contc">
-        <form class="formulario">
-          <label for="name">Nombre:</label>
-          <input type="text" id="name" name="name" autocomplete="family-name" required>
-          <label for="email">Correo electrónico:</label>
-          <input type="email" id="email" name="email" autocomplete="off" required>
-          <label for="asunto">Asunto:</label>
-          <input type="text" id="asunto" name="asunto" autocomplete="off" required>
-          <label for="message">Mensaje:</label>
-          <textarea id="message" name="message" rows="4" required>
-            </textarea>
+        <p>Me pondré en contacto contigo lo antes posible.</p><br><br>
+        <form action="" class="formulario">
+          <fieldset>
+            <legend>Rellena el siguiente formulario</legend><br>
+            
+            <label for="name">*Nombre:</label>
+            <input type="text" id="name" name="name" placeholder="Nombre" required><br><br>
+            <label for="name">*Apellidos:</label>
+            <input type="text" id="apellido" name="apellido" placeholder="Apellidos" required><br><br>
+            <label for="email">*Email:</label>
+            <input type="email" id="email" name="email" placeholder="user@email.x" required> <br><br>
+            <label for="asunto">*Asunto:</label>
+            <input type="text" id="asunto" name="asunto" autocomplete="off" required><br><br>
+            <label for="message">*Mensaje:</label>
+            <textarea id="message" name="message" rows="4" required>
+            </textarea><br><br>
+          </fieldset>
           <button type="submit">Enviar</button>
         </form>
       </div>

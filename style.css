@@ -1,36 +1,22 @@
-*{
+* {
     box-sizing: border-box;
     padding: 0;
+    margin: 0;
 }
 
-body{
+body {
     background-color: rgb(245, 245, 245);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, 'Times New Roman', Times, serif;
-    margin:0; /* Espacio para el header fijo */
+    margin: 0;
+    /* Espacio para el header fijo */
     padding: 0;
 }
 
-html
-{
+html {
     scroll-behavior: smooth;
-    scroll-padding-top: 60px;
-    justify-content: center;
 }
 
-section {
-  margin-bottom: 0;
-}
-
-
-/* h1
-{
-    font-size: clamp(2.5em, 3vw, 1em);
-    color: rgba(37, 37, 37, 0.795);
-    padding-bottom: 20px;
-} */
-
-h2
-{   
+h2 {
     display: flex;
     text-align: left;
     background-position: center;
@@ -39,19 +25,22 @@ h2
     color: rgba(37, 37, 37, 0.795);
 }
 
-h3
-{
+h3 {
     font-size: clamp(1.2em, 3vw, 1.7em);
     margin: 0;
     padding: 10px;
-    color:  whitesmoke;
-}
-p{  
-    font-size: clamp(1.08em, 3vw, 1.5em);   
-    margin: 0; 
+    color: whitesmoke;
 }
 
-button{
+p {
+    font-size: clamp(1.08em, 3vw, 1.5em);
+    margin: 0;
+    color: rgba(37, 37, 37, 0.795);
+}
+
+section{margin-bottom: 2rem;}
+
+button {
     font-size: clamp(1.08em, 3vw, 1.5em);
     font-weight: bold;
     padding: 7px 15px;
@@ -60,14 +49,14 @@ button{
     border: 1px solid rgb(238, 246, 250);
     box-shadow: 3px 3px 12px rgba(105, 185, 238, 0.76);
     color: whitesmoke;
-    background-color:rgb(133, 193, 233);
+    background-color: rgb(133, 193, 233);
 }
 
-button:hover{
+button:hover {
     background-color: rgb(91, 178, 236);
 }
 
-a{
+a {
     text-decoration: none;
     font-size: clamp(1.1em, 3vw, 1.5em);
 }
@@ -75,36 +64,40 @@ a{
 
 /*-------------------------------------------*/
 
-.container{
+.container {
     margin: auto;
     max-width: 100%;
-    padding: 0 20px;
+    padding-left: 1rem;
+    padding-right: .3rem;
 }
 
-header{
+header {
     display: flex;
     flex-direction: row;
     max-width: 100%;
     background-color: whitesmoke;
-    margin-top: 0; /* Espacio para el header fijo */;
+    margin-top: 0;
+    /* Espacio para el header fijo */
+    ;
     margin-bottom: 0;
-    
+
 }
-header .container{
+
+header .container {
     display: flex;
     flex-direction: row;
-    max-width: 100%;
+    width: 100%;
+    height: 5dvh;
     position: fixed;
     background-color: whitesmoke;
     top: 0;
-    left: 0;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(105, 185, 238, 0.76);
 
 }
 
-.nombre a{
+.nombre a {
     font-size: clamp(1.2em, 3vw, 1.5em);
     font-weight: bold;
     padding-right: 20px;
@@ -113,7 +106,7 @@ header .container{
     text-decoration: none;
 }
 
-nav .menu{
+nav .menu {
     display: flex;
     flex-direction: row;
     text-align: right;
@@ -121,48 +114,51 @@ nav .menu{
     justify-content: flex-end;
 }
 
-.menu a{
+.menu a {
     font-size: clamp(0.9em, 4vw, 1.3em);
-    padding-right:5px;
+    padding-right: 5px;
     font-weight: bold;
     color: rgba(37, 37, 37, 0.795);
 }
 
-header a:hover{
+header a:hover {
     color: rgb(20, 154, 243);
 }
 
 /*----------------------*/
 
-.containerhero{
+.containerhero {
     max-width: 90%;
+    height: 100%;
     margin: auto;
 }
 
-#hero{
+#hero {
     display: flex;
-    align-items: left;
-    justify-content: center; 
-    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
     background-color: whitesmoke;
-    height: 55vh;
-    margin-top: 50px;
-    
+    height: 100%;
+    padding-top: 4rem;
+    /* Espacio para el header fijo */
+    margin-bottom: 2rem;
+
 }
 
-.img-container #rizos{
+.img-container #rizos {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 260px;
-    width: 225px;
+    height: 80%;
+    width: 80%;
     padding-bottom: 15px;
     border-radius: 45%;
-    
+
 }
 
-#hero .texto p{
+#hero .texto p {
     font-size: clamp(1.08em, 3vw, 1.5em);
     color: rgba(37, 37, 37, 0.795);
     display: flex;
@@ -171,10 +167,9 @@ header a:hover{
     text-align: justify;
     padding-left: 10px;
     padding-right: 15px;
-    
-    }
+}
 
-#hero h2{
+#hero h2 {
     font-size: clamp(1.5em, 3vw, 1.7em);
     color: rgba(37, 37, 37, 0.795);
     margin: 0;
@@ -185,20 +180,19 @@ header a:hover{
 
 /*---------------*/
 
-.containerexp{
+.containerexp {
     max-width: 90%;
     margin: auto;
 }
 
-#experiencia .containerexp
-{
+#experiencia .containerexp {
     display: flex;
     flex-direction: column;
     padding: 0;
-    text-align: left;  
+    text-align: left;
 }
 
-#experiencia .texto{
+#experiencia .texto {
     background-position: center;
     background-size: cover;
     padding: 10px;
@@ -206,320 +200,203 @@ header a:hover{
     justify-content: left;
     text-align: justify;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5)), url("imagenes/desarrollador-de-software.jpg");
-    }
+            rgba(0, 0, 0, 0.5)), url("imagenes/desarrollador-de-software.jpg");
+}
 
-#experiencia h2{
+#experiencia h2 {
     margin: 0;
 }
 
-.texto p{
+.texto p {
     color: whitesmoke;
     font-size: clamp(1.08em, 3vw, 1.5em);
     margin: 0;
     padding: 10px;
 }
 
-.color-acento{ color: whitesmoke;}
+.color-acento {
+    color: whitesmoke;
+}
 
 
 /*----------*/
 
-.containerpro{
-    max-width: 90%;
-    margin: auto;
-}
-
-#mis-proyectos .container
-{
+#mis-proyectos {
     display: flex;
     flex-direction: column;
-    text-align: left;
-    padding: 0;
-}
-#mis-proyectos h2
-{
-    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
     
 }
 
-#mis-proyectos p{display: none;} 
+.containerpro {
+    width: 90%;
+    margin: auto;
+}
+
+#mis-proyectos h2 {
+    margin: 10px;
+}
+
+#mis-proyectos p {
+    display: none;
+}
+
 /* #mis-proyectos p{color: whitesmoke;}  */
 
- #mis-proyectos .carta
-{   
+#mis-proyectos .carta {
     background-position: center;
     background-size: cover;
     padding: 50px;
     border-radius: 12px;
     text-align: center;
 }
-#mis-proyectos .carta:not(:last-child)
-{
+
+#mis-proyectos .carta:not(:last-child) {
     margin-bottom: 20px;
 }
 
-#mis-proyectos .carta:first-child
-{
+#mis-proyectos .carta:first-child {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5)), url("imagenes/portafolio.jpg");
+            rgba(0, 0, 0, 0.5)), url("imagenes/portafolio.jpg");
 }
 
-.carta:nth-child(2)
-{
+.carta:nth-child(2) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5)), url("imagenes/restaurante.jpg");
+            rgba(0, 0, 0, 0.5)), url("imagenes/restaurante.jpg");
 }
 
-.carta:nth-child(3)
-{
+.carta:nth-child(3) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5)), url("imagenes/web\ ong.png");
+            rgba(0, 0, 0, 0.5)), url("imagenes/web\ ong.png");
 }
 
 /*-----------*/
 
-.containercontacto{
-    max-width: 90%;
+#contacto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: whitesmoke;
+    padding-bottom: 40px;
+}
+
+.containercont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin: auto;
+    width: 90%;
 }
 
-#contacto .container
-{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    padding: 0;
-    
-}
-
-#contacto .formulario
-{
-    font-size: larger;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    background-position: center;
-    padding: 0px 50px 0px 50px;
-    text-align: center;
-
-}
-
-#contacto h2
-{
+#contacto h2 {
     margin: 10px;
 }
 
-.formulario label 
-{
-   margin-bottom: 5px;
-   margin-top: 10px;
-   display: flex;
-   flex-wrap: wrap;
-}
-
-.formulario input
-{
+#contacto .formulario {
+    font-size: medium;
+    width: 100%;
     display: flex;
-    text-align: right;
-    text-rendering: auto;
-    cursor: text;
-    letter-spacing: normal;
-    word-spacing: normal;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-textarea
-{
-    font-family: monospace;
-    text-rendering: auto;
-    display: inline-block;
-    text-align: start;
-    column-count: initial !important;
-    white-space: pre-wrap;
+fieldset {
+    width: 100%;
+    border: 1px solid rgb(238, 246, 250);
+    box-shadow: 3px 3px 12px rgba(105, 185, 238, 0.76);
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+#contacto .formulario label {
+    margin: .5rem;
+    font-size: clamp(.8em, 3vw, 1.3em);
+    color: rgba(37, 37, 37, 0.795);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+#contacto .formulario input,
+#contacto .formulario textarea {
+
+    width: 90%;
+    padding: 1rem;
+    margin-bottom: .5rem;
+    margin-left: 1rem;
+    border-radius: 5px;
+    border: 1px solid rgb(238, 246, 250);
+    box-shadow: 3px 3px 12px rgba(105, 185, 238, 0.76);
 }
 
 /*--------*/
 
-footer
-{
+footer {
     font-size: smaller;
+    text-align: center;
 }
 
-/* footer p{
-    text-align: center;
-} */
-
 /* css para pantallas desktop*/
-@media(min-width:780px)
-{
-    header{
-        position:fixed;
-        max-width: 100%;
-        top: 0;
-        left: 0;
-        height: 60px;
+@media(min-width:768px) {
+
+    header {
+        height: 4dvh;
     }
 
-    header nav{
-        flex-direction: row;
-        padding-bottom: 0;
-        padding-right: 20px;
-    }
-
-    #hero .containerhero{
-        display: flex;
-        flex-direction: row;
-        width: 60%;
-    }
-
-    #hero .texto{
-        display: flex;
-        flex-direction: column;
-        justify-content: left;
-        text-align: justify;
-        padding-top: 50px;
-        padding-left: 40px;
-    }
-
-    #hero .img-container{
-        width: 40%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
     
-    #hero .img-container #rizos{
-        height: 350px;
-        width: 300px;
-        padding-bottom: 0;
-        border-radius: 45%;
-    }
 
-    #experiencia .containerexp{
-        display: flex;  
-        width: 70%;
-        padding-bottom: 60px;
-    }
-
-    #experiencia .texto{
-        width: auto;
-        text-align: justify;
-        display: flex;
-        padding: 20px 50px;
-        flex-direction: column;
-    }
-
-    #mis-proyectos .containerpro{
-        display: flex;  
-        width: 70%;
-        flex-direction: column;
-    }
-
-    #mis-proyectos .carta{
-        width: auto;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-    }
-
-    #contacto .containercontacto{
+    div.containerhero {
         display: flex;
         flex-direction: row;
-        width: 70%;
-        justify-content: left;
-        align-items: left;
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
-
-    #contacto .formulario{
-        width: 500px;
-        display: flex;
-        flex-direction: column;
-        margin: 20px 60px 20px 20px;
-        padding-top: 50px;
-    }
-
-
-
-     
-  
-  
-}  
-  
-    /*  header {
-        position:fixed;
-        max-width: 100%;
-        top: 0;
-        left: 0;
-        height: 60px;
-    }
-
-    header .container{
-        flex-direction: row;
-        justify-content: space-between;
-         
-    }
-
-    header nav{
-        flex-direction: row;
-        padding-bottom: 0;
-        padding-right: 20px;
-        
-    }
-
-    #hero .container{
-        display: flex;
-        
-    }
-
-    #hero .texto{
-        width: 60%;
-        text-align: initial;
-        display: flex;
-        flex-direction: column;
-    }
-
-    #hero .img-container{
-        width: 40%;
-        display: flex;
         justify-content: center;
         align-items: center;
+        gap: 2rem;
+        width: 100%;
+        margin-bottom: 2rem;
     }
-    #hero .img-container #rizos{
-        height: 350px;
-        width: 300px;
+
+    .img-container #rizos {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
         padding-bottom: 0;
         border-radius: 50%;
+        width: 100%;
     }
 
-    #experiencia .containerexp{
-        display: flex;  
+    div.texto {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 70%;
     }
 
-    #experiencia .texto{
+    #experiencia .texto {
         width: auto;
         text-align: justify;
-        display: flex;
-        flex-direction: column;
+        padding: 20px 50px;
     }
 
-    #mis-proyectos .container{
-        display: flex;  
-    }
-
-    #mis-proyectos .carta{
-        width: auto;
-        text-align: center;
+    .containercontc{
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
     }
 
-    #contacto .formulario{
-        width: 500px;
+    .contc {
         display: flex;
         flex-direction: column;
-        padding: 20px;
-        margin: 20px 60px 20px 20px;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
     }
-*/
+
+    
+}

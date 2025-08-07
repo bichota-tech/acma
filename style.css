@@ -4,16 +4,15 @@
     margin: 0;
 }
 
-body {
-    background-color: rgb(245, 245, 245);
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, 'Times New Roman', Times, serif;
-    margin: 0;
-    /* Espacio para el header fijo */
-    padding: 0;
-}
 
 html {
     scroll-behavior: smooth;
+}
+
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
 }
 
 h2 {
@@ -22,20 +21,20 @@ h2 {
     background-position: center;
     padding: 10px;
     font-size: clamp(1.5em, 3vw, 2em);
-    color: rgba(37, 37, 37, 0.795);
+    
 }
 
 h3 {
     font-size: clamp(1.2em, 3vw, 1.7em);
     margin: 0;
     padding: 10px;
-    color: whitesmoke;
+    
 }
 
 p {
     font-size: clamp(1.08em, 3vw, 1.5em);
     margin: 0;
-    color: rgba(37, 37, 37, 0.795);
+    
 }
 
 section{margin-bottom: 2rem;}
@@ -46,15 +45,9 @@ button {
     padding: 7px 15px;
     margin: 20px;
     border-radius: 7px;
-    border: 1px solid rgb(238, 246, 250);
-    box-shadow: 3px 3px 12px rgba(105, 185, 238, 0.76);
-    color: whitesmoke;
-    background-color: rgb(133, 193, 233);
 }
 
-button:hover {
-    background-color: rgb(91, 178, 236);
-}
+
 
 a {
     text-decoration: none;
@@ -64,44 +57,64 @@ a {
 
 /*-------------------------------------------*/
 
-.container {
-    margin: auto;
-    max-width: 100%;
-    padding-left: 1rem;
-    padding-right: .3rem;
-}
 
 header {
     display: flex;
     flex-direction: row;
     max-width: 100%;
-    background-color: whitesmoke;
     margin-top: 0;
-    /* Espacio para el header fijo */
-    ;
     margin-bottom: 0;
-
+    position: fixed;
+    top: 0;
 }
 
 header .container {
     display: flex;
     flex-direction: row;
-    width: 100%;
-    height: 5dvh;
-    position: fixed;
-    background-color: whitesmoke;
-    top: 0;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(105, 185, 238, 0.76);
-
+    width: 100%;
+    height: 6dvh;
+    position:inherit;
+    margin: auto;
+    padding-left: 1rem;
+    padding-right: .3rem;
+    padding-top: .5rem;
+    background-color: inherit;
+    
 }
 
+div#modo{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+header img#iconoModo {
+    width: 40px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  header img#iconoModo:hover {
+    transform: scale(1.1);
+  }
+
+  p.nombre{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+
 .nombre a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
     font-size: clamp(1.2em, 3vw, 1.5em);
     font-weight: bold;
-    padding-right: 20px;
-    color: rgba(37, 37, 37, 0.795);
+    padding-right: 10px;
     text-align: left;
     text-decoration: none;
 }
@@ -110,6 +123,7 @@ nav .menu {
     display: flex;
     flex-direction: row;
     text-align: right;
+    position: inherit;
     padding-right: 20px;
     justify-content: flex-end;
 }
@@ -118,27 +132,15 @@ nav .menu {
     font-size: clamp(0.9em, 4vw, 1.3em);
     padding-right: 5px;
     font-weight: bold;
-    color: rgba(37, 37, 37, 0.795);
-}
-
-header a:hover {
-    color: rgb(20, 154, 243);
 }
 
 /*----------------------*/
 
-.containerhero {
-    max-width: 90%;
-    height: 100%;
-    margin: auto;
-}
-
-#hero {
+section#hero {
     display: flex;
     justify-content: center;
     align-content: center;
     flex-direction: column;
-    background-color: whitesmoke;
     height: 100%;
     padding-top: 4rem;
     /* Espacio para el header fijo */
@@ -146,36 +148,49 @@ header a:hover {
 
 }
 
-.img-container #rizos {
+.containerhero {
+    max-width: 90%;
+    height: 100%;
+    margin: auto;
+}
+
+.img-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 80%;
-    width: 80%;
     padding-bottom: 15px;
-    border-radius: 45%;
-
+    
 }
+
+img#rizos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 45%;
+    height: auto;
+    width: 50%;
+}
+
+#hero h2 {
+    font-size: clamp(1.5em, 3vw, 1.7em);
+    margin: 0;
+    text-align: left;
+    justify-content: left;
+}
+
 
 #hero .texto p {
     font-size: clamp(1.08em, 3vw, 1.5em);
-    color: rgba(37, 37, 37, 0.795);
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: center;
     text-align: justify;
     padding-left: 10px;
     padding-right: 15px;
 }
 
-#hero h2 {
-    font-size: clamp(1.5em, 3vw, 1.7em);
-    color: rgba(37, 37, 37, 0.795);
-    margin: 0;
-    text-align: left;
-    justify-content: left;
-}
 
 
 /*---------------*/
@@ -208,14 +223,13 @@ header a:hover {
 }
 
 .texto p {
-    color: whitesmoke;
     font-size: clamp(1.08em, 3vw, 1.5em);
     margin: 0;
     padding: 10px;
 }
 
 .color-acento {
-    color: whitesmoke;
+    color: #e7e5e5;
 }
 
 
@@ -226,8 +240,6 @@ header a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: whitesmoke;
-    
 }
 
 .containerpro {
@@ -278,21 +290,13 @@ header a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: whitesmoke;
     padding-bottom: 40px;
+    width: 100%;
 }
 
 .containercont {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     margin: auto;
     width: 90%;
-}
-
-#contacto h2 {
-    margin: 10px;
 }
 
 #contacto .formulario {
@@ -304,18 +308,17 @@ header a:hover {
     align-items: center;
 }
 
+
 fieldset {
-    width: 100%;
-    border: 1px solid rgb(238, 246, 250);
-    box-shadow: 3px 3px 12px rgba(105, 185, 238, 0.76);
+    width: clamp(20em, 50vw, 30em);
     border-radius: 10px;
     padding: 1rem;
+    font-size: large;
 }
 
 #contacto .formulario label {
     margin: .5rem;
     font-size: clamp(.8em, 3vw, 1.3em);
-    color: rgba(37, 37, 37, 0.795);
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -329,8 +332,6 @@ fieldset {
     margin-bottom: .5rem;
     margin-left: 1rem;
     border-radius: 5px;
-    border: 1px solid rgb(238, 246, 250);
-    box-shadow: 3px 3px 12px rgba(105, 185, 238, 0.76);
 }
 
 /*--------*/
@@ -338,7 +339,11 @@ fieldset {
 footer {
     font-size: smaller;
     text-align: center;
+    padding-block: 1rem;
+    
 }
+
+
 
 /* css para pantallas desktop*/
 @media(min-width:768px) {
@@ -394,7 +399,7 @@ footer {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 90%;
+        width: 100%;
     }
 
     .contc {
@@ -402,8 +407,10 @@ footer {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 60%;
+        max-width: 100%;
     }
+
+
 
     
     

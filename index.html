@@ -7,13 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portafolio</title>
   <link href="style.css" rel="stylesheet">
+  <link href="dark_mode_style.css" rel="stylesheet">
+
 </head>
 
 <body>
   <header>
     <div class="container">
-      <p class="nombre"><a id="acma" href="#hero" rel="noopener noreferrer">ACMA <a></p>
+      <div id="modo">
+        <p class="nombre"><a id="acma" href="#hero" rel="noopener noreferrer">ACMA <a></p>
+        <img id="iconoModo" src="imagenes/luna.png" alt="Cambiar modo" title="Cambiar modo">
 
+      </div>
       <nav class="menu">
         <a href="#experiencia" rel="noopener noreferrer">Experiencia</a>
         <a href="#mis-proyectos" rel="noopener noreferrer">Proyectos</a>
@@ -92,25 +97,26 @@
   </section>
 
   <section id="contacto">
-    <h2>Contacto</h2>
     <div class="containercont">
+      <h2>Contacto</h2>
       <div class="contc">
         <p>Me pondré en contacto contigo lo antes posible.</p><br><br>
         <form action="" class="formulario">
           <fieldset>
             <legend>Rellena el siguiente formulario</legend><br>
-            
+
             <label for="name">*Nombre:</label>
-            <input type="text" id="name" name="name" placeholder="Nombre" required><br><br>
+            <input type="text" id="name" name="name" placeholder="Nombre" autocomplete="cc-name" required>
             <label for="name">*Apellidos:</label>
-            <input type="text" id="apellido" name="apellido" placeholder="Apellidos" required><br><br>
+            <input type="text" id="apellido" name="apellido" placeholder="Apellidos" autocomplete="family-name"
+              required>
             <label for="email">*Email:</label>
-            <input type="email" id="email" name="email" placeholder="user@email.x" required> <br><br>
+            <input type="email" id="email" name="email" placeholder="user@email.x" autocomplete="email" required>
             <label for="asunto">*Asunto:</label>
-            <input type="text" id="asunto" name="asunto" autocomplete="off" required><br><br>
+            <input type="text" id="asunto" name="asunto" placeholder="Asunto a tratar" required>
             <label for="message">*Mensaje:</label>
             <textarea id="message" name="message" rows="4" required>
-            </textarea><br><br>
+            </textarea>
           </fieldset>
           <button type="submit">Enviar</button>
         </form>
@@ -122,10 +128,11 @@
     <div class="container">
       <p>&copy; 2025 ACMA. Todos los derechos reservados.</p>
       <div class="social-icons">
-        <a href="#" rel="noopener noreferrer">Instagram</a>
+        <a href="#" rel="noopener noreferrer">Perfil Instagram</a>
       </div>
     </div>
   </footer>
+  <script src="script.js"></script>
 </body>
 
 </html>

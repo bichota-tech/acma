@@ -1,0 +1,79 @@
+:root{
+    
+    --color-title:rgba(37, 37, 37, 0.795);
+    --color-text: whitesmoke;
+    --color-fondo: rgb(252, 242, 242);
+    --color-fboton: rgb(148, 64, 4);
+    --color-sombra-boton: chocolate;
+    --color-borde-boton: rgb(119, 55, 9);
+    /*modo oscuro*/
+    --color-bg: #1b1b1b;
+    --color-textd: #dbd6d6;
+}
+
+/*Modo claro*/
+body {
+    background-color: var(--color-fondo) ;
+    color: var(--color-title);
+}
+
+header{
+    background-color:var(--color-fondo);
+}
+
+header.container{
+    border-bottom: 1px solid var(--color-borde-boton);
+}
+
+.nombre a, .menu a, footer a, p{
+    color: inherit;
+}
+
+h3{color: var(--color-text);}
+
+header a:hover {
+    color: var(--color-sombra-boton);
+}
+
+button{
+    border: 1px solid var(--color-borde-boton);
+    box-shadow: 2px 2px 10px var(--color-sombra-boton);
+    color: var(--color-text);
+    background-color: var(--color-fboton);
+}
+
+button:hover {
+    background-color: var(--color-sombra-boton);
+}
+
+#contacto .formulario input,
+#contacto .formulario textarea{
+    background-color: rgba(255, 255, 255, 0.849);
+}
+
+fieldset, #contacto .formulario input,
+#contacto .formulario textarea{
+    border: none;
+    /* border: 1px solid var(--color-borde-boton); */
+    box-shadow: 1px 3px 7px var(--color-fboton);
+}
+
+/*modo oscuro*/
+
+body.modo-oscuro{
+    background-color: var(--color-bg);
+    color: var(--color-textd);
+}
+
+body.modo-oscuro header{
+    background-color: var(--color-bg);
+}
+
+body.modo-oscuro footer{
+    background-color: var(--color-bg);
+}
+
+
+
+
+

@@ -1,3 +1,12 @@
+:root{
+    --color-fondo-claro: #ebe7d9;
+    --color-texto-claro: #ebe7d9;
+    --color-fondo-oscuro: #1e1f22;
+    --color-texto-oscuro: #1e1f22;
+    --color-acento-primario: #f55139;
+    --color-acento-secundario: #3AB7BF;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;

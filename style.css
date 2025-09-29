@@ -1,10 +1,18 @@
-:root{
+:root {
+    /*paleta principal*/
     --color-fondo-claro: #ebe7d9;
     --color-texto-claro: #ebe7d9;
     --color-fondo-oscuro: #1e1f22;
     --color-texto-oscuro: #1e1f22;
     --color-acento-primario: #f55139;
     --color-acento-secundario: #3AB7BF;
+    /*paleta de contacto*/
+    --first-color: #3AB7BF;
+    --title-color: #ebe7d9;
+    --text-color: #cac09b;
+    --body-color: #1e1f22;
+    --h2-font-size: 1.3rem;
+    --small-font-size: .875rem;
 }
 
 * {
@@ -13,414 +21,134 @@
     margin: 0;
 }
 
-
-html {
-    scroll-behavior: smooth;
-}
-
-body{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, 'Times New Roman', Times, serif;
+body {
+    font-family: "Montserrat", sans-serif !important;
     margin: 0;
     padding: 0;
 }
 
-h2 {
-    display: flex;
-    text-align: left;
-    background-position: center;
-    padding: 10px;
-    font-size: clamp(1.5em, 3vw, 2em);
-    
+ul {
+    list-style: none;
 }
-
-h3 {
-    font-size: clamp(1.2em, 3vw, 1.7em);
-    margin: 0;
-    padding: 10px;
-    
-}
-
-p {
-    font-size: clamp(1.08em, 3vw, 1.5em);
-    margin: 0;
-    
-}
-
-section{margin-bottom: 2rem;}
-
-button {
-    font-size: clamp(1.08em, 3vw, 1.5em);
-    font-weight: bold;
-    padding: 7px 15px;
-    margin: 20px;
-    border-radius: 7px;
-}
-
-
 
 a {
     text-decoration: none;
-    font-size: clamp(1.1em, 3vw, 1.5em);
 }
 
+.linkscontainer {
+    height: 40vh;
+    margin-inline: 1.5rem;
+    display: grid;
+    place-items: center;
+}
 
-/*-------------------------------------------*/
+.card.linkscard {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 24px hsla(216, 50%, 20%, .1);
+    padding: 4rem 4rem 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    position: relative;
+}
 
-
-header {
-    display: flex;
-    flex-direction: row;
+img.card__img {
+    display: block;
     max-width: 100%;
-    margin-top: 0;
-    margin-bottom: 0;
-    position: fixed;
+    height: 6.9rem;
+    width: 5.rem;
+    margin: 0 auto .75rem;
+    border-radius: 50%;
+    border: 2px solid var(--first-color);
+    position: absolute;
     top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-header .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 6dvh;
-    position:inherit;
-    margin: auto;
-    padding-left: 1rem;
-    padding-right: .3rem;
-    padding-top: .5rem;
-    background-color: inherit;
-    
+h2.card__name {
+    font-size: var(--h2-font-size);
+    font-weight: 600;
+    color: var(--title-color);
+    margin-bottom: .25rem;
 }
 
-div#modo{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    text-align: left;
-}
-
-header img#iconoModo {
-    width: 40px;
-    cursor: pointer;
-    transition: transform 0.3s;
-  }
-  
-  header img#iconoModo:hover {
-    transform: scale(1.1);
-  }
-
-  p.nombre{
-    display: flex;
-    justify-content: center;
-    align-self: center;
-  }
-
-.nombre a {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    font-size: clamp(1.2em, 3vw, 1.5em);
-    font-weight: bold;
-    padding-right: 10px;
-    text-align: left;
-    text-decoration: none;
-}
-
-nav .menu {
-    display: flex;
-    flex-direction: row;
-    text-align: right;
-    position: inherit;
-    padding-right: 20px;
-    justify-content: flex-end;
-}
-
-.menu a {
-    font-size: clamp(0.9em, 4vw, 1.3em);
-    padding-right: 5px;
-    font-weight: bold;
-}
-
-/*----------------------*/
-
-section#hero {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    height: 100%;
-    padding-top: 4rem;
-    /* Espacio para el header fijo */
+p.card__web {
+    font-size: var(--small-font-size);
     margin-bottom: 2rem;
-
+    color: var(--text-color);
 }
 
-.containerhero {
-    max-width: 90%;
+.button {
+    position: relative;
+    background-color: var(--body-color);
+    border: 2px solid var(--first-color);
+    outline: none;
+    padding: .75rem 1.5rem;
+    border-radius: 4rem;
+    cursor: pointer;
+    color: var(--title-color);
+    font-size: 1.1rem;
+}
+
+.button__social {
+    display: flex;
+    justify-content: center;
+    column-gap: 1rem;
+    z-index: 1;
+}
+
+.button__social a {
+    font-size: 1.55rem;
+    color: var(--first-color);
+    transition: transform .5s cubic-bezier(.2, .9, .2, 1.2);
+    transform: translateY(1.1rem);
+}
+
+.button__social img{
+    color: var(--first-color);
+}
+
+.button__social a:nth-child(1) {
+    transition-delay: .1s;
+}
+
+.button__social a:nth-child(2) {
+    transition-delay: .15s;
+}
+
+.button__social a:nth-child(3) {
+    transition-delay: .2s;
+}
+
+.button__social a:nth-child(4) {
+    transition-delay: .25s;
+}
+
+div.button__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--first-color);
+    width: 100%;
     height: 100%;
-    margin: auto;
+    border-radius: 4rem;
+    display: grid;
+    place-items: center;
+    transform: scale(1.03);
+    transition: transform .5s cubic-bezier(.2, .9, .2, 1.2);
+    z-index: 5;
 }
 
-.img-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 15px;
-    
-}
-
-img#rizos{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 45%;
-    height: auto;
-    width: 50%;
-}
-
-#hero h2 {
-    font-size: clamp(1.5em, 3vw, 1.7em);
-    margin: 0;
-    text-align: left;
-    justify-content: left;
+.button__content span {
+    color: var(--white-color);
+    font: 600 var(--normal-font-size) var(--body-font);
 }
 
 
-#hero .texto p {
-    font-size: clamp(1.08em, 3vw, 1.5em);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    text-align: justify;
-    padding-left: 10px;
-    padding-right: 15px;
+.button:hover .button__content {
+    transform: translateY(-40px) scale(.6);
 }
 
-
-
-/*---------------*/
-
-.containerexp {
-    max-width: 90%;
-    margin: auto;
-}
-
-#experiencia .containerexp {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    text-align: left;
-}
-
-#experiencia .texto {
-    background-position: center;
-    background-size: cover;
-    padding: 10px;
-    border-radius: 12px;
-    justify-content: left;
-    text-align: justify;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
-            rgba(0, 0, 0, 0.5)), url("imagenes/desarrollador-de-software.jpg");
-}
-
-#experiencia h2 {
-    margin: 0;
-}
-
-.texto p {
-    font-size: clamp(1.08em, 3vw, 1.5em);
-    margin: 0;
-    padding: 10px;
-}
-
-.color-acento {
-    color: #e7e5e5;
-}
-
-
-/*----------*/
-
-#mis-proyectos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.containerpro {
-    width: 90%;
-    margin: auto;
-}
-
-#mis-proyectos h2 {
-    margin: 10px;
-}
-
-#mis-proyectos p {
-    display: none;
-}
-
-/* #mis-proyectos p{color: whitesmoke;}  */
-
-#mis-proyectos .carta {
-    background-position: center;
-    background-size: cover;
-    padding: 50px;
-    border-radius: 12px;
-    text-align: center;
-}
-
-#mis-proyectos .carta:not(:last-child) {
-    margin-bottom: 20px;
-}
-
-#mis-proyectos .carta:first-child {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
-            rgba(0, 0, 0, 0.5)), url("imagenes/portafolio.jpg");
-}
-
-.carta:nth-child(2) {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
-            rgba(0, 0, 0, 0.5)), url("imagenes/restaurante.jpg");
-}
-
-.carta:nth-child(3) {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
-            rgba(0, 0, 0, 0.5)), url("imagenes/web\ ong.png");
-}
-
-/*-----------*/
-
-#contacto {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-bottom: 40px;
-    width: 100%;
-}
-
-.containercont {
-    margin: auto;
-    width: 90%;
-}
-
-#contacto .formulario {
-    font-size: medium;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-
-fieldset {
-    width: clamp(20em, 50vw, 30em);
-    border-radius: 10px;
-    padding: 1rem;
-    font-size: large;
-}
-
-#contacto .formulario label {
-    margin: .5rem;
-    font-size: clamp(.8em, 3vw, 1.3em);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-}
-
-#contacto .formulario input,
-#contacto .formulario textarea {
-
-    width: 90%;
-    padding: 1rem;
-    margin-bottom: .5rem;
-    margin-left: 1rem;
-    border-radius: 5px;
-}
-
-/*--------*/
-
-footer {
-    font-size: smaller;
-    text-align: center;
-    padding-block: 1rem;
-    
-}
-
-
-
-/* css para pantallas desktop*/
-@media(min-width:768px) {
-
-    header {
-        height: 4dvh;
-    }
-
-    .menu{
-        padding-right: 2rem;
-    }
-
-    .nombre a{
-        padding-left: 2rem;
-    }
-    
-
-    div.containerhero {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-        width: 100%;
-        margin-bottom: 2rem;
-    }
-
-    .img-container #rizos {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 0;
-        border-radius: 50%;
-        width: 100%;
-    }
-
-    div.texto {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 70%;
-    }
-
-    #experiencia .texto {
-        width: auto;
-        text-align: justify;
-        padding: 20px 50px;
-    }
-
-    .containercontc{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
-
-    .contc {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        max-width: 100%;
-    }
-
-
-
-    
-    
+.button:hover .button__social a {
+    transform: translateY(0) scale(1);
 }

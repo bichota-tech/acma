@@ -32,8 +32,99 @@ ul {
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none !important;
 }
+
+.navbar.fixed-top.bg-body-tertiary, 
+.navbar.fixed-top.bg-body-tertiary.navbar-expand-lg{
+    background-color: var(--color-fondo-oscuro) !important;
+    box-shadow: 0 4px 24px hsla(216, 50%, 20%, .1);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar.fixed-top.bg-body-tertiary div.container.logo{
+    max-width: 9.5rem;
+    margin: 0;
+}
+
+.navbar.fixed-top.bg-body-tertiary div.container-fluid{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 1rem;
+    justify-content: right;
+    align-items: center;
+}
+
+.navbar.fixed-top.bg-body-tertiary.navbar-expand-lg div.container-fluid{
+    display: flex;
+    justify-content: space-between;
+}
+
+button.navbar-toggler{
+    margin-right: 1rem;
+    padding: 2px 6px;
+    border: none;
+    color: transparent;
+    margin: 0;
+}
+
+.custom-toggler i {
+  color: var(--color-acento-primario);
+  font-size: 2.5rem;
+} 
+
+ul.navbar-nav.me-auto.mb-2.mb-lg-0{
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar.fixed-top.bg-body-tertiary div.container-fluid a{
+    color: var(--color-texto-claro);
+    font-size: clamp( 1rem, 2vw, 1.5rem);
+    font-weight: 600;
+}
+
+a.navbar-brand img{
+    width: clamp( 6.5rem, 12vw, 9.375rem);
+}
+
+.navbar .navbar-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar .navbar-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-acento-primario);
+  transition: width 0.3s ease;
+}
+
+.navbar .navbar-link:hover::after,
+.navbar .navbar-link:focus::after {
+  width: 100%;
+}
+
+.navbar .navbar-link.active::after {
+  width: 100%;
+}
+
+/**/
+
+
+/*seccion contacto*/
 
 .linkscontainer {
     height: 40vh;

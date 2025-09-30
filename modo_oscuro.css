@@ -1,0 +1,33 @@
+/* Paleta de colores */
+:root {
+  --bg-light: #ffffff;
+  --bg-dark: #1a1a1a;
+  --text-light: #000000;
+  --text-dark: #ffffff;
+  --icon-light: #ffffff;
+  --icon-dark: #ff4c4c; /* Bombilla rojiza en modo oscuro */
+}
+
+/* Estilos generales */
+body {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* Icono */
+#theme-toggle i {
+  color: var(--icon-light);
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+body.dark-mode #theme-toggle i {
+  color: var(--icon-dark);
+}
+

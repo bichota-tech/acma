@@ -1,19 +1,22 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const icono = document.getElementById('iconoModo');
-    icono.addEventListener('click', () => {
-        document.body.classList.toggle('modo-oscuro');
-        const modoOscuroActivo = document.body.classList.contains('modo-oscuro');
-        if (modoOscuroActivo) {
-            icono.src = 'imagenes/sol.png';
-            icono.alt = 'Modo claro';
-            icono.title = 'Activar modo claro';
-        } else {
-            icono.src = 'imagenes/luna.png';
-            icono.alt = 'Modo oscuro';
-            icono.title = 'Activar modo oscuro';
-        }
-    });
+const toggleButton = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Mantener modo en localStorage
+if (localStorage.getItem('theme') === 'dark') {
+  body.classList.add('dark-mode');
+}
+
+toggleButton.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+
+  // Guardar la preferencia
+  if (body.classList.contains('dark-mode')) {
+    localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.setItem('theme', 'light');
+  }
 });
+
 // Regex estricta para validar estructura del correo
 const strictEmail = /^(?!.*\.\.)[A-Za-z0-9][A-Za-z0-9._%+-]{0,63}@[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*\.[A-Za-z]{2,}$/;
 

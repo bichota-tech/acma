@@ -5,6 +5,7 @@
     --color-fondo-oscuro: #1e1f22;
     --color-texto-oscuro: #1e1f22;
     --color-acento-primario: #f55139;
+    --color-acento-primario-brillo: #fd0800;
     --color-acento-secundario: #3AB7BF;
     /*paleta de contacto*/
     --first-color: #3AB7BF;
@@ -44,6 +45,7 @@ a {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
+    padding: 0;
 }
 
 .navbar.fixed-top.bg-body-tertiary div.container.logo{
@@ -63,9 +65,59 @@ a {
 .navbar.fixed-top.bg-body-tertiary.navbar-expand-lg div.container-fluid{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 0;
 }
 
-button.navbar-toggler{
+div.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.logo a.navbar-brand{
+    font-size: 2.4rem !important;
+    font-weight: bold !important;
+    margin: 0;
+    padding: 0;
+    font-style: italic;   
+    color: var(--color-texto-claro);
+}
+
+div.logo a.navbar-brand.neon {
+    font-size: 2rem !important;
+    font-weight: 800 !important;
+    margin-left:.5rem;
+    color: var(--color-acento-primario) !important;
+}
+.neon {
+  color: var(--color-acento-primario); /* color base */
+  font-size: 2rem;
+  text-decoration: none;
+  text-shadow: 
+    0 0 5px var(--color-acento-primario-brillo),
+    0 0 10px var(--color-acento-primario-brillo),
+    0 0 20px var(--color-acento-primario-brillo),
+    0 0 40px var(--color-acento-primario-brillo);
+  animation: flicker 2s infinite alternate;
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    text-shadow: 
+      0 0 5px var(--color-acento-primario-brillo),
+      0 0 10px var(--color-acento-primario-brillo),
+      0 0 20px var(--color-acento-primario-brillo),
+      0 0 40px var(--color-acento-primario-brillo);
+  }
+  20%, 24%, 55% {
+    opacity: 0.6;
+    text-shadow: none;
+  }
+}
+
+button.navbar-toggler, button.navbar-toggler.collapse {
     margin-right: 1rem;
     padding: 2px 6px;
     border: none;
@@ -78,12 +130,14 @@ button.navbar-toggler{
   font-size: 2.5rem;
 } 
 
-ul.navbar-nav.me-auto.mb-2.mb-lg-0{
+ul.navbar-nav{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: right;
-    align-items: center;
+    align-items: flex-end;
     gap: 1rem;
+    margin-block: 1rem;
 }
 
 .navbar.fixed-top.bg-body-tertiary div.container-fluid a{

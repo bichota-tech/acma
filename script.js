@@ -1,22 +1,3 @@
-const toggleButton = document.getElementById('theme-toggle');
-const body = document.body;
-
-// Mantener modo en localStorage
-if (localStorage.getItem('theme') === 'dark') {
-  body.classList.add('dark-mode');
-}
-
-toggleButton.addEventListener('click', () => {
-  body.classList.toggle('dark-mode');
-
-  // Guardar la preferencia
-  if (body.classList.contains('dark-mode')) {
-    localStorage.setItem('theme', 'dark');
-  } else {
-    localStorage.setItem('theme', 'light');
-  }
-});
-
 // Regex estricta para validar estructura del correo
 const strictEmail = /^(?!.*\.\.)[A-Za-z0-9][A-Za-z0-9._%+-]{0,63}@[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*\.[A-Za-z]{2,}$/;
 

@@ -1,19 +1,12 @@
 :root {
     /*paleta principal*/
     --color-fondo-claro: #ebe7d9;
-    --color-texto-claro: #ebe7d9;
     --color-fondo-oscuro: #1e1f22;
-    --color-texto-oscuro: #1e1f22;
     --color-acento-primario: #f55139;
     --color-acento-primario-brillo: #fd0800;
     --color-acento-secundario: #3AB7BF;
-    /*paleta de contacto*/
-    --first-color: #3AB7BF;
-    --title-color: #ebe7d9;
-    --text-color: #cac09b;
-    --body-color: #1e1f22;
-    --h2-font-size: 1.3rem;
-    --small-font-size: .875rem;
+
+
 }
 
 * {
@@ -23,67 +16,177 @@
 }
 
 body {
-    font-family: "Montserrat", sans-serif !important;
-    margin: 0;
-    padding: 0;
+    font-family: 'Montserrat', 'sans-serif' !important;
+    background-color: var(--color-fondo-oscuro);
+    color: var(--color-fondo-claro);
+    overflow: hidden;
+    /*para quitar el scroll entre secciones*/
 }
 
-header{
-    position:fixed;
+header {
+    width: 100%;
     top: 0;
 }
 
-main{
-    
+main {
+
+    position: relative;
 }
 
-ul {
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    color: white;
+    transition: all 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-menu {
     list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    margin-right:0;
+    transition: all 0.3 ease;
 }
 
-a {
-    text-decoration: none !important;
+.nav-menu a {
+    color: var(--color-light);
+    text-decoration: none;
+    font-weight: 700;
+    position: relative;
 }
 
-.navbar.fixed-top.bg-body-tertiary.navbar-expand-lg {
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--color-acento-primario);
+}
+
+/*Hamburguer Menu*/
+.hamburguer {
     display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 35px;
+    height: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
-.navbar.fixed-top.bg-body-tertiary div.logo {
+.bar {
+    height: 5px;
+    width: 100%;
+    background-color: var(--color-acento-primario);
+    transition: all 0.3 ease;
+}
+
+/*Responsive Hamburguer Menu*/
+@media (max-width: 768px) {
+    .hamburguer {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 61px;
+        right: 0;
+        flex-direction: column;
+        width: 50%;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        color: white;
+        text-align: center;
+        transition: all 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .nav-menu.show {
+        max-height: 300px;
+        opacity: 1;
+        visibility: visible;
+        padding: 2rem 0;
+    }
+
+    .nav-menu li {
+        text-align: center;
+        margin: 0.5rem 0;
+    }
+}
+
+/* Secciones SPA */
+.section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    pointer-events: none;
+}
+
+.section.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: all;
+}
+
+/* Estilos del logo */
+div.logo {
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 9.5rem;
-    margin-inline: 1rem;
+    
 }
 
 div.logo a.navbar-brand {
-    font-size: 2.4rem !important;
-    font-weight: bold !important;
+    font-size: clamp(1.5rem, 4vw, 2.1rem);
+    font-weight: 750;
     margin: 0;
     padding: 0;
     font-style: italic;
     color: var(--color-texto-claro);
+    text-decoration: none;
 }
 
 div.logo a.navbar-brand.neon {
-    font-size: 2rem !important;
-    font-weight: 800 !important;
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    font-weight: 800;
     margin-left: .5rem;
-    color: var(--color-acento-primario) !important;
+    color: var(--color-acento-primario);
 }
 
 .neon {
     color: var(--color-acento-primario);
-    /* color base */
-    font-size: 2rem;
+    font-size: clamp(1.2rem, 4vw, 2rem);
     text-decoration: none;
     text-shadow:
         0 0 5px var(--color-acento-primario-brillo),
         0 0 10px var(--color-acento-primario-brillo),
         0 0 20px var(--color-acento-primario-brillo),
         0 0 40px var(--color-acento-primario-brillo);
-    animation: flicker 2s infinite alternate;
+    animation: flicker 5s infinite alternate;
 }
 
 @keyframes flicker {
@@ -100,8 +203,8 @@ div.logo a.navbar-brand.neon {
         text-shadow:
             0 0 5px var(--color-acento-primario-brillo),
             0 0 10px var(--color-acento-primario-brillo),
-            0 0 20px var(--color-acento-primario-brillo),
-            0 0 40px var(--color-acento-primario-brillo);
+            0 0 20px var(--color-acento-primario),
+            0 0 40px var(--color-acento-primario);
     }
 
     20%,
@@ -112,106 +215,16 @@ div.logo a.navbar-brand.neon {
     }
 }
 
-.navbar div.container-fluid a {
-    color: var(--color-texto-claro);
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    font-weight: 600;
-}
-
-.navbar .navbar-link {
-    position: relative;
-    transition: color 0.3s ease;
-}
-
-.navbar .navbar-link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0%;
-    height: 2px;
-    background-color: var(--color-acento-primario);
-    transition: width 0.3s ease;
-}
-
-.navbar .navbar-link:hover::after,
-.navbar .navbar-link:focus::after {
-    width: 100%;
-}
-
-.navbar .navbar-link.active::after {
-    width: 100%;
-}
-
-/**/
-
-@media(max-width:460px) {
-    .navbar.fixed-top.bg-body-tertiary.navbar-expand-lg {
-        display: flex;
-        justify-content: space-between;
-        width: auto;
-    }
-    .navbar.fixed-top.bg-body-tertiary.navbar-expand-lg div.container-fluid{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-    margin-left:0 ;  
-    }
-
-    ul.navbar-nav{
-        text-align: center;
-        column-gap: .5rem;
-    }
-
-    .navbar-toggler{
-        color:transparent !important;
-        border: none !important;   
-    }
-
-    span.custom-toggler i{
-        font-size: 1.8rem;
-        color: var(--color-fondo-claro);
-    }
-
-    .navbar.fixed-top.bg-body-tertiary{
-        display: none;
-    }
-}
-
-.navbar.fixed-top{
-    display: flex;
-    flex-direction: row;
-    background-color: var(--color-fondo-oscuro) !important;
-    justify-content:space-between;
-    align-items: center; 
-}
-
-.navbar.fixed-top.bg-body-tertiary div.container-fluid{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    column-gap: 1rem;
-    justify-content: right;
-    align-items: center ;
-    margin-inline: 1rem;
-    padding: 0;
-    width: auto;
-}
-
-
-
 /*seccion contacto*/
 
-.linkscontainer {
-    height: 40vh;
+#contacto.container {
+    height: 100vh;
     margin-inline: 1.5rem;
     display: grid;
     place-items: center;
 }
 
-.card.linkscard {
+.card {
     background-color: rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 24px hsla(216, 50%, 20%, .1);
     padding: 4rem 4rem 2rem;
@@ -220,84 +233,77 @@ div.logo a.navbar-brand.neon {
     position: relative;
 }
 
-img.card__img {
+img.card_img {
     display: block;
     max-width: 100%;
     height: 6.9rem;
-    width: 5.rem;
+    width: auto;
     margin: 0 auto .75rem;
     border-radius: 50%;
-    border: 2px solid var(--first-color);
+    border: 2px solid var(--color-acento-secundario);
     position: absolute;
     top: 0;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-h2.card__name {
-    font-size: var(--h2-font-size);
+.card_name {
     font-weight: 600;
-    color: var(--title-color);
+    color: var(--color-fondo-claro);
     margin-bottom: .25rem;
 }
 
-p.card__web {
-    font-size: var(--small-font-size);
+.card_web {
+    font-size: small;
     margin-bottom: 2rem;
-    color: var(--text-color);
 }
 
 .button {
     position: relative;
-    background-color: var(--body-color);
-    border: 2px solid var(--first-color);
+    background-color: var(--color-acento-primario);
+    border: 2px solid var(--color-acento-primario-brillo);
     outline: none;
     padding: .75rem 1.5rem;
     border-radius: 4rem;
     cursor: pointer;
-    color: var(--title-color);
+    color: var(--color-fondo-claro);
     font-size: 1.1rem;
 }
 
-.button__social {
+.button_social {
     display: flex;
-    justify-content: center;
-    column-gap: 1rem;
+    column-gap: .5rem;
     z-index: 1;
 }
 
-.button__social a {
+.button_social a {
     font-size: 1.55rem;
-    color: var(--first-color);
+    color: var(--color-fondo-claro);
     transition: transform .5s cubic-bezier(.2, .9, .2, 1.2);
     transform: translateY(1.1rem);
 }
 
-.button__social img {
-    color: var(--first-color);
-}
-
-.button__social a:nth-child(1) {
+.button_social a:nth-child(1) {
     transition-delay: .1s;
 }
 
-.button__social a:nth-child(2) {
+.button_social a:nth-child(2) {
     transition-delay: .15s;
 }
 
-.button__social a:nth-child(3) {
+.button_social a:nth-child(3) {
     transition-delay: .2s;
 }
 
-.button__social a:nth-child(4) {
+.button_social a:nth-child(4) {
     transition-delay: .25s;
 }
 
-div.button__content {
+.button_content {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: var(--first-color);
+    background-color: var(--color-acento-primario);
     width: 100%;
     height: 100%;
     border-radius: 4rem;
@@ -308,16 +314,27 @@ div.button__content {
     z-index: 5;
 }
 
-.button__content span {
-    color: var(--white-color);
-    font: 600 var(--normal-font-size) var(--body-font);
+.button_content span {
+    color: var(--color-fondo-claro);
+    font-weight: 600;
 }
 
 
-.button:hover .button__content {
+.button:hover .button_content {
     transform: translateY(-40px) scale(.6);
 }
 
-.button:hover .button__social a {
+.button:hover .button_social a {
     transform: translateY(0) scale(1);
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    font-size: small;
+    padding: 1rem;
+    background-color: var(--color-fondo-claro);
+    color: var(--color-fondo-oscuro);
+    position: absolute;
+    bottom: 0;
 }

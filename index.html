@@ -1,259 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACMA Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="modo_oscuro.css">
-    <link rel="icon" href="#" type="image/png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-    </style>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ACMA Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="#" type="image/png">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        </style>
+    </head>
 
-<body>
-    <header>
-        <nav class="navbar fixed-top bg-body-tertiary">
-            <div class="logo">
-                <a class="navbar-brand neon" href="#"> //</a>
-                <a class="navbar-brand" href="#"> ACMA</a>
-            </div>
-
-            <div class="container-fluid">
-                <a class="navbar-link" href="#">INICIO</a>
-                <a class="navbar-link" href="#">SOBRE MÍ</a>
-                <a class="navbar-link" href="#">PORTFOLIO</a>
-                <a class="navbar-link" href="#">CONTACTO</a>
-            </div>
-        </nav>
-        <nav class="navbar fixed-top bg-body-tertiary navbar-expand-lg">
-            <div class="container-fluid">
+    <body>
+        <header>
+            <nav>
                 <div class="logo">
-                    <a class="navbar-brand neon" href="#"> //</a>
-                    <a class="navbar-brand" href="#"> ACMA</a>
+                    <a class="navbar-brand neon" href="#inicio"> //</a>
+                    <a class="navbar-brand" href="#inicio"> ACMA</a>
                 </div>
                 
-                    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="custom-toggler">
-                            <i class="bi bi-list"></i>
-                        </span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="navbar-link" aria-current="page" href="#">INICIO</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="navbar-link" href="#">SOBRE MÍ</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="navbar-link" href="#">PORTFOLIO</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="navbar-link" href="#">CONTACTO</a>
-                            </li>
-                        </ul>
-                    </div>
-                
-            </div>
-        </nav>
+                <button class="hamburguer" id="hamburguer">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
 
-    </header>
-    <main>
-        <section class="home">
-            <picture class="profile">
-                <img src="#" alt="Imagen referente a desarrollador web frontend">
-            </picture>
-            <div class="infoprofile">
-                <h1>Desarrollador Web Frontend</h1>
-                <h2>Adalid Martínez Álvarez</h2>
-                <h3>"Construyo experiencias web"</h3>
-            </div>
-            <button type="button" class="btn btn-primary">Ver Proyectos</button>
-            <buttton type="button" class="btn btn-primary">Descargar CV</buttton>
-        </section>
-        <section class="aboutme">
-            <article class="infoaboutme">
-                <picture>
-                    <img src="#" alt="Imagen de perfil del desarrollador">
-                </picture>
-                <div class="textresume">
-                    <h5>
-                        Soy Adalid, desarrollador web frontend apasionado por crear experiencias
-                        digitales atractivas y funcionales. Con habilidades en HTML, CSS y JavaScript, me
-                        especializo en transformar
-                        ideas en sitios web interactivos y responsivos. Mi objetivo es combinar diseño y tecnología
-                        para ofrecer
-                        soluciones innovadoras que mejoren la experiencia del usuario.
-                    </h5>
-                    <h5>Tipos de proyectos:</h5>
-                    <ul>
-                        <li>Sitios web estáticos</li>
-                        <li>Aplicaciones web de una sola página (SPA)</li>
-                        <li>Aplicaciones de tarea</li>
-                        <li>Portales web</li>
-                        <li>Landing pages</li>
-                    </ul>
-                </div>
-            </article>
-            <article class="skills">
-                <div class="tecnologias">
-                    <picture>
-                        <img src="imagenes/filetype-html.svg" alt="icono estable de HTML">
-                        <span>HTML</span>
-                    </picture>
-                    <picture>
-                        <img src="imagenes/filetype-css.svg" alt="icono estable de CSS">
-                        <span>CSS</span>
-                    </picture>
-                    <picture>
-                        <img src="imagenes/filetype-js.svg" alt="icono estable de JavaScript">
-                        <span>JavaScript</span>
-                    </picture>
-                    <picture>
-                        <img src="imagenes/bootstrap.svg" alt="icono estable de Bootstrap">
-                        <span>Bootstrap</span>
-                    </picture>
-                    <picture>
-                        <img src="imagenes/google.svg" alt="icono estable de Google">
-                        <span>Google</span>
-                    </picture>
-                    <picture>
-                        <img src="imagenes/openai.svg" alt="icono estable de OpenAI">
-                        <span>OpenAI</span>
-                    </picture>
-                    <picture>
-                        <img src="imagenes/vscode.svg" alt="icono estable de Visual Studio">
-                        <span>VS Code</span>
-                    </picture>
-                    <picture>
-                        <img src="imagenes/git.svg" alt="icono estable de Git">
-                        <span>Git</span>
-                    </picture>
-                </div>
-                <div class="habilidades">
-                    <h5>Habilidades Blandas</h5>
-                    <ul>
-                        <li>Comunicación efectiva</li>
-                        <li>Trabajo en equipo</li>
-                        <li>Resolución de problemas</li>
-                        <li>Adaptabilidad</li>
-                        <li>Gestión del tiempo</li>
-                        <li>Creatividad</li>
-                        <li>Atención al detalle</li>
-                        <li>Aprendizaje continuo</li>
-                    </ul>
-                </div>
-            </article>
-        </section>
-        <section class="portfolio">
-            <div class="mainprojects">
-                <h2>Proyectos Destacados</h2>
-                <div class="cards">
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#inicio" data-section="inicio" class="active">Inicio</a></li>
+                    <li><a href="#proyectos" data-section="proyectos">Proyectos</a></li>
+                    <li><a href="#servicios" data-section="servicios">Servicios</a></li>
+                    <li><a href="#sobre-mi" data-section="sobre-mi">Sobre mí</a></li>
+                    <li><a href="#contacto" data-section="contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main id="main-content">
+            <section id="inicio" class="section active">Contenido de Inicio
+
+            </section>
+
+            <section id="proyectos" class="section">Contenido de Proyectos</section>
+
+            <section id="servicios" class="section">Contenido de Servicios</section>
+
+            <section id="sobre-mi" class="section">Contenido de Sobre mí</section>
+
+            <section id="contacto" class="section">
+                <div class="container">
                     <div class="card">
-                        <img src="#" class="card-img-top" alt="Imagen del proyecto 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Proyecto 1</h5>
-                            <p class="card-text">Descripción breve del proyecto 1.</p>
-                            <a href="#" class="btn btn-primary">Ver Proyecto</a>
-                            <a href="#" class="btn btn-primary">Ver Demo</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="inprocess">
-                    <h2>Proyectos en Proceso</h2>
-                    <div class="cards">
-                        <div class="card">
-                            <img src="#" class="card-img-top" alt="Imagen del proyecto 1 en proceso">
-                            <div class="card-body">
-                                <h5 class="card-title">En proceso</h5>
-                                <div class="progress">
-                                    <div class="rogress-bar bg-success progress-bar-striped progress-bar-animated"
-                                        role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                        aria-valuemax="100">
-                                    </div>
-                                </div>
+                        <img src="./imagenes/cartoon.svg" alt="image" class="card_img">
+                        <h2 class="card_name">Adalid Martínez</h2>
+                        <p class="card_web">Programador web (frontend)</p>
+                        <button class="button">
+                            <div class="button_content">
+                                <span>CONTACTO</span>
                             </div>
-                        </div>
+
+                            <div class="button_social">
+                                <a href="https://github.com/" target="_blank">
+                                    <i class="bi bi-github"></i>
+                                </a>
+
+                                <a href="https://www.linkedin.com/" target="_blank">
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+
+                                <a href="https://www.instagram.com/" target="_blank">
+                                    <i class="bi bi-whatsapp"></i>
+                                </a>
+                                <a href="https://www.facebook.com/" target="_blank">
+                                    <i class="bi bi-envelope-at-fill"></i>
+                                </a>
+                            </div>
+                        </button>
                     </div>
                 </div>
-        </section>
-        <section class="contacto">
-            <h2>Disponible para proyectos y colaboraciones</h2>
-            <div class="linkscontainer">
-                <div class="card linkscard">
-                    <img src="imagenes/cartoon.svg" alt="imagen animada del desarrollador" class="card__img">
-                    <h2 class="card__name">Adalid Martínez</h2>
-                    <p class="card__web">Programador web (frontend)</p>
+            </section>
 
-                    <button class="button">
-                        <div class="button__content">
-                            <span>CONTACTO</span>
-                        </div>
+        </main>
 
-                        <div class="button__social">
-                            <a href="#" target="_blank" aria-placeholder="Perfil de Linkedin">
-                                <i class="bi bi-linkedin"></i>
-                            </a>
 
-                            <a href="#" target="_blank">
-                                <i class="bi bi-github"></i>
-                            </a>
-
-                            <a href="#" target="_blank">
-                                <i class="bi bi-whatsapp"></i>
-                            </a>
-
-                            <a href="#" target="_blank">
-                                <i class="bi bi-file-earmark-arrow-down"></i>
-                            </a>
-                        </div>
-                    </button>
-                </div>
-            </div>
-            <div class="formulario">
-                <fieldset>
-                    <legend>Contáctame</legend>
-                    <form action="https://api.web3forms.com/submit" method="post" id="formcontacto">
-                        <input type="hidden" name="access_key" value="5122eb3b-775c-42ca-8e24-fd0bfc57ec5a">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Nombre:</label>
-                            <input type="text" class="form-control" id="name" aria-describedby="nameHelp" name="Nombre"
-                                pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{3,30}$" title="Introduce un nombre correcto"
-                                placeholder="¿Como te llamas? *" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Correo:</label>
-                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                                name="Correo" placeholder="¿A qué correo te puedo contactar? *" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Mensaje:</label>
-                            <textarea class="form-control" id="message" rows="3"
-                                placeholder="¿Qué necesitas o en qué te puedo ayudar?" name="Mensaje"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Enviar</button>
-                    </form>
-                </fieldset>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Adalid Martínez Álvarez. Todos los derechos reservados.</p>
-    </footer>
-    <script src="script.js"></script>
-</body>
+        <footer>
+            <p>&copy; 2025 Adalid Martínez Álvarez. Todos los derechos reservados.</p>
+        </footer>
+        <script src="app.js"></script>
+    </body>
 
 </html>

@@ -5,7 +5,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ACMA Portfolio</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="app_style.css">
+        <link rel="stylesheet" href="effects_style.css">
         <link rel="icon" href="#" type="image/png">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
         <style>
@@ -20,7 +21,7 @@
                     <a class="navbar-brand neon" href="#inicio"> //</a>
                     <a class="navbar-brand" href="#inicio"> ACMA</a>
                 </div>
-                
+
                 <button class="hamburguer" id="hamburguer">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -37,11 +38,82 @@
             </nav>
         </header>
         <main id="main-content">
-            <section id="inicio" class="section active">Contenido de Inicio
-
+            <section id="inicio" class="section active hero">
+                <div id="particles-js"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span id="typed-text"></span>
+                    </h1>
+                    <h2 class="hero-subtitle">
+                        ¡Bienvenid@ a mi portfolio web!
+                    </h2>
+                    <button class="hero-btn" data-section="proyectos">Ver Proyectos</button>
+                </div>
             </section>
 
-            <section id="proyectos" class="section">Contenido de Proyectos</section>
+            <section id="proyectos" class="section">
+                <div class="section-header">
+                    <h2>Proyectos Destacados</h2>
+                    <p>
+                        Aquí encontrarás una selección de mis proyectos más recientes.
+                    </p>
+                </div>
+                <div class="projects-grid">
+
+                    <div class="project-card" data-aos="fade-up">
+                        <img src="#" alt="Fotografía Profesional HEVCA">
+                        <div class="project-info">
+                            <h3>Fotografía Profesional HEVCA</h3>
+                            <p>Desarrollo Web Frontend con HTML, CSS y JavaScript para landing page y Json para mostrar galería virtual por categorías</p>
+                            <div class="project-links">
+                                <a href="https://github.com/bichota-tech/Galeria_Virtual.git" target="_blank">Ver Código</a>
+                                <button class="demo-btn" data-demo="git-galery">Demo</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="#" alt="Proyecto Asistente Digital">
+                        <div class="project-info">
+                            <h3>Asistente Digital</h3>
+                            <p>Desarrollo Web Frontend con HTML, CSS y JavaScript para interfaz atractiva y funcional que muestra varios perfiles con distintas
+                                tareas y funciones básicas</p>
+                            <div class="project-links">
+                                <a href="https://github.com/bichota-tech/proyectos_web/tree/main/asistente_digital" target="_blank">Ver Código</a>
+                                <button class="demo-btn" data-demo="git-asistente">Demo</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="#" alt="Sitio corporativo Limpieza Doméstica">
+                        <div class="project-info">
+                            <h3>Plataforma WooCommerce con WordPress</h3>
+                            <p>Diseño y maquetado con Elementor en colaboración prácticas con Agencia de Marketing y Diseño ubicada en Asturias</p>
+                            <div class="project-links">
+                                <button class="demo-btn" data-demo="wp-woo">Demo</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                        <img src="#" alt="Sitio corporativo de Impermeabilizaciones y cubiertas">
+                        <div class="project-info">
+                            <h3>Web de Servicios con Wordpress</h3>
+                            <p>
+                                Diseño y maquetado Web con Elementor, en colaboración prácticas con Agencia de
+                                Marketing y Diseño ubicada en Asturias
+                            </p>
+                            <div class="project-links">
+                                <button class="demo-btn" data-demo="wp-servicio">Demo</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="see-more">
+                    <a href="https://github.com/bichota-tech" target="_blank">Ver más en GitHub</a>
+                </div>
+            </section>
 
             <section id="servicios" class="section">Contenido de Servicios</section>
 
@@ -85,6 +157,9 @@
         <footer>
             <p>&copy; 2025 Adalid Martínez Álvarez. Todos los derechos reservados.</p>
         </footer>
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+        <script src="effects.js"></script>
         <script src="app.js"></script>
     </body>
 

@@ -46,7 +46,6 @@ nav {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    color: white;
     transition: all 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -62,7 +61,7 @@ nav {
 }
 
 .nav-menu a {
-    color: var(--color-light);
+    color: var(--color-fondo-claro);
     text-decoration: none;
     font-weight: 700;
     position: relative;
@@ -166,7 +165,7 @@ div.logo a.navbar-brand {
     margin: 0;
     padding: 0;
     font-style: italic;
-    color: var(--color-texto-claro);
+    color: var(--color-fondo-claro);
     text-decoration: none;
 }
 
@@ -330,6 +329,8 @@ img.card_img {
 
 footer {
     width: 100%;
+    position: fixed;
+    bottom: 0;
     text-align: center;
     font-size: small;
     padding: 1rem;
@@ -337,6 +338,5 @@ footer {
     backdrop-filter: blur(5px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     color: var(--color-fondo-claro);
-    position: absolute;
-    bottom: 0;
+    
 }

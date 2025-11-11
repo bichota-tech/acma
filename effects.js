@@ -31,56 +31,5 @@ particlesJS("particles-js", {
     retina_detect: true
 });
 
-// Inicializar AOS
-AOS.init({
-  duration: 800,
-  once: true
-});
 
-// Demo modal
-const demoButtons = document.querySelectorAll(".demo-btn");
-const demoModal = document.getElementById("demo-modal");
-const demoContent = document.getElementById("demo-content");
-const closeModal = document.querySelector(".close-modal");
-
-// Objeto con imágenes de demo
-const demos = {
-  "wp-woo": [
-    "img/wp-agencia-1.jpg",
-    "img/wp-agencia-2.jpg",
-    "img/wp-agencia-3.jpg",
-    "img/wp-agencia-4.jpg"
-  ],
-  "wp-servicio": [
-    "img/wp-elementor-1.jpg",
-    "img/wp-elementor-2.jpg",
-    "img/wp-elementor-3.jpg",
-    "img/wp-elementor-4.jpg"
-  ],
-    "git-galery": [],
-    "git-asistente": []
-};
-
-// Abrir modal
-demoButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const demoId = btn.dataset.demo;
-    demoContent.innerHTML = "";
-    demos[demoId].forEach(src => {
-      const img = document.createElement("img");
-      img.src = src;
-      demoContent.appendChild(img);
-    });
-    demoModal.style.display = "flex";
-  });
-});
-
-// Cerrar modal
-closeModal.addEventListener("click", () => {
-  demoModal.style.display = "none";
-});
-
-window.addEventListener("click", (e) => {
-  if(e.target === demoModal) demoModal.style.display = "none";
-});
 

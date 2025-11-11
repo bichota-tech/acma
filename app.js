@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll(".section");
   const hamburguer = document.getElementById("hamburguer");
   const navMenu = document.getElementById("nav-menu");
+  
 
   //Navegacion SPA entre secciones
   links.forEach(link => {
@@ -26,8 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   //Toggle menu hamburguesa
-  hamburguer.addEventListener("click", ()=>{
+  hamburguer.addEventListener("click", () => {
     navMenu.classList.toggle("show");
     hamburguer.classList.toggle("active");
   });
+
 });

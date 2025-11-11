@@ -17,9 +17,7 @@ $color-acento-secundario: #3AB7BF;
         width: 50%;
         border-radius: 1rem;
         overflow: hidden;
-        background: $color-gray;
-        backdrop-filter: blur(5px);
-        box-shadow: 0 8px 32px $color-fondo-oscuro;
+        background:transparent;
         position: relative;
 
         // Imagen del carrusel

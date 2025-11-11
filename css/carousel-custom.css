@@ -1,0 +1,124 @@
+#proyectos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1e1f22;
+  padding: 4rem 2rem;
+}
+#proyectos .carousel {
+  width: 50%;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1019607843);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 8px 32px #1e1f22;
+  position: relative;
+}
+#proyectos .carousel .carousel-item img {
+  height: 400px;
+  object-fit: cover;
+  filter: brightness(0.85);
+  transition: filter 0.3s ease-in-out;
+}
+#proyectos .carousel .carousel-item img:hover {
+  filter: brightness(1);
+}
+#proyectos .carousel .carousel-item .carousel-caption {
+  background: rgba(30, 31, 34, 0.65);
+  border-top: 2px solid #f55139;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  backdrop-filter: blur(8px);
+  bottom: 1.5rem;
+}
+#proyectos .carousel .carousel-item .carousel-caption h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #3AB7BF;
+  margin-bottom: 0.5rem;
+}
+#proyectos .carousel .carousel-item .carousel-caption p {
+  font-size: 1rem;
+  color: #fff;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+#proyectos .carousel .carousel-item .carousel-caption a,
+#proyectos .carousel .carousel-item .carousel-caption .demo-btn {
+  display: inline-block;
+  margin: 0.3rem 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+#proyectos .carousel .carousel-item .carousel-caption a {
+  background: linear-gradient(135deg, #f55139, #fd0800);
+  color: #ebe7d9;
+  border: none;
+}
+#proyectos .carousel .carousel-item .carousel-caption a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #fd0800;
+}
+#proyectos .carousel .carousel-item .carousel-caption .demo-btn {
+  background: linear-gradient(135deg, #3AB7BF, rgb(93.9156626506, 199.3373493976, 206.0843373494));
+  color: #1e1f22;
+  border: none;
+}
+#proyectos .carousel .carousel-item .carousel-caption .demo-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #3AB7BF;
+}
+#proyectos .carousel .carousel-control-prev-icon,
+#proyectos .carousel .carousel-control-next-icon {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(200%) contrast(100%);
+}
+#proyectos .carousel .carousel-control-prev,
+#proyectos .carousel .carousel-control-next {
+  width: 8%;
+  transition: transform 0.3s ease-in-out;
+}
+#proyectos .carousel .carousel-control-prev:hover,
+#proyectos .carousel .carousel-control-next:hover {
+  transform: scale(1.1);
+}
+#proyectos .carousel .carousel-indicators button {
+  background-color: #3AB7BF;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
+}
+#proyectos .carousel .carousel-indicators button.active {
+  opacity: 1;
+  background-color: #f55139;
+}
+@media (max-width: 992px) {
+  #proyectos .carousel {
+    width: 80%;
+  }
+  #proyectos .carousel .carousel-item img {
+    height: 320px;
+  }
+}
+@media (max-width: 576px) {
+  #proyectos .carousel {
+    width: 100%;
+  }
+  #proyectos .carousel .carousel-item img {
+    height: 250px;
+  }
+  #proyectos .carousel .carousel-caption {
+    padding: 1rem;
+  }
+  #proyectos .carousel .carousel-caption h3 {
+    font-size: 1.2rem;
+  }
+  #proyectos .carousel .carousel-caption p {
+    font-size: 0.9rem;
+  }
+}/*# sourceMappingURL=carousel-custom.css.map */

@@ -1,114 +1,285 @@
-// Vanilla carousel 
-(function () {
-  const root = document.getElementById('mycarousel');
-  if (!root) return;
+/**
+ * CARRUSEL VANILLA - ACMA PORTFOLIO
+ * Carrusel completamente personalizado sin dependencias
+ * Características: autoplay, swipe, keyboard navigation, accesibilidad ARIA
+ * Autor: ACMA
+ * Versión: 2.0
+ */
 
-  const trackWrapper = document.createElement('div');
-  trackWrapper.className = 'carousel-track';
-  // move existing .carousel-inner > .carousel-item into .carousel-track
-  const inner = root.querySelector('.carousel-inner');
-  const items = Array.from(inner.querySelectorAll('.carousel-item'));
-  items.forEach(item => trackWrapper.appendChild(item));
-  inner.appendChild(trackWrapper);
+class CarouselController {
+  constructor(containerId) {
+    this.root = document.getElementById(containerId);
+    if (!this.root) return;
 
-  const indicators = Array.from(root.querySelectorAll('.carousel-indicators button'));
-  const prevBtn = root.querySelector('.carousel-control-prev');
-  const nextBtn = root.querySelector('.carousel-control-next');
+    this.config = {
+      interval: 4000, // ms entre cambios automáticos
+      transitionSpeed: 600, // ms para la animación
+      swipeThreshold: 40, // px mínimos para swipe
+    };
 
-  let index = items.findIndex(i => i.classList.contains('active'));
-  if (index < 0) index = 0;
-  const total = items.length;
-  const interval = 4000;
-  let timer = null;
-  let isHover = false;
-  let isAnimating = false;
+    this.state = {
+      currentIndex: 0,
+      isAnimating: false,
+      isHovering: false,
+      timer: null,
+    };
 
-  function goTo(i, instant = false) {
-    if (isAnimating) return;
-    i = (i + total) % total;
-    index = i;
-    // update transform
-    const track = root.querySelector('.carousel-track');
-    const translateX = -100 * index;
-    if (instant) {
-      track.style.transition = 'none';
-      track.style.transform = `translateX(${translateX}%)`;
-      requestAnimationFrame(() => {
-        track.style.transition = '';
-      });
-    } else {
-      isAnimating = true;
-      track.style.transform = `translateX(${translateX}%)`;
-      setTimeout(() => { isAnimating = false; }, 650); // slightly > transition
+    this.elements = this.cacheElements();
+    if (this.elements.items.length === 0) return;
+
+    this.init();
+  }
+
+  /**
+   * Cachea los elementos del DOM
+   */
+  cacheElements() {
+    const inner = this.root.querySelector('.carousel-inner');
+    if (!inner) return { items: [] };
+
+    // Crear track si no existe
+    let track = inner.querySelector('.carousel-track');
+    if (!track) {
+      track = document.createElement('div');
+      track.className = 'carousel-track';
+      const items = Array.from(inner.querySelectorAll('.carousel-item'));
+      items.forEach(item => track.appendChild(item));
+      inner.appendChild(track);
     }
 
-    // update active classes
-    items.forEach((el, idx) => el.classList.toggle('active', idx === index));
-    indicators.forEach((btn, idx) => btn.classList.toggle('active', idx === index));
+    return {
+      track,
+      items: Array.from(this.root.querySelectorAll('.carousel-item')),
+      indicators: Array.from(this.root.querySelectorAll('.carousel-indicators button')),
+      prevBtn: this.root.querySelector('[data-action="prev"]'),
+      nextBtn: this.root.querySelector('[data-action="next"]'),
+      inner,
+    };
   }
 
-  function next() { goTo(index + 1); }
-  function prev() { goTo(index - 1); }
-
-  // attach indicator events
-  indicators.forEach((btn, idx) => {
-    btn.addEventListener('click', () => goTo(idx));
-  });
-
-  // attach controls
-  if (nextBtn) nextBtn.addEventListener('click', e => { e.preventDefault(); next(); restartTimer(); });
-  if (prevBtn) prevBtn.addEventListener('click', e => { e.preventDefault(); prev(); restartTimer(); });
-
-  // autoplay
-  function startTimer() {
-    if (timer) clearInterval(timer);
-    timer = setInterval(() => { if (!isHover) next(); }, interval);
+  /**
+   * Inicializa el carrusel
+   */
+  init() {
+    this.setInitialState();
+    this.attachEventListeners();
+    this.startAutoplay();
   }
-  function stopTimer() { if (timer) { clearInterval(timer); timer = null; } }
-  function restartTimer() { stopTimer(); startTimer(); }
 
-  // pause on hover
-  root.addEventListener('mouseenter', () => { isHover = true; });
-  root.addEventListener('mouseleave', () => { isHover = false; });
+  /**
+   * Establece el estado inicial
+   */
+  setInitialState() {
+    const activeItem = this.root.querySelector('.carousel-item.active');
+    this.state.currentIndex = activeItem
+      ? this.elements.items.indexOf(activeItem)
+      : 0;
+    this.updateCarousel();
+  }
 
-  // touch swipe (mobile)
-  (function attachSwipe() {
-    let startX = 0, delta = 0, threshold = 40;
-    const track = root.querySelector('.carousel-track');
-    root.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; stopTimer(); }, {passive: true});
-    root.addEventListener('touchmove', (e) => {
-      delta = e.touches[0].clientX - startX;
-      // small drag effect:
-      if (Math.abs(delta) > 6) {
-        track.style.transition = 'none';
-        const percent = (-index * 100) + (delta / root.clientWidth) * 100;
-        track.style.transform = `translateX(${percent}%)`;
-      }
-    }, {passive: true});
-    root.addEventListener('touchend', () => {
-      track.style.transition = '';
-      if (Math.abs(delta) > threshold) {
-        if (delta < 0) next(); else prev();
-      } else {
-        goTo(index); // snap back
-      }
-      delta = 0;
-      restartTimer();
+  /**
+   * Adjunta listeners de eventos
+   */
+  attachEventListeners() {
+    // Botones de control
+    if (this.elements.prevBtn) {
+      this.elements.prevBtn.addEventListener('click', () => this.prev());
+    }
+    if (this.elements.nextBtn) {
+      this.elements.nextBtn.addEventListener('click', () => this.next());
+    }
+
+    // Indicadores
+    this.elements.indicators.forEach((btn, idx) => {
+      btn.addEventListener('click', () => this.goToSlide(idx));
     });
-  })();
 
-  // init position
-  goTo(index, true);
-  startTimer();
+    // Autoplay - pausar en hover
+    this.root.addEventListener('mouseenter', () => this.pauseAutoplay());
+    this.root.addEventListener('mouseleave', () => this.resumeAutoplay());
 
-  // demo-btns delegación (opcional)
-  root.addEventListener('click', (e) => {
-    const btn = e.target.closest('.demo-btn');
-    if (!btn) return;
-    const demo = btn.dataset.demo;
-    if (demo) {
-      // aquí puedes añadir navegación o lógica para abrir demo modal
-      console.log('Demo click:', demo);
+    // Swipe en mobile
+    this.attachSwipeListeners();
+
+    // Keyboard navigation
+    this.attachKeyboardListeners();
+  }
+
+  /**
+   * Gestiona el swipe/drag en móvil
+   */
+  attachSwipeListeners() {
+    let startX = 0;
+    let delta = 0;
+
+    this.root.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      this.pauseAutoplay();
+    }, { passive: true });
+
+    this.root.addEventListener('touchmove', (e) => {
+      if (!startX) return;
+      delta = e.touches[0].clientX - startX;
+
+      // Efecto visual de arrastre
+      if (Math.abs(delta) > 6) {
+        this.elements.track.style.transition = 'none';
+        const percent = (-this.state.currentIndex * 100) + (delta / this.root.clientWidth) * 100;
+        this.elements.track.style.transform = `translateX(${percent}%)`;
+      }
+    }, { passive: true });
+
+    this.root.addEventListener('touchend', () => {
+      this.elements.track.style.transition = '';
+
+      if (Math.abs(delta) > this.config.swipeThreshold) {
+        if (delta < 0) this.next();
+        else this.prev();
+      } else {
+        this.updateCarousel();
+      }
+
+      startX = 0;
+      delta = 0;
+      this.resumeAutoplay();
+    });
+  }
+
+  /**
+   * Navegación con teclado
+   */
+  attachKeyboardListeners() {
+    this.root.addEventListener('keydown', (e) => {
+      switch (e.key) {
+        case 'ArrowLeft':
+          e.preventDefault();
+          this.prev();
+          break;
+        case 'ArrowRight':
+          e.preventDefault();
+          this.next();
+          break;
+      }
+    });
+  }
+
+  /**
+   * Navega a una slide específica
+   * @param {number} index - Índice de la slide
+   */
+  goToSlide(index) {
+    if (this.state.isAnimating) return;
+    
+    index = (index + this.elements.items.length) % this.elements.items.length;
+    this.state.currentIndex = index;
+    this.updateCarousel();
+    this.restartAutoplay();
+  }
+
+  /**
+   * Siguiente slide
+   */
+  next() {
+    this.goToSlide(this.state.currentIndex + 1);
+  }
+
+  /**
+   * Slide anterior
+   */
+  prev() {
+    this.goToSlide(this.state.currentIndex - 1);
+  }
+
+  /**
+   * Actualiza la posición del carrusel y estados ARIA
+   */
+  updateCarousel() {
+    const translateX = -100 * this.state.currentIndex;
+    
+    this.state.isAnimating = true;
+    this.elements.track.style.transform = `translateX(${translateX}%)`;
+
+    setTimeout(() => {
+      this.state.isAnimating = false;
+    }, this.config.transitionSpeed);
+
+    // Actualizar items activos
+    this.elements.items.forEach((item, idx) => {
+      const isActive = idx === this.state.currentIndex;
+      item.classList.toggle('active', isActive);
+      item.setAttribute('aria-hidden', !isActive);
+    });
+
+    // Actualizar indicadores
+    this.elements.indicators.forEach((btn, idx) => {
+      const isActive = idx === this.state.currentIndex;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-selected', isActive);
+      btn.setAttribute('aria-current', isActive ? 'page' : undefined);
+    });
+  }
+
+  /**
+   * Inicia el autoplay
+   */
+  startAutoplay() {
+    this.state.timer = setInterval(() => {
+      if (!this.state.isHovering) {
+        this.next();
+      }
+    }, this.config.interval);
+  }
+
+  /**
+   * Pausa el autoplay
+   */
+  pauseAutoplay() {
+    this.state.isHovering = true;
+    if (this.state.timer) {
+      clearInterval(this.state.timer);
+      this.state.timer = null;
+    }
+  }
+
+  /**
+   * Reanuda el autoplay
+   */
+  resumeAutoplay() {
+    this.state.isHovering = false;
+    this.startAutoplay();
+  }
+
+  /**
+   * Reinicia el autoplay
+   */
+  restartAutoplay() {
+    this.pauseAutoplay();
+    this.resumeAutoplay();
+  }
+
+  /**
+   * Destruye la instancia del carrusel
+   */
+  destroy() {
+    if (this.state.timer) {
+      clearInterval(this.state.timer);
+    }
+  }
+}
+
+// Inicializar carrusel cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', () => {
+  const carousel = new CarouselController('mycarousel');
+  
+  // Delegación de eventos para demo buttons
+  document.getElementById('mycarousel')?.addEventListener('click', (e) => {
+    const demoBtn = e.target.closest('.demo-btn');
+    if (demoBtn) {
+      const demo = demoBtn.getAttribute('data-demo');
+      if (demo) {
+        console.log(`Demo activo: ${demo}`);
+        // Aquí puedes añadir lógica para modal o navegación
+      }
     }
   });
-})();
+});

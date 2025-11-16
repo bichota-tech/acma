@@ -1,0 +1,16 @@
+﻿// =============================
+// BREAKPOINTS RESPONSIVOS
+// =============================
+
+// Dispositivos
+$breakpoint-xs: 320px;     // Móvil pequeño
+$breakpoint-sm: 576px;     // Móvil
+$breakpoint-md: 768px;     // Tablet
+$breakpoint-lg: 992px;     // Laptop
+$breakpoint-xl: 1200px;    // Desktop
+$breakpoint-2xl: 1400px;   // Desktop grande
+
+// Alias semántico
+$mobile: $breakpoint-sm;
+$tablet: $breakpoint-md;
+$desktop: $breakpoint-lg;

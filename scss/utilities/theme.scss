@@ -1,0 +1,195 @@
+﻿// =============================
+// UTILIDADES: TEMA Y ACCESIBILIDAD
+// =============================
+
+// Utilidades de color
+.text-primary {
+  color: $color-primary;
+}
+
+.text-secondary {
+  color: $color-secondary;
+}
+
+.text-light {
+  color: $color-light;
+}
+
+.text-muted {
+  color: rgba($color-light, 0.6);
+}
+
+// Utilidades de fondo
+.bg-primary {
+  background-color: $color-primary;
+}
+
+.bg-secondary {
+  background-color: $color-secondary;
+}
+
+.bg-dark {
+  background-color: $color-dark;
+}
+
+// Utilidades de espaciado
+.mt-xs { margin-top: $spacing-xs; }
+.mt-sm { margin-top: $spacing-sm; }
+.mt-md { margin-top: $spacing-md; }
+.mt-lg { margin-top: $spacing-lg; }
+.mt-xl { margin-top: $spacing-xl; }
+
+.mb-xs { margin-bottom: $spacing-xs; }
+.mb-sm { margin-bottom: $spacing-sm; }
+.mb-md { margin-bottom: $spacing-md; }
+.mb-lg { margin-bottom: $spacing-lg; }
+.mb-xl { margin-bottom: $spacing-xl; }
+
+.p-xs { padding: $spacing-xs; }
+.p-sm { padding: $spacing-sm; }
+.p-md { padding: $spacing-md; }
+.p-lg { padding: $spacing-lg; }
+.p-xl { padding: $spacing-xl; }
+
+// Utilidades de display
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+// Utilidades de texto
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.font-bold {
+  font-weight: $font-weight-bold;
+}
+
+.font-medium {
+  font-weight: $font-weight-medium;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+// Utilidades de sombras
+.shadow-sm {
+  box-shadow: $shadow-sm;
+}
+
+.shadow-md {
+  box-shadow: $shadow-md;
+}
+
+.shadow-lg {
+  box-shadow: $shadow-lg;
+}
+
+.shadow-xl {
+  box-shadow: $shadow-xl;
+}
+
+// Utilidades de bordes
+.rounded-sm {
+  border-radius: $radius-sm;
+}
+
+.rounded-md {
+  border-radius: $radius-md;
+}
+
+.rounded-lg {
+  border-radius: $radius-lg;
+}
+
+.rounded-full {
+  border-radius: $radius-full;
+}
+
+// Utilidades de opacidad
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.opacity-75 {
+  opacity: 0.75;
+}
+
+// Accesibilidad
+.focus-visible:focus {
+  outline: 2px solid $color-primary;
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+// Responsive utilities
+@include respond-down-md {
+  .hide-md {
+    display: none !important;
+  }
+}
+
+@include respond-down-sm {
+  .hide-sm {
+    display: none !important;
+  }
+}
+
+// Preferencias de movimiento reducido (accesibilidad)
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

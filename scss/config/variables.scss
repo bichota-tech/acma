@@ -1,0 +1,83 @@
+﻿// =============================
+// VARIABLES GLOBALES DEL PROYECTO
+// =============================
+
+// Colores principales
+\-light: #ebe7d9;
+\-dark: #1e1f22;
+\-primary: #f55139;
+\-primary-bright: #fd0800;
+\-secondary: #3AB7BF;
+\-gray-50: #ffffff1a;
+
+// Aliases semánticos
+\-bg-light: \-light;
+\-bg-dark: \-dark;
+\-accent-primary: \-primary;
+\-accent-secondary: \-secondary;
+
+// Colores funcionales
+\-white: #ffffff;
+\-black: #000000;
+\-success: #22c55e;
+\-warning: #eab308;
+\-error: #ef4444;
+
+// Tipografía
+\-primary: 'Montserrat', sans-serif;
+\-weight-light: 100;
+\-weight-normal: 400;
+\-weight-medium: 600;
+\-weight-bold: 700;
+\-weight-black: 800;
+
+// Tamaños de fuente (base 16px)
+\-size-xs: 0.75rem;    // 12px
+\-size-sm: 0.875rem;   // 14px
+\-size-base: 1rem;     // 16px
+\-size-lg: 1.125rem;   // 18px
+\-size-xl: 1.25rem;    // 20px
+\-size-2xl: 1.5rem;    // 24px
+\-size-3xl: 1.875rem;  // 30px
+\-size-4xl: 2.25rem;   // 36px
+
+// Espaciado (escala modular 0.5rem = 8px)
+\-xs: 0.25rem;      // 4px
+\-sm: 0.5rem;       // 8px
+\-md: 1rem;         // 16px
+\-lg: 1.5rem;       // 24px
+\-xl: 2rem;         // 32px
+\-2xl: 3rem;        // 48px
+\-3xl: 4rem;        // 64px
+
+// Border radius
+\-sm: 0.25rem;       // 4px
+\-md: 0.5rem;        // 8px
+\-lg: 1rem;          // 16px
+\-full: 9999px;
+
+// Sombras
+\-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+\-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+\-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+\-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+\-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+\-elevation: 0 6px 18px rgba(2, 6, 23, 0.35);
+
+// Z-index
+\-dropdown: 100;
+\-sticky: 500;
+\-nav: 1000;
+\-modal: 1200;
+\-popover: 1300;
+
+// Transiciones
+\-duration-fast: 150ms;
+\-duration-base: 300ms;
+\-duration-slow: 500ms;
+\-duration-slower: 800ms;
+\-timing: cubic-bezier(0.2, 0.9, 0.2, 1.2);
+\-easing-ease: ease;
+\-easing-ease-in: ease-in;
+\-easing-ease-out: ease-out;
+\-easing-ease-in-out: ease-in-out;

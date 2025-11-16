@@ -75,7 +75,8 @@
 }
 #proyectos .carousel .carousel-control-prev,
 #proyectos .carousel .carousel-control-next {
-  width: 8%;
+  text-align: center;
+  width: 10%;
   transition: transform 0.3s ease-in-out;
 }
 #proyectos .carousel .carousel-control-prev:hover,

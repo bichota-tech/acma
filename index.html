@@ -1,231 +1,257 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio web de Adalid Martínez. Desarrollador Frontend con proyectos en HTML, CSS, JavaScript y WordPress. Especializado en diseño web moderno y responsive.">
-    <meta name="keywords" content="Frontend, Desarrollador Web, Portfolio, HTML, CSS, JavaScript, WordPress, Diseño Web">
-    <meta name="author" content="Adalid Martínez Álvarez">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Preconnect para optimización de fuentes externas -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="./imagenes/acmalogo.png">
-    <link rel="apple-touch-icon" href="./imagenes/acmalogo.png">
-    
-    <!-- Fuentes -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;0,700;0,800;1,400;1,700&display=swap" rel="preload" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;0,700;0,800;1,400;1,700&display=swap" rel="stylesheet">
-    
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    
-    <!-- Estilos principales (compilados desde SCSS) -->
-    <link rel="stylesheet" href="css/style.css">
-    
-    <title>ACMA Portfolio - Desarrollador Web Frontend</title>
-  </head>
 
-  <body>
-    <!-- HEADER Y NAVEGACIÓN -->
-    <header role="banner">
-      <nav role="navigation" aria-label="Navegación principal">
-        <div class="logo">
-          <a class="navbar-brand neon" href="#inicio" aria-label="ACMA - Ir a inicio">//</a>
-          <a class="navbar-brand" href="#inicio">ACMA</a>
-        </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+            content="Portfolio web de Adalid Martínez. Desarrollador Frontend con proyectos en HTML, CSS, JavaScript y WordPress. Especializado en diseño web moderno y responsive.">
+        <meta name="keywords"
+            content="Frontend, Desarrollador Web, Portfolio, HTML, CSS, JavaScript, WordPress, Diseño Web">
+        <meta name="author" content="Adalid Martínez Álvarez">
+        <meta name="robots" content="index, follow">
 
-        <button class="hamburguer" id="hamburguer" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-menu">
-          <span class="bar" aria-hidden="true"></span>
-          <span class="bar" aria-hidden="true"></span>
-          <span class="bar" aria-hidden="true"></span>
-        </button>
+        <!-- Preconnect para optimización de fuentes externas -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
-        <ul class="nav-menu" id="nav-menu">
-          <li><a href="#inicio" data-section="inicio" class="active">Inicio</a></li>
-          <li><a href="#proyectos" data-section="proyectos">Proyectos</a></li>
-          <li><a href="#servicios" data-section="servicios">Servicios</a></li>
-          <li><a href="#sobre-mi" data-section="sobre-mi">Sobre mí</a></li>
-          <li><a href="#contacto" data-section="contacto">Contacto</a></li>
-        </ul>
-      </nav>
-    </header>
+        <!-- Favicon -->
+        <link rel="icon" type="image/svg+xml" href="./imagenes/acmalogo.png">
+        <link rel="apple-touch-icon" href="./imagenes/acmalogo.png">
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <main id="main-content">
-      <!-- SECCIÓN 1: HERO -->
-      <section id="inicio" class="section active hero" aria-labelledby="hero-title">
-        <div id="particles-js" aria-hidden="true"></div>
-        <div class="hero-content">
-          <h1 class="hero-title" id="hero-title">
-            <span id="typed-text" role="status" aria-live="polite"></span>
-          </h1>
-          <p class="hero-subtitle">
-            ¡Bienvenido a mi portfolio web!
-          </p>
-          <button class="hero-btn btn btn-primary" data-section="proyectos" aria-label="Ver mis proyectos">
-            Ver Proyectos
-          </button>
-        </div>
-      </section>
+        <!-- Fuentes -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;0,700;0,800;1,400;1,700&display=swap"
+            rel="preload" as="style">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;0,700;0,800;1,400;1,700&display=swap"
+            rel="stylesheet">
 
-      <!-- SECCIÓN 2: PROYECTOS -->
-      <section id="proyectos" class="section" aria-labelledby="projects-title">
-        <div class="section-header">
-          <h2 id="projects-title">Selección de Proyectos</h2>
-          <div class="see-more">
-            <a href="https://github.com/bichota-tech" target="_blank" rel="noopener noreferrer" aria-label="Ver mi perfil de GitHub">
-              <i class="bi bi-github" aria-hidden="true"></i>
-            </a>
-          </div>
-        </div>
+        <!-- Bootstrap Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
-        <div id="mycarousel" class="carousel" role="region" aria-label="Carrusel de proyectos" aria-roledescription="carrusel">
-          <!-- Indicadores -->
-          <div class="carousel-indicators" role="tablist" aria-label="Selector de diapositivas del carrusel">
-            <button type="button" class="active" role="tab" aria-selected="true" aria-label="Ir a proyecto 1" data-slide-to="0"></button>
-            <button type="button" role="tab" aria-selected="false" aria-label="Ir a proyecto 2" data-slide-to="1"></button>
-            <button type="button" role="tab" aria-selected="false" aria-label="Ir a proyecto 3" data-slide-to="2"></button>
-            <button type="button" role="tab" aria-selected="false" aria-label="Ir a proyecto 4" data-slide-to="3"></button>
-          </div>
+        <!-- Estilos principales (compilados desde SCSS) -->
+        <link rel="stylesheet" href="css/style.css">
 
-          <!-- Contenedor de items -->
-          <div class="carousel-inner" role="presentation">
-            <!-- Proyecto 1 -->
-            <div class="carousel-item active" role="tabpanel" aria-label="Fotografía Profesional HEVCA">
-              <img 
-                src="./imagenes/Macbook-Air-www.limpiezasvioletayverde.com (5).png"
-                alt="Captura de la plataforma Fotografía Profesional HEVCA"
-                loading="lazy">
-              <div class="carousel-caption">
-                <h3>Fotografía Profesional HEVCA</h3>
-                <p>Desarrollo Web Frontend con HTML, CSS y JavaScript para landing page con galería virtual interactiva por categorías</p>
-                <a href="https://github.com/bichota-tech/Galeria_Virtual.git" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ver Código</a>
-                <button class="demo-btn btn btn-secondary" data-demo="git-galery">Demo</button>
-              </div>
-            </div>
+        <title>ACMA Portfolio - Desarrollador Web Frontend</title>
+    </head>
 
-            <!-- Proyecto 2 -->
-            <div class="carousel-item" role="tabpanel" aria-label="Asistente Digital">
-              <img 
-                src="./imagenes/bootstrap.svg"
-                alt="Captura de la plataforma Asistente Digital"
-                loading="lazy">
-              <div class="carousel-caption">
-                <h3>Asistente Digital</h3>
-                <p>Desarrollo Web Frontend con HTML, CSS y JavaScript para interfaz atractiva y funcional con múltiples perfiles y tareas</p>
-                <a href="https://github.com/bichota-tech/proyectos_web/tree/main/asistente_digital" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ver Código</a>
-                <button class="demo-btn btn btn-secondary" data-demo="git-asistente">Demo</button>
-              </div>
-            </div>
+    <body>
+        <!-- HEADER Y NAVEGACIÓN -->
+        <header role="banner">
+            <nav role="navigation" aria-label="Navegación principal">
+                <div class="logo">
+                    <a class="navbar-brand neon" href="#inicio" aria-label="ACMA - Ir a inicio">//</a>
+                    <a class="navbar-brand" href="#inicio">ACMA</a>
+                </div>
 
-            <!-- Proyecto 3 -->
-            <div class="carousel-item" role="tabpanel" aria-label="Plataforma WooCommerce con WordPress">
-              <img 
-                src="./imagenes/filetype-html.svg"
-                alt="Captura de plataforma WooCommerce con WordPress"
-                loading="lazy">
-              <div class="carousel-caption">
-                <h3>Plataforma WooCommerce con WordPress</h3>
-                <p>Diseño y maquetado con Elementor en colaboración con Agencia de Marketing y Diseño ubicada en Asturias</p>
-                <button class="demo-btn btn btn-secondary" data-demo="wp-woo">Demo</button>
-              </div>
-            </div>
+                <button class="hamburguer" id="hamburguer" aria-label="Abrir menú de navegación" aria-expanded="false"
+                    aria-controls="nav-menu">
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                </button>
 
-            <!-- Proyecto 4 -->
-            <div class="carousel-item" role="tabpanel" aria-label="Web de Servicios con WordPress">
-              <img 
-                src="./imagenes/filetype-css.svg"
-                alt="Captura de web de servicios con WordPress"
-                loading="lazy">
-              <div class="carousel-caption">
-                <h3>Web de Servicios con WordPress</h3>
-                <p>Diseño y maquetado Web con Elementor, en colaboración con Agencia de Marketing y Diseño ubicada en Asturias</p>
-                <button class="demo-btn btn btn-secondary" data-demo="wp-servicio">Demo</button>
-              </div>
-            </div>
-          </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#inicio" data-section="inicio" class="active">Inicio</a></li>
+                    <li><a href="#proyectos" data-section="proyectos">Proyectos</a></li>
+                    <li><a href="#servicios" data-section="servicios">Servicios</a></li>
+                    <li><a href="#sobre-mi" data-section="sobre-mi">Sobre mí</a></li>
+                    <li><a href="#contacto" data-section="contacto">Contacto</a></li>
+                    <li><a href="./assets/adalid_martinez_alvarez_CV.pdf" class="btn-cv" download>
+                            <i class="bi bi-file-earmark-person"></i>
+                            Descargar CV
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-          <!-- Controles de navegación -->
-          <button type="button" class="carousel-control carousel-control-prev" aria-label="Proyecto anterior" data-action="prev">
-            <i class="bi bi-chevron-left" aria-hidden="true"></i>
-          </button>
-          <button type="button" class="carousel-control carousel-control-next" aria-label="Siguiente proyecto" data-action="next">
-            <i class="bi bi-chevron-right" aria-hidden="true"></i>
-          </button>
-        </div>
-      </section>
+        <!-- CONTENIDO PRINCIPAL -->
+        <main id="main-content">
+            <!-- SECCIÓN 1: HERO -->
+            <section id="inicio" class="section active hero" aria-labelledby="hero-title">
+                <div id="particles-js" aria-hidden="true"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title" id="hero-title">
+                        <span id="typed-text" role="status" aria-live="polite"></span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        ¡Bienvenido a mi portfolio web!
+                    </p>
+                    <button class="neon-button" data-section="proyectos" aria-label="Ver mis proyectos">
+                        Ver Proyectos
+                    </button>
+                </div>
+            </section>
 
-      <!-- SECCIÓN 3: SERVICIOS -->
-      <section id="servicios" class="section" aria-labelledby="services-title">
-        <h2 id="services-title">Servicios</h2>
-        <p>Contenido de Servicios - próximamente</p>
-      </section>
+            <!-- SECCIÓN 2: PROYECTOS -->
+            <section id="proyectos" class="section" aria-labelledby="projects-title">
+                <div class="section-header">
+                    <h2 id="projects-title">Selección de Proyectos</h2>
+                    <div class="see-more">
+                        <a href="https://github.com/bichota-tech" class="tooltip" target="_blank" rel="noopener noreferrer"
+                            aria-label="Ver mi perfil de GitHub">
+                            <i class="bi bi-github" aria-hidden="true"></i>
+                            <span class="tooltip-text">Ver en GitHub</span>
+                        </a>
+                        <a href="./assets/carta_recomendación-adalid_martinez.pdf" class="btn-cv tooltip" download>
+                            <i class="bi bi-envelope-paper-heart"></i>
+                            <span class="tooltip-text"> Ver recomendación</span>
+                        </a>
+                    </div>
+                </div>
 
-      <!-- SECCIÓN 4: SOBRE MÍ -->
-      <section id="sobre-mi" class="section" aria-labelledby="about-title">
-        <h2 id="about-title">Sobre Mí</h2>
-        <p>Contenido de Sobre mí - próximamente</p>
-      </section>
+                <div id="mycarousel" class="carousel" role="region" aria-label="Carrusel de proyectos"
+                    aria-roledescription="carrusel">
+                    <!-- Indicadores -->
+                    <div class="carousel-indicators" role="tablist" aria-label="Selector de diapositivas del carrusel">
+                        <button type="button" class="active" role="tab" aria-selected="true"
+                            aria-label="Ir a proyecto 1" data-slide-to="0"></button>
+                        <button type="button" role="tab" aria-selected="false" aria-label="Ir a proyecto 2"
+                            data-slide-to="1"></button>
+                        <button type="button" role="tab" aria-selected="false" aria-label="Ir a proyecto 3"
+                            data-slide-to="2"></button>
+                        <button type="button" role="tab" aria-selected="false" aria-label="Ir a proyecto 4"
+                            data-slide-to="3"></button>
+                    </div>
 
-      <!-- SECCIÓN 5: CONTACTO -->
-      <section id="contacto" class="section" aria-labelledby="contact-title">
-        <div class="container">
-          <div class="card">
-            <img 
-              src="./imagenes/cartoon.svg" 
-              alt="Retrato de Adalid Martínez" 
-              class="card_img"
-              loading="lazy">
-            <h2 class="card_name" id="contact-title">Adalid Martínez</h2>
-            <p class="card_web">Programador web (frontend)</p>
-            <button class="btncontact btn btn-primary" aria-label="Abrir opciones de contacto" aria-expanded="false">
-              <div class="button_content">
-                <span>CONTACTO</span>
-              </div>
-              <div class="button_social" role="toolbar" aria-label="Redes sociales">
-                <a href="https://github.com/bichota-tech" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                  <i class="bi bi-github" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/acma-48755b34b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                  <i class="bi bi-linkedin" aria-hidden="true"></i>
-                </a>
-                <a href="https://wa.me/640947912" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                  <i class="bi bi-whatsapp" aria-hidden="true"></i>
-                </a>
-                <a href="mailto:adalvarez2021@gmail.com" aria-label="Correo electrónico">
-                  <i class="bi bi-envelope-at-fill" aria-hidden="true"></i>
-                </a>
-              </div>
-            </button>
-          </div>
-        </div>
-      </section>
-    </main>
+                    <!-- Contenedor de items -->
+                    <div class="carousel-inner" role="presentation">
+                        <!-- Proyecto 1 -->
+                        <div class="carousel-item active" role="tabpanel" aria-label="Fotografía Profesional HEVCA">
+                            <img src="./imagenes/Macbook-Air-www.limpiezasvioletayverde.com (5).png"
+                                alt="Captura de la plataforma Fotografía Profesional HEVCA" loading="lazy">
+                            <div class="carousel-caption">
+                                <h3>Fotografía Profesional HEVCA</h3>
+                                <p>Desarrollo Web Frontend con HTML, CSS y JavaScript para landing page con galería
+                                    virtual interactiva por categorías</p>
+                                <a href="https://github.com/bichota-tech/Galeria_Virtual.git" target="_blank"
+                                    rel="noopener noreferrer" class="btn btn-primary">Ver Código</a>
+                                <button class="demo-btn btn btn-secondary" data-demo="git-galery">Demo</button>
+                            </div>
+                        </div>
 
-    <!-- FOOTER -->
-    <footer role="contentinfo">
-      <p>&copy; 2025 Adalid Martínez Álvarez. Todos los derechos reservados.</p>
-    </footer>
+                        <!-- Proyecto 2 -->
+                        <div class="carousel-item" role="tabpanel" aria-label="Asistente Digital">
+                            <img src="./imagenes/bootstrap.svg" alt="Captura de la plataforma Asistente Digital"
+                                loading="lazy">
+                            <div class="carousel-caption">
+                                <h3>Asistente Digital</h3>
+                                <p>Desarrollo Web Frontend con HTML, CSS y JavaScript para interfaz atractiva y
+                                    funcional con múltiples perfiles y tareas</p>
+                                <a href="https://github.com/bichota-tech/proyectos_web/tree/main/asistente_digital"
+                                    target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ver Código</a>
+                                <button class="demo-btn btn btn-secondary" data-demo="git-asistente">Demo</button>
+                            </div>
+                        </div>
 
-    <!-- SCRIPTS -->
-    <!-- Typed.js para efecto de tipeado -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
-    
-    <!-- Particles.js para fondo animado -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
-    
-    <!-- Carrusel personalizado -->
-    <script src="./carousel.js" defer></script>
-    
-    <!-- Efectos y animaciones -->
-    <script src="./effects.js" defer></script>
-    
-    <!-- Aplicación principal -->
-    <script src="./app.js" defer></script>
-  </body>
+                        <!-- Proyecto 3 -->
+                        <div class="carousel-item" role="tabpanel" aria-label="Plataforma WooCommerce con WordPress">
+                            <img src="./imagenes/filetype-html.svg"
+                                alt="Captura de plataforma WooCommerce con WordPress" loading="lazy">
+                            <div class="carousel-caption">
+                                <h3>Plataforma WooCommerce con WordPress</h3>
+                                <p>Diseño y maquetado con Elementor en colaboración con Agencia de Marketing y Diseño
+                                    ubicada en Asturias</p>
+                                <button class="demo-btn btn btn-secondary" data-demo="wp-woo">Demo</button>
+                            </div>
+                        </div>
+
+                        <!-- Proyecto 4 -->
+                        <div class="carousel-item" role="tabpanel" aria-label="Web de Servicios con WordPress">
+                            <img src="./imagenes/filetype-css.svg" alt="Captura de web de servicios con WordPress"
+                                loading="lazy">
+                            <div class="carousel-caption">
+                                <h3>Web de Servicios con WordPress</h3>
+                                <p>Diseño y maquetado Web con Elementor, en colaboración con Agencia de Marketing y
+                                    Diseño ubicada en Asturias</p>
+                                <button class="demo-btn btn btn-secondary" data-demo="wp-servicio">Demo</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Controles de navegación -->
+                    <button type="button" class="carousel-control carousel-control-prev" aria-label="Proyecto anterior"
+                        data-action="prev">
+                        <i class="bi bi-chevron-left" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="carousel-control carousel-control-next" aria-label="Siguiente proyecto"
+                        data-action="next">
+                        <i class="bi bi-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 3: SERVICIOS -->
+            <section id="servicios" class="section" aria-labelledby="services-title">
+                <h2 id="services-title">Servicios</h2>
+                <p>Contenido de Servicios - próximamente</p>
+            </section>
+
+            <!-- SECCIÓN 4: SOBRE MÍ -->
+            <section id="sobre-mi" class="section" aria-labelledby="about-title">
+                <h2 id="about-title">Sobre Mí</h2>
+                <p>Contenido de Sobre mí - próximamente</p>
+            </section>
+
+            <!-- SECCIÓN 5: CONTACTO -->
+            <section id="contacto" class="section" aria-labelledby="contact-title">
+                <div class="container">
+                    <div class="card">
+                        <img src="./imagenes/cartoon.svg" alt="Retrato de Adalid Martínez" class="card_img"
+                            loading="lazy">
+                        <h2 class="card_name" id="contact-title">Adalid Martínez</h2>
+                        <p class="card_web">Programador web (frontend)</p>
+                        <button class="btncontact btn btn-primary" aria-label="Abrir opciones de contacto"
+                            aria-expanded="false">
+                            <div class="button_content">
+                                <span>CONTACTO</span>
+                            </div>
+                            <div class="button_social" role="toolbar" aria-label="Redes sociales">
+                                <a href="https://github.com/bichota-tech" target="_blank" rel="noopener noreferrer"
+                                    aria-label="GitHub">
+                                    <i class="bi bi-github" aria-hidden="true"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/acma-48755b34b/" target="_blank"
+                                    rel="noopener noreferrer" aria-label="LinkedIn">
+                                    <i class="bi bi-linkedin" aria-hidden="true"></i>
+                                </a>
+                                <a href="https://wa.me/640947912" target="_blank" rel="noopener noreferrer"
+                                    aria-label="WhatsApp">
+                                    <i class="bi bi-whatsapp" aria-hidden="true"></i>
+                                </a>
+                                <a href="mailto:adalvarez2021@gmail.com" aria-label="Correo electrónico">
+                                    <i class="bi bi-envelope-at-fill" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer role="contentinfo">
+            <p>&copy; 2025 Adalid Martínez Álvarez. Todos los derechos reservados.</p>
+        </footer>
+
+        <!-- SCRIPTS -->
+        <!-- Typed.js para efecto de tipeado -->
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+
+        <!-- Particles.js para fondo animado -->
+        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+
+        <!-- Carrusel personalizado -->
+        <script src="./carousel.js" defer></script>
+
+        <!-- Efectos y animaciones -->
+        <script src="./effects.js" defer></script>
+
+        <!-- Aplicación principal -->
+        <script src="./app.js" defer></script>
+    </body>
+
 </html>

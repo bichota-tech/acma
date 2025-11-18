@@ -2,12 +2,21 @@
 
 /**
  * ESTILOS PRINCIPALES - ACMA PORTFOLIO
- * Compilado desde SCSS modular
- * Incluye: variables, componentes, layouts, utilidades
+ * CSS puro, escalable, sin dependencias de preprocesadores
+ * 
+ * Estructura:
+ * - Variables CSS: Paleta de colores y diseño
+ * - Reset & Base: Estilos básicos de elementos
+ * - Header: Navegación y logo
+ * - Secciones: Hero, Proyectos, Servicios, etc
+ * - Carrusel: Estilos del carousel vanilla
+ * - Footer: Pie de página
+ * - Utilidades: Clases auxiliares y accesibilidad
+ * - Responsive: Media queries para todos los breakpoints
  */
 
 :root {
-  /*Paleta principal*/
+  /* Colores - Paleta principal */
   --color-fondo-claro: #ebe7d9;
   --color-fondo-oscuro: #1e1f22;
   --color-acento-primario: #f55139;
@@ -36,7 +45,10 @@ body {
   overflow-x: hidden;
 }
 
-/* Reset */
+/* =====================================================
+   RESET & ELEMENTOS BASE
+   ===================================================== */
+
 button,
 a {
   cursor: pointer;
@@ -51,7 +63,10 @@ img {
   display: block;
 }
 
-/* Navegación */
+/* =====================================================
+   HEADER Y NAVEGACIÓN
+   ===================================================== */
+
 header {
   width: 100%;
   height: 4rem;
@@ -220,7 +235,10 @@ nav:hover {
   }
 }
 
-/* Secciones */
+/* =====================================================
+   SECCIONES PRINCIPALES
+   ===================================================== */
+
 main {
   position: relative;
 }
@@ -246,7 +264,10 @@ main {
   pointer-events: all;
 }
 
-/* Hero */
+/* =====================================================
+   SECCIÓN HERO (Inicio)
+   ===================================================== */
+
 .hero {
   position: relative;
   overflow: hidden;
@@ -355,7 +376,10 @@ main {
     0 0 80px var(--color-acento-primario-brillo);
 }
 
-/* Proyectos */
+/* =====================================================
+   SECCIÓN PROYECTOS (Carrusel)
+   ===================================================== */
+
 #proyectos {
   flex-direction: column;
   align-items: center;
@@ -391,6 +415,7 @@ main {
   position: absolute;
   right: 10%;
   bottom: 15%;
+  z-index: 1000;
 }
 
 .see-more a {
@@ -438,7 +463,10 @@ main {
 }
 
 
-/* Carrusel */
+/* =====================================================
+   COMPONENTE: CARRUSEL VANILLA
+   ===================================================== */
+
 #mycarousel {
   position: relative;
   width: 50%;
@@ -498,7 +526,7 @@ main {
   display: flex;
   width: 100%;
   height: 100%;
-  transition: transform 600ms ease;
+  transition: transform 30s ease;
   will-change: transform;
 }
 
@@ -517,7 +545,7 @@ main {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: none;
   border-radius: 8px;
 }
 
@@ -666,7 +694,10 @@ main {
   }
 }
 
-/* Contacto */
+/* =====================================================
+   SECCIÓN CONTACTO (Card)
+   ===================================================== */
+
 #contacto {
   display: grid;
   place-items: center;
@@ -790,7 +821,10 @@ main {
   opacity: 1;
 }
 
-/* Footer */
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
 footer {
   width: 100%;
   position: fixed;
@@ -808,7 +842,10 @@ footer p {
   margin: 0;
 }
 
-/* Utilidades */
+/* =====================================================
+   UTILIDADES Y COMPONENTES GLOBALES
+   ===================================================== */
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -842,7 +879,10 @@ footer p {
   box-shadow: 0 0 20px rgba(58, 183, 191, 0.5);
 }
 
-/* Accesibilidad */
+/* =====================================================
+   ACCESIBILIDAD Y EXPERIENCIA DE USUARIO
+   ===================================================== */
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;

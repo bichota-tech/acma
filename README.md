@@ -2,9 +2,9 @@
 
 ##  Descripción del Proyecto
 
-**ACMA Portfolio** es un sitio web de portafolio profesional moderna, completamente responsivo y accesible, desarrollado con HTML5, CSS3, SCSS y JavaScript vanilla.
+**ACMA Portfolio** es un sitio web de portafolio profesional moderna, completamente responsivo y accesible, desarrollado con HTML5, CSS3 puro y JavaScript vanilla.
 
-**Versión:** 2.0 (Refactorizado y Optimizado)  
+**Versión:** 3.0 (CSS Puro - Sin Dependencias SASS)  
 **Autor:** Adalid Martínez Álvarez  
 **Licencia:** MIT
 
@@ -16,43 +16,15 @@
 
 ```
 acma/
- index.html                 # Página principal HTML
- app.js                     # Controlador de navegación SPA
- carousel.js                # Controlador del carrusel vanilla
+ index.html                 # Página principal HTML5 semántico
+ app.js                     # Controlador SPA - Navegación y menú
+ carousel.js                # Controlador vanilla carousel
  effects.js                 # Efectos: Typed.js y Particles.js
  css/
-    style.css              # CSS consolidado y optimizado
- scss/                      # Fuente SCSS modular
-    style.scss             # Archivo principal (importa módulos)
-    config/
-       variables.scss     # Variables globales (colores, espaciado, etc.)
-       breakpoints.scss   # Breakpoints responsivos
-    mixins/
-       responsive.scss    # Media queries
-       transitions.scss   # Animaciones y transiciones
-       gradients.scss     # Utilidades de gradientes
-    base/
-       reset.scss         # Reset y estilos base
-       typography.scss    # Tipografía
-    components/
-       buttons.scss       # Componentes botones
-       cards.scss         # Componentes tarjetas
-       carousel.scss      # Carrusel personalizado
-    layouts/
-       header.scss        # Navegación y header
-       hero.scss          # Sección hero
-       projects.scss      # Sección proyectos
-       contact.scss       # Sección contacto
-       footer.scss        # Footer
-    utilities/
-        animations.scss    # Keyframes
-        theme.scss         # Utilidades y temas
- imagenes/
-    acmalogo.png
-    cartoon.svg
-    bootstrap.svg
-    ... (resto de imágenes)
- README.md
+    style.css              # CSS único, escalable, sin preprocesadores
+ imagenes/                  # Imágenes optimizadas (PNG, SVG)
+ assets/                    # Documentos (CV, cartas de recomendación)
+ README.md                  # Esta documentación
 ```
 
 ---
@@ -71,14 +43,13 @@ acma/
 
 ##  Breakpoints Responsivos
 
-```scss
-// Mobile-first approach
-$breakpoint-xs: 320px;    // Móvil pequeño
-$breakpoint-sm: 576px;    // Móvil
-$breakpoint-md: 768px;    // Tablet
-$breakpoint-lg: 992px;    // Laptop
-$breakpoint-xl: 1200px;   // Desktop
-$breakpoint-2xl: 1400px;  // Desktop grande
+```css
+/* Mobile-first approach - Media queries en CSS */
+@media (max-width: 576px)  { /* Móvil */ }
+@media (max-width: 768px)  { /* Tablet */ }
+@media (max-width: 992px)  { /* Laptop */ }
+@media (max-width: 1200px) { /* Desktop */ }
+@media (max-width: 1400px) { /* Desktop Grande */ }
 ```
 
 ---
@@ -86,106 +57,33 @@ $breakpoint-2xl: 1400px;  // Desktop grande
 ##  Tecnologías Utilizadas
 
 ### Frontend
-- **HTML5** - Semántico y accesible
-- **CSS3** - Variables CSS, flexbox, grid
-- **SCSS** - Arquitectura modular
-- **JavaScript ES6+** - Vanilla JS (sin dependencias)
-- **Typed.js** - Efecto de texto tipeado
-- **Particles.js** - Efecto de partículas animadas
-- **Bootstrap Icons** - Iconografía
+- **HTML5** - Semántico, accesible, ARIA completo
+- **CSS3 Puro** - Variables CSS, flexbox, grid, sin preprocesadores
+- **JavaScript ES6+** - Vanilla JS, clases, sin dependencias frameworks
+- **Typed.js** (CDN) - Efecto de texto tipeado
+- **Particles.js** (CDN) - Efecto de partículas animadas
+- **Bootstrap Icons** (CDN) - Iconografía
 
 ### Características Implementadas
  **SPA Navigation** - Navegación sin recargas  
  **Responsive Design** - Mobile-first  
  **Accesibilidad (WCAG 2.1 AA)** - ARIA labels, roles semánticos  
- **Performance** - Lazy loading, CSS optimizado  
+ **Performance** - Lazy loading, CSS optimizado, sin build tools  
+ **Zero Dependencies** - Sin npm, build tools, o preprocesadores
  **Carrusel Vanilla** - Sin dependencias, autoplay, swipe  
  **Efectos Visuales** - Animaciones smooth, gradientes  
  **SEO Friendly** - Meta tags, estructura semántica
 
 ---
 
-##  Componentes Principales
-
-### 1. **Navegación (Header)**
-- Menú hamburguesa responsivo
-- Logo neón animado
-- Navegación activa con indicador
-- Cierre de menú automático
-
-**Archivos relacionados:**
-- `layouts/header.scss`
-- Selector CSS: `header`, `nav`, `.nav-menu`
-
-### 2. **Sección Hero**
-- Fondo de partículas interactivas
-- Texto tipeado automático
-- Botón CTA animado
-
-**Archivos relacionados:**
-- `layouts/hero.scss`
-- `effects.js` (Typed.js, Particles.js)
-
-### 3. **Carrusel de Proyectos**
-- Autoplay inteligente
-- Navegación por swipe (móvil)
-- Indicadores interactivos
-- Accesible (ARIA)
-
-**Archivos relacionados:**
-- `components/carousel.scss`
-- `carousel.js` (Clase CarouselController)
-
-### 4. **Tarjeta de Contacto**
-- Animación de redes sociales
-- Efecto hover suave
-
-**Archivos relacionados:**
-- `layouts/contact.scss`
-
----
-
-##  Clases JavaScript Principales
-
 ### `ACMAPortfolio`
 Controlador principal de la SPA.
-
-```javascript
-// Uso
-new ACMAPortfolio();
-
-// Métodos públicos
-- navigateTo(target)
-- toggleMenu()
-- closeMenu()
-```
 
 ### `CarouselController`
 Controlador del carrusel vanilla.
 
-```javascript
-// Uso
-const carousel = new CarouselController('mycarousel');
-
-// Métodos públicos
-- goToSlide(index)
-- next()
-- prev()
-- pauseAutoplay()
-- resumeAutoplay()
-```
-
 ### `PortfolioEffects`
 Gestiona efectos visuales.
-
-```javascript
-// Uso
-new PortfolioEffects();
-
-// Contiene
-- Typed.js (efecto tipeado)
-- Particles.js (partículas)
-```
 
 ---
 
@@ -212,63 +110,28 @@ new PortfolioEffects();
 
 ---
 
-##  Cómo Compilar SCSS a CSS
+##  Estructura del CSS
 
-### Opción 1: Live Sass Compiler (VS Code)
-1. Instala la extensión "Live Sass Compiler"
-2. En VS Code: Botón derecho  "Watch Sass"
-3. Los archivos SCSS se compilarán automáticamente
+### Archivo Único: `css/style.css`
 
-### Opción 2: Línea de Comandos (Node-SASS)
-```bash
-npm install -g sass
+El proyecto utiliza un único archivo CSS puro, bien organizado y sin dependencias de preprocesadores.
 
-# Compilar un archivo
-sass scss/style.scss css/style.css
+**Ventajas de esta aproximación:**
+- ✅ Sin herramientas de compilación (no requiere npm, webpack, etc.)
+- ✅ Carga más rápida (un solo archivo HTTP)
+- ✅ Fácil de debuggear (sin mapeos complejos)
+- ✅ Mantenimiento directo sin intermediarios
+- ✅ Compatible con todos los navegadores modernos
 
-# Modo watch
-sass --watch scss:css
-```
-
-### Opción 3: CLI nativa de Sass
-```bash
-# Instalar Sass
-npm install sass --save-dev
-
-# Compilar
-npx sass scss/style.scss css/style.css
-```
-
----
-
-##  Variables SCSS Disponibles
-
-### Colores
-```scss
-$color-light: #ebe7d9;
-$color-dark: #1e1f22;
-$color-primary: #f55139;
-$color-primary-bright: #fd0800;
-$color-secondary: #3AB7BF;
-```
-
-### Espaciado
-```scss
-$spacing-xs: 0.25rem;    // 4px
-$spacing-sm: 0.5rem;     // 8px
-$spacing-md: 1rem;       // 16px
-$spacing-lg: 1.5rem;     // 24px
-$spacing-xl: 2rem;       // 32px
-```
-
-### Tipografía
-```scss
-$font-weight-bold: 700;
-$font-size-base: 1rem;
-$font-size-xl: 1.25rem;
-```
-
----
+**Secciones principales del CSS:**
+1. Variables CSS (colores, espacios, tokens de diseño)
+2. Reset & Base (estilos básicos)
+3. Header y Navegación
+4. Secciones principales (Hero, Proyectos, etc.)
+5. Componentes (Carrusel, Card, Botones)
+6. Footer
+7. Utilidades y temas
+8. Accesibilidad y media queries
 
 ##  Eventos de JavaScript
 
@@ -326,28 +189,44 @@ https://jigsaw.w3.org/css-validator/
 
 ##  Notas de Desarrollo
 
-### CSS vs SCSS
-- **CSS compilado**: `css/style.css` (archivo de producción)
-- **Fuente SCSS**: `scss/` (para desarrollo)
-- Compilar SCSS después de cambios
-- No editar `css/style.css` directamente
+### Estructura sin Herramientas de Compilación
+- **HTML**: Editar directamente `index.html`
+- **CSS**: Editar directamente `css/style.css` 
+- **JavaScript**: Editar archivos `.js` individuales
+- **Sin NPM, webpack, o build tools** - Todo funciona en navegador
+
+### Workflow de Cambios
+1. Abre el archivo a editar en VS Code
+2. Realiza cambios
+3. Guarda (Ctrl+S)
+4. Recarga navegador (F5)
+5. ¡Listo!
 
 ### Git Ignore
 Considera ignorar:
 ```
-/node_modules/
-.env
 .DS_Store
-*.scss.map
+Thumbs.db
+.vscode/
+node_modules/  (si añades npm en el futuro)
+.env
 ```
 
+### Ventajas de CSS Puro vs Preprocesadores
+| Aspecto | CSS Puro | SCSS |
+|--------|----------|------|
+| Herramientas | Ninguna | Compilador necesario |
+| Complejidad | Simple | Moderada |
+| Curva aprendizaje | Baja | Media |
+| Velocidad desarrollo | Rápida | Rápida (con herramientas) |
+| Rendimiento | Excelente | Igual (después de compilar) |
+| Debuggear | Directo | Necesita source maps |
+
 ### Próximas Mejoras
-- [ ] Modo oscuro/claro con toggle
+- [ ] Completar página de Servicios
+- [ ] Completar página de Sobre mí
 - [ ] Animaciones más fluidas
-- [ ] Página de servicios completada
-- [ ] Página de sobre mí completada
-- [ ] Formulario de contacto funcional
-- [ ] Integración con CMS
+- [ ] Integración con CMS (opcional)
 
 ---
 
@@ -355,8 +234,8 @@ Considera ignorar:
 
 **Adalid Martínez Álvarez**  
  [GitHub](https://github.com/bichota-tech)  
- [LinkedIn](https://www.linkedin.com)  
- contacto@example.com  
+ [LinkedIn](https://www.linkedin.com/acma-48755b34b/)  
+ adalvarez2021@gmail.com  
 
 ---
 

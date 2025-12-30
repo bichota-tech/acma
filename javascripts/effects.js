@@ -30,8 +30,8 @@ class PortfolioEffects {
 
     this.typedInstance = new Typed('#typed-text', {
       strings: [
-        'Desarrollador Web Frontend Júnior.',
-        'Apasionado por el diseño y la tecnología.',
+        'Desarrolladora Web Frontend Junior.',
+        'Disponible para nuevos proyectos.',
         'En constante aprendizaje y crecimiento.',
       ],
       typeSpeed: 60,        // velocidad de escritura (ms/carácter)

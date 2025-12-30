@@ -5,20 +5,22 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description"
-            content="Portfolio web de Adalid Martínez. Desarrollador Frontend con proyectos en HTML, CSS, JavaScript y WordPress. Especializado en diseño web moderno y responsive.">
-        <meta name="keywords"
-            content="Frontend, Desarrollador Web, Portfolio, HTML, CSS, JavaScript, WordPress, Diseño Web">
+            content="Portfolio web. Desarrollador Frontend y Maquetador WordPress. Especializado en diseño webresponsivo y experiencia de usuario.">
         <meta name="author" content="Adalid Martínez Álvarez">
         <meta name="robots" content="index, follow">
+
+        <!-- Favicon y iconos -->
+        <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
+        <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="Portfolio" />
+        <link rel="manifest" href="assets/favicon/site.webmanifest" />
 
         <!-- Preconnect para optimización de fuentes externas -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="preconnect" href="https://cdn.jsdelivr.net">
-
-        <!-- Favicon -->
-        <link rel="icon" type="image/svg+xml" href="./imagenes/acmalogo.png">
-        <link rel="apple-touch-icon" href="./imagenes/acmalogo.png">
 
         <!-- Fuentes -->
         <link
@@ -34,7 +36,7 @@
         <!-- Estilos principales -->
         <link rel="stylesheet" href="css/style.css">
 
-        <title>ACMA Portfolio - Desarrollador Web Frontend</title>
+        <title>ACMA Portfolio | Desarrollador Web Frontend</title>
     </head>
 
     <body>
@@ -78,7 +80,7 @@
                         <span id="typed-text" role="status" aria-live="polite"></span>
                     </h1>
                     <p class="hero-subtitle">
-                        ¡Bienvenido a mi portfolio web!
+                        ¡Bienvenid@s a mi portfolio web!
                     </p>
                     <button class="neon-button" data-section="proyectos" aria-label="Ver mis proyectos">
                         Ver Proyectos
@@ -89,10 +91,10 @@
             <!-- SECCIÓN 2: PROYECTOS -->
             <section id="proyectos" class="section" aria-labelledby="projects-title">
                 <div class="section-header">
-                    <h2 id="projects-title">Selección de Proyectos</h2>
+                    <h2 id="projects-title">Proyectos</h2>
                     <div class="see-more">
-                        <a href="https://github.com/bichota-tech" class="tooltip" target="_blank" rel="noopener noreferrer"
-                            aria-label="Ver mi perfil de GitHub">
+                        <a href="https://github.com/bichota-tech" class="tooltip" target="_blank"
+                            rel="noopener noreferrer" aria-label="Ver mi perfil de GitHub">
                             <i class="bi bi-github" aria-hidden="true"></i>
                             <span class="tooltip-text">Ver en GitHub</span>
                         </a>
@@ -103,82 +105,14 @@
                     </div>
                 </div>
 
-                <div id="mycarousel" class="carousel" role="region" aria-label="Carrusel de proyectos"
-                    aria-roledescription="carrusel">
-                    <!-- Indicadores -->
-                    <div class="carousel-indicators" role="tablist" aria-label="Selector de diapositivas del carrusel">
-                        <button type="button" class="active" role="tab" aria-selected="true"
-                            aria-label="Ir a proyecto 1" data-slide-to="0"></button>
-                        <button type="button" role="tab" aria-selected="false" aria-label="Ir a proyecto 2"
-                            data-slide-to="1"></button>
-                        <button type="button" role="tab" aria-selected="false" aria-label="Ir a proyecto 3"
-                            data-slide-to="2"></button>
-                        <button type="button" role="tab" aria-selected="false" aria-label="Ir a proyecto 4"
-                            data-slide-to="3"></button>
+                <div class="carousel-container" aria-label="Carrusel de proyectos">
+                    <div class="carousel" id="project-carousel" tabindex="0" aria-roledescription="carousel">
+                        <!-- Los elementos del carrusel se generan dinámicamente con JavaScript -->
                     </div>
-
-                    <!-- Contenedor de items -->
-                    <div class="carousel-inner" role="presentation">
-                        <!-- Proyecto 1 -->
-                        <div class="carousel-item active" role="tabpanel" aria-label="Fotografía Profesional HEVCA">
-                            <img src="./imagenes/hevca.png"
-                                alt="Captura de la plataforma Fotografía Profesional HEVCA" loading="lazy">
-                            <div class="carousel-caption">
-                                <h3>Fotografía Profesional HEVCA</h3>
-                                <p>Desarrollo Web Frontend con HTML, CSS y JavaScript para landing page con galería
-                                    virtual interactiva por categorías</p>
-                                <a href="https://github.com/bichota-tech/Galeria_Virtual.git" target="_blank"
-                                    rel="noopener noreferrer" class="btn btn-primary">Ver Código</a>
-                                <button class="demo-btn btn btn-secondary" data-demo="git-galery">Demo</button>
-                            </div>
-                        </div>
-
-                        <!-- Proyecto 2 -->
-                        <div class="carousel-item" role="tabpanel" aria-label="Asistente Digital">
-                            <img src="./imagenes/bootstrap.svg" alt="Captura de la plataforma Asistente Digital"
-                                loading="lazy">
-                            <div class="carousel-caption">
-                                <h3>Asistente Digital</h3>
-                                <p>Desarrollo Web Frontend con HTML, CSS y JavaScript para interfaz atractiva y
-                                    funcional con múltiples perfiles y tareas</p>
-                                <a href="https://github.com/bichota-tech/proyectos_web/tree/main/asistente_digital"
-                                    target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ver Código</a>
-                                <button class="demo-btn btn btn-secondary" data-demo="git-asistente">Demo</button>
-                            </div>
-                        </div>
-
-                        <!-- Proyecto 3 -->
-                        <div class="carousel-item" role="tabpanel" aria-label="Plataforma WooCommerce con WordPress">
-                            <img src="./imagenes/filetype-html.svg"
-                                alt="Captura de plataforma WooCommerce con WordPress" loading="lazy">
-                            <div class="carousel-caption">
-                                <h3>Plataforma WooCommerce con WordPress</h3>
-                                <p>Diseño y maquetado con Elementor en colaboración con Agencia de Marketing y Diseño
-                                    ubicada en Asturias</p>
-                                <button class="demo-btn btn btn-secondary" data-demo="wp-woo">Demo</button>
-                            </div>
-                        </div>
-
-                        <!-- Proyecto 4 -->
-                        <div class="carousel-item" role="tabpanel" aria-label="Web de Servicios con WordPress">
-                            <img src="./imagenes/filetype-css.svg" alt="Captura de web de servicios con WordPress"
-                                loading="lazy">
-                            <div class="carousel-caption">
-                                <h3>Web de Servicios con WordPress</h3>
-                                <p>Diseño y maquetado Web con Elementor, en colaboración con Agencia de Marketing y
-                                    Diseño ubicada en Asturias</p>
-                                <button class="demo-btn btn btn-secondary" data-demo="wp-servicio">Demo</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Controles de navegación -->
-                    <button type="button" class="carousel-control carousel-control-prev" aria-label="Proyecto anterior"
-                        data-action="prev">
+                    <button class="carousel-control prev" id="prev-btn" aria-label="Proyecto anterior">
                         <i class="bi bi-chevron-left" aria-hidden="true"></i>
                     </button>
-                    <button type="button" class="carousel-control carousel-control-next" aria-label="Siguiente proyecto"
-                        data-action="next">
+                    <button class="carousel-control next" id="next-btn" aria-label="Próximo proyecto">
                         <i class="bi bi-chevron-right" aria-hidden="true"></i>
                     </button>
                 </div>
@@ -200,7 +134,7 @@
             <section id="contacto" class="section" aria-labelledby="contact-title">
                 <div class="container">
                     <div class="card">
-                        <img src="./imagenes/cartoon.svg" alt="Retrato de Adalid Martínez" class="card_img"
+                        <img src="assets/imagenes/cartoon.svg" alt="Retrato de Adalid Martínez" class="card_img"
                             loading="lazy">
                         <h2 class="card_name" id="contact-title">Adalid Martínez</h2>
                         <p class="card_web">Programador web (frontend)</p>
@@ -245,13 +179,13 @@
         <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
 
         <!-- Carrusel personalizado -->
-        <script src="./carousel.js" defer></script>
+        <script src="javascripts/carousel.js" defer></script>
 
         <!-- Efectos y animaciones -->
-        <script src="./effects.js" defer></script>
+        <script src="javascripts/effects.js" defer></script>
 
         <!-- Aplicación principal -->
-        <script src="./app.js" defer></script>
+        <script src="javascripts/app.js" defer></script>
     </body>
 
 </html>

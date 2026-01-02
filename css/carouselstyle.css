@@ -125,19 +125,19 @@
 
 /* Posicionamiento orbital */
 .mobile-card:nth-child(1) {
-    transform: translate(-50%, -50%) rotateY(0deg) ;
+    transform: translate(-50%, -50%) rotateY(0deg);
 }
 
 .mobile-card:nth-child(2) {
-    transform: translate(-50%, -50%) rotateY(90deg) ;
+    transform: translate(-50%, -50%) rotateY(90deg);
 }
 
 .mobile-card:nth-child(3) {
-    transform: translate(-50%, -50%) rotateY(180deg) ;
+    transform: translate(-50%, -50%) rotateY(180deg);
 }
 
 .mobile-card:nth-child(4) {
-    transform: translate(-50%, -50%) rotateY(270deg) ;
+    transform: translate(-50%, -50%) rotateY(270deg);
 }
 
 /* Control de visibilidad según rotación */
@@ -171,11 +171,11 @@
     transform: translateY(-50%);
     width: clamp(45px, 6vw, 60px);
     height: clamp(45px, 6vw, 60px);
-    background: rgba(255, 255, 255, 0.95);
-    border: none;
     border-radius: 50%;
+    background: rgba(245, 81, 57, 0.1);
+    border: 2px solid var(--color-acento-primario);
+    color: var(--color-acento-primario);
     font-size: clamp(20px, 3vw, 24px);
-    color: #667eea;
     cursor: pointer;
     z-index: 10;
     transition: all 0.3s;
@@ -186,9 +186,9 @@
 }
 
 .nav-button:hover {
-    background: white;
+    background: var(--color-acento-primario);
+    color: var(--color-fondo-oscuro);
     transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
 .nav-button:active {

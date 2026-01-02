@@ -35,11 +35,15 @@
 
         <!-- Estilos principales -->
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/carouselstyle.css">
 
         <title>ACMA Portfolio | Desarrollador Web Frontend</title>
     </head>
 
     <body>
+        <div id="particles-layer">
+           
+        </div>
         <!-- HEADER Y NAVEGACIÓN -->
         <header role="banner">
             <nav role="navigation" aria-label="Navegación principal">
@@ -61,7 +65,7 @@
                     <li><a href="#servicios" data-section="servicios">Servicios</a></li>
                     <li><a href="#sobre-mi" data-section="sobre-mi">Sobre mí</a></li>
                     <li><a href="#contacto" data-section="contacto">Contacto</a></li>
-                    <li><a href="./assets/adalid_martinez_alvarez_CV.pdf" class="btn-cv" download>
+                    <li><a href="./assets/docs/adalid_martinez_alvarez_CV.pdf" class="btn-cv" download>
                             <i class="bi bi-file-earmark-person"></i>
                             Descargar CV
                         </a>
@@ -69,12 +73,12 @@
                 </ul>
             </nav>
         </header>
-
+        <div id="particles-js"></div>
         <!-- CONTENIDO PRINCIPAL -->
         <main id="main-content">
             <!-- SECCIÓN 1: HERO -->
             <section id="inicio" class="section active hero" aria-labelledby="hero-title">
-                <div id="particles-js" aria-hidden="true"></div>
+                
                 <div class="hero-content">
                     <h1 class="hero-title" id="hero-title">
                         <span id="typed-text" role="status" aria-live="polite"></span>
@@ -89,32 +93,35 @@
             </section>
 
             <!-- SECCIÓN 2: PROYECTOS -->
-            <section id="proyectos" class="section" aria-labelledby="projects-title">
+            <section id="proyectos" class="section projects" aria-labelledby="projects-title">
                 <div class="section-header">
-                    <h2 id="projects-title">Proyectos</h2>
                     <div class="see-more">
                         <a href="https://github.com/bichota-tech" class="tooltip" target="_blank"
                             rel="noopener noreferrer" aria-label="Ver mi perfil de GitHub">
                             <i class="bi bi-github" aria-hidden="true"></i>
                             <span class="tooltip-text">Ver en GitHub</span>
                         </a>
-                        <a href="./assets/carta_recomendación-adalid_martinez.pdf" class="btn-cv tooltip" download>
+                        <a href="./assets/docs/carta_recomendación-adalid_martinez.pdf" class="btn-cv tooltip" download>
                             <i class="bi bi-envelope-paper-heart"></i>
                             <span class="tooltip-text"> Ver recomendación</span>
                         </a>
                     </div>
                 </div>
 
-                <div class="carousel-container" aria-label="Carrusel de proyectos">
-                    <div class="carousel" id="project-carousel" tabindex="0" aria-roledescription="carousel">
-                        <!-- Los elementos del carrusel se generan dinámicamente con JavaScript -->
+                <div class="carousel-container">
+                    
+                    <!-- <h2 id="projects-title">Proyectos</h2> -->
+
+                    <div class="carousel-stage" id="carouselStage">
+                        <div class="carousel-orbit" id="carouselOrbit">
+                            <!-- Las tarjetas se generarán con JavaScript -->
+                        </div>
                     </div>
-                    <button class="carousel-control prev" id="prev-btn" aria-label="Proyecto anterior">
-                        <i class="bi bi-chevron-left" aria-hidden="true"></i>
-                    </button>
-                    <button class="carousel-control next" id="next-btn" aria-label="Próximo proyecto">
-                        <i class="bi bi-chevron-right" aria-hidden="true"></i>
-                    </button>
+
+                    <button class="nav-button prev-btn" id="prevBtn">‹</button>
+                    <button class="nav-button next-btn" id="nextBtn">›</button>
+
+                    <div class="indicators" id="indicators"></div>
                 </div>
             </section>
 
@@ -163,13 +170,12 @@
                         </button>
                     </div>
                 </div>
+                <!-- FOOTER -->
+                <footer role="contentinfo">
+                    <p>&copy; 2025 Adalid Martínez Álvarez. Todos los derechos reservados.</p>
+                </footer>
             </section>
         </main>
-
-        <!-- FOOTER -->
-        <footer role="contentinfo">
-            <p>&copy; 2025 Adalid Martínez Álvarez. Todos los derechos reservados.</p>
-        </footer>
 
         <!-- SCRIPTS -->
         <!-- Typed.js para efecto de tipeado -->
@@ -177,14 +183,14 @@
 
         <!-- Particles.js para fondo animado -->
         <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
-
-        <!-- Carrusel personalizado -->
+        
+        <!-- Carrusel personalizado 3D -->
         <script src="javascripts/carousel.js" defer></script>
 
-        <!-- Efectos y animaciones -->
+        <!-- Efectos y animaciones Typed.js y Particles.js -->
         <script src="javascripts/effects.js" defer></script>
 
-        <!-- Aplicación principal -->
+        <!-- Aplicación principal SPA -->
         <script src="javascripts/app.js" defer></script>
     </body>
 

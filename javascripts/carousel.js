@@ -1,285 +1,221 @@
-/**
- * CARRUSEL VANILLA - ACMA PORTFOLIO
- * Carrusel completamente personalizado sin dependencias
- * Características: autoplay, swipe, keyboard navigation, accesibilidad ARIA
- * Autor: ACMA
- * Versión: 2.0
- */
 
-class CarouselController {
-  constructor(containerId) {
-    this.root = document.getElementById(containerId);
-    if (!this.root) return;
-
-    this.config = {
-      interval: 4000, // ms entre cambios automáticos
-      transitionSpeed: 600, // ms para la animación
-      swipeThreshold: 40, // px mínimos para swipe
-    };
-
-    this.state = {
-      currentIndex: 0,
-      isAnimating: false,
-      isHovering: false,
-      timer: null,
-    };
-
-    this.elements = this.cacheElements();
-    if (this.elements.items.length === 0) return;
-
-    this.init();
-  }
-
-  /**
-   * Cachea los elementos del DOM
-   */
-  cacheElements() {
-    const inner = this.root.querySelector('.carousel-inner');
-    if (!inner) return { items: [] };
-
-    // Crear track si no existe
-    let track = inner.querySelector('.carousel-track');
-    if (!track) {
-      track = document.createElement('div');
-      track.className = 'carousel-track';
-      const items = Array.from(inner.querySelectorAll('.carousel-item'));
-      items.forEach(item => track.appendChild(item));
-      inner.appendChild(track);
+const cards = [
+    {
+        title: "HEVCA | Fotografía Profesional",
+        videoUrl: "assets/demos/hevca_prueba.webm",
+        url: "https://bichota-tech.github.io/Galeria_Virtual/"
+    },
+    {
+        title: "Excurciones Cartas",
+        videoUrl: "assets/demos/excursionescartas.webm",
+        url: "https://bichota-tech.github.io/excursionescartas/"
+    },
+    {
+        title: "Maquetación Wordpress Limpiezas Violeta y Verde",
+        videoUrl: "assets/demos/iPhone-13-PRO-www.limpiezasvioletayverde.com.webm",
+        url: "https://www.limpiezasvioletayverde.com/"
+    },
+    {
+        title: "Maquetación Wordpress Hidráulica WeldingBoss",
+        videoUrl: "assets/demos/iPhone-13-PRO-hidraulica.cotos.es.webm",
+        url: "https://hidraulica.cotos.es/"
     }
+];
 
-    return {
-      track,
-      items: Array.from(this.root.querySelectorAll('.carousel-item')),
-      indicators: Array.from(this.root.querySelectorAll('.carousel-indicators button')),
-      prevBtn: this.root.querySelector('[data-action="prev"]'),
-      nextBtn: this.root.querySelector('[data-action="next"]'),
-      inner,
-    };
-  }
+let currentRotation = 0;
+let currentIndex = 0;
+let isAnimating = false;
+const orbit = document.getElementById('carouselOrbit');
+const indicatorsContainer = document.getElementById('indicators');
+const rotationStep = 90; // 360 / 4 tarjetas
 
-  /**
-   * Inicializa el carrusel
-   */
-  init() {
-    this.setInitialState();
-    this.attachEventListeners();
-    this.startAutoplay();
-  }
+// Crear las tarjetas
+function createCards() {
+    cards.forEach((card, index) => {
+        const mobileCard = document.createElement('div');
+        mobileCard.className = 'mobile-card';
+        mobileCard.dataset.index = index;
+        mobileCard.innerHTML = `
+                    <div class="mobile-frame">
+                        <div class="mobile-notch"></div>
+                        <div class="mobile-screen">
+                            <div class="video-container">
+                                <video autoplay loop muted playsinline>
+                                    <source src="${card.videoUrl}" type="video/webm">
+                                    <source src="${card.videoUrl}" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-label">${card.title}</div>
+                `;
 
-  /**
-   * Establece el estado inicial
-   */
-  setInitialState() {
-    const activeItem = this.root.querySelector('.carousel-item.active');
-    this.state.currentIndex = activeItem
-      ? this.elements.items.indexOf(activeItem)
-      : 0;
-    this.updateCarousel();
-  }
+        mobileCard.addEventListener('click', () => {
+            if (mobileCard.classList.contains('front')) {
+                window.open(card.url, '_blank');
+            }
+        });
 
-  /**
-   * Adjunta listeners de eventos
-   */
-  attachEventListeners() {
-    // Botones de control
-    if (this.elements.prevBtn) {
-      this.elements.prevBtn.addEventListener('click', () => this.prev());
-    }
-    if (this.elements.nextBtn) {
-      this.elements.nextBtn.addEventListener('click', () => this.next());
-    }
+        orbit.appendChild(mobileCard);
 
-    // Indicadores
-    this.elements.indicators.forEach((btn, idx) => {
-      btn.addEventListener('click', () => this.goToSlide(idx));
+        // Crear indicadores
+        const indicator = document.createElement('div');
+        indicator.className = 'indicator';
+        indicator.addEventListener('click', () => goToSlide(index));
+        indicatorsContainer.appendChild(indicator);
     });
 
-    // Autoplay - pausar en hover
-    this.root.addEventListener('mouseenter', () => this.pauseAutoplay());
-    this.root.addEventListener('mouseleave', () => this.resumeAutoplay());
-
-    // Swipe en mobile
-    this.attachSwipeListeners();
-
-    // Keyboard navigation
-    this.attachKeyboardListeners();
-  }
-
-  /**
-   * Gestiona el swipe/drag en móvil
-   */
-  attachSwipeListeners() {
-    let startX = 0;
-    let delta = 0;
-
-    this.root.addEventListener('touchstart', (e) => {
-      startX = e.touches[0].clientX;
-      this.pauseAutoplay();
-    }, { passive: true });
-
-    this.root.addEventListener('touchmove', (e) => {
-      if (!startX) return;
-      delta = e.touches[0].clientX - startX;
-
-      // Efecto visual de arrastre
-      if (Math.abs(delta) > 6) {
-        this.elements.track.style.transition = 'none';
-        const percent = (-this.state.currentIndex * 100) + (delta / this.root.clientWidth) * 100;
-        this.elements.track.style.transform = `translateX(${percent}%)`;
-      }
-    }, { passive: true });
-
-    this.root.addEventListener('touchend', () => {
-      this.elements.track.style.transition = '';
-
-      if (Math.abs(delta) > this.config.swipeThreshold) {
-        if (delta < 0) this.next();
-        else this.prev();
-      } else {
-        this.updateCarousel();
-      }
-
-      startX = 0;
-      delta = 0;
-      this.resumeAutoplay();
-    });
-  }
-
-  /**
-   * Navegación con teclado
-   */
-  attachKeyboardListeners() {
-    this.root.addEventListener('keydown', (e) => {
-      switch (e.key) {
-        case 'ArrowLeft':
-          e.preventDefault();
-          this.prev();
-          break;
-        case 'ArrowRight':
-          e.preventDefault();
-          this.next();
-          break;
-      }
-    });
-  }
-
-  /**
-   * Navega a una slide específica
-   * @param {number} index - Índice de la slide
-   */
-  goToSlide(index) {
-    if (this.state.isAnimating) return;
-    
-    index = (index + this.elements.items.length) % this.elements.items.length;
-    this.state.currentIndex = index;
-    this.updateCarousel();
-    this.restartAutoplay();
-  }
-
-  /**
-   * Siguiente slide
-   */
-  next() {
-    this.goToSlide(this.state.currentIndex + 1);
-  }
-
-  /**
-   * Slide anterior
-   */
-  prev() {
-    this.goToSlide(this.state.currentIndex - 1);
-  }
-
-  /**
-   * Actualiza la posición del carrusel y estados ARIA
-   */
-  updateCarousel() {
-    const translateX = -100 * this.state.currentIndex;
-    
-    this.state.isAnimating = true;
-    this.elements.track.style.transform = `translateX(${translateX}%)`;
-
-    setTimeout(() => {
-      this.state.isAnimating = false;
-    }, this.config.transitionSpeed);
-
-    // Actualizar items activos
-    this.elements.items.forEach((item, idx) => {
-      const isActive = idx === this.state.currentIndex;
-      item.classList.toggle('active', isActive);
-      item.setAttribute('aria-hidden', !isActive);
-    });
-
-    // Actualizar indicadores
-    this.elements.indicators.forEach((btn, idx) => {
-      const isActive = idx === this.state.currentIndex;
-      btn.classList.toggle('active', isActive);
-      btn.setAttribute('aria-selected', isActive);
-      btn.setAttribute('aria-current', isActive ? 'page' : undefined);
-    });
-  }
-
-  /**
-   * Inicia el autoplay
-   */
-  startAutoplay() {
-    this.state.timer = setInterval(() => {
-      if (!this.state.isHovering) {
-        this.next();
-      }
-    }, this.config.interval);
-  }
-
-  /**
-   * Pausa el autoplay
-   */
-  pauseAutoplay() {
-    this.state.isHovering = true;
-    if (this.state.timer) {
-      clearInterval(this.state.timer);
-      this.state.timer = null;
-    }
-  }
-
-  /**
-   * Reanuda el autoplay
-   */
-  resumeAutoplay() {
-    this.state.isHovering = false;
-    this.startAutoplay();
-  }
-
-  /**
-   * Reinicia el autoplay
-   */
-  restartAutoplay() {
-    this.pauseAutoplay();
-    this.resumeAutoplay();
-  }
-
-  /**
-   * Destruye la instancia del carrusel
-   */
-  destroy() {
-    if (this.state.timer) {
-      clearInterval(this.state.timer);
-    }
-  }
+    updateVisibility();
+    updateIndicators();
 }
 
-// Inicializar carrusel cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', () => {
-  const carousel = new CarouselController('mycarousel');
-  
-  // Delegación de eventos para demo buttons
-  document.getElementById('mycarousel')?.addEventListener('click', (e) => {
-    const demoBtn = e.target.closest('.demo-btn');
-    if (demoBtn) {
-      const demo = demoBtn.getAttribute('data-demo');
-      if (demo) {
-        console.log(`Demo activo: ${demo}`);
-        // Aquí puedes añadir lógica para modal o navegación
-      }
-    }
-  });
+// Actualizar visibilidad de las tarjetas según rotación
+function updateVisibility() {
+    const mobileCards = document.querySelectorAll('.mobile-card');
+    const normalizedRotation = ((currentRotation % 360) + 360) % 360;
+
+    mobileCards.forEach((card, index) => {
+        const cardAngle = (index * rotationStep) % 360;
+        const relativeAngle = ((cardAngle - normalizedRotation) % 360 + 360) % 360;
+
+        card.classList.remove('front', 'side', 'back');
+
+        if (relativeAngle < 45 || relativeAngle > 315) {
+            card.classList.add('front');
+        } else if (relativeAngle >= 45 && relativeAngle <= 135) {
+            card.classList.add('side');
+        } else if (relativeAngle >= 225 && relativeAngle <= 315) {
+            card.classList.add('side');
+        } else {
+            card.classList.add('back');
+        }
+    });
+}
+
+// Actualizar indicadores
+function updateIndicators() {
+    const indicators = document.querySelectorAll('.indicator');
+    indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === currentIndex);
+    });
+}
+
+// Rotar el carrusel
+function rotateCarousel() {
+    orbit.style.transform = `rotateY(${-currentRotation}deg)`;
+    updateVisibility();
+    updateIndicators();
+}
+
+// Navegación hacia adelante
+function nextSlide() {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    currentRotation += rotationStep;
+    currentIndex = (currentIndex + 1) % cards.length;
+    rotateCarousel();
+
+    setTimeout(() => {
+        isAnimating = false;
+    });
+}
+
+// Navegación hacia atrás
+function prevSlide() {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    currentRotation -= rotationStep;
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+    rotateCarousel();
+
+    setTimeout(() => {
+        isAnimating = false;
+    });
+}
+
+// Ir a una diapositiva específica
+function goToSlide(index) {
+    if (isAnimating || index === currentIndex) return;
+    isAnimating = true;
+
+    const diff = index - currentIndex;
+    const shortestPath = diff > cards.length / 2 ? diff - cards.length :
+        diff < -cards.length / 2 ? diff + cards.length : diff;
+
+    currentRotation += shortestPath * rotationStep;
+    currentIndex = index;
+    rotateCarousel();
+
+    setTimeout(() => {
+        isAnimating = false;
+    });
+}
+
+// Event listeners
+document.getElementById('nextBtn').addEventListener('click', () => {
+    clearInterval(autoRotateInterval);
+    nextSlide();
+    startAutoRotate();
 });
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+    clearInterval(autoRotateInterval);
+    prevSlide();
+    startAutoRotate();
+});
+
+// Rotación automática continua y suave
+let autoRotateInterval;
+
+function startAutoRotate() {
+    autoRotateInterval = setInterval(() => {
+        nextSlide();
+    }, 3500);
+}
+
+// Soporte para teclado
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+        clearInterval(autoRotateInterval);
+        prevSlide();
+        startAutoRotate();
+    }
+    if (e.key === 'ArrowRight') {
+        clearInterval(autoRotateInterval);
+        nextSlide();
+        startAutoRotate();
+    }
+});
+
+// Soporte para gestos táctiles
+let touchStartX = 0;
+let touchEndX = 0;
+
+orbit.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+});
+
+orbit.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+});
+
+function handleSwipe() {
+    const swipeThreshold = 50;
+    if (touchEndX < touchStartX - swipeThreshold) {
+        clearInterval(autoRotateInterval);
+        nextSlide();
+        startAutoRotate();
+    }
+    if (touchEndX > touchStartX + swipeThreshold) {
+        clearInterval(autoRotateInterval);
+        prevSlide();
+        startAutoRotate();
+    }
+}
+
+// Inicializar
+createCards();
+startAutoRotate();

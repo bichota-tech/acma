@@ -48,7 +48,7 @@ class PortfolioEffects {
   /**
    * Inicializa el efecto de partículas
    */
-  initParticles() {
+   initParticles() {
     const particlesContainer = document.getElementById('particles-js');
     if (!particlesContainer || typeof particlesJS === 'undefined') {
       console.warn('Particles.js no está disponible o contenedor no existe');

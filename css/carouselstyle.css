@@ -4,12 +4,11 @@
 
 .carousel-container {
     position: relative;
-    width: 100%;
+    width: 80%;
     max-width: 1400px;
     height: 100vh;
     max-height: 100vh;
     perspective: 2000px;
-    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,11 +38,37 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    width: clamp(240px, 18vw, 350px);
-    height: clamp(480px, 45vh, 650px);
+    width: 210px;
+    height: auto;
     transform-style: preserve-3d;
     cursor: pointer;
     transition: opacity 0.6s ease, filter 0.6s ease;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px #3AB7BF33;
+}
+
+#globalTooltip{
+  position: absolute;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  background: #111;
+  color: #fff;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  z-index: 9999;
+}
+
+@media (max-width: 550px) {
+    .carousel-container {
+        width: 100%;
+    }
+
+    .mobile-card {
+        width: 210px;
+        height: auto;
+    }
 }
 
 .mobile-frame {
@@ -86,6 +111,7 @@
     position: relative;
     /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
     overflow: hidden;
+    cursor: pointer;
 }
 
 .video-container video {
@@ -107,20 +133,20 @@
 
 .card-label {
     position: absolute;
-    bottom: clamp(-60px, -5vh, -90px);
+    bottom: clamp(-70px, -5vh, -90px);
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(255, 255, 255, 0.95);
-    padding: clamp(8px, 1.5vh, 12px) clamp(16px, 3vw, 24px);
+    background: transparent;
+    padding: clamp(8px, 1.5vh, 12px);
     border-radius: clamp(12px, 2vw, 20px);
+    border: 2px solid #3AB7BF;
     font-weight: 600;
     font-size: clamp(0.8rem, 1.5vw, 1rem);
-    color: #667eea;
+    color: var(--color-fondo-claro);
     white-space: nowrap;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px #3AB7BF33;
     opacity: 0;
     transition: opacity 0.5s;
-    pointer-events: none;
 }
 
 /* Posicionamiento orbital */
@@ -171,11 +197,11 @@
     transform: translateY(-50%);
     width: clamp(45px, 6vw, 60px);
     height: clamp(45px, 6vw, 60px);
+    font-size: clamp(20px, 3vw, 24px);
     border-radius: 50%;
     background: rgba(245, 81, 57, 0.1);
     border: 2px solid var(--color-acento-primario);
     color: var(--color-acento-primario);
-    font-size: clamp(20px, 3vw, 24px);
     cursor: pointer;
     z-index: 10;
     transition: all 0.3s;
@@ -206,7 +232,7 @@
 /* Indicadores */
 .indicators {
     position: absolute;
-    bottom: clamp(25px, 2vh, 40px);
+    bottom: clamp(30px, 2vh, 40px);
     left: 50%;
     transform: translateX(-50%);
     display: flex;

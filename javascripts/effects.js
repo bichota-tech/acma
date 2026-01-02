@@ -81,7 +81,7 @@ class PortfolioEffects {
           }
         },
         size: {
-          value: 3,
+          value: 5,
           random: true,
           anim: {
             enable: true,
@@ -95,7 +95,7 @@ class PortfolioEffects {
           distance: 120,
           color: '#3AB7BF',
           opacity: 0.2,
-          width: 1
+          width: 2
         },
         move: {
           enable: true,
@@ -106,7 +106,7 @@ class PortfolioEffects {
           out_mode: 'out',
           bounce: false,
           attract: {
-            enable: false,
+            enable: true,
             rotateX: 600,
             rotateY: 1200
           }

@@ -12,12 +12,12 @@ const cards = [
     },
     {
         title: "Maquetación Wordpress Limpiezas Violeta y Verde",
-        videoUrl: "assets/demos/iPhone-13-PRO-www.limpiezasvioletayverde.com.webm",
+        videoUrl: "assets/demos/iPhone-13-PROlimpiezasvioletayverde.webm",
         url: "https://www.limpiezasvioletayverde.com/"
     },
     {
         title: "Maquetación Wordpress Hidráulica WeldingBoss",
-        videoUrl: "assets/demos/iPhone-13-PRO-hidraulica.cotos.es.webm",
+        videoUrl: "assets/demos/iPhone-13-PRO-hidraulica.webm",
         url: "https://hidraulica.cotos.es/"
     }
 ];
@@ -30,35 +30,47 @@ const indicatorsContainer = document.getElementById('indicators');
 const rotationStep = 90; // 360 / 4 tarjetas
 
 // Crear las tarjetas
+
 function createCards() {
     cards.forEach((card, index) => {
         const mobileCard = document.createElement('div');
         mobileCard.className = 'mobile-card';
         mobileCard.dataset.index = index;
+
         mobileCard.innerHTML = `
-                    <div class="mobile-frame">
-                        <div class="mobile-notch"></div>
-                        <div class="mobile-screen">
-                            <div class="video-container">
-                                <video autoplay loop muted playsinline>
-                                    <source src="${card.videoUrl}" type="video/webm">
-                                    <source src="${card.videoUrl}" type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
+            <div class="mobile-frame">
+                <div class="mobile-notch"></div>
+                <div class="mobile-screen">
+                    <div class="video-container">
+                        <video autoplay loop muted playsinline>
+                            <source src="${card.videoUrl}" type="video/webm">
+                        </video>
                     </div>
-                    <div class="card-label">${card.title}</div>
-                `;
+                </div>
+            </div>
+            <div class="card-label">${card.title}</div>
+
+        `;
+
+        // 👉 CONTROL EXPLÍCITO DE HOVER
+        mobileCard.addEventListener('mouseenter', () => {
+            if (mobileCard.classList.contains('front')) {
+                mobileCard.classList.add('is-hovered');
+            }
+        });
+
+        mobileCard.addEventListener('mouseleave', () => {
+            mobileCard.classList.remove('is-hovered');
+        });
 
         mobileCard.addEventListener('click', () => {
             if (mobileCard.classList.contains('front')) {
-                window.open(card.url, '_blank');
+                window.open(card.url, '_blank', 'noopener,noreferrer');
             }
         });
 
         orbit.appendChild(mobileCard);
 
-        // Crear indicadores
         const indicator = document.createElement('div');
         indicator.className = 'indicator';
         indicator.addEventListener('click', () => goToSlide(index));
@@ -69,6 +81,31 @@ function createCards() {
     updateIndicators();
 }
 
+// Tooltip global para la tarjeta frontal 
+const tooltip = document.getElementById('globalTooltip');
+
+document.addEventListener('mousemove', (e) => {
+    const frontCard = document.querySelector('.mobile-card.front');
+    if (!frontCard) return;
+
+    const rect = frontCard.getBoundingClientRect();
+    const isInside =
+        e.clientX >= rect.left &&
+        e.clientX <= rect.right &&
+        e.clientY >= rect.top &&
+        e.clientY <= rect.bottom;
+
+    if (isInside) {
+        tooltip.style.opacity = '1';
+        tooltip.style.left = `${e.clientX + 12}px`;
+        tooltip.style.top = `${e.clientY + 12}px`;
+    } else {
+        tooltip.style.opacity = '0';
+    }
+});
+
+
+
 // Actualizar visibilidad de las tarjetas según rotación
 function updateVisibility() {
     const mobileCards = document.querySelectorAll('.mobile-card');
@@ -78,13 +115,14 @@ function updateVisibility() {
         const cardAngle = (index * rotationStep) % 360;
         const relativeAngle = ((cardAngle - normalizedRotation) % 360 + 360) % 360;
 
-        card.classList.remove('front', 'side', 'back');
+        card.classList.remove('front', 'side', 'back', 'is-hovered');
 
         if (relativeAngle < 45 || relativeAngle > 315) {
             card.classList.add('front');
-        } else if (relativeAngle >= 45 && relativeAngle <= 135) {
-            card.classList.add('side');
-        } else if (relativeAngle >= 225 && relativeAngle <= 315) {
+        } else if (
+            (relativeAngle >= 45 && relativeAngle <= 135) ||
+            (relativeAngle >= 225 && relativeAngle <= 315)
+        ) {
             card.classList.add('side');
         } else {
             card.classList.add('back');
@@ -172,7 +210,7 @@ let autoRotateInterval;
 function startAutoRotate() {
     autoRotateInterval = setInterval(() => {
         nextSlide();
-    }, 3500);
+    }, 7000);
 }
 
 // Soporte para teclado

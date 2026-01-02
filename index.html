@@ -41,9 +41,7 @@
     </head>
 
     <body>
-        <div id="particles-layer">
-           
-        </div>
+        <div id="particles-js"></div>
         <!-- HEADER Y NAVEGACIÓN -->
         <header role="banner">
             <nav role="navigation" aria-label="Navegación principal">
@@ -91,19 +89,19 @@
                     </button>
                 </div>
             </section>
-
             <!-- SECCIÓN 2: PROYECTOS -->
             <section id="proyectos" class="section projects" aria-labelledby="projects-title">
+                
                 <div class="section-header">
                     <div class="see-more">
                         <a href="https://github.com/bichota-tech" class="tooltip" target="_blank"
                             rel="noopener noreferrer" aria-label="Ver mi perfil de GitHub">
-                            <i class="bi bi-github" aria-hidden="true"></i>
-                            <span class="tooltip-text">Ver en GitHub</span>
+                            <i class="bi bi-github"></i>
+                            <span class="tooltip-text">Ver Perfil</span>
                         </a>
                         <a href="./assets/docs/carta_recomendación-adalid_martinez.pdf" class="btn-cv tooltip" download>
                             <i class="bi bi-envelope-paper-heart"></i>
-                            <span class="tooltip-text"> Ver recomendación</span>
+                            <span class="tooltip-text">Recomendada</span>
                         </a>
                     </div>
                 </div>
@@ -116,12 +114,14 @@
                         <div class="carousel-orbit" id="carouselOrbit">
                             <!-- Las tarjetas se generarán con JavaScript -->
                         </div>
+                        
                     </div>
-
+                    
                     <button class="nav-button prev-btn" id="prevBtn">‹</button>
                     <button class="nav-button next-btn" id="nextBtn">›</button>
 
                     <div class="indicators" id="indicators"></div>
+                    <div id="globalTooltip">Visitar página</div>
                 </div>
             </section>
 

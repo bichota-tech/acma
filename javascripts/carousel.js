@@ -1,259 +1,383 @@
+/**
+ * ============================================================================
+ * CAROUSEL 3D CONTROLLER
+ * ============================================================================
+ * Gestiona el carrusel 3D con loop infinito, pausa automática, eventos táctiles,
+ * teclado y sincronización de indicadores.
+ * 
+ * Estructura esperada en HTML:
+ * - Contenedor: #carousel (clase carouselfame)
+ * - Cards: .cardfame con clases de estado (activefame, leftfame, rightfame, hiddenfame)
+ * - Indicadores: #indicators (contenedor vacío)
+ * ============================================================================
+ */
 
-const cards = [
-    {
-        title: "HEVCA | Fotografía Profesional",
-        videoUrl: "assets/demos/hevca_prueba.webm",
-        url: "https://bichota-tech.github.io/Galeria_Virtual/"
-    },
-    {
-        title: "Excurciones Cartas",
-        videoUrl: "assets/demos/excursionescartas.webm",
-        url: "https://bichota-tech.github.io/excursionescartas/"
-    },
-    {
-        title: "Maquetación Wordpress Limpiezas Violeta y Verde",
-        videoUrl: "assets/demos/iPhone-13-PROlimpiezasvioletayverde.webm",
-        url: "https://www.limpiezasvioletayverde.com/"
-    },
-    {
-        title: "Maquetación Wordpress Hidráulica WeldingBoss",
-        videoUrl: "assets/demos/iPhone-13-PRO-hidraulica.webm",
-        url: "https://hidraulica.cotos.es/"
-    }
-];
+// ============================================================================
+// CONFIGURACIÓN Y VARIABLES GLOBALES
+// ============================================================================
 
-let currentRotation = 0;
+// Constantes de configuración
+const CAROUSEL_SELECTOR = document.getElementById('carousel');
+const INDICATORS_SELECTOR = document.getElementById('indicators');
+const CARD_SELECTOR = document.querySelectorAll('.cardfame');
+const AUTOPLAY_DURATION = 8000; // 8 segundos antes de avanzar
+const PAUSE_ON_HOVER_DELAY = 2000; // 2 segundos para reactivar tras hover
+const SWIPE_THRESHOLD = 50; // Píxeles mínimos para detectar swipe
+const TRANSITION_DURATION = 800; // 0.8s (coincide con CSS)
+
+// Estados del carrusel
 let currentIndex = 0;
-let isAnimating = false;
-const orbit = document.getElementById('carouselOrbit');
-const indicatorsContainer = document.getElementById('indicators');
-const rotationStep = 90; // 360 / 4 tarjetas
-
-// Crear las tarjetas
-
-function createCards() {
-    cards.forEach((card, index) => {
-        const mobileCard = document.createElement('div');
-        mobileCard.className = 'mobile-card';
-        mobileCard.dataset.index = index;
-
-        mobileCard.innerHTML = `
-            <div class="mobile-frame">
-                <div class="mobile-notch"></div>
-                <div class="mobile-screen">
-                    <div class="video-container">
-                        <video autoplay loop muted playsinline>
-                            <source src="${card.videoUrl}" type="video/webm">
-                        </video>
-                    </div>
-                </div>
-            </div>
-            <div class="card-label">${card.title}</div>
-
-        `;
-
-        // 👉 CONTROL EXPLÍCITO DE HOVER
-        mobileCard.addEventListener('mouseenter', () => {
-            if (mobileCard.classList.contains('front')) {
-                mobileCard.classList.add('is-hovered');
-            }
-        });
-
-        mobileCard.addEventListener('mouseleave', () => {
-            mobileCard.classList.remove('is-hovered');
-        });
-
-        mobileCard.addEventListener('click', () => {
-            if (mobileCard.classList.contains('front')) {
-                window.open(card.url, '_blank', 'noopener,noreferrer');
-            }
-        });
-
-        orbit.appendChild(mobileCard);
-
-        const indicator = document.createElement('div');
-        indicator.className = 'indicator';
-        indicator.addEventListener('click', () => goToSlide(index));
-        indicatorsContainer.appendChild(indicator);
-    });
-
-    updateVisibility();
-    updateIndicators();
-}
-
-// Tooltip global para la tarjeta frontal 
-const tooltip = document.getElementById('globalTooltip');
-
-document.addEventListener('mousemove', (e) => {
-    const frontCard = document.querySelector('.mobile-card.front');
-    if (!frontCard) return;
-
-    const rect = frontCard.getBoundingClientRect();
-    const isInside =
-        e.clientX >= rect.left &&
-        e.clientX <= rect.right &&
-        e.clientY >= rect.top &&
-        e.clientY <= rect.bottom;
-
-    if (isInside) {
-        tooltip.style.opacity = '1';
-        tooltip.style.left = `${e.clientX + 12}px`;
-        tooltip.style.top = `${e.clientY + 12}px`;
-    } else {
-        tooltip.style.opacity = '0';
-    }
-});
-
-
-
-// Actualizar visibilidad de las tarjetas según rotación
-function updateVisibility() {
-    const mobileCards = document.querySelectorAll('.mobile-card');
-    const normalizedRotation = ((currentRotation % 360) + 360) % 360;
-
-    mobileCards.forEach((card, index) => {
-        const cardAngle = (index * rotationStep) % 360;
-        const relativeAngle = ((cardAngle - normalizedRotation) % 360 + 360) % 360;
-
-        card.classList.remove('front', 'side', 'back', 'is-hovered');
-
-        if (relativeAngle < 45 || relativeAngle > 315) {
-            card.classList.add('front');
-        } else if (
-            (relativeAngle >= 45 && relativeAngle <= 135) ||
-            (relativeAngle >= 225 && relativeAngle <= 315)
-        ) {
-            card.classList.add('side');
-        } else {
-            card.classList.add('back');
-        }
-    });
-}
-
-// Actualizar indicadores
-function updateIndicators() {
-    const indicators = document.querySelectorAll('.indicator');
-    indicators.forEach((indicator, index) => {
-        indicator.classList.toggle('active', index === currentIndex);
-    });
-}
-
-// Rotar el carrusel
-function rotateCarousel() {
-    orbit.style.transform = `rotateY(${-currentRotation}deg)`;
-    updateVisibility();
-    updateIndicators();
-}
-
-// Navegación hacia adelante
-function nextSlide() {
-    if (isAnimating) return;
-    isAnimating = true;
-
-    currentRotation += rotationStep;
-    currentIndex = (currentIndex + 1) % cards.length;
-    rotateCarousel();
-
-    setTimeout(() => {
-        isAnimating = false;
-    });
-}
-
-// Navegación hacia atrás
-function prevSlide() {
-    if (isAnimating) return;
-    isAnimating = true;
-
-    currentRotation -= rotationStep;
-    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-    rotateCarousel();
-
-    setTimeout(() => {
-        isAnimating = false;
-    });
-}
-
-// Ir a una diapositiva específica
-function goToSlide(index) {
-    if (isAnimating || index === currentIndex) return;
-    isAnimating = true;
-
-    const diff = index - currentIndex;
-    const shortestPath = diff > cards.length / 2 ? diff - cards.length :
-        diff < -cards.length / 2 ? diff + cards.length : diff;
-
-    currentRotation += shortestPath * rotationStep;
-    currentIndex = index;
-    rotateCarousel();
-
-    setTimeout(() => {
-        isAnimating = false;
-    });
-}
-
-// Event listeners
-document.getElementById('nextBtn').addEventListener('click', () => {
-    clearInterval(autoRotateInterval);
-    nextSlide();
-    startAutoRotate();
-});
-
-document.getElementById('prevBtn').addEventListener('click', () => {
-    clearInterval(autoRotateInterval);
-    prevSlide();
-    startAutoRotate();
-});
-
-// Rotación automática continua y suave
-let autoRotateInterval;
-
-function startAutoRotate() {
-    autoRotateInterval = setInterval(() => {
-        nextSlide();
-    }, 7000);
-}
-
-// Soporte para teclado
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') {
-        clearInterval(autoRotateInterval);
-        prevSlide();
-        startAutoRotate();
-    }
-    if (e.key === 'ArrowRight') {
-        clearInterval(autoRotateInterval);
-        nextSlide();
-        startAutoRotate();
-    }
-});
-
-// Soporte para gestos táctiles
+let totalCards = 0;
+let isPaused = false;
+let isTransitioning = false;
+let autoplayTimer = null;
+let hoverTimer = null;
 let touchStartX = 0;
-let touchEndX = 0;
 
-orbit.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-});
+// Referencias a elementos del DOM
+let carouselElement = null;
+let indicatorsContainer = null;
+let cards = null;
 
-orbit.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-});
+// ============================================================================
+// INICIALIZACIÓN
+// ============================================================================
 
-function handleSwipe() {
-    const swipeThreshold = 50;
-    if (touchEndX < touchStartX - swipeThreshold) {
-        clearInterval(autoRotateInterval);
-        nextSlide();
-        startAutoRotate();
-    }
-    if (touchEndX > touchStartX + swipeThreshold) {
-        clearInterval(autoRotateInterval);
-        prevSlide();
-        startAutoRotate();
-    }
+/**
+ * Inicializa el carrusel cuando el DOM está listo
+ */
+function initCarousel() {
+  // Obtener referencias a elementos principales
+  carouselElement = document.querySelector(CAROUSEL_SELECTOR);
+  indicatorsContainer = document.querySelector(INDICATORS_SELECTOR);
+  cards = document.querySelectorAll(CARD_SELECTOR);
+  
+  // Validar elementos necesarios
+  if (!carouselElement || !cards.length) {
+    console.error('Error: No se encontró el carousel o las cards');
+    return;
+  }
+  
+  totalCards = cards.length;
+  
+  // Crear indicadores dinámicamente
+  createIndicators();
+  
+  // Establecer estado inicial
+  updateCarousel(0);
+  
+  // Configurar event listeners
+  setupEventListeners();
+  
+  // Iniciar autoplay
+  startAutoplay();
+  
+  console.log(`✓ Carousel inicializado con ${totalCards} cards`);
 }
 
-// Inicializar
-createCards();
-startAutoRotate();
+/**
+ * Crea los indicadores dinámicamente en el contenedor #indicators
+ */
+function createIndicators() {
+  if (!indicatorsContainer) return;
+  
+  // Limpiar indicadores previos (si existen)
+  indicatorsContainer.innerHTML = '';
+  
+  // Crear un indicador por cada card
+  for (let i = 0; i < totalCards; i++) {
+    const indicator = document.createElement('div');
+    indicator.className = 'indicator';
+    
+    // Marcar el primer indicador como activo
+    if (i === 0) {
+      indicator.classList.add('indicator-active');
+    }
+    
+    // Click en indicador navega a esa posición
+    indicator.addEventListener('click', () => {
+      if (!isTransitioning) {
+        goToCard(i);
+      }
+    });
+    
+    indicatorsContainer.appendChild(indicator);
+  }
+  
+  console.log(`✓ ${totalCards} indicadores creados`);
+}
+
+// ============================================================================
+// CONTROL PRINCIPAL DEL CARRUSEL
+// ============================================================================
+
+/**
+ * Actualiza las clases de las cards según el índice actual
+ * Distribuye las clases: active, left, right, hidden
+ * 
+ * @param {number} index - Índice de la card activa
+ */
+function updateCarousel(index) {
+  // Validar índice dentro del rango
+  currentIndex = (index % totalCards + totalCards) % totalCards;
+  
+  // Calcular índices para cada posición
+  const leftIndex = (currentIndex - 1 + totalCards) % totalCards;
+  const rightIndex = (currentIndex + 1) % totalCards;
+  
+  // Remover todas las clases de estado
+  cards.forEach(card => {
+    card.classList.remove('activefame', 'leftfame', 'rightfame', 'hiddenfame');
+  });
+  
+  // Asignar nuevas clases según posición
+  cards[currentIndex].classList.add('activefame');
+  cards[leftIndex].classList.add('leftfame');
+  cards[rightIndex].classList.add('rightfame');
+  
+  // El resto quedan ocultas
+  for (let i = 0; i < totalCards; i++) {
+    if (i !== currentIndex && i !== leftIndex && i !== rightIndex) {
+      cards[i].classList.add('hiddenfame');
+    }
+  }
+  
+  // Actualizar indicadores
+  updateIndicators();
+  
+  // Marcar que NO estamos en transición tras actualizar
+  isTransitioning = false;
+}
+
+/**
+ * Actualiza el estado visual de los indicadores
+ * Solo el indicador de la card activa tendrá la clase 'indicator-active'
+ */
+function updateIndicators() {
+  const indicators = document.querySelectorAll('.indicator');
+  
+  indicators.forEach((indicator, index) => {
+    if (index === currentIndex) {
+      indicator.classList.add('indicator-active');
+    } else {
+      indicator.classList.remove('indicator-active');
+    }
+  });
+}
+
+/**
+ * Navega a una card específica
+ * @param {number} index - Índice de la card destino
+ */
+function goToCard(index) {
+  if (isTransitioning) return;
+  
+  // Marcar como en transición
+  isTransitioning = true;
+  
+  // Actualizar carousel
+  updateCarousel(index);
+  
+  // Resetear autoplay
+  restartAutoplay();
+}
+
+/**
+ * Avanza a la siguiente card
+ */
+function nextCard() {
+  goToCard(currentIndex + 1);
+}
+
+/**
+ * Retrocede a la card anterior
+ */
+function prevCard() {
+  goToCard(currentIndex - 1);
+}
+
+// ============================================================================
+// AUTOPLAY
+// ============================================================================
+
+/**
+ * Inicia el autoplay automático que avanza cada AUTOPLAY_DURATION ms
+ */
+function startAutoplay() {
+  if (autoplayTimer) clearInterval(autoplayTimer);
+  
+  autoplayTimer = setInterval(() => {
+    if (!isPaused) {
+      nextCard();
+    }
+  }, AUTOPLAY_DURATION);
+}
+
+/**
+ * Reinicia el autoplay (se usa después de navegación manual)
+ */
+function restartAutoplay() {
+  startAutoplay();
+}
+
+/**
+ * Detiene el autoplay
+ */
+function stopAutoplay() {
+  if (autoplayTimer) {
+    clearInterval(autoplayTimer);
+    autoplayTimer = null;
+  }
+}
+
+// ============================================================================
+// EVENT LISTENERS
+// ============================================================================
+
+/**
+ * Configura todos los event listeners del carousel
+ */
+function setupEventListeners() {
+  // Eventos de teclado
+  document.addEventListener('keydown', handleKeyboardEvent);
+  
+  // Eventos táctiles (swipe)
+  carouselElement.addEventListener('touchstart', handleTouchStart, false);
+  carouselElement.addEventListener('touchend', handleTouchEnd, false);
+  
+  // Eventos de hover (pausa autoplay)
+  carouselElement.addEventListener('mouseenter', handleMouseEnter);
+  carouselElement.addEventListener('mouseleave', handleMouseLeave);
+  
+  // Evento click en las cards (solo la activa abre el link)
+  cards.forEach((card, index) => {
+    card.addEventListener('click', (e) => handleCardClick(e, index));
+  });
+  
+  console.log('✓ Event listeners configurados');
+}
+
+/**
+ * Maneja eventos de teclado
+ * - Flecha derecha → siguiente card
+ * - Flecha izquierda → card anterior
+ * - Enter → abre link si la card es activa
+ * 
+ * @param {KeyboardEvent} e - Evento de teclado
+ */
+function handleKeyboardEvent(e) {
+  if (isTransitioning) return;
+  
+  switch (e.key) {
+    case 'ArrowRight':
+      e.preventDefault();
+      nextCard();
+      break;
+    case 'ArrowLeft':
+      e.preventDefault();
+      prevCard();
+      break;
+    case 'Enter':
+      // Activar el link solo si hay una card activa
+      const activeCard = cards[currentIndex];
+      const link = activeCard.querySelector('a');
+      if (link) {
+        link.click();
+      }
+      break;
+  }
+}
+
+/**
+ * Maneja el inicio del swipe (táctil)
+ * Registra la posición inicial del toque
+ * 
+ * @param {TouchEvent} e - Evento táctil
+ */
+function handleTouchStart(e) {
+  touchStartX = e.touches[0].clientX;
+}
+
+/**
+ * Maneja el final del swipe (táctil)
+ * Calcula la distancia y dirección del swipe
+ * - Swipe derecha (positivo) → card anterior
+ * - Swipe izquierda (negativo) → siguiente card
+ * 
+ * @param {TouchEvent} e - Evento táctil
+ */
+function handleTouchEnd(e) {
+  if (isTransitioning) return;
+  
+  const touchEndX = e.changedTouches[0].clientX;
+  const difference = touchStartX - touchEndX;
+  
+  // Solo actuar si el swipe supera el umbral
+  if (Math.abs(difference) > SWIPE_THRESHOLD) {
+    if (difference > 0) {
+      // Swipe izquierda → siguiente
+      nextCard();
+    } else {
+      // Swipe derecha → anterior
+      prevCard();
+    }
+  }
+}
+
+/**
+ * Maneja el evento mouseenter (cursor entra al carousel)
+ * Pausa el autoplay
+ */
+function handleMouseEnter() {
+  isPaused = true;
+  console.log('⏸ Carousel pausado (hover)');
+}
+
+/**
+ * Maneja el evento mouseleave (cursor sale del carousel)
+ * Reactiva el autoplay tras una pausa
+ */
+function handleMouseLeave() {
+  // Reactivar tras PAUSE_ON_HOVER_DELAY ms
+  if (hoverTimer) clearTimeout(hoverTimer);
+  
+  hoverTimer = setTimeout(() => {
+    isPaused = false;
+    console.log('▶ Carousel reanudado (hover salió)');
+  }, PAUSE_ON_HOVER_DELAY);
+}
+
+/**
+ * Maneja el evento click en las cards
+ * SOLO la card activa permite navegar al link externo
+ * Las cards laterales y ocultas no son clicables
+ * 
+ * @param {MouseEvent} e - Evento de click
+ * @param {number} index - Índice de la card clickeada
+ */
+function handleCardClick(e, index) {
+  // Si NO es la card activa, prevenir navegación
+  if (index !== currentIndex) {
+    e.preventDefault();
+    console.log('ℹ Click bloqueado: solo la card activa es clicable');
+    return;
+  }
+  
+  // Si es la card activa, permitir que el link se siga naturalmente
+  console.log('✓ Card activa clickeada, navegación permitida');
+}
+
+// ============================================================================
+// INICIAR CUANDO EL DOM ESTÉ LISTO
+// ============================================================================
+
+/**
+ * Ejecuta initCarousel cuando el DOM esté completamente cargado
+ */
+if (document.readyState === 'loading') {
+  // DOM aún cargando
+  document.addEventListener('DOMContentLoaded', initCarousel);
+} else {
+  // DOM ya cargado
+  initCarousel();
+}

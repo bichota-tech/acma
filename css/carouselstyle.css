@@ -1,279 +1,146 @@
-/* =====================================================
-    Estilos para el carrusel 3D de móviles
-    ===================================================== */
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
 
-.carousel-container {
-    position: relative;
-    width: 80%;
-    max-width: 1400px;
-    height: 100vh;
-    max-height: 100vh;
-    perspective: 2000px;
+.bodycardfame {
+    background-color: transparent;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 90vh;  
+    cursor: default;
+    margin-top: 5rem;
+    
 }
 
-.carousel-stage {
-    position: relative;
+.carousel-wrapperfame {
     width: 100%;
-    flex: 1;
-    max-height: calc(100vh - 150px);
+    height: 90vh;
+    padding: 1rem;
+    overflow: hidden;
+    position: relative;
+    perspective: 2000px;
+}
+
+.carouselfame {
+    position: relative;
+    height: 100%;
+    width: 100%;
     transform-style: preserve-3d;
     display: flex;
-    align-items: center;
     justify-content: center;
-}
-
-.carousel-orbit {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.mobile-card {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 210px;
-    height: auto;
-    transform-style: preserve-3d;
-    cursor: pointer;
-    transition: opacity 0.6s ease, filter 0.6s ease;
-    border-radius: 50%;
-    box-shadow: 0 10px 30px #3AB7BF33;
-}
-
-#globalTooltip{
-  position: absolute;
-  padding: 6px 12px;
-  font-size: 0.75rem;
-  background: #111;
-  color: #fff;
-  border-radius: 6px;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.15s ease;
-  z-index: 9999;
-}
-
-@media (max-width: 550px) {
-    .carousel-container {
-        width: 100%;
-    }
-
-    .mobile-card {
-        width: 210px;
-        height: auto;
-    }
-}
-
-.mobile-frame {
-    width: 100%;
-    height: 100%;
-    /* background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
-    border-radius: clamp(30px, 4vw, 40px); */
-    /* padding: clamp(8px, 1vw, 12px); */
-    /* box-shadow:
-        0 30px 90px rgba(0, 0, 0, 0.5),
-        inset 0 0 0 2px rgba(255, 255, 255, 0.1); */
-    position: relative;
-    overflow: hidden;
-}
-
-.mobile-notch {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: clamp(100px, 12vw, 140px);
-    height: clamp(20px, 2.5vh, 28px);
-    /* background: #1a1a1a;
-    border-radius: 0 0 20px 20px; */
-    z-index: 10;
-}
-
-.mobile-screen {
-    width: 100%;
-    height: 100%;
-    /* background: #000;
-    border-radius: clamp(24px, 3vw, 32px); */
-    overflow: hidden;
-    position: relative;
-}
-
-.video-container {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.video-container video {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    border-radius: clamp(15px, 3vw, 32px);
-}
-
-.video-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: clamp(32px, 5vw, 48px);
-    color: rgba(255, 255, 255, 0.3);
 }
 
-.card-label {
+.cardfame {
     position: absolute;
-    bottom: clamp(-70px, -5vh, -90px);
-    left: 50%;
-    transform: translateX(-50%);
-    background: transparent;
-    padding: clamp(8px, 1.5vh, 12px);
-    border-radius: clamp(12px, 2vw, 20px);
-    border: 2px solid #3AB7BF;
-    font-weight: 600;
-    font-size: clamp(0.8rem, 1.5vw, 1rem);
-    color: var(--color-fondo-claro);
-    white-space: nowrap;
-    box-shadow: 0 10px 30px #3AB7BF33;
+    padding: 0;
+    width: 300px;
+    height: 500px;
+    /* background: linear-gradient(to top, #300046, #652479); */
+    
+    overflow: hidden;
+    transition: transform 0.8s ease, opacity 0.6s ease, filter 0.6s ease;
+    filter: blur(2px);
     opacity: 0;
-    transition: opacity 0.5s;
+    z-index: 0;
 }
 
-/* Posicionamiento orbital */
-.mobile-card:nth-child(1) {
-    transform: translate(-50%, -50%) rotateY(0deg);
+@media (max-width: 768px) {
+    .cardfame {
+        width: 200px;
+        height: 350px;
+    }
 }
 
-.mobile-card:nth-child(2) {
-    transform: translate(-50%, -50%) rotateY(90deg);
+video{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(1);
+    transition: filter 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+video:hover {
+    filter: brightness(0.8);
 }
 
-.mobile-card:nth-child(3) {
-    transform: translate(-50%, -50%) rotateY(180deg);
-}
-
-.mobile-card:nth-child(4) {
-    transform: translate(-50%, -50%) rotateY(270deg);
-}
-
-/* Control de visibilidad según rotación */
-.mobile-card.front {
+.cardfame.activefame {
+    transform: translateX(0px) translateZ(0px) rotateY(0deg) scale(1);
+    filter: none;
     opacity: 1;
-    filter: blur(0);
-    z-index: 4;
+    z-index: 5;
+    cursor: pointer;
 }
 
-.mobile-card.front .card-label {
+.cardfame.activefame:hover {
+    transform: translateX(0px) translateZ(0px) rotateY(0deg) scale(1);
+    filter: none;
     opacity: 1;
+    z-index: 5;
 }
 
-.mobile-card.side {
-    opacity: 0.6;
-    filter: blur(1px);
+.cardfame.leftfame {
+    transform: translateX(-270px) translateZ(-150px) rotateY(35deg) scale(0.85);
+    opacity: 1;
     z-index: 3;
 }
 
-.mobile-card.back {
+.cardfame.rightfame {
+    transform: translateX(270px) translateZ(-150px) rotateY(-35deg) scale(0.85);
+    opacity: 1;
+    z-index: 3;
+}
+
+@media (max-width: 768px) {
+    .cardfame.leftfame {
+        transform: translateX(-170px) translateZ(-150px) rotateY(35deg) scale(0.85);
+    }
+
+    .cardfame.rightfame {
+        transform: translateX(170px) translateZ(-150px) rotateY(-35deg) scale(0.85);
+    }
+}
+
+.cardfame.hiddenfame {
     opacity: 0;
-    filter: blur(3px);
-    z-index: 1;
     pointer-events: none;
+    transform: scale(0.5) translateZ(-400px);
+    z-index: 0;
 }
 
-/* Botones de navegación */
-.nav-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: clamp(45px, 6vw, 60px);
-    height: clamp(45px, 6vw, 60px);
-    font-size: clamp(20px, 3vw, 24px);
-    border-radius: 50%;
-    background: rgba(245, 81, 57, 0.1);
-    border: 2px solid var(--color-acento-primario);
-    color: var(--color-acento-primario);
-    cursor: pointer;
-    z-index: 10;
-    transition: all 0.3s;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+/* ============================================================================
+   INDICADORES DEL CAROUSEL
+   ============================================================================ */
 
-.nav-button:hover {
-    background: var(--color-acento-primario);
-    color: var(--color-fondo-oscuro);
-    transform: translateY(-50%) scale(1.1);
-}
-
-.nav-button:active {
-    transform: translateY(-50%) scale(0.95);
-}
-
-.nav-button.prev-btn {
-    left: clamp(10px, 3vw, 40px);
-}
-
-.nav-button.next-btn {
-    right: clamp(10px, 3vw, 40px);
-}
-
-/* Indicadores */
 .indicators {
-    position: absolute;
-    bottom: clamp(30px, 2vh, 40px);
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
-    gap: clamp(8px, 1.5vw, 12px);
-    z-index: 10;
+    justify-content: center;
+    gap: 12px;
+    padding: 1rem;
+    margin-bottom: 2rem;
 }
 
 .indicator {
-    width: clamp(10px, 1.5vw, 12px);
-    height: clamp(10px, 1.5vw, 12px);
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.4);
+    background-color: rgba(46, 46, 46, 0.829);
     cursor: pointer;
-    transition: all 0.3s;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.indicator.active {
-    background: white;
-    width: clamp(24px, 3.5vw, 32px);
-    border-radius: 6px;
+.indicator:hover {
+    background-color: rgba(70, 69, 69, 0.6);
+    transform: scale(1.2);
 }
 
-/* /* Gradiente único para todas las tarjetas 
-.video-container {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-} */
-
-@media (max-height: 600px) {
-    .carousel-title {
-        font-size: 1.3rem;
-        margin-bottom: 15px;
-    }
-
-    .mobile-card {
-        height: clamp(180px, 40vh, 350px);
-    }
-}
-
-@media (orientation: landscape) and (max-height: 500px) {
-    .carousel-title {
-        font-size: 1.2rem;
-        margin-bottom: 10px;
-    }
+.indicator-active {
+    background-color: rgb(255, 28, 123);
+    transform: scale(1.3);
+    box-shadow: 0 0 10px rgb(255, 28, 123);
 }

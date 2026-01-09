@@ -458,21 +458,23 @@ main {
   opacity: 1;
 }
 
-/* =================
-   SECCIÓN SERVICIOS
-   ================= */
+/* ====================
+   SECCIÓN HABILIDADES
+   ==================== */
 
-section#servicios {
+section#habilidad {
   position: absolute;
   color: var(--color-fondo-claro);
   text-align: center;
 }
 
+
+
 /* =================
    SECCIÓN SOBRE MI
    ================= */
 
-section#sobre-mi{
+section#sobre-mi {
   position: absolute;
   color: var(--color-fondo-claro);
   text-align: center;

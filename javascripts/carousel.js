@@ -1,25 +1,15 @@
-/**
+/*
  * ============================================================================
  * CAROUSEL 3D CONTROLLER
  * ============================================================================
  * Gestiona el carrusel 3D con loop infinito, pausa automática, eventos táctiles,
  * teclado y sincronización de indicadores.
- * 
- * Estructura esperada en HTML:
- * - Contenedor: #carousel (clase carouselfame)
- * - Cards: .cardfame con clases de estado (activefame, leftfame, rightfame, hiddenfame)
- * - Indicadores: #indicators (contenedor vacío)
- * ============================================================================
- */
-
-// ============================================================================
-// CONFIGURACIÓN Y VARIABLES GLOBALES
-// ============================================================================
+*/
 
 // Constantes de configuración
-const CAROUSEL_SELECTOR = document.getElementById('carousel');
-const INDICATORS_SELECTOR = document.getElementById('indicators');
-const CARD_SELECTOR = document.querySelectorAll('.cardfame');
+const CAROUSEL_SELECTOR = '#carousel';
+const INDICATORS_SELECTOR = '#indicators';
+const CARD_SELECTOR = '.cardfame';
 const AUTOPLAY_DURATION = 8000; // 8 segundos antes de avanzar
 const PAUSE_ON_HOVER_DELAY = 2000; // 2 segundos para reactivar tras hover
 const SWIPE_THRESHOLD = 50; // Píxeles mínimos para detectar swipe

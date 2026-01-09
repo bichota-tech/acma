@@ -1,6 +1,4 @@
-﻿@charset "UTF-8";
-
-/**
+﻿/**
  * ESTILOS PRINCIPALES - ACMA PORTFOLIO
  * CSS puro, escalable, sin dependencias de preprocesadores
  * 
@@ -8,11 +6,10 @@
  * - Variables CSS: Paleta de colores y diseño
  * - Reset & Base: Estilos básicos de elementos
  * - Header: Navegación y logo
- * - Secciones: Hero, Proyectos, Servicios, etc
- * - Carrusel: Estilos del carousel vanilla
+ * - Secciones: Hero, Proyectos, Servicios, Contacto
  * - Footer: Pie de página
- * - Utilidades: Clases auxiliares y accesibilidad
- * - Responsive: Media queries para todos los breakpoints
+ * - Utilidades: Botones, tipografías, espaciados
+ * - Accesibilidad: Preferencias de usuario
  */
 
 :root {
@@ -31,9 +28,7 @@
   cursor: default;
 }
 
-
 html {
-  font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
@@ -47,9 +42,9 @@ body {
   overflow: hidden;
 }
 
-/* =====================================================
+/* ======================
    RESET & ELEMENTOS BASE
-   ===================================================== */
+   ====================== */
 
 button,
 a {
@@ -65,7 +60,7 @@ img {
   display: block;
 }
 
-/* Selección de texto transparente */
+/* - Selección de texto transparente - */
 ::selection {
   background: transparent;
   color: inherit;
@@ -80,9 +75,9 @@ img {
   z-index: 0;
 }
 
-/* =====================================================
+/* ===================
    HEADER Y NAVEGACIÓN
-   ===================================================== */
+   =================== */
 
 header {
   width: 100%;
@@ -253,9 +248,9 @@ nav:hover {
   }
 }
 
-/* =====================================================
+/* =====================
    SECCIONES PRINCIPALES
-   ===================================================== */
+   ===================== */
 
 main {
   width: 100%;
@@ -283,9 +278,9 @@ main {
   pointer-events: auto;
 }
 
-/* =====================================================
+/* =====================
    SECCIÓN HERO (Inicio)
-   ===================================================== */
+   ===================== */
 
 .hero {
   position: absolute;
@@ -344,7 +339,6 @@ main {
     0 0 5px var(--color-acento-primario),
     0 0 10px var(--color-acento-primario),
     0 0 20px var(--color-acento-primario),
-
 }
 
 .neon-button::before {
@@ -384,9 +378,9 @@ main {
     0 0 80px var(--color-acento-primario-brillo);
 }
 
-/* =====================================================
+/* ====================================
    SECCIÓN PROYECTOS (Carrusel externo)
-   ===================================================== */
+   ==================================== */
 .projects {
   width: 100%;
   height: 100%;
@@ -400,14 +394,6 @@ main {
   right: 5%;
   bottom: 11%;
   z-index: 1000;
-}
-
-@media (max-width: 670px) {
-  .see-more {
-    right: 10%;
-    top: 15%;
-  }
-
 }
 
 .see-more a {
@@ -454,9 +440,9 @@ main {
   opacity: 1;
 }
 
-/* =====================================================
+/* =======================
    SECCIÓN CONTACTO (Card)
-   ===================================================== */
+   ======================= */
 
 #contacto {
   display: grid;
@@ -581,9 +567,9 @@ main {
   opacity: 1;
 }
 
-/* =====================================================
+/* =======
    FOOTER
-   ===================================================== */
+   ======= */
 
 footer {
   width: 100%;
@@ -602,9 +588,9 @@ footer p {
   margin: 0;
 }
 
-/* =====================================================
+/* =================================
    UTILIDADES Y COMPONENTES GLOBALES
-   ===================================================== */
+   ================================== */
 
 .btn {
   display: inline-flex;
@@ -639,9 +625,9 @@ footer p {
   box-shadow: 0 0 20px rgba(58, 183, 191, 0.5);
 }
 
-/* =====================================================
+/* =======================================
    ACCESIBILIDAD Y EXPERIENCIA DE USUARIO
-   ===================================================== */
+   ======================================== */
 
 @media (prefers-reduced-motion: reduce) {
   * {

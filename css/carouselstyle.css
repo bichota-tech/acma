@@ -1,10 +1,10 @@
 :root {
-  /* Colores - Paleta principal */
-  --color-fondo-claro: #ebe7d9;
-  --color-fondo-oscuro: #1e1f22;
-  --color-acento-primario: #f55139;
-  --color-acento-primario-brillo: #fd0800;
-  --color-acento-secundario: #3AB7BF;
+    /* Colores - Paleta principal */
+    --color-fondo-claro: #ebe7d9;
+    --color-fondo-oscuro: #1e1f22;
+    --color-acento-primario: #f55139;
+    --color-acento-primario-brillo: #fd0800;
+    --color-acento-secundario: #3AB7BF;
 }
 
 .bodycardfame {
@@ -14,7 +14,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;  
+    height: 100%;
     cursor: default;
     margin-top: 3rem;
     padding-block: 1.5rem;
@@ -53,6 +53,31 @@
     z-index: 0;
 }
 
+a[data-title] {
+    position: relative;
+}
+
+a[data-title]::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: 150%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    background: #000;
+    color: #fff;
+    border-radius: 0.4rem;
+    padding: 0.4rem 0.7rem;
+    font-size: clamp(5px, 3vw, 10px);
+    white-space: nowrap;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+a[data-title]:hover::after {
+    opacity: 1;
+}
+
 @media (max-width: 768px) {
     .cardfame {
         width: auto;
@@ -61,7 +86,7 @@
     }
 }
 
-video{
+video {
     width: 100%;
     height: 100%;
     object-fit: contain;

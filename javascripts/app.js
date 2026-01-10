@@ -207,21 +207,27 @@ class ACMAPortfolio {
 
     // Cambiar secciones visibles
     this.sections.forEach(section => {
-      const isActive = section.id === target;
-      section.classList.toggle('active', isActive);
-      
-      // Mejorar accesibilidad
-      if (isActive) {
-        section.setAttribute('aria-hidden', 'false');
-        // Focus en el primer heading de la sección
-        const heading = section.querySelector('h1, h2, h3');
-        if (heading) {
-          setTimeout(() => heading.focus(), 100);
-        }
-      } else {
-        section.setAttribute('aria-hidden', 'true');
-      }
-    });
+  const isActive = section.id === target;
+
+  section.classList.toggle('active', isActive);
+
+  if (isActive) {
+    section.removeAttribute('inert');
+    section.setAttribute('aria-hidden', 'false');
+
+    // Focus controlado en el primer heading
+    const heading = section.querySelector('h1, h2, h3');
+    if (heading) {
+      // Asegura que el heading pueda recibir foco
+      heading.setAttribute('tabindex', '-1');
+      setTimeout(() => heading.focus(), 50);
+    }
+  } else {
+    section.setAttribute('inert', '');
+    section.setAttribute('aria-hidden', 'true');
+  }
+});
+
   }
 
   /**

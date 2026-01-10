@@ -6,7 +6,7 @@
  * - Variables CSS: Paleta de colores y diseño
  * - Reset & Base: Estilos básicos de elementos
  * - Header: Navegación y logo
- * - Secciones: Hero, Proyectos, Servicios, Contacto
+ * - Secciones: Hero, Proyectos, Habilidades, Contacto
  * - Footer: Pie de página
  * - Utilidades: Botones, tipografías, espaciados
  * - Accesibilidad: Preferencias de usuario
@@ -85,9 +85,8 @@ header {
   position: fixed;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--color-fondo-oscuro);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -250,7 +249,6 @@ abbr{
     padding: 0;
     background: rgba(30, 31, 34, 0.95);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     overflow: hidden;
     transition: max-height 0.3s ease;
   }
@@ -287,13 +285,13 @@ main {
   justify-content: center;
   transform: scale(0.95);
   transition: opacity 0.6s ease, transform 0.6s ease;
-  pointer-events: none;
+  pointer-events: none!important;
 }
 
 .section.active {
   opacity: 1;
   transform: scale(1);
-  pointer-events: auto;
+  pointer-events: auto!important;
 }
 
 /* =====================
@@ -462,10 +460,125 @@ main {
    SECCIÓN HABILIDADES
    ==================== */
 
-section#habilidad {
+section#skills {
   position: absolute;
   color: var(--color-fondo-claro);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.skills-spotlight {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+/*Selector*/
+.skill-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skill-btn{
+  background: none;
+  border: none;
+  color: var(--color-fondo-claro);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.skill-btn:hover {
+  color: var(--color-acento-secundario);
+  text-shadow:
+    0 0 6px var(--color-acento-secundario),
+    0 0 12px var(--color-acento-secundario);
+}
+
+.skill-btn.active,
+.skill-btn:focus-visible {
+  color: var(--color-acento-secundario);
+}
+
+/* Card */
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.341);
+  width: 500px;
+}
+
+/* Icono */
+.skill-icon {
+  font-size: 3rem;
+}
+
+.skill-btn.active i,
+.skill-btn:focus-visible i,
+.skill-card .neon i {
+  text-shadow:
+    0 0 6px var(--color-acento-secundario),
+    0 0 12px var(--color-acento-secundario);
+}
+
+/* Nivel */
+.skill-level {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 1rem 0;
+}
+
+.pip {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #444;
+}
+
+.pip.active {
+  background: var(--color-acento-secundario);
+}
+
+.level-text {
+  margin-left: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--color-fondo-claro);
+}
+
+/* Texto */
+.skill-use {
+  font-size: 0.95rem;
+  color: var(--color-fondo-claro);
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width:768px) {
+  .skills-spotlight {
+    flex-direction: column;
+  }
+
+  .skill-selector {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 
@@ -535,7 +648,7 @@ section#sobre-mi {
 .btncontact {
   position: relative;
   background-color: var(--color-acento-primario);
-  border: 2px solid var(--color-acento-primario-brillo);
+  border: none;
   outline: none;
   padding: 0.75rem 1.5rem;
   border-radius: 4rem !important;
@@ -560,6 +673,11 @@ section#sobre-mi {
   transform: scale(1);
   transition: transform 500ms cubic-bezier(0.2, 0.9, 0.2, 1.2);
   z-index: 5;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(245, 81, 57, 0.5);
 }
 
 .btncontact .button_content span {
@@ -612,6 +730,21 @@ section#sobre-mi {
   opacity: 1;
 }
 
+/* =================================
+   UTILIDADES Y COMPONENTES GLOBALES
+   ================================== */
+
+
+.btn-secondary {
+  background: linear-gradient(135deg, var(--color-acento-secundario), #6fccd1);
+  color: var(--color-fondo-oscuro);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(58, 183, 191, 0.5);
+}
+
 /* =======
    FOOTER
    ======= */
@@ -631,43 +764,6 @@ footer {
 
 footer p {
   margin: 0;
-}
-
-/* =================================
-   UTILIDADES Y COMPONENTES GLOBALES
-   ================================== */
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  border: none;
-  transition: all 0.3s ease;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, var(--color-acento-primario), var(--color-acento-primario-brillo));
-  color: var(--color-fondo-oscuro);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 20px rgba(245, 81, 57, 0.5);
-}
-
-.btn-secondary {
-  background: linear-gradient(135deg, var(--color-acento-secundario), #6fccd1);
-  color: var(--color-fondo-oscuro);
-}
-
-.btn-secondary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 20px rgba(58, 183, 191, 0.5);
 }
 
 /* =======================================

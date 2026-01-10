@@ -60,7 +60,7 @@
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#inicio" data-section="inicio" class="active">Inicio</a></li>
                 <li><a href="#proyectos" data-section="proyectos">Proyectos</a></li>
-                <li><a href="#habilidad" data-section="habilidad">Habilidades</a></li>
+                <li><a href="#skills" data-section="skills">Habilidades</a></li>
                 <li><a href="#sobre-mi" data-section="sobre-mi">Sobre mí</a></li>
                 <li><a href="#contacto" data-section="contacto">Contacto</a></li>
                 <li><a href="./assets/docs/adalid_martinez_alvarez_CV.pdf" class="btn-cv" download>
@@ -90,7 +90,7 @@
             </div>
         </section>
         <!-- SECCIÓN 2: PROYECTOS -->
-        <section id="proyectos" class="section projects" aria-labelledby="projects-title">
+        <section id="proyectos" class="section projects" aria-labelledby="projects-title" inert>
 
             <div class="section-header">
                 <div class="see-more">
@@ -112,7 +112,7 @@
 
                         <div class="cardfame activefame">
                             <a href="https://www.google.com" target="_blank" rel="noopener noreferrer"
-                                data-title="Visitar Sitio">
+                                data-title="WordPress | Visitar Sitio">
                                 <video autoplay loop muted playsinline>
                                     <source src="assets/demos/iPhone-13-PRO-hidraulica.webm" type="video/webm">
                                     Your browser does not support the video tag.
@@ -122,7 +122,7 @@
 
                         <div class="cardfame leftfame">
                             <a href="https://www.google.com" target="_blank" rel="noopener noreferrer"
-                                data-title="Visitar Sitio">
+                                data-title="Frontend | Visitar Sitio">
                                 <video autoplay loop muted playsinline>
                                     <source src="assets/demos/excursionescartas.webm" type="video/webm">
                                     Your browser does not support the video tag.
@@ -132,7 +132,7 @@
 
                         <div class="cardfame rightfame">
                             <a href="https://www.google.com" target="_blank" rel="noopener noreferrer"
-                                data-title="Visitar Sitio">
+                                data-title="Frontend | Visitar Sitio">
                                 <video autoplay loop muted playsinline>
                                     <source src="assets/demos/hevca_prueba.webm" type="video/webm">
                                     Your browser does not support the video tag.
@@ -142,7 +142,7 @@
 
                         <div class="cardfame hiddenfame">
                             <a href="https://www.google.com" target="_blank" rel="noopener noreferrer"
-                                data-title="Visitar Sitio">
+                                data-title="WordPress | Visitar Sitio">
                                 <video autoplay loop muted playsinline>
                                     <source src="assets/demos/iPhone-13-PROlimpiezasvioletayverde.webm"
                                         type="video/webm">
@@ -153,7 +153,7 @@
 
                         <div class="cardfame hiddenfame">
                             <a href="https://www.google.com" target="_blank" rel="noopener noreferrer"
-                                data-title="Visitar Sitio">
+                                data-title="WordPress | Visitar Sitio">
                                 <video autoplay loop muted playsinline>
                                     <source src="assets/demos/iPhone-13-PRO-hidraulica.webm" type="video/webm">
                                     Your browser does not support the video tag.
@@ -167,52 +167,60 @@
         </section>
 
         <!-- SECCIÓN 3: HABILIDADES -->
-        <section id="habilidad" class="section skills" aria-labelledby="skills-title">
+        <section id="skills" class="section skills" aria-labelledby="skills-title">
             <h2 id="skills-title">Habilidades - próximamente</h2>
             <div class="skills-spotlight">
                 <!-- Selector de habilidades -->
                 <div class="skill-selector" role="tablist" aria-label="Tecnologías">
                     <button class="skill-btn active" data-skill="html" role="tab" aria-selected="true">
-                        <i class="icon-html"></i>
+                        <i class="bi bi-filetype-html"></i>
                         <span>HTML5</span>
                     </button>
                     <button class="skill-btn" data-skill="css" role="tab" aria-selected="false">
-                        <i class="icon-css"></i>
+                        <i class="bi bi-filetype-css"></i>
                         <span>CSS3</span>
                     </button>
                     <button class="skill-btn" data-skill="js" role="tab" aria-selected="false">
-                        <i class="icon-js"></i>
+                        <i class="bi bi-javascript"></i>
                         <span>JavaScript</span>
                     </button>
                     <button class="skill-btn" data-skill="git" role="tab" aria-selected="false">
-                        <i class="icon-git"></i>
+                        <i class="bi bi-git"></i>
                         <span>Git</span>
                     </button>
+                    <button class="skill-btn" data-skill="github" role="tab" aria-selected="false">
+                        <i class="bi bi-github"></i>
+                        <span>GitHub</span>
+                    </button>
                     <button class="skill-btn" data-skill="frameworks" role="tab" aria-selected="false">
-                        <i class="icon-frameworks"></i>
+                        <i class="bi bi-bricks"></i>
                         <span>Frameworks</span>
                     </button>
                     <button class="skill-btn" data-skill="ia" role="tab" aria-selected="false">
-                        <i class="icon-ia"></i>
+                        <i class="bi bi-openai"></i>
                         <span>Inteligencia Artificial</span>
                     </button>
-                    <button class="skill-btn" data-skill="figma" role="tab" aria-selected="false">
-                        <i class="icon-figma"></i>
-                        <span>Figma</span>
+                    <button class="skill-btn" data-skill="uiux" role="tab" aria-selected="false">
+                        <i class="bi bi-brush"></i>
+                        <span>Prototipado de Web</span>
+                    </button>
+                    <button class="skill-btn" data-skill="WordPress" role="tab" aria-selected="false">
+                        <i class="bi bi-wordpress"></i>
+                        <span>WordPress</span>
                     </button>
                 </div>
                 <!-- Card activa -->
                 <div class="skill-card" aria-live="polite">
                     <div class="skill-icon neon">
-                        <i class="icon-html-large"></i>
+                        <i class="bi bi-filetype-html"></i>
                     </div>
-                    <h3 class="skill-name">HTML5</h3>
+    
                     <div class="skill-level">
                         <span class="pip active"></span>
                         <span class="pip active"></span>
                         <span class="pip active"></span>
                         <span class="pip"></span>
-                        <span class="level text">Intemedio</span>
+                        <span class="level-text">Intermedio</span>
                     </div>
                     <p class="skill-use">
                         Estructura semántica, SEO básico y accesibilidad en este portfolio.
@@ -276,6 +284,9 @@
 
     <!-- Carrusel personalizado 3D -->
     <script src="javascripts/carousel.js" defer></script>
+
+    <!-- Spotlight para habilidades -->
+    <script src="javascripts/spotlight.js" defer></script>
 
     <!-- Efectos y animaciones Typed.js y Particles.js -->
     <script src="javascripts/effects.js" defer></script>

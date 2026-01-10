@@ -521,6 +521,12 @@ section#skills {
   border-radius: 16px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.341);
   width: 500px;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.skill-card.is-animating{
+  opacity: 0;
+  transform: translateY(6px);
 }
 
 /* Icono */
@@ -578,9 +584,57 @@ section#skills {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    margin-inline: 1rem;
+  }
+
+  .skill-card {
+    width: 90%;
+    padding: 2rem 1.5rem;
   }
 }
 
+.skill-connector {
+  position: absolute;
+  width: 0;
+  height: 3px;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(90deg, #0ff, #0ff0); /* base azul neón */
+  box-shadow: 0 0 8px #0ff, 0 0 16px #0ff;
+  border-radius: 2px;
+  transform-origin: left center;
+}
+
+.skill-connector.active {
+  opacity: 1;
+  animation: lightningZig 250ms ease forwards;
+}
+
+@keyframes lightningZig {
+  0% {
+    width: 0;
+  }
+  20% {
+    width: calc(var(--conn-length) * 0.2);
+    transform: rotate(var(--angle)deg) translateY(-2px);
+  }
+  40% {
+    width: calc(var(--conn-length) * 0.4);
+    transform: rotate(var(--angle)deg) translateY(2px);
+  }
+  60% {
+    width: calc(var(--conn-length) * 0.6);
+    transform: rotate(var(--angle)deg) translateY(-2px);
+  }
+  80% {
+    width: calc(var(--conn-length) * 0.8);
+    transform: rotate(var(--angle)deg) translateY(2px);
+  }
+  100% {
+    width: var(--conn-length);
+    transform: rotate(var(--angle)deg) translateY(0);
+  }
+}
 
 
 /* =================

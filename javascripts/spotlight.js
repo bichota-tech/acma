@@ -60,31 +60,53 @@ const buttons = document.querySelectorAll('.skill-btn');
 const card = document.querySelector('.skill-card');
 
 buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const skill = btn.dataset.skill;
-        updateSpotlight(skill);
-
-        buttons.forEach(b => {
-            b.classList.toggle('active', b === btn);
-            b.setAttribute('aria-selected', b === btn);
-        });
+  btn.addEventListener('click', () => {
+    buttons.forEach(b => {
+      b.classList.toggle('active', b === btn);
+      b.setAttribute('aria-selected', b === btn);
     });
+    lightningZigToCard(btn);
+  });
+
+  btn.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      buttons.forEach(b => {
+        b.classList.toggle('active', b === btn);
+        b.setAttribute('aria-selected', b === btn);
+      });
+      lightningZigToCard(btn);
+    }
+  });
 });
+
+
 
 function updateSpotlight(skillKey) {
     const skill = skillsData[skillKey];
 
-    card.querySelector('.skill-icon i').className = skill.icon;
-    card.querySelector('.skill-use').textContent = skill.use;
+    //Activar clase de animación
+    card.classList.add('is-animating');
 
-    const pips = card.querySelectorAll('.pip');
-    pips.forEach((pip, i) => {
-        pip.classList.toggle('active', i < skill.level);
-    });
+    //Esperar que la animación de salida se aplique
+    setTimeout(() => {
+        // Actualizar contenido
+        card.querySelector('.skill-icon i').className = skill.icon;
+        card.querySelector('.skill-use').textContent = skill.use;
 
-    card.querySelector('.level-text').textContent = skill.label;
+        const pips = card.querySelectorAll('.pip');
+        pips.forEach((pip, i) => {
+            pip.classList.toggle('active', i < skill.level);
+        });
+
+        card.querySelector('.level-text').textContent = skill.label;
+
+        //Quitar clase de animación para la reentrada
+        requestAnimationFrame(() => {
+            card.classList.remove('is-animating');
+        });
+    }, 180); // coincide con el transition CSS
 }
-
 
 skillsSection.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {

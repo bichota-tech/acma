@@ -209,42 +209,41 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 
 // EFECTO RELAMPAGO SPOTLIGHT SKILLS 
 
-function lightningZigToCard(btn) {
-  const skillKey = btn.dataset.skill;
+function lightningEffects(btn, skillKey) {
+    const rectCard = card.getBoundingClientRect();
+    const rectBtn = btn.getBoundingClientRect();
 
-  const rectCard = card.getBoundingClientRect();
-  const rectBtn = btn.getBoundingClientRect();
+    //Crear línea relámpago
+    const line = document.createElement('div');
+    line.className = 'skill-connector';
+    document.body.appendChild(line);
 
-  const line = document.createElement('div');
-  line.className = 'skill-connector';
-  document.body.appendChild(line);
+    const top = rectBtn.top + rectBtn.height / 2 + window.scrollY;
+    const left = rectBtn.left + rectBtn.width / .98 + window.scrollX;
 
-  const top = rectBtn.top + rectBtn.height / 2 + window.scrollY;
-  const left = rectBtn.left + rectBtn.width / 0.98 + window.scrollX;
+    const deltaX = rectCard.left + rectCard.width / 10 - left;
+    const deltaY = rectCard.top + rectCard.height / 2 - top;
+    const length = Math.sqrt(deltaX ** 2 + deltaY ** 2);
+    const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
 
-  const deltaX = rectCard.left + rectCard.width / 4 - left;
-  const deltaY = rectCard.top + rectCard.height / 2 - top;
-  const length = Math.sqrt(deltaX ** 2 + deltaY ** 2);
-  const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+    line.style.top = `${top}px`;
+    line.style.left = `${left}px`;
+    line.style.setProperty('--conn-length', `${length}px`);
+    line.style.setProperty('--angle', `${angle}deg`);
+    line.style.transform = `rotate(${angle}deg)`;
 
-  line.style.top = `${top}px`;
-  line.style.left = `${left}px`;
-  line.style.setProperty('--conn-length', `${length}px`);
-  line.style.setProperty('--angle', `${angle}deg`);
-  line.style.transform = `rotate(${angle}deg)`;
+    requestAnimationFrame(() => line.classList.add('active'));
 
-  // Activar animación
-  requestAnimationFrame(() => line.classList.add('active'));
-  
-  // Al terminar animación, actualizar card y limpiar línea
-  setTimeout(() => {
-    updateSpotlight(skillKey);
-    line.remove();
-  }, 280); // un poco más que el duration CSS
+    //Esperar animación para actualizar card
+    setTimeout(() => {
+        // Actualizar contenido
+        updateSpotlight(skillKey);
 
+        // Glow en card
+        card.classList.add('glow');
+        setTimeout(() => card.classList.remove('glow'), 400);
+
+        // Limpiar línea
+        line.remove();
+    }, 260);
 }
-
-
-
-
-

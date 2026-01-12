@@ -533,6 +533,7 @@ section#skills {
   align-items: center;
   gap: 1rem;
   background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 6px 20px rgb(24, 24, 24);
   padding: 1.5rem;
   border-radius: 16px;
   max-width: 50%;
@@ -545,6 +546,17 @@ section#skills {
   opacity: 0;
   transform: translateY(6px);
   box-shadow: 0 0 40px rgb(45, 104, 104);
+}
+
+/* Glow pulsante en la card */
+.skill-card.glow {
+  animation: cardGlow 400ms ease-in-out;
+  box-shadow: 0 0 12px var(--color-acento-secundario), 0 0 24px var(--color-acento-secundario);
+}
+
+@keyframes cardGlow {
+  0%, 100% { box-shadow: 0 0 0px var(--color-acento-secundario); }
+  50% { box-shadow: 0 0 12px var(--color-acento-secundario), 0 0 24px var(--color-acento-secundario); }
 }
 
 /* Icono */
@@ -577,34 +589,6 @@ section#skills {
 
 .pip.active {
   background: var(--color-acento-secundario);
-
-}
-
-.neon {
-  color: var(--color-acento-secundario);
-  text-shadow:
-    0 0 5px var(--color-acento-secundario),
-    0 0 10px var(--color-acento-secundario);
-  animation: neon-flicker 4s ease-in-out infinite;
-}
-
-@keyframes neon-flicker {
-
-  0%,
-  100% {
-    opacity: 1;
-    text-shadow:
-      0 0 2px var(--color-acento-primario),
-      0 0 5px var(--color-acento-primario);
-  }
-
-  50% {
-    opacity: 1;
-    text-shadow:
-      0 0 10px var(--color-acento-primario-brillo),
-      0 0 20px var(--color-acento-primario-brillo),
-      0 0 30px var(--color-acento-primario);
-  }
 }
 
 .level-text {

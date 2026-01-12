@@ -58,26 +58,35 @@ const skillsData = {
 const skillsSection = document.getElementById('skills');
 const buttons = document.querySelectorAll('.skill-btn');
 const card = document.querySelector('.skill-card');
+let currentSkill = 'html'; // skill por defecto
 
 buttons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    buttons.forEach(b => {
-      b.classList.toggle('active', b === btn);
-      b.setAttribute('aria-selected', b === btn);
+    btn.addEventListener('click', () => {
+        const skillKey = btn.dataset.skill;
+        if (skillKey !== currentSkill) {
+            buttons.forEach(b => {
+                b.classList.toggle('active', b === btn);
+                b.setAttribute('aria-selected', b === btn);
+            });
+            currentSkill = skillKey;
+            lightningEffects(btn, skillKey);
+        }
     });
-    lightningZigToCard(btn);
-  });
 
-  btn.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      buttons.forEach(b => {
-        b.classList.toggle('active', b === btn);
-        b.setAttribute('aria-selected', b === btn);
-      });
-      lightningZigToCard(btn);
-    }
-  });
+    btn.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            const skillKey = btn.dataset.skill;
+            if (skillKey !== currentSkill) {
+                buttons.forEach(b => {
+                    b.classList.toggle('active', b === btn);
+                    b.setAttribute('aria-selected', b === btn);
+                });
+                currentSkill = skillKey;
+                lightningEffects(btn, skillKey);
+            }
+        }
+    });
 });
 
 
@@ -109,7 +118,7 @@ function updateSpotlight(skillKey) {
 }
 
 skillsSection.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') {
-    e.stopPropagation();
-  }
+    if (e.key === 'Enter') {
+        e.stopPropagation();
+    }
 });

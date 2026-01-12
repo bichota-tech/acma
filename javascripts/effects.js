@@ -48,7 +48,7 @@ class PortfolioEffects {
   /**
    * Inicializa el efecto de partículas
    */
-   initParticles() {
+  initParticles() {
     const particlesContainer = document.getElementById('particles-js');
     if (!particlesContainer || typeof particlesJS === 'undefined') {
       console.warn('Particles.js no está disponible o contenedor no existe');
@@ -210,37 +210,38 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 // EFECTO RELAMPAGO SPOTLIGHT SKILLS 
 
 function lightningZigToCard(btn) {
-    const skillKey = btn.dataset.skill;
+  const skillKey = btn.dataset.skill;
 
-    const rectCard = card.getBoundingClientRect();
-    const rectBtn = btn.getBoundingClientRect();
+  const rectCard = card.getBoundingClientRect();
+  const rectBtn = btn.getBoundingClientRect();
 
-    const line = document.createElement('div');
-    line.className = 'skill-connector';
-    document.body.appendChild(line);
+  const line = document.createElement('div');
+  line.className = 'skill-connector';
+  document.body.appendChild(line);
 
-    const top = rectBtn.top + rectBtn.height / 2 + window.scrollY;
-    const left = rectBtn.left + rectBtn.width / 2 + window.scrollX;
+  const top = rectBtn.top + rectBtn.height / 2 + window.scrollY;
+  const left = rectBtn.left + rectBtn.width / 0.98 + window.scrollX;
 
-    const deltaX = rectCard.left + rectCard.width / 2 - left;
-    const deltaY = rectCard.top + rectCard.height / 2 - top;
-    const length = Math.sqrt(deltaX ** 2 + deltaY ** 2);
-    const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+  const deltaX = rectCard.left + rectCard.width / 4 - left;
+  const deltaY = rectCard.top + rectCard.height / 2 - top;
+  const length = Math.sqrt(deltaX ** 2 + deltaY ** 2);
+  const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
 
-    line.style.top = `${top}px`;
-    line.style.left = `${left}px`;
-    line.style.setProperty('--conn-length', `${length}px`);
-    line.style.setProperty('--angle', `${angle}deg`);
-    line.style.transform = `rotate(${angle}deg)`;
+  line.style.top = `${top}px`;
+  line.style.left = `${left}px`;
+  line.style.setProperty('--conn-length', `${length}px`);
+  line.style.setProperty('--angle', `${angle}deg`);
+  line.style.transform = `rotate(${angle}deg)`;
 
-    // Activar animación
-    requestAnimationFrame(() => line.classList.add('active'));
+  // Activar animación
+  requestAnimationFrame(() => line.classList.add('active'));
+  
+  // Al terminar animación, actualizar card y limpiar línea
+  setTimeout(() => {
+    updateSpotlight(skillKey);
+    line.remove();
+  }, 280); // un poco más que el duration CSS
 
-    // Al terminar animación, actualizar card y limpiar línea
-    setTimeout(() => {
-        updateSpotlight(skillKey);
-        line.remove();
-    }, 260); // un poco más que el duration CSS
 }
 
 

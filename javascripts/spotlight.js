@@ -15,7 +15,7 @@ const skillsData = {
         level: 2,
         label: 'En progreso',
         use: 'Gestión de estados UI y navegación SPA.',
-        icon: 'bi bi-javascript'
+        icon: 'bi bi-filetype-js'
     },
     git: {
         level: 2,

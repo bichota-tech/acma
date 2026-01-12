@@ -93,29 +93,42 @@ buttons.forEach(btn => {
 
 function updateSpotlight(skillKey) {
     const skill = skillsData[skillKey];
+    const pips = card.querySelectorAll('.pip');
 
-    //Activar clase de animación
+    // Activar animación de salida
     card.classList.add('is-animating');
 
-    //Esperar que la animación de salida se aplique
     setTimeout(() => {
         // Actualizar contenido
         card.querySelector('.skill-icon i').className = skill.icon;
         card.querySelector('.skill-use').textContent = skill.use;
-
-        const pips = card.querySelectorAll('.pip');
-        pips.forEach((pip, i) => {
-            pip.classList.toggle('active', i < skill.level);
-        });
-
         card.querySelector('.level-text').textContent = skill.label;
 
-        //Quitar clase de animación para la reentrada
+        // Reset y aplicar estados de pips
+        pips.forEach((pip, i) => {
+            pip.classList.remove('active', 'neon-progress');
+
+            if (i < skill.level) {
+                // Niveles completados
+                pip.classList.add('active');
+            } else if (i === skill.level) {
+                // Nivel en progreso (parpadeo)
+                pip.classList.add('neon-progress');
+            } else if (i === skill.level && skill.level < pips.length) {
+                //progreso completado sin parpadeo
+                pip.classList.add('neon-progress');
+            }
+
+        });
+
+        // Reentrada
         requestAnimationFrame(() => {
             card.classList.remove('is-animating');
         });
-    }, 180); // coincide con el transition CSS
+
+    }, 180);
 }
+
 
 skillsSection.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {

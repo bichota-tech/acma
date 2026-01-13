@@ -623,8 +623,8 @@ section#skills {
 
 @media(max-width:440px){
   .skill-card {
-    padding: 1rem;
-    height: 350px;
+    padding: 1.2rem 1.5rem;
+    height: 380px;
   }
 }
 

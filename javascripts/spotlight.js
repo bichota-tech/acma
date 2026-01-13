@@ -1,30 +1,30 @@
 const skillsData = {
     html: {
-        level: 3,
-        label: 'Intermedio',
-        use: 'Estructura semántica, SEO básico y accesibilidad en este portfolio.',
+        level: 4,
+        label: 'Avanzado',
+        use: 'Estructuro interfaces semánticas, accesibles y orientadas a SEO. Trabajo con HTML como base de producto, no como simple mercado, garantizando compatibilidad, rendimiento y una experiencia sólida desde el primer render.',
         icon: 'bi bi-filetype-html'
     },
     css: {
-        level: 3,
-        label: 'Intermedio',
+        level: 4,
+        label: 'Avanzado',
         use: 'Layout responsive con Flexbox, Grid y animaciones.',
         icon: 'bi bi-filetype-css'
     },
     js: {
-        level: 2,
+        level: 3,
         label: 'En progreso',
         use: 'Gestión de estados UI y navegación SPA.',
         icon: 'bi bi-filetype-js'
     },
     git: {
-        level: 2,
+        level: 3,
         label: 'En progreso',
         use: 'Control de versiones y repositorios en GitHub.',
         icon: 'bi bi-git'
     },
     github: {
-        level: 2,
+        level: 3,
         label: 'En progreso',
         use: 'Gestión de proyectos pequeños-medianos mediante GitHub.',
         icon: 'bi bi-github'
@@ -36,20 +36,20 @@ const skillsData = {
         icon: 'bi bi-bricks'
     },
     ia: {
-        level: 2,
-        label: 'En progreso',
+        level: 4,
+        label: 'Avanzado',
         use: 'Generación de contenido y optimización de procesos creativos.',
         icon: 'bi bi-openai'
     },
     uiux: {
-        level: 2,
+        level: 3,
         label: 'En progreso',
         use: 'Diseño de interfaces y prototipos para proyectos web usando Figma y Canva.',
         icon: 'bi bi-brush'
     },
     WordPress: {
-        level: 2,
-        label: 'En progreso',
+        level: 3,
+        label: 'Intermedio',
         use: 'Creación, maquetado y gestión de sitios web dinámicos.',
         icon: 'bi bi-wordpress'
     }

@@ -598,9 +598,14 @@ section#skills {
   .skill-card {
     max-width: 100%;
     width: 85%;
-    height: auto;
+    height: fit-content;
     padding: 2rem 2.5rem;
+    row-gap: .5rem;
 
+  }
+
+  .skill-level{
+    margin: .5rem 0;
   }
 
   .skill-connector {

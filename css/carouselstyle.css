@@ -89,7 +89,7 @@ a[data-title]:hover::after {
 
 }
 
-@media (max-width:425px) {
+@media (max-width:440px) {
     
     .carousel-wrapperfame {
         height: 70vh;

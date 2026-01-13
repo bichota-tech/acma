@@ -477,10 +477,11 @@ section#skills {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: clamp(2.5rem, 5vw, 4rem);
+  
 }
 
 .skills-spotlight {
+  position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -607,10 +608,8 @@ section#skills {
   .skill-card {
     max-width: 100%;
     width: 85%;
-    height: fit-content;
     padding: 2rem 2.5rem;
     row-gap: .5rem;
-
   }
 
   .skill-level{
@@ -625,7 +624,7 @@ section#skills {
 @media(max-width:440px){
   .skill-card {
     padding: 1rem;
-
+    height: 350px;
   }
 }
 

@@ -150,7 +150,7 @@ video:hover {
     justify-content: initial;
     align-items: center;
     gap: 12px;
-    margin-bottom: 1rem;
+    margin-block: 1rem;
     height: auto;
 }
 

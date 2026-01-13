@@ -1,303 +1,303 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Portfolio web. Desarrollador Frontend y Maquetador WordPress. Especializado en diseño webresponsivo y experiencia de usuario.">
-    <meta name="author" content="Adalid Martínez Álvarez">
-    <meta name="robots" content="index, follow">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+            content="Portfolio web. Desarrollador Frontend y Maquetador WordPress. Especializado en diseño webresponsivo y experiencia de usuario.">
+        <meta name="author" content="Adalid Martínez Álvarez">
+        <meta name="robots" content="index, follow">
 
-    <!-- Favicon y iconos -->
-    <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Portfolio" />
-    <link rel="manifest" href="assets/favicon/site.webmanifest" />
+        <!-- Favicon y iconos -->
+        <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
+        <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="Portfolio" />
+        <link rel="manifest" href="assets/favicon/site.webmanifest" />
 
-    <!-- Preconnect para optimización de fuentes externas -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+        <!-- Preconnect para optimización de fuentes externas -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
-    <!-- Fuentes -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;0,700;0,800;1,400;1,700&display=swap"
-        rel="preload" as="style">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;0,700;0,800;1,400;1,700&display=swap"
-        rel="stylesheet">
+        <!-- Fuentes -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;0,700;0,800;1,400;1,700&display=swap"
+            rel="preload" as="style">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;0,700;0,800;1,400;1,700&display=swap"
+            rel="stylesheet">
 
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+        <!-- Bootstrap Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
-    <!-- Estilos principales -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/carouselstyle.css">
+        <!-- Estilos principales -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/carouselstyle.css">
 
-    <!-- Umami Analytics -->
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="f89ae255-7d3b-47ec-ba36-6633d94f0cc6">
-    </script>
+        <!-- Umami Analytics -->
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="f89ae255-7d3b-47ec-ba36-6633d94f0cc6">
+        </script>
 
-    <title>ACMA Portfolio | Desarrollador Web Frontend</title>
-</head>
+        <title>ACMA Portfolio | Desarrollador Web Frontend</title>
+    </head>
 
-<body>
-    <div id="particles-js"></div>
-    <!-- HEADER Y NAVEGACIÓN -->
-    <header role="banner">
-        <nav role="navigation" aria-label="Navegación principal">
-            <div class="logo">
-                <a class="navbar-brand neon" href="#inicio" aria-label="ACMA - Ir a inicio">//</a>
-                <a class="navbar-brand" href="#inicio">ACMA</a>
-            </div>
+    <body>
+        <div id="particles-js"></div>
+        <!-- HEADER Y NAVEGACIÓN -->
+        <header role="banner">
+            <nav role="navigation" aria-label="Navegación principal">
+                <div class="logo">
+                    <a class="navbar-brand neon" href="#inicio" aria-label="ACMA - Ir a inicio">//</a>
+                    <a class="navbar-brand" href="#inicio">ACMA</a>
+                </div>
 
-            <button class="hamburguer" id="hamburguer" aria-label="Abrir menú de navegación" aria-expanded="false"
-                aria-controls="nav-menu">
-                <span class="bar" aria-hidden="true"></span>
-                <span class="bar" aria-hidden="true"></span>
-                <span class="bar" aria-hidden="true"></span>
-            </button>
-
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#inicio" data-section="inicio" class="active">Inicio</a></li>
-                <li><a href="#proyectos" data-section="proyectos">Proyectos</a></li>
-                <li><a href="#skills" data-section="skills">Habilidades</a></li>
-                <li><a href="#sobre-mi" data-section="sobre-mi">Sobre mí</a></li>
-                <li><a href="#contacto" data-section="contacto">Contacto</a></li>
-                <li><a href="./assets/docs/adalid_martinez_alvarez_CV.pdf" class="btn-cv" download>
-                        <i class="bi bi-file-earmark-person"></i>
-                        <abbr title="Descargar">DL CV</abbr>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <div id="particles-js"></div>
-    <!-- CONTENIDO PRINCIPAL -->
-    <main id="main-content">
-        <!-- SECCIÓN 1: HERO -->
-        <section id="inicio" class="section active hero" aria-label="Inicio">
-
-            <div class="hero-content">
-                <h1 class="hero-title" id="hero-title">
-                    <span id="typed-text" role="status" aria-live="polite"></span>
-                </h1>
-                <p class="hero-subtitle">
-                    ¡Bienvenid@s a mi portfolio web!
-                </p>
-                <button class="neon-button" data-section="proyectos">
-                    Ver Proyectos
+                <button class="hamburguer" id="hamburguer" aria-label="Abrir menú de navegación" aria-expanded="false"
+                    aria-controls="nav-menu">
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
                 </button>
-            </div>
-        </section>
-        <!-- SECCIÓN 2: PROYECTOS -->
-        <section id="proyectos" class="section projects" aria-label="Proyectos" inert>
 
-            <div class="section-header">
-                <div class="see-more">
-                    <a href="https://github.com/bichota-tech" class="tooltip" target="_blank" rel="noopener noreferrer"
-                        aria-label="Ver mi perfil de GitHub">
-                        <i class="bi bi-github"></i>
-                        <span class="tooltip-text">Ver Perfil</span>
-                    </a>
-                    <a href="./assets/docs/carta_recomendación-adalid_martinez.pdf" class="btn-cv tooltip" download>
-                        <i class="bi bi-envelope-paper-heart"></i>
-                        <span class="tooltip-text">Recomendada</span>
-                    </a>
-                </div>
-            </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#inicio" data-section="inicio" class="active">Inicio</a></li>
+                    <li><a href="#proyectos" data-section="proyectos">Proyectos</a></li>
+                    <li><a href="#skills" data-section="skills">Habilidades</a></li>
+                    <li><a href="#sobre-mi" data-section="sobre-mi">Sobre mí</a></li>
+                    <li><a href="#contacto" data-section="contacto">Contacto</a></li>
+                    <li><a href="./assets/docs/adalid_martinez_alvarez_CV.pdf" class="btn-cv" download>
+                            <i class="bi bi-file-earmark-person"></i>
+                            <abbr title="Descargar">DL CV</abbr>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div id="particles-js"></div>
+        <!-- CONTENIDO PRINCIPAL -->
+        <main id="main-content">
+            <!-- SECCIÓN 1: HERO -->
+            <section id="inicio" class="section active hero" aria-label="Inicio">
 
-            <div class="bodycardfame">
-                <div class="carousel-wrapperfame">
-                    <div class="carouselfame" id="carousel">
-
-                        <div class="cardfame activefame">
-                            <a href="https://hidraulica.cotos.es/" target="_blank" rel="noopener noreferrer"
-                                data-title="WordPress | Visitar Sitio">
-                                <video autoplay loop muted playsinline>
-                                    <source src="assets/demos/iPhone-13-PRO-hidraulica.webm" type="video/webm">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </a>
-                        </div>
-
-                        <div class="cardfame leftfame">
-                            <a href="https://bichota-tech.github.io/excursionescartas/" target="_blank"
-                                rel="noopener noreferrer" data-title="Frontend | Visitar Sitio">
-                                <video autoplay loop muted playsinline>
-                                    <source src="assets/demos/excursionescartas.webm" type="video/webm">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </a>
-                        </div>
-
-                        <div class="cardfame rightfame">
-                            <a href="https://bichota-tech.github.io/Galeria_Virtual/" target="_blank"
-                                rel="noopener noreferrer" data-title="Frontend | Visitar Sitio">
-                                <video autoplay loop muted playsinline>
-                                    <source src="assets/demos/hevca_prueba.webm" type="video/webm">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </a>
-                        </div>
-
-                        <div class="cardfame hiddenfame">
-                            <a href="https://www.limpiezasvioletayverde.com/" target="_blank" rel="noopener noreferrer"
-                                data-title="WordPress | Visitar Sitio">
-                                <video autoplay loop muted playsinline>
-                                    <source src="assets/demos/iPhone-13-PROlimpiezasvioletayverde.webm"
-                                        type="video/webm">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </a>
-                        </div>
-
-                        <div class="cardfame hiddenfame">
-                            <a href="https://bichota-tech.github.io/acma/" target="_blank" rel="noopener noreferrer"
-                                data-title="Frontend | Visitar Sitio">
-                                <video autoplay loop muted playsinline>
-                                    <source src="assets/demos/iPhone-13-PRO-hidraulica.webm" type="video/webm">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="indicators" id="indicators"></div>
-            </div>
-        </section>
-
-        <!-- SECCIÓN 3: HABILIDADES -->
-        <section id="skills" class="section skills" aria-label="Habilidades">
-            <!-- <h2 id="skills-title">Habilidades - próximamente</h2> -->
-            <div class="skills-spotlight">
-                <!-- Selector de habilidades -->
-                <div class="skill-selector" role="tablist" aria-label="Tecnologías">
-                    <button class="skill-btn active" data-skill="html" role="tab" aria-selected="true">
-                        <i class="bi bi-filetype-html"></i>
-                        <span>HTML5</span>
-                    </button>
-                    <button class="skill-btn" data-skill="css" role="tab" aria-selected="false">
-                        <i class="bi bi-filetype-css"></i>
-                        <span>CSS3</span>
-                    </button>
-                    <button class="skill-btn" data-skill="js" role="tab" aria-selected="false">
-                        <i class="bi bi-filetype-js"></i>
-                        <span>JavaScript</span>
-                    </button>
-                    <button class="skill-btn" data-skill="git" role="tab" aria-selected="false">
-                        <i class="bi bi-git"></i>
-                        <span>Git</span>
-                    </button>
-                    <button class="skill-btn" data-skill="github" role="tab" aria-selected="false">
-                        <i class="bi bi-github"></i>
-                        <span>GitHub</span>
-                    </button>
-                    <button class="skill-btn" data-skill="frameworks" role="tab" aria-selected="false">
-                        <i class="bi bi-bricks"></i>
-                        <span>Frameworks</span>
-                    </button>
-                    <button class="skill-btn" data-skill="ia" role="tab" aria-selected="false">
-                        <i class="bi bi-openai"></i>
-                        <span>Inteligencia Artificial</span>
-                    </button>
-                    <button class="skill-btn" data-skill="uiux" role="tab" aria-selected="false">
-                        <i class="bi bi-brush"></i>
-                        <span>Prototipado de Web</span>
-                    </button>
-                    <button class="skill-btn" data-skill="WordPress" role="tab" aria-selected="false">
-                        <i class="bi bi-wordpress"></i>
-                        <span>WordPress</span>
-                    </button>
-                </div>
-                <!-- Card activa -->
-                <div class="skill-card" aria-live="polite">
-                    <div class="skill-icon neon">
-                        <i class="bi bi-filetype-html"></i>
-                    </div>
-
-                    <div class="skill-level">
-                        <span class="pip active"></span>
-                        <span class="pip active"></span>
-                        <span class="pip active"></span>
-                        <span class="pip"></span>
-                        <span class="pip"></span>
-                        <span class="level-text">Intermedio</span>
-                    </div>
-                    <p class="skill-use">
-                        Estructura semántica, SEO básico y accesibilidad en este portfolio.
+                <div class="hero-content">
+                    <h1 class="hero-title" id="hero-title">
+                        <span id="typed-text" role="status" aria-live="polite"></span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        ¡Bienvenid@s a mi portfolio web!
                     </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECCIÓN 4: SOBRE MÍ -->
-        <section id="sobre-mi" class="section" aria-label="Sobre Mí">
-            <h2 id="about-title">Sobre Mí - próximamente</h2>
-
-        </section>
-
-        <!-- SECCIÓN 5: CONTACTO -->
-        <section id="contacto" class="section" aria-label="Contacto">
-            <div class="container">
-                <div class="card">
-                    <img src="assets/imagenes/cartoon.svg" alt="Retrato de Adalid Martínez" class="card_img"
-                        loading="lazy">
-                    <h2 class="card_name" id="contact-title">Adalid Martínez</h2>
-                    <p class="card_web">Programador web (frontend)</p>
-                    <button class="btncontact btn btn-primary" aria-label="Abrir opciones de contacto"
-                        aria-expanded="false">
-                        <div class="button_content">
-                            <span>CONTÁCTAME</span>
-                        </div>
-                        <div class="button_social" role="toolbar" aria-label="Redes sociales">
-                            <a href="https://github.com/bichota-tech" target="_blank" rel="noopener noreferrer"
-                                aria-label="GitHub">
-                                <i class="bi bi-github" aria-hidden="true"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/acma-48755b34b/" target="_blank"
-                                rel="noopener noreferrer" aria-label="LinkedIn">
-                                <i class="bi bi-linkedin" aria-hidden="true"></i>
-                            </a>
-                            <a href="https://wa.me/640947912" target="_blank" rel="noopener noreferrer"
-                                aria-label="WhatsApp">
-                                <i class="bi bi-whatsapp" aria-hidden="true"></i>
-                            </a>
-                            <a href="mailto:adalvarez2021@gmail.com" aria-label="Correo electrónico">
-                                <i class="bi bi-envelope-at-fill" aria-hidden="true"></i>
-                            </a>
-                        </div>
+                    <button class="neon-button" data-section="proyectos">
+                        Ver Proyectos
                     </button>
                 </div>
-            </div>
-            <!-- FOOTER -->
-            <footer role="contentinfo">
-                <p>&copy; 2026 Adalid Martínez Álvarez. Todos los derechos reservados.</p>
-            </footer>
-        </section>
-    </main>
+            </section>
+            <!-- SECCIÓN 2: PROYECTOS -->
+            <section id="proyectos" class="section projects" aria-label="Proyectos" inert>
+                <div class="bodycardfame">
+                    <div class="carousel-wrapperfame">
+                        <div class="carouselfame" id="carousel">
 
-    <!-- SCRIPTS -->
-    <!-- Typed.js para efecto de tipeado -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+                            <div class="cardfame activefame">
+                                <a href="https://hidraulica.cotos.es/" target="_blank" rel="noopener noreferrer"
+                                    data-title="WordPress | Visitar Sitio">
+                                    <video autoplay loop muted playsinline>
+                                        <source src="assets/demos/iPhone-13-PRO-hidraulica.webm" type="video/webm">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </a>
+                            </div>
 
-    <!-- Particles.js para fondo animado -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+                            <div class="cardfame leftfame">
+                                <a href="https://bichota-tech.github.io/excursionescartas/" target="_blank"
+                                    rel="noopener noreferrer" data-title="Frontend | Visitar Sitio">
+                                    <video autoplay loop muted playsinline>
+                                        <source src="assets/demos/excursionescartas.webm" type="video/webm">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </a>
+                            </div>
 
-    <!-- Carrusel personalizado 3D -->
-    <script src="javascripts/carousel.js" defer></script>
+                            <div class="cardfame rightfame">
+                                <a href="https://bichota-tech.github.io/Galeria_Virtual/" target="_blank"
+                                    rel="noopener noreferrer" data-title="Frontend | Visitar Sitio">
+                                    <video autoplay loop muted playsinline>
+                                        <source src="assets/demos/hevca_prueba.webm" type="video/webm">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </a>
+                            </div>
 
-    <!-- Spotlight para habilidades -->
-    <script src="javascripts/spotlight.js" defer></script>
+                            <div class="cardfame hiddenfame">
+                                <a href="https://www.limpiezasvioletayverde.com/" target="_blank"
+                                    rel="noopener noreferrer" data-title="WordPress | Visitar Sitio">
+                                    <video autoplay loop muted playsinline>
+                                        <source src="assets/demos/iPhone-13-PROlimpiezasvioletayverde.webm"
+                                            type="video/webm">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </a>
+                            </div>
 
-    <!-- Efectos y animaciones Typed.js y Particles.js -->
-    <script src="javascripts/effects.js" defer></script>
+                            <div class="cardfame hiddenfame">
+                                <a href="https://bichota-tech.github.io/acma/" target="_blank" rel="noopener noreferrer"
+                                    data-title="Frontend | Visitar Sitio">
+                                    <video autoplay loop muted playsinline>
+                                        <source src="assets/demos/iPhone-13-PRO-hidraulica.webm" type="video/webm">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="indicators" id="indicators"></div>
+                </div>
+                <div class="section-header">
+                    <div class="see-more">
+                        <a href="https://github.com/bichota-tech" class="tooltip" target="_blank"
+                            rel="noopener noreferrer" aria-label="Ver mi perfil de GitHub">
+                            <i class="bi bi-github"></i>
+                            <span class="tooltip-text">Ver Perfil</span>
+                        </a>
+                        <a href="./assets/docs/carta_recomendación-adalid_martinez.pdf" class="btn-cv tooltip" download>
+                            <i class="bi bi-envelope-paper-heart"></i>
+                            <span class="tooltip-text">Recomendada</span>
+                        </a>
+                    </div>
+                </div>
 
-    <!-- Aplicación principal SPA -->
-    <script src="javascripts/app.js" defer></script>
-</body>
+
+            </section>
+
+            <!-- SECCIÓN 3: HABILIDADES -->
+            <section id="skills" class="section skills" aria-label="Habilidades">
+                <!-- <h2 id="skills-title">Habilidades - próximamente</h2> -->
+                <div class="skills-spotlight">
+                    <!-- Selector de habilidades -->
+                    <div class="skill-selector" role="tablist" aria-label="Tecnologías">
+                        <button class="skill-btn active" data-skill="html" role="tab" aria-selected="true">
+                            <i class="bi bi-filetype-html"></i>
+                            <span>HTML5</span>
+                        </button>
+                        <button class="skill-btn" data-skill="css" role="tab" aria-selected="false">
+                            <i class="bi bi-filetype-css"></i>
+                            <span>CSS3</span>
+                        </button>
+                        <button class="skill-btn" data-skill="js" role="tab" aria-selected="false">
+                            <i class="bi bi-filetype-js"></i>
+                            <span>JavaScript</span>
+                        </button>
+                        <button class="skill-btn" data-skill="git" role="tab" aria-selected="false">
+                            <i class="bi bi-git"></i>
+                            <span>Git</span>
+                        </button>
+                        <button class="skill-btn" data-skill="github" role="tab" aria-selected="false">
+                            <i class="bi bi-github"></i>
+                            <span>GitHub</span>
+                        </button>
+                        <button class="skill-btn" data-skill="frameworks" role="tab" aria-selected="false">
+                            <i class="bi bi-bricks"></i>
+                            <span>Frameworks</span>
+                        </button>
+                        <button class="skill-btn" data-skill="ia" role="tab" aria-selected="false">
+                            <i class="bi bi-openai"></i>
+                            <span>Inteligencia Artificial</span>
+                        </button>
+                        <button class="skill-btn" data-skill="uiux" role="tab" aria-selected="false">
+                            <i class="bi bi-brush"></i>
+                            <span>Prototipado de Web</span>
+                        </button>
+                        <button class="skill-btn" data-skill="WordPress" role="tab" aria-selected="false">
+                            <i class="bi bi-wordpress"></i>
+                            <span>WordPress</span>
+                        </button>
+                    </div>
+                    <!-- Card activa -->
+                    <div class="skill-card" aria-live="polite">
+                        <div class="skill-icon neon">
+                            <i class="bi bi-filetype-html"></i>
+                        </div>
+
+                        <div class="skill-level">
+                            <span class="pip active"></span>
+                            <span class="pip active"></span>
+                            <span class="pip active"></span>
+                            <span class="pip"></span>
+                            <span class="pip"></span>
+                            <span class="level-text">Intermedio</span>
+                        </div>
+                        <p class="skill-use">
+                            Estructura semántica, SEO básico y accesibilidad en este portfolio.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 4: SOBRE MÍ -->
+            <section id="sobre-mi" class="section" aria-label="Sobre Mí">
+                <h2 id="about-title">Sobre Mí - próximamente</h2>
+
+            </section>
+
+            <!-- SECCIÓN 5: CONTACTO -->
+            <section id="contacto" class="section" aria-label="Contacto">
+                <div class="container">
+                    <div class="card">
+                        <img src="assets/imagenes/cartoon.svg" alt="Retrato de Adalid Martínez" class="card_img"
+                            loading="lazy">
+                        <h2 class="card_name" id="contact-title">Adalid Martínez</h2>
+                        <p class="card_web">Programador web (frontend)</p>
+                        <button class="btncontact btn btn-primary" aria-label="Abrir opciones de contacto"
+                            aria-expanded="false">
+                            <div class="button_content">
+                                <span>CONTÁCTAME</span>
+                            </div>
+                            <div class="button_social" role="toolbar" aria-label="Redes sociales">
+                                <a href="https://github.com/bichota-tech" target="_blank" rel="noopener noreferrer"
+                                    aria-label="GitHub">
+                                    <i class="bi bi-github" aria-hidden="true"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/acma-48755b34b/" target="_blank"
+                                    rel="noopener noreferrer" aria-label="LinkedIn">
+                                    <i class="bi bi-linkedin" aria-hidden="true"></i>
+                                </a>
+                                <a href="https://wa.me/640947912" target="_blank" rel="noopener noreferrer"
+                                    aria-label="WhatsApp">
+                                    <i class="bi bi-whatsapp" aria-hidden="true"></i>
+                                </a>
+                                <a href="mailto:adalvarez2021@gmail.com" aria-label="Correo electrónico">
+                                    <i class="bi bi-envelope-at-fill" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <!-- FOOTER -->
+                <footer role="contentinfo">
+                    <p>&copy; 2026 Adalid Martínez Álvarez. Todos los derechos reservados.</p>
+                </footer>
+            </section>
+        </main>
+
+        <!-- SCRIPTS -->
+        <!-- Typed.js para efecto de tipeado -->
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+
+        <!-- Particles.js para fondo animado -->
+        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+
+        <!-- Carrusel personalizado 3D -->
+        <script src="javascripts/carousel.js" defer></script>
+
+        <!-- Spotlight para habilidades -->
+        <script src="javascripts/spotlight.js" defer></script>
+
+        <!-- Efectos y animaciones Typed.js y Particles.js -->
+        <script src="javascripts/effects.js" defer></script>
+
+        <!-- Aplicación principal SPA -->
+        <script src="javascripts/app.js" defer></script>
+    </body>
 
 </html>

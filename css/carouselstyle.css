@@ -17,13 +17,11 @@
     height: 100%;
     cursor: default;
     margin-top: 3rem;
-    padding-block: 1.5rem;
 }
 
 .carousel-wrapperfame {
     width: 100%;
-    height: 100%;
-    padding: 1rem;
+    height: 70vh;
     overflow: hidden;
     position: relative;
     perspective: 2000px;
@@ -43,7 +41,7 @@
     position: absolute;
     padding: 0;
     width: auto;
-    height: 400px;
+    height: 450px;
     border-radius: 35px;
     /* background: linear-gradient(to top, #300046, #652479); */
     overflow: hidden;
@@ -78,12 +76,25 @@ a[data-title]:hover::after {
     opacity: 1;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
+    .carousel-wrapperfame {
+        height: 50vh;
+    }
+
     .cardfame {
         width: auto;
-        height: 350px;
+        height: 450px;
         border-radius: 30px;
     }
+
+}
+
+@media (max-width:425px) {
+    
+    .carousel-wrapperfame {
+        height: 70vh;
+    }
+
 }
 
 video {
@@ -112,25 +123,15 @@ video:hover {
 }
 
 .cardfame.leftfame {
-    transform: translateX(-300px) translateZ(-150px) rotateY(35deg) scale(0.85);
+    transform: translateX(-250px) translateZ(-150px) rotateY(35deg) scale(0.85);
     opacity: 1;
     z-index: 3;
 }
 
 .cardfame.rightfame {
-    transform: translateX(300px) translateZ(-150px) rotateY(-35deg) scale(0.85);
+    transform: translateX(250px) translateZ(-150px) rotateY(-35deg) scale(0.85);
     opacity: 1;
     z-index: 3;
-}
-
-@media (max-width: 768px) {
-    .cardfame.leftfame {
-        transform: translateX(-190px) translateZ(-150px) rotateY(35deg) scale(0.85);
-    }
-
-    .cardfame.rightfame {
-        transform: translateX(190px) translateZ(-150px) rotateY(-35deg) scale(0.85);
-    }
 }
 
 .cardfame.hiddenfame {
@@ -146,11 +147,11 @@ video:hover {
 
 .indicators {
     display: flex;
-    justify-content: center;
+    justify-content: initial;
     align-items: center;
     gap: 12px;
-    padding: 1rem;
     margin-bottom: 1rem;
+    height: auto;
 }
 
 .indicator {

@@ -427,8 +427,15 @@ main {
   gap: 1rem;
   position: absolute;
   right: 5%;
-  bottom: 25%;
+  bottom: 5%;
   z-index: 1000;
+}
+
+@media (max-width:800px) {
+    .see-more {
+      flex-direction: column;
+        bottom: 20%;
+    }
 }
 
 @media (max-width:425px) {

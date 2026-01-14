@@ -89,36 +89,73 @@ buttons.forEach(btn => {
     });
 });
 
+function renderSkillCard(skill) {
+    // Limpiar card
+    card.innerHTML = '';
+
+    // ICONO
+    const iconWrap = document.createElement('div');
+    iconWrap.className = 'skill-icon neon';
+
+    const icon = document.createElement('i');
+    icon.className = skill.icon;
+
+    iconWrap.appendChild(icon);
+
+    // NIVEL
+    const levelWrap = document.createElement('div');
+    levelWrap.className = 'skill-level';
+
+    const pips = [];
+
+    for (let i = 0; i < 5; i++) {
+        const pip = document.createElement('span');
+        pip.className = 'pip';
+        levelWrap.appendChild(pip);
+        pips.push(pip);
+    }
+
+    const levelText = document.createElement('span');
+    levelText.className = 'level-text';
+    levelText.textContent = skill.label;
+
+    levelWrap.appendChild(levelText);
+
+    // USO
+    const use = document.createElement('p');
+    use.className = 'skill-use';
+    use.textContent = skill.use;
+
+    // Montar card
+    card.appendChild(iconWrap);
+    card.appendChild(levelWrap);
+    card.appendChild(use);
+
+    return pips;
+}
 
 
 function updateSpotlight(skillKey) {
     const skill = skillsData[skillKey];
-    const pips = card.querySelectorAll('.pip');
 
-    // Activar animación de salida
+    // Animación de salida
     card.classList.add('is-animating');
 
     setTimeout(() => {
-        // Actualizar contenido
-        card.querySelector('.skill-icon i').className = skill.icon;
-        card.querySelector('.skill-use').textContent = skill.use;
-        card.querySelector('.level-text').textContent = skill.label;
+        // Crear estructura completa
+        const pips = renderSkillCard(skill);
 
-        // Reset y aplicar estados de pips
+        // Reset y aplicar estados de pips (MISMA LÓGICA)
         pips.forEach((pip, i) => {
             pip.classList.remove('active', 'neon-progress');
 
             if (i < skill.level) {
-                // Niveles completados
                 pip.classList.add('active');
             } else if (i === skill.level) {
-                // Nivel en progreso (parpadeo)
                 pip.classList.add('neon-progress');
             } else if (i === skill.level && skill.level < pips.length) {
-                //progreso completado sin parpadeo
                 pip.classList.add('neon-progress');
             }
-
         });
 
         // Reentrada
@@ -129,9 +166,17 @@ function updateSpotlight(skillKey) {
     }, 180);
 }
 
-
 skillsSection.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         e.stopPropagation();
     }
+});
+
+// Inicializar la aplicación cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', () => {
+    const firstSkillKey = Object.keys(skillsData)[0];
+
+    if (!firstSkillKey) return;
+
+    updateSpotlight(firstSkillKey);
 });

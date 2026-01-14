@@ -5,6 +5,7 @@
     --color-acento-primario: #f55139;
     --color-acento-primario-brillo: #fd0800;
     --color-acento-secundario: #3AB7BF;
+    --color-acento-dark: #298288;
 }
 
 .bodycardfame {
@@ -21,10 +22,11 @@
 
 .carousel-wrapperfame {
     width: 100%;
-    height: 70vh;
+    height: 90%;
     overflow: hidden;
     position: relative;
     perspective: 2000px;
+    padding-block: 1rem;
 }
 
 .carouselfame {
@@ -41,9 +43,8 @@
     position: absolute;
     padding: 0;
     width: auto;
-    height: 450px;
+    height: 100%;
     border-radius: 35px;
-    /* background: linear-gradient(to top, #300046, #652479); */
     overflow: hidden;
     transition: transform 0.8s ease, opacity 0.6s ease, filter 0.6s ease;
     filter: blur(2px);
@@ -62,11 +63,12 @@ a[data-title]::after {
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
-    background: #000;
-    color: #fff;
-    border-radius: 0.4rem;
-    padding: 0.4rem 0.7rem;
-    font-size: clamp(5px, 3vw, 10px);
+    background: var(--color-acento-dark);
+    color: var(--color-fondo-claro);
+    border-radius: 15px;
+    padding: 0.5rem 0.7rem;
+    font-size: clamp(8px, 3vw, 13px);
+    font-weight: 550;
     white-space: nowrap;
     pointer-events: none;
     transition: opacity 0.25s ease;
@@ -90,7 +92,7 @@ a[data-title]:hover::after {
 }
 
 @media (max-width:440px) {
-    
+
     .carousel-wrapperfame {
         height: 70vh;
     }
@@ -119,19 +121,46 @@ video:hover {
 
 .cardfame.activefame:hover {
     transform: translateX(0px) translateZ(0px) rotateY(0deg) scale(1.03);
-    box-shadow: black 0px 0px 15px 0px;
 }
 
 .cardfame.leftfame {
-    transform: translateX(-250px) translateZ(-150px) rotateY(35deg) scale(0.85);
+    transform: translateX(-350px) translateZ(-150px) rotateY(35deg) scale(0.85);
     opacity: 1;
     z-index: 3;
 }
 
 .cardfame.rightfame {
-    transform: translateX(250px) translateZ(-150px) rotateY(-35deg) scale(0.85);
+    transform: translateX(350px) translateZ(-150px) rotateY(-35deg) scale(0.85);
     opacity: 1;
     z-index: 3;
+}
+
+@media(max-width:1024px) {
+    .cardfame.leftfame {
+        transform: translateX(-280px) translateZ(-150px) rotateY(35deg) scale(0.85);
+        opacity: 1;
+        z-index: 3;
+    }
+
+    .cardfame.rightfame {
+        transform: translateX(280px) translateZ(-150px) rotateY(-35deg) scale(0.85);
+        opacity: 1;
+        z-index: 3;
+    }
+}
+
+@media(max-width:440px) {
+    .cardfame.leftfame {
+        transform: translateX(-200px) translateZ(-150px) rotateY(35deg) scale(0.85);
+        opacity: 1;
+        z-index: 3;
+    }
+
+    .cardfame.rightfame {
+        transform: translateX(200px) translateZ(-150px) rotateY(-35deg) scale(0.85);
+        opacity: 1;
+        z-index: 3;
+    }
 }
 
 .cardfame.hiddenfame {

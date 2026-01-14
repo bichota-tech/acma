@@ -47,17 +47,20 @@ class ACMAPortfolio {
    * Botón "Ver Proyectos" en la sección hero
    */
   attachHeroButtonListener() {
-    const heroBtn = document.querySelector('.neon-button[data-section]');
-    if (!heroBtn) return;
+  const heroBtns = document.querySelectorAll('.neon-button[data-section]');
+  if (!heroBtns.length) return;
 
-    heroBtn.addEventListener('click', (e) => {
-      const target = heroBtn.getAttribute('data-section');
-      if (target) {
-        this.navigateTo(target);
-        this.closeMenu();
-      }
+  heroBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.getAttribute('data-section');
+      if (!target) return;
+
+      this.navigateTo(target);
+      this.closeMenu();
     });
-  }
+  });
+}
+
 
   /**
    * Mejora la experiencia al descargar el CV desde el nav

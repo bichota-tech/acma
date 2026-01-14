@@ -335,7 +335,8 @@ main {
   font-weight: 700;
   color: var(--color-acento-primario);
   letter-spacing: 1px;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
+  height: 70px;
 }
 
 .hero-subtitle {

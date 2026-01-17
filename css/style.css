@@ -113,11 +113,18 @@ nav {
   font-weight: 700;
   color: var(--color-fondo-claro);
   text-decoration: none;
+}
+
+a.navbar-brand-symbol{
+  color: var(--color-acento-primario);
+  font-size: clamp(1.5rem, 3vw, 1.8rem);
+  font-weight: 700;
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.navbar-brand.neon {
-  color: var(--color-acento-primario);
+.neon {
+  color: inherit;
   font-weight: 800;
   text-shadow:
     0 0 5px var(--color-acento-primario-brillo),
@@ -185,7 +192,6 @@ nav {
 
 abbr {
   text-decoration: none;
-
 }
 
 .hamburguer {
@@ -328,7 +334,8 @@ main {
   font-weight: 700;
   color: var(--color-acento-primario);
   letter-spacing: 1px;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
+  height: 70px;
 }
 
 .hero-subtitle {
@@ -338,9 +345,17 @@ main {
   margin-bottom: 3rem;
 }
 
+.ctas{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
+  
+}
+
 .neon-button {
   background: transparent;
-  color: var(--color-fondo-claro) !important;
+  color: var(--color-fondo-claro);
   border: 2px solid var(--color-acento-primario);
   border-radius: 4rem !important;
   padding: 12px 25px;
@@ -400,6 +415,9 @@ main {
 .projects {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
 }
 
 .see-more {
@@ -408,17 +426,22 @@ main {
   gap: 1rem;
   position: absolute;
   right: 5%;
-  bottom: 25%;
+  bottom: 5%;
   z-index: 1000;
 }
 
+@media (max-width:800px) {
+    .see-more {
+      flex-direction: column;
+        bottom: 20%;
+    }
+}
+
 @media (max-width:425px) {
-    
     .see-more {
       flex-direction: column;
         bottom: 5%;
     }
-
 }
 
 .see-more a {
@@ -459,6 +482,8 @@ main {
   white-space: nowrap;
   pointer-events: none;
   transition: opacity 0.25s ease;
+  text-shadow: none;
+  animation: none;
 }
 
 .tooltip:hover .tooltip-text {
@@ -477,6 +502,7 @@ section#skills {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 2rem;
   
 }
 
@@ -581,14 +607,18 @@ section#skills {
 }
 
 /* Tablet Responsive */
-@media (max-width:768px) {
+@media (max-width:800px) {
+  section#skills{
+    margin-top: -5rem;
+  }
+
   .skills-spotlight {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: stretch; 
-    row-gap: 2rem;
+    row-gap: 6rem;
   }
 
   .skill-selector {
@@ -622,6 +652,14 @@ section#skills {
 }
 
 @media(max-width:440px){
+  section#skills{
+    margin-top:2rem;
+  }
+
+  .skills-spotlight{
+    row-gap: 2rem;
+  }
+
   .skill-card {
     padding: 1.2rem 1.5rem;
     height: 380px;

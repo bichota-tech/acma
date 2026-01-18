@@ -1,0 +1,75 @@
+{
+    "html": {
+        "level": 4,
+        "label": "Avanzado",
+        "use": "Estructuro interfaces semánticas, accesibles y orientadas a SEO. Trabajo con HTML como base de producto, garantizando compatibilidad, rendimiento y experiencia sólida desde el primer render.",
+        "icon": "bi bi-filetype-html"
+    },
+    "css": {
+        "level": 4,
+        "label": "Avanzado",
+        "use": "Diseño de layouts responsive usando Flexbox y Grid, animaciones CSS y adaptaciones para distintos dispositivos. Garantizo consistencia visual y rendimiento.",
+        "icon": "bi bi-filetype-css"
+    },
+    "js": {
+        "level": 3,
+        "label": "En progreso",
+        "use": "Gestión de DOM, estados UI y navegación SPA. Desarrollo componentes dinámicos como carruseles 3D, spotlight de habilidades y modals interactivos. Uso de librerías externas mínimas solo cuando aportan valor.",
+        "icon": "bi bi-filetype-js"
+    },
+    
+    "frameworks": {
+        "level": 3,
+        "label": "En progreso",
+        "use": "Experiencia con librerías JS (por ejemplo: Typed.js, particles.js) para efectos visuales y funcionalidad interactiva. Uso de Bootstrap limitado a iconos y componentes puntuales; al inicio lo usé más ampliamente para agilizar maquetación.",
+        "icon": "bi bi-bricks"
+    },
+    "JSON": {
+        "level": 3,
+        "label": "En progreso",
+        "use": "Manejo de datos dinámicos mediante JSON y consumo de APIs para renderizar componentes como projects y skills de forma dinámica.",
+        "icon": "bi bi-filetype-json"
+    },
+    "git": {
+        "level": 3,
+        "label": "En progreso",
+        "use": "Control de versiones con ramas, commits y merges. Uso eficiente para proyectos personales y su despliegue de portfolios.",
+        "icon": "bi bi-git"
+    },
+    "github": {
+        "level": 3,
+        "label": "En progreso",
+        "use": "Gestión de repositorios y proyectos pequeños-medianos, deployment de páginas estáticas (GitHub Pages) y documentación de repositorios profesional.",
+        "icon": "bi bi-github"
+    },
+    "ia": {
+        "level": 4,
+        "label": "Avanzado",
+        "use": "Generación de contenido y optimización de procesos creativos, utilizando herramientas como ChatGPT y MidJourney para diseño, documentación y prototipado.",
+        "icon": "bi bi-openai"
+    },
+    "uiux": {
+        "level": 3,
+        "label": "En progreso",
+        "use": "Diseño de interfaces y prototipos para proyectos web con Figma y Canva. Aplico principios básicos de usabilidad y experiencia de usuario, accesibilidad y consistencia visual.",
+        "icon": "bi bi-brush"
+    },
+    "WordPress": {
+        "level": 3,
+        "label": "Intermedio",
+        "use": "Desarrollo, maquetado y gestión de sitios web dinámicos, con enfoque en SEO, accesibilidad, performance y mantenimiento de contenido.",
+        "icon": "bi bi-wordpress"
+    },
+    "SEO": {
+        "level": 3,
+        "label": "Intermedio",
+        "use": "Optimización de sitios web para motores de búsqueda y rendimiento con auditoría de rendimiento, SEO y buenas prácticas con Google Lighthouse y PageSpeed Insights, optimizando tiempos de carga, lazy loading, imágenes y scripts.",
+        "icon": "bi bi-speedometer2"
+    },
+    "accesibilidad": {
+        "level": 3,
+        "label": "Intermedio",
+        "use": "Evaluación y corrección de accesibilidad usando WAVE, implementando ARIA, roles, foco y contraste para interfaces inclusivas.",
+        "icon": "bi bi-universal-access"
+    } 
+}

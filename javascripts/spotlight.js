@@ -1,64 +1,20 @@
-const skillsData = {
-    html: {
-        level: 4,
-        label: 'Avanzado',
-        use: 'Estructuro interfaces semánticas, accesibles y orientadas a SEO. Trabajo con HTML como base de producto, no como simple mercado, garantizando compatibilidad, rendimiento y una experiencia sólida desde el primer render.',
-        icon: 'bi bi-filetype-html'
-    },
-    css: {
-        level: 4,
-        label: 'Avanzado',
-        use: 'Layout responsive con Flexbox, Grid y animaciones.',
-        icon: 'bi bi-filetype-css'
-    },
-    js: {
-        level: 3,
-        label: 'En progreso',
-        use: 'Gestión de estados UI y navegación SPA.',
-        icon: 'bi bi-filetype-js'
-    },
-    git: {
-        level: 3,
-        label: 'En progreso',
-        use: 'Control de versiones y repositorios en GitHub.',
-        icon: 'bi bi-git'
-    },
-    github: {
-        level: 3,
-        label: 'En progreso',
-        use: 'Gestión de proyectos pequeños-medianos mediante GitHub.',
-        icon: 'bi bi-github'
-    },
-    frameworks: {
-        level: 2,
-        label: 'En progreso',
-        use: 'Uso de librerías como React y Bootstrap para acelerar el desarrollo.',
-        icon: 'bi bi-bricks'
-    },
-    ia: {
-        level: 4,
-        label: 'Avanzado',
-        use: 'Generación de contenido y optimización de procesos creativos.',
-        icon: 'bi bi-openai'
-    },
-    uiux: {
-        level: 3,
-        label: 'En progreso',
-        use: 'Diseño de interfaces y prototipos para proyectos web usando Figma y Canva.',
-        icon: 'bi bi-brush'
-    },
-    WordPress: {
-        level: 3,
-        label: 'Intermedio',
-        use: 'Creación, maquetado y gestión de sitios web dinámicos.',
-        icon: 'bi bi-wordpress'
-    }
-};
 
 const skillsSection = document.getElementById('skills');
 const buttons = document.querySelectorAll('.skill-btn');
 const card = document.querySelector('.skill-card');
-let currentSkill = 'html'; // skill por defecto
+let skillsData = {};
+let currentSkill = null; //hasta cargar el json
+
+async function loadSkillsData() {
+    try {
+        const res = await fetch('assets/data/skills.json');
+        skillsData = await res.json();
+        console.log('✓ Skills data cargado');
+    } catch (err) {
+        console.error('Error cargando skills.json', err);
+    }
+}
+
 
 buttons.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -173,10 +129,20 @@ skillsSection.addEventListener('keydown', (e) => {
 });
 
 // Inicializar la aplicación cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', () => {
-    const firstSkillKey = Object.keys(skillsData)[0];
+document.addEventListener('DOMContentLoaded', async () => {
+    await loadSkillsData();
 
+    const firstSkillKey = Object.keys(skillsData)[0];
     if (!firstSkillKey) return;
+
+    currentSkill = firstSkillKey;
+
+    // Marcar botón activo inicial
+    buttons.forEach(btn => {
+        const isActive = btn.dataset.skill === firstSkillKey;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-selected', isActive);
+    });
 
     updateSpotlight(firstSkillKey);
 });

@@ -81,7 +81,7 @@ a[data-title]:hover::after {
 
 @media (max-width: 800px) {
     .carousel-wrapperfame {
-        height: 50vh;
+        height: 70vh;
     }
 
     .cardfame {
@@ -203,4 +203,100 @@ video:hover {
     background-color: var(--color-acento-secundario);
     transform: scale(1.2);
     box-shadow: 0 0 10px var(--color-acento-secundario);
+}
+
+/* ==========================
+   MODAL PROYECTOS
+   ========================= */
+
+.project-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    margin-inline: 1rem;
+    text-align: center;
+    top: 10%;
+}
+
+.project-modal.hidden {
+    display: none;
+}
+
+.project-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(30, 31, 34, 0.85);
+    backdrop-filter: blur(6px);
+}
+
+.project-modal-content {
+    position: relative;
+    max-width: 500px;
+    height: auto;
+    margin: 10vh auto;
+    text-align: center;
+    background: var(--color-fondo-oscuro);
+    color: var(--color-fondo-claro);
+    border-radius: 30px;
+    padding: 2rem;
+    box-shadow: 0 0 30px rgba(0,0,0,0.6);
+    animation: modalIn 0.3s ease;
+}
+
+@keyframes modalIn {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes modalOut {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+}
+
+.project-modal.closing .project-modal-content {
+    animation: modalOut 0.3s ease forwards;
+}
+
+.project-modal .project-modal-content {
+    animation: modalIn 0.3s ease forwards;
+}
+
+.project-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--color-acento-primario);
+    cursor: pointer;
+}
+
+#project-modal-tech {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem 0 1.5rem;
+    padding: 0;
+    list-style: none;
+}
+
+#project-modal-tech li {
+    background: var(--color-acento-dark);
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
 }

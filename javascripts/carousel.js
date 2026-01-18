@@ -1,10 +1,102 @@
-/*
- * ============================================================================
+/*========================
  * CAROUSEL 3D CONTROLLER
- * ============================================================================
- * Gestiona el carrusel 3D con loop infinito, pausa automática, eventos táctiles,
+ * ========================
+ * Gestiona el carrusel 3D con loop infinito
+ * pausa automática, eventos táctiles
+ * modal informativo
  * teclado y sincronización de indicadores.
 */
+
+const projectsData = {
+  hidraulica: {
+    title: "Hidráulica Welding Boss SL.",
+    description: "Web corporativa desarrollada en WordPress, optimizada para SEO local, rendimiento y usabilidad.",
+    technologies: ["WordPress", "Elementor", "Maquetado", "CSS3", "SEO", "Accesibilidad web", "Responsive"],
+    url: "https://hidraulica.cotos.es/"
+  },
+  excursiones: {
+    title: "Excursiones Cartas",
+    description: "Aplicación frontend interactiva desarrollada con JavaScript vanilla para el control de animaciones de entrada.",
+    technologies: ["HTML5", "CSS3", "JavaScript", "Responsive", "Bootstrap"],
+    url: "https://bichota-tech.github.io/excursionescartas/"
+  },
+  hevca: {
+    title: "Hevca PhotoArt",
+    description: "Aplicación frontend interactiva desarrollada con JavaScript vanilla",
+    technologies: ["HTML5", "CSS3", "JavaScript", "JSON", "Responsive", "Bootstrap"],
+    url: "https://bichota-tech.github.io/Galeria_Virtual/"
+  },
+  limpieza: {
+    title: "Limpiezas Violeta y Verde",
+    description: "Web corporativa desarrollada en WordPress, optimizada para SEO local, rendimiento y usabilidad.",
+    technologies: ["WordPress", "Elementor", "Maquetado", "CSS3", "SEO", "Accesibilidad web", "Responsive"],
+    url: "https://www.limpiezasvioletayverde.com/"
+  },
+  acma: {
+    title: "Portfolio Web Frontend",
+    description: "Aplicación frontend interactiva desarrollada con JavaScript vanilla.",
+    technologies: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "Librerías JS"],
+    url: "https://bichota-tech.github.io/acma/"
+  }
+};
+
+/* =====================
+*   LÓGICA DE MODAL
+*  ======================*/
+
+const modal = document.getElementById('project-modal');
+const overlay = modal.querySelector('.project-modal-overlay');
+const closeBtn = modal.querySelector('.project-modal-close');
+
+const titleEl = document.getElementById('project-modal-title');
+const descEl = document.getElementById('project-modal-description');
+const techEl = document.getElementById('project-modal-tech');
+const linkEl = document.getElementById('project-modal-link');
+
+function openProjectModal(key) {
+  const data = projectsData[key];
+  if (!data) return;
+
+  pauseCarouselForModal();
+
+  titleEl.textContent = data.title;
+  descEl.textContent = data.description;
+  linkEl.href = data.url;
+
+  techEl.innerHTML = '';
+  data.technologies.forEach(t => {
+    const li = document.createElement('li');
+    li.textContent = t;
+    techEl.appendChild(li);
+  });
+
+  modal.classList.remove('hidden');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeProjectModal() {
+  modal.classList.add('closing');
+
+  setTimeout(() => {
+    modal.classList.remove('closing');
+    modal.classList.add('hidden');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+
+    resumeCarouselAfterModal();
+  }, 300); // debe coincidir con la animación CSS
+}
+
+
+overlay.addEventListener('click', closeProjectModal);
+closeBtn.addEventListener('click', closeProjectModal);
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeProjectModal();
+  }
+});
 
 // Constantes de configuración
 const CAROUSEL_SELECTOR = '#carousel';
@@ -29,20 +121,17 @@ let carouselElement = null;
 let indicatorsContainer = null;
 let cards = null;
 
-// ============================================================================
+// ================
 // INICIALIZACIÓN
-// ============================================================================
+// ================
 
-/**
- * Inicializa el carrusel cuando el DOM está listo
- */
 function initCarousel() {
-  // Obtener referencias a elementos principales
+
   carouselElement = document.querySelector(CAROUSEL_SELECTOR);
   indicatorsContainer = document.querySelector(INDICATORS_SELECTOR);
   cards = document.querySelectorAll(CARD_SELECTOR);
   
-  // Validar elementos necesarios
+  // Validación de elemntos vacios
   if (!carouselElement || !cards.length) {
     console.error('Error: No se encontró el carousel o las cards');
     return;
@@ -65,9 +154,7 @@ function initCarousel() {
   console.log(`✓ Carousel inicializado con ${totalCards} cards`);
 }
 
-/**
- * Crea los indicadores dinámicamente en el contenedor #indicators
- */
+/* Crea los indicadores dinámicamente en el contenedor #indicators */
 function createIndicators() {
   if (!indicatorsContainer) return;
   
@@ -97,15 +184,14 @@ function createIndicators() {
   console.log(`✓ ${totalCards} indicadores creados`);
 }
 
-// ============================================================================
+// ===============================
 // CONTROL PRINCIPAL DEL CARRUSEL
-// ============================================================================
+// ===============================
 
 /**
  * Actualiza las clases de las cards según el índice actual
  * Distribuye las clases: active, left, right, hidden
- * 
- * @param {number} index - Índice de la card activa
+ * @param {number} index  //Índice de la card activa
  */
 function updateCarousel(index) {
   // Validar índice dentro del rango
@@ -186,13 +272,10 @@ function prevCard() {
   goToCard(currentIndex - 1);
 }
 
-// ============================================================================
+// =========
 // AUTOPLAY
-// ============================================================================
-
-/**
- * Inicia el autoplay automático que avanza cada AUTOPLAY_DURATION ms
- */
+// =========
+/* Inicia el autoplay automático que avanza cada AUTOPLAY_DURATION ms */
 function startAutoplay() {
   if (autoplayTimer) clearInterval(autoplayTimer);
   
@@ -203,30 +286,35 @@ function startAutoplay() {
   }, AUTOPLAY_DURATION);
 }
 
-/**
- * Reinicia el autoplay (se usa después de navegación manual)
- */
+/* Reinicia el autoplay y Pausa (se usa durante y después de navegación manual) */
 function restartAutoplay() {
   startAutoplay();
 }
 
-/**
- * Detiene el autoplay
- */
 function stopAutoplay() {
   if (autoplayTimer) {
     clearInterval(autoplayTimer);
     autoplayTimer = null;
   }
 }
+/* Helpers de pausa del carrusel ante el modal*/
+function pauseCarouselForModal() {
+  isPaused = true;
+  stopAutoplay();
+}
 
-// ============================================================================
+function resumeCarouselAfterModal() {
+  setTimeout(() => {
+    isPaused = false;
+    startAutoplay();
+  }, 2000);
+}
+
+// ================
 // EVENT LISTENERS
-// ============================================================================
+// ================
 
-/**
- * Configura todos los event listeners del carousel
- */
+/* Configura todos los event listeners del carousel */
 function setupEventListeners() {
   // Eventos de teclado
   document.addEventListener('keydown', handleKeyboardEvent);
@@ -247,12 +335,10 @@ function setupEventListeners() {
   console.log('✓ Event listeners configurados');
 }
 
-/**
- * Maneja eventos de teclado
- * - Flecha derecha → siguiente card
- * - Flecha izquierda → card anterior
- * - Enter → abre link si la card es activa
- * 
+/* Maneja eventos de teclado
+  - Flecha derecha → siguiente card
+  - Flecha izquierda → card anterior
+  - Enter → abre link si la card es activa 
  * @param {KeyboardEvent} e - Evento de teclado
  */
 function handleKeyboardEvent(e) {
@@ -345,17 +431,20 @@ function handleMouseLeave() {
  * @param {MouseEvent} e - Evento de click
  * @param {number} index - Índice de la card clickeada
  */
+
 function handleCardClick(e, index) {
-  // Si NO es la card activa, prevenir navegación
   if (index !== currentIndex) {
     e.preventDefault();
-    console.log('ℹ Click bloqueado: solo la card activa es clicable');
     return;
   }
-  
-  // Si es la card activa, permitir que el link se siga naturalmente
-  console.log('✓ Card activa clickeada, navegación permitida');
+
+  const card = cards[index];
+  const projectKey = card.dataset.project;
+  if (!projectKey) return;
+
+  openProjectModal(projectKey);
 }
+
 
 // ============================================================================
 // INICIAR CUANDO EL DOM ESTÉ LISTO

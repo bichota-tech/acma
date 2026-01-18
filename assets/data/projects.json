@@ -1,0 +1,32 @@
+{
+    "hidraulica": {
+    "title": "Hidráulica Welding Boss SL.",
+    "description": "Web corporativa desarrollada en WordPress, optimizada para SEO local, rendimiento y usabilidad.",
+    "technologies": ["WordPress", "Elementor", "Maquetado", "CSS3", "SEO", "Accesibilidad web", "Responsive"],
+    "url": "https://hidraulica.cotos.es/"
+  },
+  "excursiones": {
+    "title": "Excursiones Cartas",
+    "description": "Aplicación frontend interactiva desarrollada con JavaScript vanilla para el control de animaciones de entrada.",
+    "technologies": ["HTML5", "CSS3", "JavaScript", "Responsive", "Bootstrap"],
+    "url": "https://bichota-tech.github.io/excursionescartas/"
+  },
+  "hevca": {
+    "title": "Hevca PhotoArt",
+    "description": "Aplicación frontend interactiva desarrollada con JavaScript vanilla",
+    "technologies": ["HTML5", "CSS3", "JavaScript", "JSON", "Responsive", "Bootstrap"],
+    "url": "https://bichota-tech.github.io/Galeria_Virtual/"
+  },
+  "limpieza": {
+    "title": "Limpiezas Violeta y Verde",
+    "description": "Web corporativa desarrollada en WordPress, optimizada para SEO local, rendimiento y usabilidad.",
+    "technologies": ["WordPress", "Elementor", "Maquetado", "CSS3", "SEO", "Accesibilidad web", "Responsive"],
+    "url": "https://www.limpiezasvioletayverde.com/"
+  },
+  "acma": {
+    "title": "Portfolio Web Frontend",
+    "description": "Aplicación frontend interactiva desarrollada con JavaScript vanilla.",
+    "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "Librerías JS"],
+    "url": "https://bichota-tech.github.io/acma/"
+  }
+}

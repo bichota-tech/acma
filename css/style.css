@@ -431,21 +431,13 @@ main {
   gap: 1rem;
   position: absolute;
   right: 5%;
-  bottom: 5%;
+  bottom: clamp(2rem, 5vh, 4rem);
   z-index: 1000;
 }
 
 @media (max-width:800px) {
     .see-more {
       flex-direction: column;
-        bottom: 20%;
-    }
-}
-
-@media (max-width:425px) {
-    .see-more {
-      flex-direction: column;
-        bottom: 5%;
     }
 }
 

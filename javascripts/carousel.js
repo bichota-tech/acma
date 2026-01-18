@@ -7,38 +7,17 @@
  * teclado y sincronización de indicadores.
 */
 
-const projectsData = {
-  hidraulica: {
-    title: "Hidráulica Welding Boss SL.",
-    description: "Web corporativa desarrollada en WordPress, optimizada para SEO local, rendimiento y usabilidad.",
-    technologies: ["WordPress", "Elementor", "Maquetado", "CSS3", "SEO", "Accesibilidad web", "Responsive"],
-    url: "https://hidraulica.cotos.es/"
-  },
-  excursiones: {
-    title: "Excursiones Cartas",
-    description: "Aplicación frontend interactiva desarrollada con JavaScript vanilla para el control de animaciones de entrada.",
-    technologies: ["HTML5", "CSS3", "JavaScript", "Responsive", "Bootstrap"],
-    url: "https://bichota-tech.github.io/excursionescartas/"
-  },
-  hevca: {
-    title: "Hevca PhotoArt",
-    description: "Aplicación frontend interactiva desarrollada con JavaScript vanilla",
-    technologies: ["HTML5", "CSS3", "JavaScript", "JSON", "Responsive", "Bootstrap"],
-    url: "https://bichota-tech.github.io/Galeria_Virtual/"
-  },
-  limpieza: {
-    title: "Limpiezas Violeta y Verde",
-    description: "Web corporativa desarrollada en WordPress, optimizada para SEO local, rendimiento y usabilidad.",
-    technologies: ["WordPress", "Elementor", "Maquetado", "CSS3", "SEO", "Accesibilidad web", "Responsive"],
-    url: "https://www.limpiezasvioletayverde.com/"
-  },
-  acma: {
-    title: "Portfolio Web Frontend",
-    description: "Aplicación frontend interactiva desarrollada con JavaScript vanilla.",
-    technologies: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "Librerías JS"],
-    url: "https://bichota-tech.github.io/acma/"
+let projectsData = {};
+
+async function loadProjectsData() {
+  try {
+    const res = await fetch('assets/data/projects.json');
+    projectsData = await res.json();
+    console.log('✓ Projects data cargado');
+  } catch (err) {
+    console.error('Error cargando projects.json', err);
   }
-};
+}
 
 /* =====================
 *   LÓGICA DE MODAL
@@ -125,11 +104,13 @@ let cards = null;
 // INICIALIZACIÓN
 // ================
 
-function initCarousel() {
+async function initCarousel() {
 
   carouselElement = document.querySelector(CAROUSEL_SELECTOR);
   indicatorsContainer = document.querySelector(INDICATORS_SELECTOR);
   cards = document.querySelectorAll(CARD_SELECTOR);
+
+  await loadProjectsData();
   
   // Validación de elemntos vacios
   if (!carouselElement || !cards.length) {
@@ -446,13 +427,11 @@ function handleCardClick(e, index) {
 }
 
 
-// ============================================================================
+// =================================
 // INICIAR CUANDO EL DOM ESTÉ LISTO
-// ============================================================================
+// =================================
 
-/**
- * Ejecuta initCarousel cuando el DOM esté completamente cargado
- */
+/* Ejecuta initCarousel cuando el DOM esté completamente cargado */
 if (document.readyState === 'loading') {
   // DOM aún cargando
   document.addEventListener('DOMContentLoaded', initCarousel);

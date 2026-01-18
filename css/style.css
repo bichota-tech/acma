@@ -521,8 +521,29 @@ section#skills {
   justify-content: left;
   align-items: center;
   row-gap: .5rem;
+  padding: .5rem;
+  padding-left: 1rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  direction: rtl;
+  scrollbar-color: var(--color-acento-secundario) transparent;
   width: 30%;
-  height: auto;
+  height: calc(8 * (3rem + 0.5rem));
+}
+
+.skill-selector::-webkit-scrollbar {
+    width: 6px; /* vertical scrollbar ancho */
+}
+
+.skill-selector::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.skill-selector::-webkit-scrollbar-thumb {
+    background-color: var(--color-acento-secundario);
+    border-radius: 3px;
 }
 
 .skill-btn {
@@ -541,6 +562,7 @@ section#skills {
   transition: all 0.3s ease;
   scale: .9;
   font-weight: 550;
+  direction: ltr;
 }
 
 .skill-btn:hover {
@@ -566,7 +588,7 @@ section#skills {
 .skill-card {
   display: flex;
   flex-direction: column;
-  justify-content: initial;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
   background: rgba(0, 0, 0, 0.4);
@@ -625,7 +647,11 @@ section#skills {
     justify-content: center;
     align-items: center;    
     width: 100%;
-    margin-inline: 1rem;
+    margin-inline: 1.1rem;
+    height: auto;       /* dejar que crezca según contenido */
+    overflow-y: visible; /* quitar scroll vertical */
+    overflow-x: auto;    /* mantener scroll horizontal si es necesario */
+    direction: ltr;
   }
 
   .skill-btn{
@@ -659,7 +685,7 @@ section#skills {
 
   .skill-card {
     padding: 1.2rem 1.5rem;
-    height: 380px;
+    height: 360px;
   }
 }
 

@@ -230,7 +230,7 @@ abbr {
   transform: rotate(-45deg) translate(7px, -7px);
 }
 
-@media (max-width: 850px) {
+@media (max-width: 884px) {
   .logo {
     margin-left: .5rem;
   }
@@ -529,7 +529,7 @@ section#skills {
   scrollbar-width: thin;
   direction: rtl;
   scrollbar-color: var(--color-acento-secundario) transparent;
-  width: 30%;
+  width: 35%;
   height: calc(8 * (3rem + 0.5rem));
 }
 
@@ -647,7 +647,6 @@ section#skills {
     justify-content: center;
     align-items: center;    
     width: 100%;
-    margin-inline: 1.1rem;
     height: auto;       /* dejar que crezca según contenido */
     overflow-y: visible; /* quitar scroll vertical */
     overflow-x: auto;    /* mantener scroll horizontal si es necesario */
@@ -656,6 +655,7 @@ section#skills {
 
   .skill-btn{
     width: fit-content;
+    direction: ltr;
   }
 
   .skill-card {

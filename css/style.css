@@ -431,13 +431,14 @@ main {
   gap: 1rem;
   position: absolute;
   right: 5%;
-  bottom: clamp(2rem, 10vh, 5rem);
+  bottom: clamp(2rem, 7vh, 5rem);
   z-index: 1000;
 }
 
 @media (max-width:800px) {
     .see-more {
       flex-direction: column;
+      bottom: clamp(2rem, 7vh, 5rem);
     }
 }
 

@@ -4,6 +4,7 @@
  * Autor: ACMA
  * Versión: 2.0
  */
+import { inject } from "@vercel/analytics"
 
 class ACMAPortfolio {
   constructor() {

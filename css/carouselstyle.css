@@ -84,7 +84,6 @@ a[data-title]:hover::after {
     }
 
     .cardfame {
-        width: auto;
         height: 450px;
         border-radius: 30px;
     }

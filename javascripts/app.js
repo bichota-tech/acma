@@ -218,6 +218,14 @@ class ACMAPortfolio {
     section.removeAttribute('inert');
     section.setAttribute('aria-hidden', 'false');
 
+     //Speed Insights: cambio de vista real
+    if (window.va) {
+      window.va('event', {
+        name: 'route_change',
+        route: target
+      });
+    }
+
     // Focus controlado en el primer heading
     const heading = section.querySelector('h1, h2, h3');
     if (heading) {

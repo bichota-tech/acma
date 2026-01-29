@@ -283,6 +283,9 @@ video:hover {
     font-size: 2rem;
     color: var(--color-acento-primario);
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent; /* Safari / iOS */
+    -moz-tap-highlight-color: transparent;    /* Firefox móvil */
+    user-select: none;                    /* Evita selección de texto */
 }
 
 #project-modal-tech {

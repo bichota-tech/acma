@@ -117,6 +117,9 @@ video:hover {
     opacity: 1;
     z-index: 5;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent; /* Safari / iOS */
+    -moz-tap-highlight-color: transparent;    /* Firefox móvil */
+    user-select: none;                     /* Evita selección de texto */
 }
 
 .cardfame.activefame:hover {

@@ -1,32 +1,32 @@
 {
     "hidraulica": {
     "title": "Hidráulica Welding Boss SL.",
-    "description": "Web corporativa desarrollada en WordPress, optimizada para SEO local, rendimiento y usabilidad.",
+    "description": "Desarrollo de web corporativa en WordPress para cliente final, realizado en entorno profesional de agencia. Optimizada para SEO y rendimiento.",
     "technologies": ["WordPress", "Elementor", "Maquetado", "CSS3", "SEO", "Accesibilidad web", "Responsive"],
-    "url": "https://hidraulica.cotos.es/"
+    "url": "https://www.hidraulicaweldingboss.com/"
   },
   "excursiones": {
     "title": "Excursiones Cartas",
-    "description": "Aplicación frontend interactiva desarrollada con JavaScript vanilla para el control de animaciones de entrada.",
-    "technologies": ["HTML5", "CSS3", "JavaScript", "Responsive", "Bootstrap"],
+    "description": "Landing web para promoción de servicios turísticos académicos, con lógica client-side para gestión de eventos y transiciones, enfocada en experiencia de usuario y navegación fluida.",
+    "technologies": ["HTML5", "CSS3", "JavaScript Vanilla", "Responsive", "Bootstrap", "Usabilidad", "Accesibilidad básica", "GitHub Pages"],
     "url": "https://bichota-tech.github.io/excursionescartas/"
   },
   "hevca": {
     "title": "Hevca PhotoArt",
-    "description": "Aplicación frontend interactiva desarrollada con JavaScript vanilla",
-    "technologies": ["HTML5", "CSS3", "JavaScript", "JSON", "Responsive", "Bootstrap"],
+    "description": "Landing web promocional de fotografía profesional, con galería interactiva y carrusel implementados mediante JavaScript y librerías ligeras de frontend. Enfocada en rendimiento, carga optimizada de imágenes y experiencia visual fluida.",
+    "technologies": ["HTML5", "CSS3", "JavaScript", "JSON", "Responsive", "Bootstrap", "Librerías JS", "GitHub Pages"],
     "url": "https://bichota-tech.github.io/Galeria_Virtual/"
   },
   "limpieza": {
     "title": "Limpiezas Violeta y Verde",
-    "description": "Web corporativa desarrollada en WordPress, optimizada para SEO local, rendimiento y usabilidad.",
+    "description": "Desarrollo de web corporativa en WordPress para cliente final, realizado en entorno profesional de agencia. Optimizada para SEO y rendimiento.",
     "technologies": ["WordPress", "Elementor", "Maquetado", "CSS3", "SEO", "Accesibilidad web", "Responsive"],
     "url": "https://www.limpiezasvioletayverde.com/"
   },
   "acma": {
     "title": "Portfolio Web Frontend",
-    "description": "Aplicación frontend interactiva desarrollada con JavaScript vanilla.",
-    "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "Librerías JS"],
-    "url": "https://bichota-tech.github.io/acma/"
+    "description": "Portfolio personal desarrollado como SPA, con arquitectura frontend basada en vistas y componentes, enrutado client-side y navegación sin recargas. Enfocado en accesibilidad, rendimiento y mantenibilidad del código, con despliegue optimizado en Vercel.",
+    "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "Librerías JS", "SPA", "Accesibilidad web", "Responsive", "Vercel", "Client-side routing"],
+    "url": "https://portfolio-blue-iota-62.vercel.app/"
   }
 }

@@ -259,13 +259,14 @@ abbr {
     position: absolute;
     top: 100%;
     right: 0;
-    width: 100%;
+    width: 85%;
     max-height: 0;
     flex-direction: column;
     gap: 1rem;
     padding: 0;
-    background: rgba(30, 31, 34, 0.95);
-    backdrop-filter: blur(10px);
+    border-radius: 10px 10px 30px 30px;
+    background: rgba(0, 0, 0, 0.85);
+      box-shadow: 0 6px 20px rgb(24, 24, 24);
     overflow: hidden;
     transition: max-height 0.3s ease;
   }

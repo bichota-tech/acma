@@ -63,7 +63,7 @@
     "WordPress": {
         "level": 3,
         "label": "Intermedio",
-        "use": "Desarollo de sitios personalizados mediante plantillas, popups y widgets avanzados, CSS personalizado, gestión de perfiles de usuario, optimización del diseño responsive y la integración de WooCommerce. Optimización de rendimiento y SEO en entornos profesionales de agencia.",
+        "use": "Webs personalizadas mediante plantillas y widgets avanzados, CSS personalizado, optimización del diseño responsive e integración de WooCommerce. Optimización de rendimiento y SEO en entornos profesionales de agencia.",
         "icon": "bi bi-wordpress"
     },
     "SEO": {

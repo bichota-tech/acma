@@ -671,7 +671,8 @@ section#skills {
 
   .skill-card {
     max-width: 100%;
-    width: 70%;
+    width: 80%;
+    height: fit-content;
     padding: 2rem 2.5rem;
     row-gap: .5rem;
   }
@@ -695,8 +696,8 @@ section#skills {
   }
 
   .skill-card {
-    padding: 1.2rem 1.5rem;
-    height: 360px;
+    padding: 1.5rem;
+    height: fit-content;
   }
 }
 

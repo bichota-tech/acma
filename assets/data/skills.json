@@ -3,32 +3,38 @@
         "level": 4,
         "label": "Avanzado",
         "use": "Estructuro interfaces semánticas, accesibles y orientadas a SEO. Trabajo con HTML como base de producto, garantizando compatibilidad, rendimiento y experiencia sólida desde el primer render.",
-        "icon": "bi bi-filetype-html"
+        "icon": "fa-brands fa-html5"
     },
     "css": {
         "level": 4,
         "label": "Avanzado",
         "use": "Diseño de layouts responsive usando Flexbox y Grid, animaciones CSS y adaptaciones para distintos dispositivos. Garantizo consistencia visual y rendimiento.",
-        "icon": "bi bi-filetype-css"
+        "icon": "fa-brands fa-css3-alt"
     },
     "js": {
         "level": 3,
         "label": "En progreso",
         "use": "Gestión de DOM, estados UI y navegación SPA. Desarrollo componentes dinámicos como carruseles 3D, spotlight de habilidades y modals interactivos. Uso de librerías externas mínimas solo cuando aportan valor.",
-        "icon": "bi bi-filetype-js"
+        "icon": "fa-brands fa-js"
+    },
+    "vue": {
+        "level": 1,
+        "label": "En progreso",
+        "use": "Creación de componentes reutilizables, uso de props y eventos simples, renderizado de listas dinámicas con v-for, manejo de estados reactivos y modales. Integración con HTML/CSS y JSON para mostrar contenido dinámico.",
+        "icon": "fa-brands fa-vuejs"
     },
     
-    "frameworks": {
+    "libraries": {
         "level": 3,
         "label": "En progreso",
-        "use": "Experiencia con librerías JS (por ejemplo: Typed.js, particles.js) para efectos visuales y funcionalidad interactiva. Uso de Bootstrap limitado a iconos y componentes puntuales; al inicio lo usé más ampliamente para agilizar maquetación.",
-        "icon": "bi bi-bricks"
+        "use": "Experiencia con librerías JS para efectos visuales y funcionalidad interactiva. Uso de Bootstrap para reutilizacion de componentes con el objetivo de agilizar la maquetación.",
+        "icon": "fa-solid fa-swatchbook"
     },
     "JSON": {
         "level": 3,
         "label": "En progreso",
         "use": "Manejo de datos dinámicos mediante JSON y consumo de APIs para renderizar componentes como projects y skills de forma dinámica.",
-        "icon": "bi bi-filetype-json"
+        "icon": "bi bi-braces"
     },
     "git": {
         "level": 3,
@@ -64,7 +70,7 @@
         "level": 3,
         "label": "Intermedio",
         "use": "Optimización de sitios web para motores de búsqueda y rendimiento con auditoría de rendimiento, SEO y buenas prácticas con Google Lighthouse y PageSpeed Insights, optimizando tiempos de carga, lazy loading, imágenes y scripts.",
-        "icon": "bi bi-speedometer2"
+        "icon": "fa-solid fa-gauge-high"
     },
     "accesibilidad": {
         "level": 3,

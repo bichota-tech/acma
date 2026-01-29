@@ -69,7 +69,7 @@
     "SEO": {
         "level": 3,
         "label": "Intermedio",
-        "use": "Optimización de sitios web para motores de búsqueda y rendimiento con auditoría de rendimiento, SEO y buenas prácticas con Google Lighthouse y PageSpeed Insights, optimizando tiempos de carga, lazy loading, imágenes y scripts.",
+        "use": "Optimización de sitios web para motores de búsqueda, auditorías de rendimiento, SEO y buenas prácticas con Google Lighthouse y PageSpeed Insights.",
         "icon": "fa-solid fa-gauge-high"
     },
     "accesibilidad": {

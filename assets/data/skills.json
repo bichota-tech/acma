@@ -14,7 +14,7 @@
     "js": {
         "level": 3,
         "label": "En progreso",
-        "use": "Gestión de DOM, estados UI y navegación SPA. Desarrollo componentes dinámicos como carruseles 3D, spotlight de habilidades y modals interactivos. Uso de librerías externas mínimas solo cuando aportan valor.",
+        "use": "Gestión de DOM, estados UI y navegación SPA. Desarrollo componentes dinámicos. Uso de librerías externas mínimas solo cuando aportan valor.",
         "icon": "fa-brands fa-js"
     },
     "vue": {
@@ -33,25 +33,25 @@
     "JSON": {
         "level": 3,
         "label": "En progreso",
-        "use": "Manejo de datos dinámicos mediante JSON y consumo de APIs para renderizar componentes como projects y skills de forma dinámica.",
+        "use": "Manejo de datos dinámicos mediante JSON y consumo de APIs para renderizar componentes forma dinámica.",
         "icon": "bi bi-braces"
     },
     "git": {
         "level": 3,
         "label": "En progreso",
-        "use": "Control de versiones con ramas, commits y merges. Uso eficiente para proyectos personales y su despliegue de portfolios.",
+        "use": "Control de versiones con ramas, commits y merges. Uso eficiente para proyectos personales y su despliegue.",
         "icon": "bi bi-git"
     },
     "github": {
         "level": 3,
         "label": "En progreso",
-        "use": "Gestión de repositorios y proyectos pequeños-medianos, deployment de páginas estáticas (GitHub Pages) y documentación de repositorios profesional.",
+        "use": "Gestión de repositorios y proyectos pequeños-medianos, deployment de páginas estáticas y documentación de repositorios profesional.",
         "icon": "bi bi-github"
     },
     "ia": {
         "level": 4,
         "label": "Avanzado",
-        "use": "Generación de contenido y optimización de procesos creativos, utilizando herramientas como ChatGPT y MidJourney para diseño, documentación y prototipado.",
+        "use": "Generación de contenido y optimización de procesos creativos y de desarrollo, utilizando herramientas para diseño, documentación y prototipado.",
         "icon": "bi bi-openai"
     },
     "uiux": {
@@ -63,7 +63,7 @@
     "WordPress": {
         "level": 3,
         "label": "Intermedio",
-        "use": "Desarrollo, maquetado y gestión de sitios web dinámicos, con enfoque en SEO, accesibilidad, performance y mantenimiento de contenido.",
+        "use": "Desarollo de sitios personalizados mediante plantillas, popups y widgets avanzados, CSS personalizado, gestión de perfiles de usuario, optimización del diseño responsive y la integración de WooCommerce. Optimización de rendimiento y SEO en entornos profesionales de agencia.",
         "icon": "bi bi-wordpress"
     },
     "SEO": {

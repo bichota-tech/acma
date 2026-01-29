@@ -596,7 +596,7 @@ section#skills {
 .skill-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: initial;
   align-items: center;
   gap: 1rem;
   background: rgba(0, 0, 0, 0.4);

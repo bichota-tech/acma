@@ -845,8 +845,8 @@ section#sobre-mi {
 }
 
 .card {
-  background-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 24px rgba(216, 50%, 20%, 0.1);
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 6px 20px rgb(24, 24, 24);
   padding: 4rem 4rem 2rem;
   border-radius: 1rem;
   text-align: center;
@@ -886,12 +886,12 @@ section#sobre-mi {
 .btncontact {
   position: relative;
   background-color: var(--color-acento-primario);
+  color: var(--color-fondo-claro);
   border: none;
   outline: none;
   padding: 0.75rem 1.5rem;
   border-radius: 4rem !important;
   cursor: pointer;
-  color: var(--color-fondo-claro);
   font-size: 1.1rem;
   width: 100%;
   overflow: hidden;

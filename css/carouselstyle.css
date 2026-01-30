@@ -6,6 +6,18 @@
     --color-acento-primario-brillo: #fd0800;
     --color-acento-secundario: #3AB7BF;
     --color-acento-dark: #298288;
+    /* --bg-main:var(--color-fondo-oscuro);
+    --bg-surface:var(--color-fondo-oscuro);
+    --text-main: var(--color-fondo-claro); */
+}
+
+html[data-theme='light'] {
+    --bg-main: #02020263;
+    --bg-surface: #7e7b7bda;
+    --bg-overlay: rgba(255, 255, 255, 0.6);
+    --text-main: var(--color-fondo-oscuro);
+    --text-muted: rgba(30, 31, 34, 0.7);
+    --border-soft: rgba(0, 0, 0, 0.15);
 }
 
 .bodycardfame {
@@ -216,7 +228,8 @@ video:hover {
     z-index: 999;
     margin-inline: 1rem;
     text-align: center;
-    top: 10%;
+    top:0;
+    
 }
 
 .project-modal.hidden {
@@ -226,18 +239,20 @@ video:hover {
 .project-modal-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(30, 31, 34, 0.85);
+    border-radius: 30px;
     backdrop-filter: blur(6px);
+    
 }
 
 .project-modal-content {
     position: relative;
     max-width: 500px;
     height: auto;
-    margin: 10vh auto;
+    margin: 18vh auto;
     text-align: center;
-    background: var(--color-fondo-oscuro);
-    color: var(--color-fondo-claro);
+    font-weight: 600;
+    background: var(--bg-surface);
+    color: var(--text-main);
     border-radius: 30px;
     padding: 2rem;
     box-shadow: 0 0 30px rgba(0,0,0,0.6);

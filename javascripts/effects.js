@@ -64,7 +64,7 @@ class PortfolioEffects {
           }
         },
         color: {
-          value: '#fd0800'
+          value: '#ab0904'
         },
         shape: {
           type: 'circle'
@@ -92,7 +92,7 @@ class PortfolioEffects {
         line_linked: {
           enable: true,
           distance: 120,
-          color: '#3AB7BF',
+          color: '#036060',
           opacity: 0.2,
           width: 2
         },

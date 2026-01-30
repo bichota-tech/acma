@@ -1,26 +1,23 @@
 :root {
     --toggle-bg: #00000066;
     --toggle-border: black;
-    --toggle-handle: #fff;
+    --toggle-handle: #f55139;
 }
 
 html[data-theme='light'] {
-    --toggle-bg: #eee;
-    --toggle-border: #ccc;
-    --toggle-handle: #222;
+    --toggle-bg: #0000006d;
+    --toggle-border: transparent;
+    --toggle-handle: #ebe7d9;
 }
 
 .theme-switch-wrapper {
-    display: inline-flex;
+    display:flex;
     align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 20%;
-    left: 10%;
+    justify-content: left;
+    width: 30%;
 }
 
 .theme-switch-checkbox {
-    position: absolute;
     opacity: 0;
     pointer-events: none;
 }
@@ -30,7 +27,8 @@ html[data-theme='light'] {
     align-items: center;
     justify-content: center;
     position: relative;
-    width: 65px;
+    padding: 1rem;
+    width: 80px;
     height: 35px;
     background-color: var(--toggle-bg);
     border-radius: 15px;
@@ -41,10 +39,9 @@ html[data-theme='light'] {
 
 .switch-slider {
     position: absolute;
-    top: 4px;
     left: 4px;
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 28px;
     background-color: var(--toggle-handle);
     border-radius: 50%;
     transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
@@ -54,13 +51,14 @@ html[data-theme='light'] {
     position: absolute;
     font-size: 18px;
     transition: opacity 0.3s ease;
+    color:var(--toggle-handle);
 }
 
 .sun-icon{left:8px; opacity:0;}
 .moon-icon{right:8px; opacity:1;}
 
 .theme-switch-checkbox:checked + .theme-switch-label .switch-slider {
-    transform: translateX(28px);
+    transform: translateX(40px);
 }
 
 .theme-switch-checkbox:checked + .theme-switch-label .sun-icon {

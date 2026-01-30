@@ -15,22 +15,23 @@
 :root {
   /* Colores - Paleta principal */
   --color-fondo-claro: #ebe7d9;
-  --color-fondo-oscuro: #1e1f22;
-  --color-oscuro-alto:#181818;
-  --color-oscuro-transp:#00000066;
+  --color-fondo-oscuro: #111212;
+  --color-oscuro-alto: #0f0e0ee5;
+  --color-oscuro-transp: #0202027b;
   --color-acento-primario: #f55139;
-  --color-acento-shadow:#f5513980;
+  --color-acento-shadow: #f5513980;
   --color-acento-primario-brillo: #fd0800;
-  --color-acento-primario-transp:#f551391a;
+  --color-acento-primario-transp: #f551391a;
   --color-acento-secundario: #3AB7BF;
-  --color-acento-secundario-alto:#2d6868;
-    /*==== Tema Oscuro ====*/
-  --bg-main: var(--color-fondo-oscuro);
+  --color-acento-secundario-alto: #2d6868;
+  /*==== Tema Oscuro ====*/
+  --bg-main: #111212;
   --bg-surface: var(--color-oscuro-alto);
   --bg-overlay: var(--color-oscuro-transp);
-  --text-main:var(--color-fondo-claro);
+  --text-main: var(--color-fondo-claro);
   --text-muted: rgba(235, 231, 217, 0.7);
-  --border-soft:rgba(255, 255, 255, 0.15);
+  --text-skill:var(--color-acento-secundario);
+  --border-soft: rgba(255, 255, 255, 0.15);
 }
 
 
@@ -42,11 +43,12 @@
 }
 
 html[data-theme='light'] {
-  --bg-main: var(--color-fondo-claro);
-  --bg-surface: #f0f0f0;
+  --bg-main: #02020263;
+  --bg-surface: #7e7b7bda;
   --bg-overlay: rgba(255, 255, 255, 0.6);
   --text-main: var(--color-fondo-oscuro);
   --text-muted: rgba(30, 31, 34, 0.7);
+  --text-skill:var(--color-acento-secundario-alto);
   --border-soft: rgba(0, 0, 0, 0.15);
 }
 
@@ -129,7 +131,6 @@ nav {
   margin-top: 1.5rem;
   background: var(--color-oscuro-transp);
   box-shadow: 0 6px 20px var(--color-oscuro-alto);
-  /*  backdrop-filter: blur(10px); */
 }
 
 .logo {
@@ -138,7 +139,7 @@ nav {
   gap: 0.1rem;
   max-width: 150px;
   cursor: pointer;
-  margin-left: 2rem;
+  margin-inline: 2rem;
 }
 
 .navbar-brand {
@@ -194,7 +195,7 @@ a.navbar-brand-symbol {
 }
 
 .nav-menu a {
-  color: var(--color-fondo-claro);
+  color: var(--text-main);
   font-weight: 600;
   position: relative;
   transition: color 0.3s ease;
@@ -280,17 +281,17 @@ abbr {
   .nav-menu {
     position: absolute;
     top: 100%;
-    right: 0;
     width: 85%;
     max-height: 0;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items:center ;
+    align-items: center;
     gap: 1rem;
     padding: 0;
     border-radius: 10px 10px 30px 30px;
-    background: var(--color-oscuro-alto);
-      box-shadow: 0 6px 20px var(--color-oscuro-alto);
+    background: var(--bg-surface);
+    box-shadow: 0 6px 20px var(--color-oscuro-alto);
     overflow: hidden;
     transition: max-height 0.3s ease;
   }
@@ -377,8 +378,9 @@ main {
 
 .hero-subtitle {
   font-size: clamp(0.9rem, 3vw, 1.7rem);
+  font-weight: 600;
   line-height: 1.6;
-  color: var(--color-fondo-claro);
+  color: var(--text-main);
   margin-bottom: 3rem;
 }
 
@@ -392,7 +394,7 @@ main {
 
 .neon-button {
   background: transparent;
-  color: var(--color-fondo-claro);
+  color: var(--text-main);
   border: 2px solid var(--color-acento-primario);
   border-radius: 4rem !important;
   padding: 12px 25px;
@@ -439,6 +441,7 @@ main {
 
 .neon-button:hover {
   background: var(--color-acento-primario-brillo);
+  color: var(--color-fondo-claro);
   box-shadow:
     0 0 10px var(--color-acento-primario),
     0 0 20px var(--color-acento-primario),
@@ -534,7 +537,6 @@ section#skills {
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
-
 }
 
 .skills-spotlight {
@@ -584,9 +586,9 @@ section#skills {
 .skill-btn {
   width: 85%;
   background: none;
-  border: 1px solid var(--color-acento-secundario);
+  border: 2px solid var(--color-acento-secundario);
   border-radius: 15px;
-  color: var(--color-fondo-claro);
+  color: var(--text-muted);
   display: block;
   align-items: center;
   text-align: center;
@@ -601,7 +603,7 @@ section#skills {
 }
 
 .skill-btn:hover {
-  color: var(--color-acento-secundario);
+  color: var(--text-skill);
   text-shadow:
     0 0 6px var(--color-acento-secundario),
     0 0 12px var(--color-acento-secundario);
@@ -611,7 +613,7 @@ section#skills {
 
 .skill-btn.active,
 .skill-btn:focus-visible {
-  color: var(--color-acento-secundario);
+  color: var(--text-skill);
   text-shadow:
     0 0 6px var(--color-acento-secundario);
   transform: translateXY(3%);

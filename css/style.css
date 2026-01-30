@@ -29,7 +29,7 @@
   --bg-surface: var(--color-oscuro-alto);
   --bg-overlay: var(--color-oscuro-transp);
   --text-main: var(--color-fondo-claro);
-  --text-muted: rgba(235, 231, 217, 0.7);
+  --text-muted: rgb(235, 231, 217);
   --text-skill:var(--color-acento-secundario);
   --border-soft: rgba(255, 255, 255, 0.15);
 }

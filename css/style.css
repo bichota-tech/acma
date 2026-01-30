@@ -866,7 +866,7 @@ section#sobre-mi {
   display: grid;
   place-items: center;
   padding: 1.5rem;
-  min-height: 100vh;
+  min-height: 90vh;
   position: absolute;
 }
 

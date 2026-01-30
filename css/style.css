@@ -863,9 +863,11 @@ section#sobre-mi {
    ======================= */
 
 #contacto {
-  display: grid;
-  place-items: center;
-  position: absolute; 
+  position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .card {
@@ -996,12 +998,11 @@ section#sobre-mi {
    FOOTER
    ======= */
 
-footer {
+#footer-global {
   width: 100%;
-  position: fixed;
-  bottom: 0;
   text-align: center;
   font-size: 0.875rem;
+  margin-block: auto;
   padding: 1rem;
   background: var(--color-oscuro-transp);
   box-shadow: 0 8px 32px var(--color-oscuro-alto);

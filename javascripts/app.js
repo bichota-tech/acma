@@ -229,7 +229,8 @@ class ACMAPortfolio {
     section.setAttribute('aria-hidden', 'true');
   }
 });
-
+    // Mostrar u ocultar el footer según la sección
+    toggleFooter(target);
   }
 
   /**
@@ -253,6 +254,13 @@ class ACMAPortfolio {
     this.hamburguer.setAttribute('aria-expanded', 'false');
   }
 }
+
+// Footer solo en contacto
+function toggleFooter(sectionId) {
+  const footer = document.getElementById('footer-global');
+  footer.hidden = sectionId !== 'contacto';
+}
+
 
 // Inicializar la aplicación cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {

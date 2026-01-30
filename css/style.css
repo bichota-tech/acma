@@ -30,7 +30,7 @@
   --bg-overlay: var(--color-oscuro-transp);
   --text-main: var(--color-fondo-claro);
   --text-muted: rgb(235, 231, 217);
-  --text-skill:var(--color-acento-secundario);
+  --text-skill: var(--color-acento-secundario);
   --border-soft: rgba(255, 255, 255, 0.15);
 }
 
@@ -48,7 +48,7 @@ html[data-theme='light'] {
   --bg-overlay: rgba(255, 255, 255, 0.6);
   --text-main: var(--color-fondo-oscuro);
   --text-muted: rgba(30, 31, 34, 0.7);
-  --text-skill:var(--color-acento-secundario-alto);
+  --text-skill: var(--color-acento-secundario-alto);
   --border-soft: rgba(0, 0, 0, 0.15);
 }
 
@@ -390,7 +390,7 @@ main {
   justify-content: center;
   align-items: center;
   column-gap: 1rem;
-  
+
 }
 
 .neon-button {
@@ -458,26 +458,33 @@ main {
   border-radius: 50%;
   border: 3px solid var(--color-acento-primario-brillo);
   position: absolute;
-  top: 75%;
+
   left: 15%;
   bottom: 0;
   transform: translate(-50%, -50%);
-  
+
 }
 
-.video-hero{
+.video-hero {
   width: 100%;
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
 }
 
-@media(max-width:700px){
+@media(max-width:700px) {
+  .hero {
+    justify-content: start;
+    align-items: center;
+    padding-top: 8rem;
+  }
+
   .card_video {
     width: 190px;
     height: 190px;
-    top: 83%;
+    top: 73%;
     left: 50%;
+   
   }
 }
 
@@ -897,10 +904,10 @@ section#sobre-mi {
 
 #contacto {
   position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .card {

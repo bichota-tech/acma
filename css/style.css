@@ -187,11 +187,13 @@ a.navbar-brand-symbol {
 
 .nav-menu {
   display: flex;
+  justify-content: right;
   align-items: center;
   gap: 1.1rem;
   list-style: none;
   margin-right: 2rem;
   padding: 0;
+  width: 100%;
 }
 
 .nav-menu a {
@@ -259,7 +261,7 @@ abbr {
   transform: rotate(-45deg) translate(7px, -7px);
 }
 
-@media (max-width: 884px) {
+@media (max-width: 1155px) {
   .logo {
     margin-inline: .5rem;
   }
@@ -388,7 +390,7 @@ main {
   justify-content: center;
   align-items: center;
   column-gap: 1rem;
-
+  
 }
 
 .neon-button {
@@ -446,6 +448,37 @@ main {
     0 0 20px var(--color-acento-primario),
     0 0 40px var(--color-acento-primario),
     0 0 80px var(--color-acento-primario-brillo);
+}
+
+.card_video {
+  max-width: 100%;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 0.75rem;
+  border-radius: 50%;
+  border: 3px solid var(--color-acento-primario-brillo);
+  position: absolute;
+  top: 75%;
+  left: 15%;
+  bottom: 0;
+  transform: translate(-50%, -50%);
+  
+}
+
+.video-hero{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media(max-width:700px){
+  .card_video {
+    width: 190px;
+    height: 190px;
+    top: 83%;
+    left: 50%;
+  }
 }
 
 /* ====================================
@@ -892,7 +925,7 @@ section#sobre-mi {
   top: 0;
   left: 50%;
   transform: translate(-50%, -50%);
-  object-fit: cover;
+  object-fit: contain;
   background: var(--color-fondo-oscuro);
 }
 

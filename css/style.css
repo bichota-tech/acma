@@ -865,8 +865,7 @@ section#sobre-mi {
 #contacto {
   display: grid;
   place-items: center;
-  padding: 1.5rem;
-  position: absolute;
+  position: absolute; 
 }
 
 .card {
@@ -1004,7 +1003,7 @@ footer {
   text-align: center;
   font-size: 0.875rem;
   padding: 1rem;
-  background: var(--color-oscuro-alto);
+  background: var(--color-oscuro-transp);
   box-shadow: 0 8px 32px var(--color-oscuro-alto);
   color: var(--color-fondo-claro);
 }

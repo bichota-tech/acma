@@ -226,7 +226,7 @@ video:hover {
     position: fixed;
     inset: 0;
     z-index: 999;
-    margin-inline: 1rem;
+    width: 100%;
     text-align: center;
     top:0;
     
@@ -241,7 +241,7 @@ video:hover {
     inset: 0;
     border-radius: 30px;
     backdrop-filter: blur(6px);
-    
+    width: 100%;
 }
 
 .project-modal-content {

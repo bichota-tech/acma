@@ -261,7 +261,7 @@ abbr {
 
 @media (max-width: 884px) {
   .logo {
-    margin-left: .5rem;
+    margin-inline: .5rem;
   }
 
   .navbar-brand {

@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <!-- Estilos principales -->
+    <link rel="stylesheet" href="css/darkmode.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/carouselstyle.css">
 
@@ -88,6 +89,16 @@
     <main id="main-content">
         <!-- SECCIÓN 1: HERO -->
         <section id="inicio" class="section active hero" aria-label="Inicio">
+            <div class="theme-switch-wrapper">
+                <input type="checkbox" id="theme-switch" class="theme-switch-checkbox" 
+                aria-label="Cambiar tema claro/oscuro">
+                <label for="theme-switch" class="theme-switch-label">
+                    <span class="sun-icon" aria-hidden="true"><i class="bi bi-cloud-sun-fill"></i></span>
+                    <span class="moon-icon" aria-hidden="true"><i class="bi bi-moon-stars-fill"></i></span>
+                    <div class="switch-slider"></div>
+                </label>
+            </div>
+            
             <div class="hero-content">
                 <h1 class="hero-title" id="hero-title">
                     <span id="typed-text" role="status" aria-live="polite"></span>
@@ -299,6 +310,9 @@
 
     <!-- Particles.js para fondo animado -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+
+    <!-- Dark Mode Toggle -->
+    <script src="javascripts/darkmode.js" defer></script>
 
     <!-- Carrusel personalizado 3D -->
     <script src="javascripts/carousel.js" defer></script>

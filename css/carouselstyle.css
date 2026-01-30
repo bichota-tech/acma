@@ -61,7 +61,7 @@ html[data-theme='light'] {
     filter: blur(2px);
     opacity: 0;
     z-index: 0;
-    
+
 }
 
 a[data-title] {
@@ -129,9 +129,12 @@ video:hover {
     opacity: 1;
     z-index: 5;
     cursor: pointer;
-    -webkit-tap-highlight-color: transparent; /* Safari / iOS */
-    -moz-tap-highlight-color: transparent;    /* Firefox móvil */
-    user-select: none;                     /* Evita selección de texto */
+    -webkit-tap-highlight-color: transparent;
+    /* Safari / iOS */
+    -moz-tap-highlight-color: transparent;
+    /* Firefox móvil */
+    user-select: none;
+    /* Evita selección de texto */
 }
 
 .cardfame.activefame:hover {
@@ -228,8 +231,11 @@ video:hover {
     z-index: 999;
     width: 100%;
     text-align: center;
-    top:0;
-    
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .project-modal.hidden {
@@ -242,20 +248,21 @@ video:hover {
     border-radius: 30px;
     backdrop-filter: blur(6px);
     width: 100%;
+
 }
 
 .project-modal-content {
     position: relative;
     max-width: 500px;
     height: auto;
-    margin: 18vh auto;
+    margin: 18vh 1.5rem;
     text-align: center;
     font-weight: 600;
     background: var(--bg-surface);
     color: var(--text-main);
     border-radius: 30px;
     padding: 2rem;
-    box-shadow: 0 0 30px rgba(0,0,0,0.6);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
     animation: modalIn 0.3s ease;
 }
 
@@ -264,6 +271,7 @@ video:hover {
         transform: translateY(30px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -275,6 +283,7 @@ video:hover {
         transform: translateY(0);
         opacity: 1;
     }
+
     to {
         transform: translateY(40px);
         opacity: 0;
@@ -298,9 +307,12 @@ video:hover {
     font-size: 2rem;
     color: var(--color-acento-primario);
     cursor: pointer;
-    -webkit-tap-highlight-color: transparent; /* Safari / iOS */
-    -moz-tap-highlight-color: transparent;    /* Firefox móvil */
-    user-select: none;                    /* Evita selección de texto */
+    -webkit-tap-highlight-color: transparent;
+    /* Safari / iOS */
+    -moz-tap-highlight-color: transparent;
+    /* Firefox móvil */
+    user-select: none;
+    /* Evita selección de texto */
 }
 
 #project-modal-tech {

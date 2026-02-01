@@ -201,7 +201,10 @@ class ACMAPortfolio {
    * @param {string} target - ID de la sección destino
    */
   navigateTo(target) {
-    history.pushState({ section: target }, '', `/${target}`);
+    const newPath = `/${target}`;
+    if (location.pathname !== newPath) {
+      history.pushState({ section: target }, '', newPath);
+    }
     // Actualizar elementos activos
     this.links.forEach(link => {
       const isActive = link.getAttribute('data-section') === target;

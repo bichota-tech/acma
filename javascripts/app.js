@@ -10,7 +10,8 @@ class ACMAPortfolio {
     this.sections = document.querySelectorAll('.section');
     this.hamburguer = document.getElementById('hamburguer');
     this.navMenu = document.getElementById('nav-menu');
-    
+    this.aboutAnimated = false;
+
     this.init();
   }
 
@@ -46,19 +47,19 @@ class ACMAPortfolio {
    * Botón "Ver Proyectos" en la sección hero
    */
   attachHeroButtonListener() {
-  const heroBtns = document.querySelectorAll('.neon-button[data-section]');
-  if (!heroBtns.length) return;
+    const heroBtns = document.querySelectorAll('.neon-button[data-section]');
+    if (!heroBtns.length) return;
 
-  heroBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const target = btn.getAttribute('data-section');
-      if (!target) return;
+    heroBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-section');
+        if (!target) return;
 
-      this.navigateTo(target);
-      this.closeMenu();
+        this.navigateTo(target);
+        this.closeMenu();
+      });
     });
-  });
-}
+  }
 
 
   /**
@@ -200,6 +201,7 @@ class ACMAPortfolio {
    * @param {string} target - ID de la sección destino
    */
   navigateTo(target) {
+    history.pushState({ section: target }, '', `/${target}`);
     // Actualizar elementos activos
     this.links.forEach(link => {
       const isActive = link.getAttribute('data-section') === target;
@@ -209,26 +211,32 @@ class ACMAPortfolio {
 
     // Cambiar secciones visibles
     this.sections.forEach(section => {
-  const isActive = section.id === target;
+      const isActive = section.id === target;
 
-  section.classList.toggle('active', isActive);
+      section.classList.toggle('active', isActive);
 
-  if (isActive) {
-    section.removeAttribute('inert');
-    section.setAttribute('aria-hidden', 'false');
+      if (isActive) {
+        section.removeAttribute('inert');
+        section.setAttribute('aria-hidden', 'false');
 
-    // Focus controlado en el primer heading
-    const heading = section.querySelector('h1, h2, h3');
-    if (heading) {
-      // Asegura que el heading pueda recibir foco
-      heading.setAttribute('tabindex', '-1');
-      setTimeout(() => heading.focus(), 50);
-    }
-  } else {
-    section.setAttribute('inert', '');
-    section.setAttribute('aria-hidden', 'true');
-  }
-});
+        // Focus controlado en el primer heading
+        const heading = section.querySelector('h1, h2, h3');
+        if (heading) {
+          // Asegura que el heading pueda recibir foco
+          heading.setAttribute('tabindex', '-1');
+          setTimeout(() => heading.focus(), 50);
+        }
+        if (target === 'sobre-mi' && !this.aboutAnimated) {
+          const aboutSection = document.getElementById('sobre-mi');
+          aboutSection.classList.add('is-animated');
+          this.aboutAnimated = true;
+        }
+
+      } else {
+        section.setAttribute('inert', '');
+        section.setAttribute('aria-hidden', 'true');
+      }
+    });
     // Mostrar u ocultar el footer según la sección
     toggleFooter(target);
   }
@@ -239,7 +247,7 @@ class ACMAPortfolio {
   toggleMenu() {
     this.navMenu.classList.toggle('show');
     this.hamburguer.classList.toggle('active');
-    
+
     // Actualizar atributo aria-expanded
     const isOpen = this.navMenu.classList.contains('show');
     this.hamburguer.setAttribute('aria-expanded', isOpen);
@@ -265,4 +273,11 @@ function toggleFooter(sectionId) {
 // Inicializar la aplicación cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
   new ACMAPortfolio();
+});
+
+// Manejar navegación con el botón atrás/adelante del navegador
+window.addEventListener('popstate', (e) => {
+  const section = e.state?.section || 'inicio';
+  const app = new ACMAPortfolio();
+  app.navigateTo(section);
 });

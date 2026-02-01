@@ -337,6 +337,15 @@ main {
   pointer-events: auto !important;
 }
 
+/* SECCIÓN SEO OCULTA */
+.seo-content {
+  position: absolute;
+  left: -9999px;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
 /* =====================
    SECCIÓN HERO (Inicio)
    ===================== */
@@ -485,7 +494,7 @@ main {
     height: 190px;
     top: 73%;
     left: 50%;
-   
+
   }
 }
 
@@ -894,10 +903,143 @@ section#skills {
 
 section#sobre-mi {
   position: absolute;
-  color: var(--color-fondo-claro);
+  color: var(--text-main);
+}
+
+.about-container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 900px;
+  padding: 1.5rem;
+  margin: 0 auto;
   text-align: center;
 }
 
+.acma-identity {
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  /*estado inicial*/
+}
+
+.letter-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  white-space: nowrap;
+  transition: transform 1s cubic-bezier(.22, .61, .36, 1);
+}
+
+/*Estado inicial*/
+.letter-block:nth-child(1) {
+  transform: translateX(90px);
+}
+
+.letter-block:nth-child(2) {
+  transform: translateX(30px);
+}
+
+.letter-block:nth-child(3) {
+  transform: translateX(-30px);
+}
+
+.letter-block:nth-child(4) {
+  transform: translateX(-90px);
+}
+
+.letter {
+  color: var(--color-acento-primario);
+}
+
+.about.is-animated .letter-block {
+  /* aquí está la clave */
+  transition-delay: 1.2s;
+}
+
+.about.is-animated .letter-block:nth-child(1) {
+  transform: translateX(-18px);
+}
+
+.about.is-animated .letter-block:nth-child(2) {
+  transform: translateX(-6px);
+}
+
+.about.is-animated .letter-block:nth-child(3) {
+  transform: translateX(6px);
+}
+
+.about.is-animated .letter-block:nth-child(4) {
+  transform: translateX(18px);
+}
+
+.name-part {
+  z-index: -1;
+  opacity: 0;
+  transform: translateX(-25px);
+  transition:
+    opacity 300ms ease-out,
+    transform 1s ease-out;
+}
+
+.about.is-animated .name-part {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 1.7s;
+}
+
+.about-description {
+  max-width: 700px;
+  opacity: 0;
+  transform: translateY(15px);
+  transition:
+    opacity 600ms ease-out,
+    transform 700ms ease-out;
+}
+
+.about.is-animated .about-description {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: .5s;
+}
+
+.about-ctas {
+  display: flex;
+  gap: 1rem;
+}
+
+.acma-identity,
+.name-part,
+.about-description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform, opacity;
+}
+
+@media (max-width: 550px) {
+
+  .letter-block {
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+  }
+
+  /* Animación en columna */
+  .about.is-animated .acma-identity {
+    gap: 0.6rem;
+  }
+
+  .name-part {
+    transform: translateX(6px);
+    /* sale perpendicular */
+  }
+}
 
 /* =======================
    SECCIÓN CONTACTO (Card)
@@ -1063,5 +1205,17 @@ footer p {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .acma-identity,
+  .name-part,
+  .about-description {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    gap: 1rem !important;
   }
 }

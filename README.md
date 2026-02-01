@@ -1,249 +1,167 @@
-﻿# ACMA Portfolio - Documentación Técnica
+﻿# ACMA Portfolio
 
-##  Descripción del Proyecto
+> Portfolio web profesional frontend · SPA en JavaScript vanilla · Accesibilidad, rendimiento y SEO técnico como prioridad
 
-**ACMA Portfolio** es un sitio web de portafolio profesional moderna, completamente responsivo y accesible, desarrollado con HTML5, CSS3 puro y JavaScript vanilla.
-
-**Versión:** 3.0 (CSS Puro - Sin Dependencias SASS)  
 **Autor:** Adalid Martínez Álvarez  
-**Licencia:** MIT
+**Versión:** 3.0  
+**Licencia:** MIT  
+**Demo:** https://portfolio-blue-iota-62.vercel.app/
 
 ---
 
-##  Arquitectura del Proyecto
+## 🎯 Descripción
 
-### Estructura de Carpetas
+**ACMA Portfolio** es un portfolio web profesional desarrollado como **Single Page Application (SPA)** sin frameworks, enfocado en demostrar competencias reales de frontend moderno: arquitectura clara, accesibilidad, rendimiento y buenas prácticas de ingeniería.
 
-```
-acma/
- index.html                 # Página principal HTML5 semántico
- app.js                     # Controlador SPA - Navegación y menú
- carousel.js                # Controlador vanilla carousel
- effects.js                 # Efectos: Typed.js y Particles.js
- css/
-    style.css              # CSS único, escalable, sin preprocesadores
- imagenes/                  # Imágenes optimizadas (PNG, SVG)
- assets/                    # Documentos (CV, cartas de recomendación)
- README.md                  # Esta documentación
-```
+El proyecto está diseñado tanto como **herramienta de empleabilidad** como base escalable para futuras funcionalidades.
 
 ---
 
-##  Paleta de Colores
+## 🧠 Qué demuestra este proyecto
 
-| Color | Hex | Variable CSS | Uso |
-|-------|-----|------------|-----|
-| Claro | `#ebe7d9` | `--color-fondo-claro` | Texto principal, fondos secundarios |
-| Oscuro | `#1e1f22` | `--color-fondo-oscuro` | Fondo principal |
-| Primario | `#f55139` | `--color-acento-primario` | Acentos, botones |
-| Primario Brillo | `#fd0800` | `--color-acento-primario-brillo` | Glow, hover effects |
-| Secundario | `#3AB7BF` | `--color-acento-secundario` | Acentos alternos |
-
----
-
-##  Breakpoints Responsivos
-
-```css
-/* Mobile-first approach - Media queries en CSS */
-@media (max-width: 576px)  { /* Móvil */ }
-@media (max-width: 768px)  { /* Tablet */ }
-@media (max-width: 992px)  { /* Laptop */ }
-@media (max-width: 1200px) { /* Desktop */ }
-@media (max-width: 1400px) { /* Desktop Grande */ }
-```
+- Arquitectura SPA sin dependencias
+- Dominio de **JavaScript vanilla** y History API
+- HTML5 semántico y **accesibilidad WCAG 2.1 AA**
+- CSS moderno (variables, responsive, dark mode)
+- Optimización de rendimiento y SEO técnico
+- Despliegue profesional en Vercel
 
 ---
 
-##  Tecnologías Utilizadas
+## 🔗 Demo
+
+👉 **Producción:**  
+https://portfolio-blue-iota-62.vercel.app/
+
+- Hosting en **Vercel**
+- Rewrites configurados para SPA
+- Navegación client-side sin errores 404
+- URLs limpias y compartibles
+
+---
+
+## 🛠️ Stack Tecnológico
 
 ### Frontend
-- **HTML5** - Semántico, accesible, ARIA completo
-- **CSS3 Puro** - Variables CSS, flexbox, grid, sin preprocesadores
-- **JavaScript ES6+** - Vanilla JS, clases, sin dependencias frameworks
-- **Typed.js** (CDN) - Efecto de texto tipeado
-- **Particles.js** (CDN) - Efecto de partículas animadas
-- **Bootstrap Icons** (CDN) - Iconografía
+- **HTML5** — Semántica, accesibilidad y SEO
+- **CSS3 puro** — Responsive design, variables CSS, dark/light mode
+- **JavaScript ES6+ (vanilla)** — Lógica SPA, gestión de eventos y estado
 
-### Características Implementadas
- **SPA Navigation** - Navegación sin recargas  
- **Responsive Design** - Mobile-first  
- **Accesibilidad (WCAG 2.1 AA)** - ARIA labels, roles semánticos  
- **Performance** - Lazy loading, CSS optimizado, sin build tools  
- **Zero Dependencies** - Sin npm, build tools, o preprocesadores
- **Carrusel Vanilla** - Sin dependencias, autoplay, swipe  
- **Efectos Visuales** - Animaciones smooth, gradientes  
- **SEO Friendly** - Meta tags, estructura semántica
+### Librerías & Servicios
+- Typed.js (animación de texto)
+- Particles.js (fondo animado)
+- Umami Analytics (analytics sin cookies)
+- Vercel Speed Insights (Core Web Vitals)
+
+### Despliegue
+- **Vercel** — Hosting y CI/CD automático
+- **Git & GitHub** — Control de versiones
 
 ---
 
-### `ACMAPortfolio`
-Controlador principal de la SPA.
+## 🏗️ Arquitectura (alto nivel)
 
-### `CarouselController`
-Controlador del carrusel vanilla.
-
-### `PortfolioEffects`
-Gestiona efectos visuales.
-
----
-
-##  Optimizaciones Implementadas
-
-### Performance
-- **Lazy Loading**: `loading="lazy"` en todas las imágenes
-- **Preconnect**: URLs externas precargadas
-- **CSS Consolidado**: Un único archivo CSS compilado
-- **JS Deferido**: Scripts cargados al final con `defer`
-- **Transiciones GPU**: `transform` y `opacity`
-
-### Accesibilidad
-- **ARIA Labels**: Botones y enlaces descriptivos
-- **Roles Semánticos**: `role="navigation"`, `role="region"`
-- **Focus Management**: Navegación por teclado
-- **Preferencias de Movimiento**: `prefers-reduced-motion`
-
-### SEO
-- **Meta Tags**: Descripción, palabras clave, author
-- **HTML Semántico**: `<header>`, `<main>`, `<section>`, `<footer>`
-- **Título Descriptivo**: ACMA Portfolio - Desarrollador Web Frontend
-- **Alt Text**: Todas las imágenes con descripciones
+- Aplicación **SPA** con navegación sin recarga
+- Enrutamiento mediante **History API**
+- Render dinámico de secciones
+- Separación clara de responsabilidades:
+  - `app.js` → controlador principal SPA
+  - módulos JS por funcionalidad
+  - datos desacoplados en JSON
+- CSS centralizado y escalable sin preprocesadores
 
 ---
 
-##  Estructura del CSS
+## ♿ Accesibilidad
 
-### Archivo Único: `css/style.css`
+Implementada siguiendo **WCAG 2.1 AA**:
 
-El proyecto utiliza un único archivo CSS puro, bien organizado y sin dependencias de preprocesadores.
-
-**Ventajas de esta aproximación:**
-- ✅ Sin herramientas de compilación (no requiere npm, webpack, etc.)
-- ✅ Carga más rápida (un solo archivo HTTP)
-- ✅ Fácil de debuggear (sin mapeos complejos)
-- ✅ Mantenimiento directo sin intermediarios
-- ✅ Compatible con todos los navegadores modernos
-
-**Secciones principales del CSS:**
-1. Variables CSS (colores, espacios, tokens de diseño)
-2. Reset & Base (estilos básicos)
-3. Header y Navegación
-4. Secciones principales (Hero, Proyectos, etc.)
-5. Componentes (Carrusel, Card, Botones)
-6. Footer
-7. Utilidades y temas
-8. Accesibilidad y media queries
-
-##  Eventos de JavaScript
-
-### Navegación
-- Click en enlaces de menú  Cambio de sección
-- Click en hamburguesa  Toggle menú
-- Tecla Escape  Cerrar menú
-- Click fuera del menú  Cerrar menú
-
-### Carrusel
-- Click en indicadores  Ir a slide
-- Click en flechas  Anterior/siguiente
-- Swipe en móvil  Deslizar carrusel
-- Teclas flecha  Navegación
-- Hover  Pausar autoplay
+- HTML semántico (`header`, `nav`, `main`, `section`, `footer`)
+- Uso correcto de **ARIA roles y labels**
+- Navegación completa por teclado
+- Focus management y estados visibles
+- Respeto a `prefers-reduced-motion`
+- Contraste de color conforme a estándares
 
 ---
 
-##  Mejoras de Accesibilidad
+## ⚡ Performance
 
- Todos los botones tienen `aria-label`  
- Enlaces con `rel="noopener noreferrer"`  
- Imágenes con `alt` descriptivo  
- Estructura de heading correcta (h1 > h2 > h3)  
- Color contrast ratio  4.5:1  
- Navegación por teclado completa  
- Respeto a preferencias de movimiento reducido  
- Roles ARIA apropiados (`navigation`, `region`, `tablist`)
+- Lighthouse scores objetivo: **95+**
+- Sin frameworks → bundle mínimo
+- CSS y JS optimizados
+- Imágenes optimizadas y lazy loading
+- Animaciones GPU-friendly (`transform`, `opacity`)
 
 ---
 
-##  Verificación de Calidad
+## 🔍 SEO Técnico
 
-### Validación HTML
+- Meta tags completos y Open Graph
+- Estructura correcta de headings
+- URLs semánticas compatibles con SPA
+- Rewrites en Vercel para indexación correcta
+- Sitemap y robots configurados
+- Preparado para Schema Markup
+
+---
+
+## 📁 Estructura del Proyecto
+
+acma/
+├── index.html
+├── css/
+├── javascripts/
+├── assets/
+│ └── data/
+├── vercel.json
+└── README.md
+
+
+---
+
+## 🚀 Uso local
+
 ```bash
-# Usar validador oficial
-https://validator.w3.org/
-```
+git clone https://github.com/bichota-tech/acma.git
+cd acma
 
-### Validación CSS
-```bash
-# Usar validador W3C
-https://jigsaw.w3.org/css-validator/
-```
+Abrir index.html directamente o usar un servidor local (Live Server recomendado).
 
-### Performance
-- Lighthouse: Objetivo 90+ en todas las métricas
-- Page Speed Insights: Verificar Core Web Vitals
+## 🛣️ Roadmap
 
-### Accesibilidad
-- axe DevTools: 0 violaciones
-- WAVE: 0 errores
+ - Blog con contenido en markdown
 
----
+ - Internacionalización (ES / EN)
 
-##  Notas de Desarrollo
+ - PWA y modo offline
 
-### Estructura sin Herramientas de Compilación
-- **HTML**: Editar directamente `index.html`
-- **CSS**: Editar directamente `css/style.css` 
-- **JavaScript**: Editar archivos `.js` individuales
-- **Sin NPM, webpack, o build tools** - Todo funciona en navegador
+ - Mejora de formulario de contacto
 
-### Workflow de Cambios
-1. Abre el archivo a editar en VS Code
-2. Realiza cambios
-3. Guarda (Ctrl+S)
-4. Recarga navegador (F5)
-5. ¡Listo!
+ - Tests automatizados básicos
 
-### Git Ignore
-Considera ignorar:
-```
-.DS_Store
-Thumbs.db
-.vscode/
-node_modules/  (si añades npm en el futuro)
-.env
-```
+## 👤 Autor
 
-### Ventajas de CSS Puro vs Preprocesadores
-| Aspecto | CSS Puro | SCSS |
-|--------|----------|------|
-| Herramientas | Ninguna | Compilador necesario |
-| Complejidad | Simple | Moderada |
-| Curva aprendizaje | Baja | Media |
-| Velocidad desarrollo | Rápida | Rápida (con herramientas) |
-| Rendimiento | Excelente | Igual (después de compilar) |
-| Debuggear | Directo | Necesita source maps |
+- Adalid Martínez Álvarez
 
-### Próximas Mejoras
-- [ ] Completar página de Servicios
-- [ ] Completar página de Sobre mí
-- [ ] Animaciones más fluidas
-- [ ] Integración con CMS (opcional)
+- GitHub: https://github.com/bichota-tech
 
----
+- LinkedIn: https://www.linkedin.com/in/acma-48755b34b/
 
-##  Contacto
+- Email: adalvarez2021@gmail.com
 
-**Adalid Martínez Álvarez**  
- [GitHub](https://github.com/bichota-tech)  
- [LinkedIn](https://www.linkedin.com/acma-48755b34b/)  
- adalvarez2021@gmail.com  
+## 📄 Licencia
 
----
+- Este proyecto está licenciado bajo **Creative Commons Attribution-NoDerivatives 4.0 (CC BY-ND 4.0)**.
 
-##  Licencia
+### Está permitido:
+- Compartir y redistribuir el proyecto en cualquier medio o formato
+- Referenciar el proyecto como muestra de trabajo
 
-Este proyecto está bajo licencia MIT. Ver archivo LICENSE para más detalles.
+### NO está permitido:
+- Modificar el código o los estilos
+- Crear obras derivadas
+- Usar el proyecto (total o parcialmente) como base de otros productos
+- Uso comercial sin autorización expresa del autor
 
----
-
-**Última actualización:** Noviembre 2025  
-**Versión:** 2.0
+🔒 Este proyecto se publica únicamente con fines demostrativos.

@@ -1,385 +1,375 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description"
-            content="Portfolio de Adalid Martínez, desarrollador web frontend especializado en HTML, CSS, JavaScript y WordPress. Diseño web accesible, rápido y optimizado para SEO.">
-        <meta name="author" content="Adalid Martínez Álvarez">
-        <meta name="robots" content="index, follow">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portfolio de Adalid Martínez, desarrollador web frontend especializado en HTML, CSS, JavaScript y WordPress. Diseño web accesible, rápido y optimizado para SEO.">
+    <meta name="author" content="Adalid Martínez Álvarez">
+    <meta name="robots" content="index, follow">
 
-        <!-- Favicon y iconos -->
-        <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
-        <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
-        <meta name="apple-mobile-web-app-title" content="Portfolio" />
-        <link rel="manifest" href="assets/favicon/site.webmanifest" />
+    <!-- Favicon y iconos -->
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Portfolio" />
+    <link rel="manifest" href="assets/favicon/site.webmanifest" />
 
-        <!-- Preconnect para optimización de fuentes externas -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <!-- Preconnect para optimización de fuentes externas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
-        <!-- Fuentes -->
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;0,700;0,800;1,400;1,700&display=swap"
-            rel="preload" as="style">
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;0,700;0,800;1,400;1,700&display=swap"
-            rel="stylesheet">
+    <!-- Fuentes -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;0,700;0,800;1,400;1,700&display=swap"
+        rel="preload" as="style">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;0,700;0,800;1,400;1,700&display=swap"
+        rel="stylesheet">
 
-        <!-- Bootstrap Icons y Font Awesome -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- Bootstrap Icons y Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-        <!-- Estilos principales -->
-        <link rel="stylesheet" href="css/darkmode.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/carouselstyle.css">
+    <!-- Estilos principales -->
+    <link rel="stylesheet" href="css/darkmode.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/carouselstyle.css">
 
-        <!-- Umami Analytics -->
-        <script defer src="https://cloud.umami.is/script.js" data-website-id="f89ae255-7d3b-47ec-ba36-6633d94f0cc6">
-        </script>
+    <!-- Umami Analytics -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="f89ae255-7d3b-47ec-ba36-6633d94f0cc6">
+    </script>
 
-        <!-- Vercel Analitic -->
-        <script>
-            window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-        </script>
-        <script defer src="/_vercel/speed-insights/script.js">
-        </script>
+    <!-- Vercel Analitic -->
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js">
+    </script>
 
-        <title>ACMA Portfolio | Desarrollador Web Frontend</title>
-    </head>
+    <title>ACMA Portfolio | Desarrollador Web Frontend</title>
+</head>
 
-    <body>
-        <div id="particles-js"></div>
-        <!-- HEADER Y NAVEGACIÓN -->
-        <header role="banner">
-            <nav role="navigation" aria-label="Navegación principal">
-                <div class="logo">
-                    <a class="navbar-brand-symbol neon" href="#inicio" aria-label="ACMA - Ir a inicio">//</a>
-                    <a class="navbar-brand" href="#inicio">ACMA</a>
-                </div>
-
-                <div class="theme-switch-wrapper">
-                    <input type="checkbox" id="theme-switch" class="theme-switch-checkbox"
-                        aria-label="Cambiar tema claro/oscuro">
-                    <label for="theme-switch" class="theme-switch-label">
-                        <span class="sun-icon" aria-hidden="true"><i class="bi bi-cloud-sun-fill"></i></span>
-                        <span class="moon-icon" aria-hidden="true"><i class="bi bi-moon-stars-fill"></i></span>
-                        <div class="switch-slider"></div>
-                    </label>
-                </div>
-
-                <button class="hamburguer" id="hamburguer" aria-label="Abrir menú de navegación" aria-expanded="false"
-                    aria-controls="nav-menu">
-                    <span class="bar" aria-hidden="true"></span>
-                    <span class="bar" aria-hidden="true"></span>
-                    <span class="bar" aria-hidden="true"></span>
-                </button>
-
-                <ul class="nav-menu" id="nav-menu">
-                    <li><a href="#inicio" data-section="inicio" class="active">Inicio</a></li>
-                    <li><a href="#proyectos" data-section="proyectos">Proyectos</a></li>
-                    <li><a href="#skills" data-section="skills">Habilidades</a></li>
-                    <li><a href="#sobre-mi" data-section="sobre-mi">Sobre mí</a></li>
-                    <li><a href="#contacto" data-section="contacto">Contacto</a></li>
-                    <li><a href="./assets/docs/adalid_martinez_alvarez_CV.pdf" class="btn-cv" download>
-                            <i class="bi bi-download"></i>
-                            <abbr title="Descargar">DL CV</abbr>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <div id="particles-js"></div>
-        <!-- CONTENIDO PRINCIPAL -->
-        <main id="main-content">
-            <!-- SECCIÓN SEO OCULTA -->
-            <section class="seo-content" aria-hidden="true">
-                <h2>Desarrollador Web Frontend en España</h2>
-                <p>
-                    Soy Adalid Martínez, desarrollador web frontend especializado en HTML5, CSS3,
-                    JavaScript y WordPress. Diseño interfaces accesibles, optimizadas para SEO
-                    y enfocadas en rendimiento y experiencia de usuario.
-                </p>
-            </section>
-            <!-- SECCIÓN 1: HERO -->
-            <section id="inicio" class="section active hero" aria-label="Inicio">
-                <div class="hero-content">
-                    <h1 class="hero-title" id="hero-title">
-                        <span id="typed-text" role="status" aria-live="polite"></span>
-                    </h1>
-                    <p class="hero-subtitle">
-                        ¡Bienvenid@s a mi portfolio web!
-                    </p>
-                    <div class="ctas">
-                        <button class="neon-button" data-section="proyectos">
-                            Ver Proyectos
-                        </button>
-                        <button class="neon-button" data-section="contacto">
-                            Contactar
-                        </button>
-                    </div>
-                </div>
-                <div class="card_video">
-                    <video class="video-hero" autoplay loop muted playsinline>
-                        <source src="assets/video/animated.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </section>
-            <!-- SECCIÓN 2: PROYECTOS -->
-            <section id="proyectos" class="section projects" aria-label="Proyectos" inert>
-                <div class="bodycardfame">
-                    <div class="carousel-wrapperfame">
-                        <div class="carouselfame" id="carousel">
-
-                            <div class="cardfame activefame" data-project="hidraulica">
-                                <video autoplay loop muted playsinline>
-                                    <source src="assets/demos/iPhone-13-PRO-hidraulica.webm" type="video/webm">
-                                </video>
-                            </div>
-
-                            <div class="cardfame leftfame" data-project="excursiones">
-                                <video autoplay loop muted playsinline>
-                                    <source src="assets/demos/excursionescartas.webm" type="video/webm">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-
-                            <div class="cardfame rightfame" data-project="hevca">
-                                <video autoplay loop muted playsinline>
-                                    <source src="assets/demos/hevca_prueba.webm" type="video/webm">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-
-                            <div class="cardfame hiddenfame" data-project="limpieza">
-                                <video autoplay loop muted playsinline>
-                                    <source src="assets/demos/iPhone-13-PROlimpiezasvioletayverde.webm"
-                                        type="video/webm">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-
-                            <div class="cardfame hiddenfame" data-project="acma">
-                                <video autoplay loop muted playsinline>
-                                    <source src="assets/demos/iPhone-13-PRO-ACMA-FrontendDev.webm" type="video/webm">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="indicators" id="indicators"></div>
-                </div>
-                <div class="section-header">
-                    <div class="see-more">
-                        <a href="https://github.com/bichota-tech" class="tooltip neon" target="_blank"
-                            rel="noopener noreferrer" aria-label="Ver mi perfil de GitHub">
-                            <i class="bi bi-github"></i>
-                            <span class="tooltip-text">Ver Perfil</span>
-                        </a>
-                        <a href="./assets/docs/carta_recomendación-adalid_martinez.pdf" class="tooltip neon" download>
-                            <i class="bi bi-envelope-paper-heart"></i>
-                            <span class="tooltip-text">Recomendada</span>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECCIÓN 3: HABILIDADES -->
-            <section id="skills" class="section skills" aria-label="Habilidades">
-                <div class="skills-spotlight">
-                    <!-- Selector de habilidades -->
-                    <div class="skill-selector" role="tablist" aria-label="Tecnologías">
-                        <button class="skill-btn active" data-skill="html" role="tab" aria-selected="true">
-                            <i class="fa-brands fa-html5"></i>
-                            <span>HTML5</span>
-                        </button>
-                        <button class="skill-btn" data-skill="css" role="tab" aria-selected="false">
-                            <i class="fa-brands fa-css3-alt"></i>
-                            <span>CSS3</span>
-                        </button>
-                        <button class="skill-btn" data-skill="js" role="tab" aria-selected="false">
-                            <i class="fa-brands fa-js"></i>
-                            <span>JavaScript</span>
-                        </button>
-                        <button class="skill-btn" data-skill="vue" role="tab" aria-selected="false">
-                            <i class="fa-brands fa-vuejs"></i>
-                            <span>Vue.js</span>
-                        </button>
-                        <button class="skill-btn" data-skill="libraries" role="tab" aria-selected="false">
-                            <i class="fa-solid fa-swatchbook"></i>
-                            <span>Librerías JS</span>
-                        </button>
-                        <button class="skill-btn" data-skill="JSON" role="tab" aria-selected="false">
-                            <i class="bi bi-braces"></i>
-                            <span>Json</span>
-                        </button>
-                        <button class="skill-btn" data-skill="git" role="tab" aria-selected="false">
-                            <i class="bi bi-git"></i>
-                            <span>Git</span>
-                        </button>
-                        <button class="skill-btn" data-skill="github" role="tab" aria-selected="false">
-                            <i class="bi bi-github"></i>
-                            <span>GitHub</span>
-                        </button>
-                        <button class="skill-btn" data-skill="ia" role="tab" aria-selected="false">
-                            <i class="bi bi-openai"></i>
-                            <span>Inteligencia Artificial</span>
-                        </button>
-                        <button class="skill-btn" data-skill="uiux" role="tab" aria-selected="false">
-                            <i class="bi bi-brush"></i>
-                            <span>Prototipado de Web</span>
-                        </button>
-                        <button class="skill-btn" data-skill="WordPress" role="tab" aria-selected="false">
-                            <i class="bi bi-wordpress"></i>
-                            <span>WordPress</span>
-                        </button>
-                        <button class="skill-btn" data-skill="SEO" role="tab" aria-selected="false">
-                            <i class="fa-solid fa-gauge-high"></i>
-                            <span>SEO / Rendimiento</span>
-                        </button>
-                        <button class="skill-btn" data-skill="accesibilidad" role="tab" aria-selected="false">
-                            <i class="bi bi-universal-access"></i>
-                            <span>Accesibilidad</span>
-                        </button>
-                    </div>
-                    <!-- Card activa -->
-                    <div class="skill-card" aria-live="polite">
-
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECCIÓN 4: SOBRE MÍ -->
-            <section id="sobre-mi" class="section about" aria-label="Sobre mí">
-                <div class="about-container">
-
-                    <!-- Identidad ACMA -->
-                    <div class="acma-identity" aria-hidden="true">
-                        <div class="letter-block">
-                            <span class="letter">A</span>
-                            <span class="name-part">dalid</span>
-                        </div>
-                        <div class="letter-block">
-                            <span class="letter">C</span>
-                            <span class="name-part">ecilia</span>
-                        </div>
-                        <div class="letter-block">
-                            <span class="letter">M</span>
-                            <span class="name-part">artínez</span>
-                        </div>
-                        <div class="letter-block">
-                            <span class="letter">A</span>
-                            <span class="name-part">lvarez</span>
-                        </div>
-                    </div>
-
-                    <!-- Texto descriptivo -->
-                    <p class="about-description">
-                        ACMA es quien soy y también mi forma de trabajar: desarrollo interfaces claras,
-                        accesibles y bien estructuradas, donde cada decisión está pensada y documentada.
-                        Me enfoco en crear soluciones mantenibles, fáciles de colaborar y adaptables al cambio,
-                        siempre con atención al detalle y orientadas a resolver necesidades reales de usuarios y
-                        negocio.
-                    </p>
-
-                    <!-- CTAs -->
-                    <div class="about-ctas">
-                        <button class="neon-button" data-section="proyectos">
-                            Ver proyectos
-                        </button>
-                        <button class="neon-button" data-section="skills">
-                            Ver habilidades
-                        </button>
-                    </div>
-
-                </div>
-            </section>
-
-            <!-- SECCIÓN 5: CONTACTO -->
-            <section id="contacto" class="section" aria-label="Contacto">
-                <div class="container">
-                    <div class="card">
-                        <img src="assets/imagenes/cartoon.svg" alt="Retrato de Adalid Martínez" class="card_img"
-                            loading="lazy">
-                        <h2 class="card_name" id="contact-title">Adalid Martínez</h2>
-                        <p class="card_web">Programador web (frontend)</p>
-                        <button class="btncontact btn btn-primary" aria-label="Abrir opciones de contacto"
-                            aria-expanded="false">
-                            <div class="button_content">
-                                <span>LinkTree</span>
-                            </div>
-                            <div class="button_social" role="toolbar" aria-label="Redes sociales">
-                                <a href="https://github.com/bichota-tech" target="_blank" rel="noopener noreferrer"
-                                    aria-label="GitHub">
-                                    <i class="bi bi-github" aria-hidden="true"></i>
-                                </a>
-                                <a href="https://www.linkedin.com/in/acma-48755b34b/" target="_blank"
-                                    rel="noopener noreferrer" aria-label="LinkedIn">
-                                    <i class="bi bi-linkedin" aria-hidden="true"></i>
-                                </a>
-                                <a href="https://wa.me/34612296854?text=Hola%20Adalid,%20te%20contacto%20desde%20tu%20portfolio%20web"
-                                    target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                                    <i class="bi bi-whatsapp" aria-hidden="true"></i>
-                                </a>
-                                <a href="mailto:adalidmartinezalvarez@gmail.com" aria-label="Correo electrónico">
-                                    <i class="bi bi-envelope-at-fill" aria-hidden="true"></i>
-                                </a>
-                            </div>
-                        </button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- FOOTER -->
-            <footer role="contentinfo" id="footer-global" hidden>
-                <p>&copy; 2026 Adalid Martínez Álvarez · CC BY-ND 4.0</p>
-            </footer>
-        </main>
-        <!-- Modals para Carrusel -->
-        <div id="project-modal" class="project-modal hidden" aria-hidden="true">
-            <div class="project-modal-overlay"></div>
-
-            <div class="project-modal-content" role="dialog" aria-modal="true">
-                <button class="project-modal-close" aria-label="Cerrar">&times;</button>
-
-                <h2 id="project-modal-title"></h2>
-                <p id="project-modal-description"></p>
-
-                <ul id="project-modal-tech"></ul>
-
-                <a id="project-modal-link" class="neon-button" target="_blank" rel="noopener noreferrer">
-                    Ver proyecto
-                </a>
+<body>
+    <div id="particles-js"></div>
+    <!-- HEADER Y NAVEGACIÓN -->
+    <header role="banner">
+        <nav role="navigation" aria-label="Navegación principal">
+            <div class="logo">
+                <a class="navbar-brand-symbol neon" href="#inicio" aria-label="ACMA - Ir a inicio">//</a>
+                <a class="navbar-brand" href="#inicio">ACMA</a>
             </div>
+
+            <div class="theme-switch-wrapper">
+                <input type="checkbox" id="theme-switch" class="theme-switch-checkbox"
+                    aria-label="Cambiar tema claro/oscuro">
+                <label for="theme-switch" class="theme-switch-label">
+                    <span class="sun-icon" aria-hidden="true"><i class="bi bi-cloud-sun-fill"></i></span>
+                    <span class="moon-icon" aria-hidden="true"><i class="bi bi-moon-stars-fill"></i></span>
+                    <div class="switch-slider"></div>
+                </label>
+            </div>
+
+            <button class="hamburguer" id="hamburguer" aria-label="Abrir menú de navegación" aria-expanded="false"
+                aria-controls="nav-menu">
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+            </button>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#inicio" data-section="inicio" class="active">Inicio</a></li>
+                <li><a href="#proyectos" data-section="proyectos">Proyectos</a></li>
+                <li><a href="#skills" data-section="skills">Habilidades</a></li>
+                <li><a href="#sobre-mi" data-section="sobre-mi">Sobre mí</a></li>
+                <li><a href="#contacto" data-section="contacto">Contacto</a></li>
+                <li><a href="./assets/docs/adalid_martinez_alvarez_CV.pdf" class="btn-cv" download>
+                        <i class="bi bi-download"></i>
+                        <abbr title="Descargar">DL CV</abbr>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div id="particles-js"></div>
+    <!-- CONTENIDO PRINCIPAL -->
+    <main id="main-content">
+        <!-- SECCIÓN SEO OCULTA -->
+        <section class="seo-content" aria-hidden="true">
+            <h2>Desarrollador Web Frontend en España</h2>
+            <p>
+                Soy Adalid Martínez, desarrollador web frontend especializado en HTML5, CSS3,
+                JavaScript y WordPress. Diseño interfaces accesibles, optimizadas para SEO
+                y enfocadas en rendimiento y experiencia de usuario.
+            </p>
+        </section>
+        <!-- SECCIÓN 1: HERO -->
+        <section id="inicio" class="section active hero" aria-label="Inicio">
+            <div class="hero-content">
+                <h1 class="hero-title" id="hero-title">
+                    <span id="typed-text" role="status" aria-live="polite"></span>
+                </h1>
+                <p class="hero-subtitle">
+                    ¡Bienvenid@s a mi portfolio web!
+                </p>
+                <div class="ctas">
+                    <button class="neon-button" data-section="proyectos">
+                        Ver Proyectos
+                    </button>
+                    <button class="neon-button" data-section="contacto">
+                        Contactar
+                    </button>
+                </div>
+            </div>
+            <div class="card_video">
+                <video class="video-hero" autoplay loop muted playsinline>
+                    <source src="assets/video/animated.mp4" type="video/mp4">
+                </video>
+            </div>
+        </section>
+        <!-- SECCIÓN 2: PROYECTOS -->
+        <section id="proyectos" class="section projects" aria-label="Proyectos" inert>
+            <div class="bodycardfame">
+                <div class="carousel-wrapperfame">
+                    <div class="carouselfame" id="carousel">
+
+                        <div class="cardfame activefame" data-project="hidraulica">
+                            <video autoplay loop muted playsinline>
+                                <source src="assets/demos/iPhone-13-PRO-hidraulica.webm" type="video/webm">
+                            </video>
+                        </div>
+
+                        <div class="cardfame leftfame" data-project="excursiones">
+                            <video autoplay loop muted playsinline>
+                                <source src="assets/demos/excursionescartas.webm" type="video/webm">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+
+                        <div class="cardfame rightfame" data-project="hevca">
+                            <video autoplay loop muted playsinline>
+                                <source src="assets/demos/hevca_prueba.webm" type="video/webm">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+
+                        <div class="cardfame hiddenfame" data-project="limpieza">
+                            <video autoplay loop muted playsinline>
+                                <source src="assets/demos/iPhone-13-PROlimpiezasvioletayverde.webm" type="video/webm">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+
+                        <div class="cardfame hiddenfame" data-project="acma">
+                            <video autoplay loop muted playsinline>
+                                <source src="assets/demos/iPhone-13-PRO-ACMA-FrontendDev.webm" type="video/webm">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div class="indicators" id="indicators"></div>
+            </div>
+            <div class="section-header">
+                <div class="see-more">
+                    <a href="https://github.com/bichota-tech" class="tooltip neon" target="_blank"
+                        rel="noopener noreferrer" aria-label="Ver mi perfil de GitHub">
+                        <i class="bi bi-github"></i>
+                        <span class="tooltip-text">Ver Perfil</span>
+                    </a>
+                    <a href="./assets/docs/carta_recomendación-adalid_martinez.pdf" class="tooltip neon" download>
+                        <i class="bi bi-envelope-paper-heart"></i>
+                        <span class="tooltip-text">Recomendada</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: HABILIDADES -->
+        <section id="skills" class="section skills" aria-label="Habilidades">
+            <div class="skills-spotlight">
+                <!-- Selector de habilidades -->
+                <div class="skill-selector" role="tablist" aria-label="Tecnologías">
+                    <button class="skill-btn active" data-skill="html" role="tab" aria-selected="true">
+                        <i class="fa-brands fa-html5"></i>
+                        <span>HTML5</span>
+                    </button>
+                    <button class="skill-btn" data-skill="css" role="tab" aria-selected="false">
+                        <i class="fa-brands fa-css3-alt"></i>
+                        <span>CSS3</span>
+                    </button>
+                    <button class="skill-btn" data-skill="js" role="tab" aria-selected="false">
+                        <i class="fa-brands fa-js"></i>
+                        <span>JavaScript</span>
+                    </button>
+                    <button class="skill-btn" data-skill="vue" role="tab" aria-selected="false">
+                        <i class="fa-brands fa-vuejs"></i>
+                        <span>Vue.js</span>
+                    </button>
+                    <button class="skill-btn" data-skill="libraries" role="tab" aria-selected="false">
+                        <i class="fa-solid fa-swatchbook"></i>
+                        <span>Librerías JS</span>
+                    </button>
+                    <button class="skill-btn" data-skill="JSON" role="tab" aria-selected="false">
+                        <i class="bi bi-braces"></i>
+                        <span>Json</span>
+                    </button>
+                    <button class="skill-btn" data-skill="git" role="tab" aria-selected="false">
+                        <i class="bi bi-git"></i>
+                        <span>Git</span>
+                    </button>
+                    <button class="skill-btn" data-skill="github" role="tab" aria-selected="false">
+                        <i class="bi bi-github"></i>
+                        <span>GitHub</span>
+                    </button>
+                    <button class="skill-btn" data-skill="ia" role="tab" aria-selected="false">
+                        <i class="bi bi-openai"></i>
+                        <span>Inteligencia Artificial</span>
+                    </button>
+                    <button class="skill-btn" data-skill="uiux" role="tab" aria-selected="false">
+                        <i class="bi bi-brush"></i>
+                        <span>Prototipado de Web</span>
+                    </button>
+                    <button class="skill-btn" data-skill="WordPress" role="tab" aria-selected="false">
+                        <i class="bi bi-wordpress"></i>
+                        <span>WordPress</span>
+                    </button>
+                    <button class="skill-btn" data-skill="SEO" role="tab" aria-selected="false">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <span>SEO / Rendimiento</span>
+                    </button>
+                    <button class="skill-btn" data-skill="accesibilidad" role="tab" aria-selected="false">
+                        <i class="bi bi-universal-access"></i>
+                        <span>Accesibilidad</span>
+                    </button>
+                </div>
+                <!-- Card activa -->
+                <div class="skill-card" aria-live="polite">
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: SOBRE MÍ -->
+        <section id="sobre-mi" class="section about" aria-label="Sobre mí">
+            <div class="about-container">
+
+                <!-- Identidad ACMA -->
+                <svg viewBox="0 0 600 120">
+                    <rect width="100%" height="100%" fill="transparent" />
+                    <text x="50%" y="55%" text-anchor="middle" font-size="44" fill="none" stroke="#f55139"
+                        stroke-width="2" stroke-dasharray="800" stroke-dashoffset="800">
+                        Hola soy Adalid
+                        <animate attributeName="stroke-dashoffset" from="800" to="0" dur="7s"
+                            repeatCount="indefinite" />
+                    </text>
+                </svg>
+
+                <!-- Texto descriptivo -->
+                <p class="about-description">
+                    ACMA es quien soy y también mi forma de trabajar: desarrollo interfaces claras,
+                    accesibles y bien estructuradas, donde cada decisión está pensada y documentada.
+                    Me enfoco en crear soluciones mantenibles, fáciles de colaborar y adaptables al cambio,
+                    siempre con atención al detalle y orientadas a resolver necesidades reales de usuarios y
+                    negocio.
+                </p>
+
+                <!-- CTAs -->
+                <div class="about-ctas">
+                    <button class="neon-button" data-section="proyectos">
+                        Ver proyectos
+                    </button>
+                    <button class="neon-button" data-section="skills">
+                        Ver habilidades
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: CONTACTO -->
+        <section id="contacto" class="section" aria-label="Contacto">
+            <div class="container">
+                <div class="card">
+                    <img src="assets/imagenes/cartoon.svg" alt="Retrato de Adalid Martínez" class="card_img"
+                        loading="lazy">
+                    <h2 class="card_name" id="contact-title">Adalid Martínez</h2>
+                    <p class="card_web">Programador web (frontend)</p>
+                    <button class="btncontact btn btn-primary" aria-label="Abrir opciones de contacto"
+                        aria-expanded="false">
+                        <div class="button_content">
+                            <span>LinkTree</span>
+                        </div>
+                        <div class="button_social" role="toolbar" aria-label="Redes sociales">
+                            <a href="https://github.com/bichota-tech" target="_blank" rel="noopener noreferrer"
+                                aria-label="GitHub">
+                                <i class="bi bi-github" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/acma-48755b34b/" target="_blank"
+                                rel="noopener noreferrer" aria-label="LinkedIn">
+                                <i class="bi bi-linkedin" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://wa.me/34612296854?text=Hola%20Adalid,%20te%20contacto%20desde%20tu%20portfolio%20web"
+                                target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                                <i class="bi bi-whatsapp" aria-hidden="true"></i>
+                            </a>
+                            <a href="mailto:adalidmartinezalvarez@gmail.com" aria-label="Correo electrónico">
+                                <i class="bi bi-envelope-at-fill" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer role="contentinfo" id="footer-global" hidden>
+            <p>&copy; 2026 Adalid Martínez Álvarez · CC BY-ND 4.0</p>
+        </footer>
+    </main>
+    <!-- Modals para Carrusel -->
+    <div id="project-modal" class="project-modal hidden" aria-hidden="true">
+        <div class="project-modal-overlay"></div>
+
+        <div class="project-modal-content" role="dialog" aria-modal="true">
+            <button class="project-modal-close" aria-label="Cerrar">&times;</button>
+
+            <h2 id="project-modal-title"></h2>
+            <p id="project-modal-description"></p>
+
+            <ul id="project-modal-tech"></ul>
+
+            <a id="project-modal-link" class="neon-button" target="_blank" rel="noopener noreferrer">
+                Ver proyecto
+            </a>
         </div>
+    </div>
 
 
-        <!-- SCRIPTS -->
-        <!-- Typed.js para efecto de tipeado -->
-        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+    <!-- SCRIPTS -->
+    <!-- Typed.js para efecto de tipeado -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
 
-        <!-- Particles.js para fondo animado -->
-        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+    <!-- Particles.js para fondo animado -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
 
-        <!-- Dark Mode Toggle -->
-        <script src="javascripts/darkmode.js" defer></script>
+    <!-- Dark Mode Toggle -->
+    <script src="javascripts/darkmode.js" defer></script>
 
-        <!-- Carrusel personalizado 3D -->
-        <script src="javascripts/carousel.js" defer></script>
+    <!-- Carrusel personalizado 3D -->
+    <script src="javascripts/carousel.js" defer></script>
 
-        <!-- Spotlight para habilidades -->
-        <script src="javascripts/spotlight.js" defer></script>
+    <!-- Spotlight para habilidades -->
+    <script src="javascripts/spotlight.js" defer></script>
 
-        <!-- Efectos y animaciones Typed.js y Particles.js -->
-        <script src="javascripts/effects.js" defer></script>
+    <!-- Efectos y animaciones Typed.js y Particles.js -->
+    <script src="javascripts/effects.js" defer></script>
 
-        <!-- Aplicación principal SPA -->
-        <script src="javascripts/app.js" defer></script>
-    </body>
+    <!-- Aplicación principal SPA -->
+    <script src="javascripts/app.js" defer></script>
+</body>
 
 </html>

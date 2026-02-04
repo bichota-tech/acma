@@ -4,6 +4,14 @@
  * Autor: ACMA
  * Versión: 2.0
  */
+
+const PAGE_TITLES = {
+  inicio: 'ACMA Portfolio | Desarrolladora Web Frontend',
+  proyectos: 'Proyectos Frontend en JavaScript | ACMA Portfolio',
+  skills: 'Habilidades Técnicas Frontend | ACMA Portfolio',
+  'sobre-mi': 'Sobre mí | ACMA – Desarrolladora Web Frontend',
+  contacto: 'Contacto Profesional | ACMA Portfolio'
+};
 class ACMAPortfolio {
   constructor() {
     this.links = document.querySelectorAll('.nav-menu a');
@@ -199,8 +207,15 @@ class ACMAPortfolio {
   /**
    * Navega a una sección específica
    * @param {string} target - ID de la sección destino
-   */
+   **/
   navigateTo(target) {
+
+    // Actualizar title para SEO y UX
+    const newTitle = PAGE_TITLES[target];
+    if (newTitle) {
+      document.title = newTitle;
+    }
+
     const newPath = `/${target}`;
     if (location.pathname !== newPath) {
       history.pushState({ section: target }, '', newPath);

@@ -912,39 +912,19 @@ section#sobre-mi {
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  max-width: 900px;
   padding: 1.5rem;
   margin: 0 auto;
   text-align: center;
 }
 
-.acma-identity {
+.about-description {
   display: flex;
-  flex-direction: row;
-  flex-wrap:wrap;
   align-items: center;
   justify-content: center;
-  gap: 0;
-  /*estado inicial*/
-}
-
-.name-part {
-  z-index: -1;
-  opacity: 0;
-  transform: translateX(-25px);
-  transition:
-    opacity 300ms ease-out,
-    transform 1s ease-out;
-}
-
-.about.is-animated .name-part {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 1.7s;
-}
-
-.about-description {
+  will-change: transform, opacity;
   max-width: 700px;
+  font-weight: 600;
+  font-size: clamp(1rem, 3vw, 1.2rem);
   opacity: 0;
   transform: translateY(15px);
   transition:
@@ -960,16 +940,8 @@ section#sobre-mi {
 
 .about-ctas {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
-}
-
-.acma-identity,
-.name-part,
-.about-description {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  will-change: transform, opacity;
 }
 
 /* =======================

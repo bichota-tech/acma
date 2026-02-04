@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://portfolio-blue-iota-62.vercel.app/sitemap.xml

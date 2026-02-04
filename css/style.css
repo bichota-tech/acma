@@ -346,6 +346,12 @@ main {
   overflow: hidden;
 }
 
+.seo-text {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  max-width: 60ch;
+}
+
 /* =====================
    SECCIÓN HERO (Inicio)
    ===================== */

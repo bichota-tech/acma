@@ -105,6 +105,12 @@ img {
   z-index: 0;
 }
 
+@media (max-width: 360px) {
+  #particles-js {
+    display: none;
+  }
+}
+
 /* ===================
    HEADER Y NAVEGACIÓN
    =================== */
@@ -145,13 +151,15 @@ nav {
 .navbar-brand {
   font-size: clamp(1.5rem, 3vw, 1.8rem);
   font-weight: 700;
+  font-style: italic;
   color: var(--color-fondo-claro);
   text-decoration: none;
 }
 
 a.navbar-brand-symbol {
   color: var(--color-acento-primario);
-  font-size: clamp(1.5rem, 3vw, 1.8rem);
+  font-size: clamp(1.95rem, 3vw, 2.1rem);
+  font-style: italic;
   font-weight: 700;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -465,15 +473,23 @@ main {
     0 0 80px var(--color-acento-primario-brillo);
 }
 
+@media (max-width: 768px) {
+
+  .neon,
+  .neon-button::before {
+    animation: none;
+    box-shadow: none;
+  }
+}
+
 .card_video {
   max-width: 100%;
   width: 180px;
   height: 180px;
   margin: 0 auto 0.75rem;
   border-radius: 50%;
-  border: 3px solid var(--color-acento-primario-brillo);
+  border: 5px solid var(--color-acento-primario);
   position: absolute;
-
   left: 15%;
   bottom: 0;
   transform: translate(-50%, -50%);

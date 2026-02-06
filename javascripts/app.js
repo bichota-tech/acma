@@ -236,6 +236,12 @@ class ACMAPortfolio {
       if (isActive) {
         section.removeAttribute('inert');
         section.setAttribute('aria-hidden', 'false');
+        video = section.querySelector('video');
+        if (video) {
+          video.play().catch(() => {
+            // Silenciar errores de reproducción automática
+          });
+        }
 
         // Focus controlado en el primer heading
         const heading = section.querySelector('h1, h2, h3');
@@ -248,6 +254,10 @@ class ACMAPortfolio {
           const aboutSection = document.getElementById('sobre-mi');
           aboutSection.classList.add('is-animated');
           this.aboutAnimated = true;
+        }
+
+        if (section === 'skills') {
+          import('./spotlight.js');
         }
 
       } else {

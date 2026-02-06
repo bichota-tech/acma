@@ -473,7 +473,7 @@ main {
     0 0 80px var(--color-acento-primario-brillo);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 450px) {
 
   .neon,
   .neon-button::before {

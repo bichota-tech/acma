@@ -256,9 +256,6 @@ class ACMAPortfolio {
           this.aboutAnimated = true;
         }
 
-        if (section === 'skills') {
-          import('./spotlight.js');
-        }
 
       } else {
         section.setAttribute('inert', '');

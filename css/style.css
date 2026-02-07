@@ -320,7 +320,7 @@ main {
 }
 
 .section {
-  position: absolute;
+  /* position: absolute; */
   inset: 0;
   opacity: 0;
   visibility: hidden;
@@ -608,8 +608,9 @@ section#skills {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  column-gap: 6rem;
+  gap: 4rem;
   width: 100%;
+  padding-top: 10rem;
 }
 
 /*Selector*/
@@ -736,7 +737,6 @@ section#skills {
     flex-wrap: wrap;
     justify-content: center;
     align-items: stretch;
-    row-gap: 6rem;
   }
 
   .skill-selector {
@@ -930,25 +930,14 @@ section#sobre-mi {
   text-align: center;
 }
 
-.about-description {
+.about-description{
+  content: "";
   display: flex;
   align-items: center;
   justify-content: center;
-  will-change: transform, opacity;
   max-width: 700px;
   font-weight: 600;
   font-size: clamp(1rem, 3vw, 1.2rem);
-  opacity: 0;
-  transform: translateY(15px);
-  transition:
-    opacity 600ms ease-out,
-    transform 700ms ease-out;
-}
-
-.about.is-animated .about-description {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: .5s;
 }
 
 .about-ctas {

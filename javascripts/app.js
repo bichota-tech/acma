@@ -44,6 +44,7 @@ class ACMAPortfolio {
   attachHamburguerListener() {
     this.hamburguer.addEventListener('click', () => {
       const open = this.navMenu.classList.toggle('show');
+      this.hamburguer.classList.toggle('active', open);
       this.hamburguer.setAttribute('aria-expanded', open);
     });
   }
@@ -87,4 +88,12 @@ const app = new ACMAPortfolio();
 window.addEventListener('popstate', e => {
   const section = e.state?.section || 'inicio';
   app.navigateTo(section, false);
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  const path = location.pathname.replace('/', '') || 'inicio';
+
+  if (PAGE_TITLES[path]) {
+    app.navigateTo(path, false);
+  }
 });

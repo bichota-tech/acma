@@ -610,7 +610,7 @@ section#skills {
   align-items: center;
   gap: 4rem;
   width: 100%;
-  padding-top: 10rem;
+  padding-top: 4rem;
 }
 
 /*Selector*/
@@ -737,6 +737,8 @@ section#skills {
     flex-wrap: wrap;
     justify-content: center;
     align-items: stretch;
+    padding-top: 9rem;
+    gap: 2rem;
   }
 
   .skill-selector {

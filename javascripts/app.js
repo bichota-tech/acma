@@ -74,6 +74,7 @@ class ACMAPortfolio {
 
   closeMenu() {
     this.navMenu.classList.remove('show');
+    this.hamburguer.classList.remove('active');
     this.hamburguer.setAttribute('aria-expanded', 'false');
   }
 }
@@ -88,6 +89,7 @@ const app = new ACMAPortfolio();
 window.addEventListener('popstate', e => {
   const section = e.state?.section || 'inicio';
   app.navigateTo(section, false);
+  app.closeMenu();
 });
 
 window.addEventListener('DOMContentLoaded', () => {

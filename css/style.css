@@ -105,11 +105,6 @@ img {
   z-index: 0;
 }
 
-@media (max-width: 360px) {
-  #particles-js {
-    display: none;
-  }
-}
 
 /* ===================
    HEADER Y NAVEGACIÓN
@@ -471,15 +466,6 @@ main {
     0 0 20px var(--color-acento-primario),
     0 0 40px var(--color-acento-primario),
     0 0 80px var(--color-acento-primario-brillo);
-}
-
-@media (max-width: 450px) {
-
-  .neon,
-  .neon-button::before {
-    animation: none;
-    box-shadow: none;
-  }
 }
 
 .card_video {

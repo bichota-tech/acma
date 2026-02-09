@@ -495,7 +495,7 @@ main {
   .hero {
     justify-content: start;
     align-items: center;
-    padding-top: 8rem;
+    padding-top: 10rem;
   }
 
   .card_video {
@@ -915,6 +915,7 @@ section#skills {
 section#sobre-mi {
   position: absolute;
   color: var(--text-main);
+  margin-top: 1rem;
 }
 
 .about-container {
@@ -922,11 +923,31 @@ section#sobre-mi {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
   padding: 1.5rem;
   margin: 0 auto;
   text-align: center;
 }
+
+.name-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.initial {
+    font-size: 40px;
+    font-weight: 500;
+    color: #fd0800;
+    line-height: 1;
+}
+
+.svg-text {
+    width: 160px;
+    height: 70px;
+    display: block;
+}
+
 
 .about-description{
   content: "";
@@ -936,6 +957,7 @@ section#sobre-mi {
   max-width: 700px;
   font-weight: 600;
   font-size: clamp(1rem, 3vw, 1.2rem);
+  padding-bottom: 2.5rem;
 }
 
 .about-ctas {
@@ -1087,11 +1109,13 @@ section#sobre-mi {
    ======= */
 
 #footer-global {
+  position: absolute;
+  bottom: 0;
+  z-index: 1000;
   width: 100%;
   text-align: center;
   font-size: 0.875rem;
-  margin-block: auto;
-  padding: 1rem;
+  padding: .5rem;
   background: var(--color-oscuro-transp);
   box-shadow: 0 8px 32px var(--color-oscuro-alto);
   color: var(--color-fondo-claro);

@@ -9,7 +9,7 @@
     <meta property="og:url" content="https://portfolio-blue-iota-62.vercel.app/">
     <meta property="og:image" content="https://portfolio-blue-iota-62.vercel.app/assets/imagenes/profile_miniatura.png">
     <meta property="og:description"
-        content="Portfolio de Adalid Martínez, desarrollador web frontend en España, especializado en HTML, CSS, JavaScript y WordPress. Webs accesibles, rápidas y optimizadas para SEO."> 
+        content="Portfolio de Adalid Martínez, desarrollador web frontend en España, especializado en HTML, CSS, JavaScript y WordPress. Webs accesibles, rápidas y optimizadas para SEO.">
     <meta name="description"
         content="Portfolio de Adalid Martínez, desarrollador web frontend en España, especializado en HTML, CSS, JavaScript y WordPress. Webs accesibles, rápidas y optimizadas para SEO.">
     <meta name="author" content="Adalid Martínez Álvarez">
@@ -29,11 +29,9 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
     <!-- Fuentes -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@400;600;700&display=swap"
-        rel="preload" as="style">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@400;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@400;600;700&display=swap" rel="preload"
+        as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@400;600;700&display=swap"
         rel="stylesheet">
 
     <!-- Bootstrap Icons y Font Awesome -->
@@ -148,7 +146,8 @@
                 </div>
             </div>
             <div class="card_video">
-                <video poster="assets/imagenes/profile_miniatura.webp" class="video-hero" autoplay loop muted playsinline preload="none">
+                <video poster="assets/imagenes/profile_miniatura.webp" class="video-hero" autoplay loop muted
+                    playsinline preload="none">
                     <source src="assets/video/animated.mp4" type="video/mp4">
                 </video>
             </div>
@@ -160,27 +159,27 @@
                     <div class="carouselfame" id="carousel">
 
                         <div class="cardfame activefame" data-project="hidraulica">
-                            <video autoplay loop muted playsinline >
+                            <video autoplay loop muted playsinline>
                                 <source src="assets/demos/iPhone-13-PRO-hidraulica.webm" type="video/webm">
                             </video>
                         </div>
 
                         <div class="cardfame leftfame" data-project="excursiones">
-                            <video autoplay loop muted playsinline >
+                            <video autoplay loop muted playsinline>
                                 <source src="assets/demos/excursionescartas.webm" type="video/webm">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
 
                         <div class="cardfame rightfame" data-project="hevca">
-                            <video autoplay loop muted playsinline >
+                            <video autoplay loop muted playsinline>
                                 <source src="assets/demos/hevca_prueba.webm" type="video/webm">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
 
                         <div class="cardfame hiddenfame" data-project="limpieza">
-                            <video autoplay loop muted playsinline >
+                            <video autoplay loop muted playsinline>
                                 <source src="assets/demos/iPhone-13-PROlimpiezasvioletayverde.webm" type="video/webm">
                                 Your browser does not support the video tag.
                             </video>
@@ -279,17 +278,51 @@
         <!-- SECCIÓN 4: SOBRE MÍ -->
         <section id="sobre-mi" class="section about" aria-label="Sobre mí" inert>
             <div class="about-container">
-
                 <!-- Identidad ACMA -->
-                <svg viewBox="0 0 600 120">
+                <div class="name-row">
+                    <!-- Adalid -->
+                    
+                    <svg class="svg-text" viewBox="0 0 500 120">
+                        <rect width="100%" height="100%" fill="transparent" />
+                        <text x="50%" y="55%" text-anchor="middle" font-size="120" fill="none" stroke="#fd0800"
+                            stroke-width="4" stroke-dasharray="800" stroke-dashoffset="800">
+                            Adalid
+                            <animate attributeName="stroke-dashoffset" from="800" to="500" dur="7s"
+                                repeatCount="indefinite" />
+                        </text>
+                    </svg>
+
+                    <svg class="svg-text" viewBox="0 0 500 120">
+                        <rect width="100%" height="100%" fill="transparent" />
+                        <text x="50%" y="55%" text-anchor="middle" font-size="120" fill="none" stroke="#fd0800"
+                            stroke-width="4" stroke-dasharray="800" stroke-dashoffset="800">
+                            Martínez
+                            <animate attributeName="stroke-dashoffset" from="800" to="0" dur="7s"
+                                repeatCount="indefinite" />
+                        </text>
+                    </svg>
+
+                    <svg class="svg-text" viewBox="0 0 500 120">
+                        <rect width="100%" height="100%" fill="transparent" />
+                        <text x="50%" y="55%" text-anchor="middle" font-size="120" fill="none" stroke="#fd0800"
+                            stroke-width="4" stroke-dasharray="800" stroke-dashoffset="700">
+                            Álvarez
+                            <animate attributeName="stroke-dashoffset" from="800" to="500" dur="7s"
+                                repeatCount="indefinite" />
+                        </text>
+                    </svg>
+                </div>
+
+                <!-- <svg viewBox="0 0 600 120">
                     <rect width="100%" height="100%" fill="transparent" />
-                    <text x="50%" y="55%" text-anchor="middle" font-size="60" fill="none" stroke="#fd0800"
+                    <text x="50%" y="55%" text-anchor="middle" font-size="40" fill="none" stroke="#fd0800"
                         stroke-width="1" stroke-dasharray="800" stroke-dashoffset="800">
-                        Hola soy Adalid
-                        <animate attributeName="stroke-dashoffset" from="800" to="0" dur="7s"
+                        Adalid
+                        <animate attributeName="stroke-dashoffset" from="800" to="700" dur="7s"
                             repeatCount="indefinite" />
                     </text>
-                </svg>
+                </svg> -->
+
 
                 <!-- Texto descriptivo -->
                 <p class="about-description">

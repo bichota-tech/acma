@@ -321,29 +321,25 @@ main {
 
 .section {
   /* position: absolute; */
-  inset: 0;
   opacity: 0;
-  visibility: hidden;
-  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: scale(0.96);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  pointer-events: none;
+  transform: scale(0.95);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  pointer-events: none !important;
 }
 
 .section.active {
   opacity: 1;
-  visibility: visible;
-  z-index: 2;
   transform: scale(1);
-  pointer-events: auto;
+  pointer-events: auto !important;
 }
 
-.section:not(.active) {
-  z-index: 0;
-}
 
 /* SECCIÓN SEO OCULTA */
 .seo-content {
@@ -737,7 +733,7 @@ section#skills {
     flex-wrap: wrap;
     justify-content: center;
     align-items: stretch;
-    padding-top: 9rem;
+    padding-top: 2rem;
     gap: 2rem;
   }
 

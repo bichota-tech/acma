@@ -92,7 +92,7 @@ class PortfolioEffects {
         line_linked: {
           enable: true,
           distance: 120,
-          color: '#036060',
+          color: '#44eeee',
           opacity: 0.2,
           width: 2
         },

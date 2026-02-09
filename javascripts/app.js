@@ -236,11 +236,6 @@ class ACMAPortfolio {
           heading.setAttribute('tabindex', '-1');
           setTimeout(() => heading.focus(), 50);
         }
-        if (target === 'sobre-mi' && !this.aboutAnimated) {
-          const aboutSection = document.getElementById('sobre-mi');
-          aboutSection.classList.add('is-animated');
-          this.aboutAnimated = true;
-        }
 
       } else {
         section.setAttribute('inert', '');

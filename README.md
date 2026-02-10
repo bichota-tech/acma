@@ -1,167 +1,94 @@
-﻿# ACMA Portfolio
+# ACMA — Portfolio Frontend SPA (en aprendizaje continuo / learning in progress)
 
-> Portfolio web profesional frontend · SPA en JavaScript vanilla · Accesibilidad, rendimiento y SEO técnico como prioridad
+Portfolio web profesional construido como **Single Page Application (SPA)** sin frameworks.  
+El objetivo es demostrar fundamentos sólidos de frontend: **arquitectura clara, accesibilidad, rendimiento y SEO técnico**, mientras sigo mejorando prácticas reales de desarrollo.
 
-**Autor:** Adalid Martínez Álvarez  
-**Versión:** 3.0  
-**Licencia:** MIT  
+Professional web portfolio built as a **Single Page Application (SPA)** without frameworks.  
+The goal is to showcase solid frontend fundamentals: **clear architecture, accessibility, performance, and technical SEO**, while continuously improving real‑world development practices.
+
 **Demo:** https://portfolio-blue-iota-62.vercel.app/
 
 ---
 
-## 🎯 Descripción
+## 🎯 Propósito / Purpose (aprendizaje / learning)
+Este proyecto nace como una **plataforma personal de práctica y demostración**. Me permite:
 
-**ACMA Portfolio** es un portfolio web profesional desarrollado como **Single Page Application (SPA)** sin frameworks, enfocado en demostrar competencias reales de frontend moderno: arquitectura clara, accesibilidad, rendimiento y buenas prácticas de ingeniería.
+- Consolidar fundamentos con **JavaScript vanilla** y **History API**
+- Aplicar principios reales de **accesibilidad (WCAG 2.1 AA)**
+- Optimizar **rendimiento, estructura y SEO**
+- Documentar mejoras futuras como parte de un aprendizaje continuo
 
-El proyecto está diseñado tanto como **herramienta de empleabilidad** como base escalable para futuras funcionalidades.
+This project was created as a **personal practice and showcase platform**. It allows me to:
 
----
-
-## 🧠 Qué demuestra este proyecto
-
-- Arquitectura SPA sin dependencias
-- Dominio de **JavaScript vanilla** y History API
-- HTML5 semántico y **accesibilidad WCAG 2.1 AA**
-- CSS moderno (variables, responsive, dark mode)
-- Optimización de rendimiento y SEO técnico
-- Despliegue profesional en Vercel
+- Strengthen fundamentals with **vanilla JavaScript** and the **History API**
+- Apply real **accessibility (WCAG 2.1 AA)** principles
+- Optimize **performance, structure, and SEO**
+- Document future improvements as part of continuous learning
 
 ---
 
-## 🔗 Demo
-
-👉 **Producción:**  
-https://portfolio-blue-iota-62.vercel.app/
-
-- Hosting en **Vercel**
-- Rewrites configurados para SPA
-- Navegación client-side sin errores 404
-- URLs limpias y compartibles
+## 🧩 Tecnologías / Tech stack
+- **HTML5** — Semántica, accesibilidad y SEO / Semantics, accessibility, and SEO  
+- **CSS3** — Responsive, variables, dark/light mode  
+- **JavaScript ES6+** — Navegación SPA, eventos, estado / SPA navigation, events, state  
+- **Vercel** — Deploy y rewrites / deployment and rewrites  
 
 ---
 
-## 🛠️ Stack Tecnológico
-
-### Frontend
-- **HTML5** — Semántica, accesibilidad y SEO
-- **CSS3 puro** — Responsive design, variables CSS, dark/light mode
-- **JavaScript ES6+ (vanilla)** — Lógica SPA, gestión de eventos y estado
-
-### Librerías & Servicios
-- Typed.js (animación de texto)
-- Particles.js (fondo animado)
-- Umami Analytics (analytics sin cookies)
-- Vercel Speed Insights (Core Web Vitals)
-
-### Despliegue
-- **Vercel** — Hosting y CI/CD automático
-- **Git & GitHub** — Control de versiones
-
----
-
-## 🏗️ Arquitectura (alto nivel)
-
-- Aplicación **SPA** con navegación sin recarga
-- Enrutamiento mediante **History API**
-- Render dinámico de secciones
-- Separación clara de responsabilidades:
-  - `app.js` → controlador principal SPA
-  - módulos JS por funcionalidad
-  - datos desacoplados en JSON
-- CSS centralizado y escalable sin preprocesadores
-
----
-
-## ♿ Accesibilidad
-
-Implementada siguiendo **WCAG 2.1 AA**:
-
-- HTML semántico (`header`, `nav`, `main`, `section`, `footer`)
-- Uso correcto de **ARIA roles y labels**
-- Navegación completa por teclado
-- Focus management y estados visibles
-- Respeto a `prefers-reduced-motion`
-- Contraste de color conforme a estándares
-
----
-
-## ⚡ Performance
-
-- Lighthouse scores objetivo: **95+**
-- Sin frameworks → bundle mínimo
-- CSS y JS optimizados
-- Imágenes optimizadas y lazy loading
-- Animaciones GPU-friendly (`transform`, `opacity`)
-
----
-
-## 🔍 SEO Técnico
-
-- Meta tags completos y Open Graph
-- Estructura correcta de headings
-- URLs semánticas compatibles con SPA
-- Rewrites en Vercel para indexación correcta
-- Sitemap y robots configurados
-- Preparado para Schema Markup
-
----
-
-## 📁 Estructura del Proyecto
-
+## 🏗️ Estructura / Structure
+```
 acma/
 ├── index.html
 ├── css/
 ├── javascripts/
 ├── assets/
-│ └── data/
+│   └── data/
 ├── vercel.json
 └── README.md
-
+```
 
 ---
 
-## 🚀 Uso local
+## 🧠 Aprendizajes clave / Key learnings
+- Implementación de **SPA sin frameworks** / SPA without frameworks
+- Uso correcto de la **History API**
+- Accesibilidad aplicada (aria, focus, teclado) / applied accessibility
+- SEO técnico en una SPA / technical SEO in SPA
+- Optimización básica para **Core Web Vitals**
 
+---
+
+## ⚠️ Limitaciones actuales / Current limitations
+- Sin backend (100% frontend estático) / no backend
+- Sin tests automatizados / no automated tests
+- Formularios sin integración real / forms without real integration
+
+---
+
+## 🔮 Próximas mejoras / Next steps
+- Tests básicos (unitarios) / basic tests
+- Internacionalización (ES/EN) / i18n
+- Blog con contenido en markdown / markdown blog
+- Mejorar formulario de contacto / improve contact form
+
+---
+
+## 🚀 Uso local / Local usage
 ```bash
 git clone https://github.com/bichota-tech/acma.git
 cd acma
+# Abrir index.html o usar un servidor local
+```
 
-Abrir index.html directamente o usar un servidor local (Live Server recomendado).
+---
 
-## 🛣️ Roadmap
+## 👤 Autor / Author
+Adalid Martínez Álvarez  
+GitHub: https://github.com/bichota-tech  
+LinkedIn: https://www.linkedin.com/in/acma-48755b34b/
 
- - Blog con contenido en markdown
+---
 
- - Internacionalización (ES / EN)
-
- - PWA y modo offline
-
- - Mejora de formulario de contacto
-
- - Tests automatizados básicos
-
-## 👤 Autor
-
-- Adalid Martínez Álvarez
-
-- GitHub: https://github.com/bichota-tech
-
-- LinkedIn: https://www.linkedin.com/in/acma-48755b34b/
-
-- Email: adalvarez2021@gmail.com
-
-## 📄 Licencia
-
-- Este proyecto está licenciado bajo **Creative Commons Attribution-NoDerivatives 4.0 (CC BY-ND 4.0)**.
-
-### Está permitido:
-- Compartir y redistribuir el proyecto en cualquier medio o formato
-- Referenciar el proyecto como muestra de trabajo
-
-### NO está permitido:
-- Modificar el código o los estilos
-- Crear obras derivadas
-- Usar el proyecto (total o parcialmente) como base de otros productos
-- Uso comercial sin autorización expresa del autor
-
-🔒 Este proyecto se publica únicamente con fines demostrativos.
+## 📄 Licencia / License
+Este proyecto se publica con fines demostrativos.  
+This project is published for demonstration purposes.

@@ -46,6 +46,73 @@ acma/
 ├── vercel.json
 └── README.md
 ```
+---
+
+## 🧩 Arquitectura SPA (Single Page Application)
+
+### Navegación y enrutamiento
+Este portfolio funciona como una **SPA pura** sin frameworks. La navegación entre secciones se gestiona mediante:
+
+- **History API** (`pushState` / `popstate`) para actualizar la URL sin recargar la página
+- **Hash navigation** (`#inicio`, `#proyectos`, etc.) para anclar secciones
+- **JavaScript vanilla** para gestionar el estado activo y las transiciones
+
+#### Flujo de navegación
+```
+Usuario click en link → 
+  ├─ app.js captura el evento
+  ├─ Actualiza URL con pushState()
+  ├─ Oculta sección actual (inert + hidden)
+  ├─ Muestra nueva sección (remove inert)
+  └─ Actualiza estado del menú activo
+```
+
+### Módulos JavaScript
+
+| Archivo | Responsabilidad |
+|---------|----------------|
+| `app.js` | **Coordinador principal**: navegación SPA, gestión de secciones, listeners de enlaces y botones |
+| `carousel.js` | Lógica del carrusel 3D de proyectos: rotación, indicadores, modal de detalles |
+| `spotlight.js` | Sistema de tabs para la sección Skills: carga dinámica de contenido según tecnología |
+| `darkmode.js` | Toggle entre tema claro/oscuro con persistencia en `localStorage` |
+| `effects.js` | Inicialización de animaciones externas: Typed.js (efecto tipeado) y Particles.js (fondo animado) |
+
+### Secciones principales
+
+```
+index.html
+├── #inicio (Hero)
+│   └── Video animado + CTAs
+├── #proyectos (Proyectos)
+│   └── Carrusel 3D con demos en video
+├── #skills (Habilidades)
+│   └── Sistema de tabs interactivo
+├── #sobre-mi (About)
+│   └── Identidad y descripción personal
+└── #contacto (Contacto)
+    └── Card con links sociales
+```
+
+### Gestión de estado
+
+- **Sección activa**: gestionada con clases CSS `.active` y atributo `inert`
+- **Tema (dark/light)**: almacenado en `localStorage` como `theme`
+- **Navegación**: sincronizada entre URL, hash y scroll
+- **Accesibilidad**: gestión de `aria-*` y focus trap en modales
+
+### SEO y accesibilidad en SPA
+
+#### SEO técnico
+- Metadata dinámica en `<head>`
+- Schema.org markup (VideoObject para proyectos)
+- Sitemap estático (`sitemap.xml`)
+- Robots.txt configurado
+
+#### Accesibilidad
+- Navegación por teclado en carrusel y tabs
+- Atributo `inert` para ocultar secciones inactivas
+- Roles ARIA (`role="navigation"`, `role="tablist"`)
+- Focus management en modales
 
 ---
 

@@ -211,6 +211,9 @@ a.navbar-brand-symbol {
   text-decoration: none;
   font-size: clamp(1.1rem, 3vw, 1.2rem);
 }
+.bi.bi-download{
+  margin-right:.5rem;
+}
 
 .nav-menu a::after {
   content: '';
@@ -417,6 +420,7 @@ main {
 }
 
 .neon-button {
+  
   background: transparent;
   color: var(--text-main);
   border: 2px solid var(--color-acento-primario);
@@ -467,10 +471,10 @@ main {
   background: var(--color-acento-primario-brillo);
   color: var(--color-fondo-claro);
   box-shadow:
+    0 0 5px var(--color-acento-primario),
     0 0 10px var(--color-acento-primario),
     0 0 20px var(--color-acento-primario),
-    0 0 40px var(--color-acento-primario),
-    0 0 80px var(--color-acento-primario-brillo);
+    0 0 30px var(--color-acento-primario-brillo);
 }
 
 .card_video {
@@ -610,7 +614,6 @@ section#skills {
   align-items: center;
   gap: 4rem;
   width: 100%;
-  padding-top: 4rem;
 }
 
 /*Selector*/
@@ -629,7 +632,7 @@ section#skills {
   direction: rtl;
   scrollbar-color: var(--color-acento-secundario) transparent;
   width: 35%;
-  height: calc(8 * (3rem + 0.5rem));
+  height: calc(7 * (3rem + 0.5rem));
 }
 
 .skill-selector::-webkit-scrollbar {
@@ -972,6 +975,10 @@ section#sobre-mi {
   gap: 1rem;
 }
 
+.about-container .see-more{
+  bottom:15%;
+}
+
 /* =======================
    SECCIÓN CONTACTO (Card)
    ======================= */
@@ -1113,21 +1120,24 @@ section#sobre-mi {
    FOOTER
    ======= */
 
-#footer-global {
-  position: absolute;
+footer#footer-global {
+  display: block;
+  margin-top: 4rem;
+  padding: .5rem;
+  text-align: center;
+  background:var(--color-oscuro-transp,rgba(0, 0, 0, 0.5));
+  border-top: 1px solid rgba(253, 8, 0, 0.3);
   bottom: 0;
   z-index: 1000;
+  position: absolute;
   width: 100%;
-  text-align: center;
-  font-size: 0.875rem;
-  padding: .5rem;
-  background: var(--color-oscuro-transp);
   box-shadow: 0 8px 32px var(--color-oscuro-alto);
-  color: var(--color-fondo-claro);
 }
 
 footer p {
+  color: var(--color-fondo-claro);
   margin: 0;
+  font-size: 0.875rem;
 }
 
 /* =======================================
@@ -1152,4 +1162,76 @@ footer p {
     transform: none !important;
     gap: 1rem !important;
   }
+}
+
+/* ========================================
+   MEJORAS DE ACCESIBILIDAD
+   ======================================== */
+
+/* Skip link para teclado */
+.skip-link {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  background: var(--primary-color, #fd0800);
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 10000;
+  border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Mejora foco visible en todos los elementos interactivos */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+[tabindex]:focus {
+  outline: 1px solid transparent;
+  outline-offset: 2px;
+}
+
+/* Foco visible en navegación */
+.nav-menu a:focus {
+  outline: 2px solid transparent;
+  outline-offset: 4px;
+}
+
+/* Asegura que elementos con inert no sean accesibles */
+[inert] {
+  pointer-events: none;
+  user-select: none;
+}
+
+[inert] * {
+  pointer-events: none;
+}
+
+/* Asegura alto contraste en modo oscuro */
+[data-theme="dark"] .seo-text,
+[data-theme="dark"] footer p {
+  color: #e0e0e0;
+}
+
+/* Indicador visual para elementos deshabilitados */
+button:disabled,
+a[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Mejora área de click en elementos táctiles (mínimo 44x44px) */
+.nav-menu a,
+.skill-btn,
+.neon-button {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }

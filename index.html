@@ -47,6 +47,9 @@
     <script defer src="https://cloud.umami.is/script.js" data-website-id="f89ae255-7d3b-47ec-ba36-6633d94f0cc6">
     </script>
 
+    <!-- WICG Inert para manejo de foco en modales y navegación -->
+    <script src="https://cdn.jsdelivr.net/npm/wicg-inert@3.1.2/dist/inert.min.js"></script>
+
     <!-- Vercel Analitic -->
     <script>
         window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
@@ -77,7 +80,11 @@
 </head>
 
 <body>
+    <!-- Skip link para accesibilidad -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
     <div id="particles-js"></div>
+
     <!-- HEADER Y NAVEGACIÓN -->
     <header role="banner">
         <nav role="navigation" aria-label="Navegación principal">
@@ -137,11 +144,11 @@
                     ¡Bienvenid@s a mi portfolio web!
                 </p>
                 <div class="ctas">
-                    <button class="neon-button" data-section="proyectos">
+                    <button class="neon-button" data-section="proyectos"  aria-label="Ver todos los proyectos">
                         Ver Proyectos
                     </button>
-                    <button class="neon-button" data-section="contacto">
-                        Contactar
+                    <button class="neon-button" data-section="contacto" aria-label="Contactar conmigo">
+                        Hablemos
                     </button>
                 </div>
             </div>
@@ -153,7 +160,7 @@
             </div>
         </section>
         <!-- SECCIÓN 2: PROYECTOS -->
-        <section id="proyectos" class="section projects" aria-label="Proyectos" inert>
+        <section id="proyectos" class="section projects" aria-label="Proyectos">
             <div class="bodycardfame">
                 <div class="carousel-wrapperfame">
                     <div class="carouselfame" id="carousel">
@@ -202,7 +209,7 @@
                         <i class="bi bi-github"></i>
                         <span class="tooltip-text">Ver Perfil</span>
                     </a>
-                    <a href="./assets/docs/carta_recomendación-adalid_martinez.pdf" class="tooltip neon" download>
+                    <a href="./assets/docs/carta_recomendación-adalid_martinez.pdf" class="tooltip neon" download aria-label="Descargar carta de recomendación">
                         <i class="bi bi-envelope-paper-heart"></i>
                         <span class="tooltip-text">Recomendada</span>
                     </a>
@@ -276,7 +283,7 @@
         </section>
 
         <!-- SECCIÓN 4: SOBRE MÍ -->
-        <section id="sobre-mi" class="section about" aria-label="Sobre mí" inert>
+        <section id="sobre-mi" class="section about" aria-label="Sobre mí" >
             <div class="about-container">
                 <!-- Identidad ACMA -->
                 <div class="name-row">
@@ -335,10 +342,10 @@
 
                 <!-- CTAs -->
                 <div class="about-ctas">
-                    <button class="neon-button" data-section="proyectos">
+                    <button class="neon-button" data-section="proyectos" aria-label="Ver todos los proyectos">
                         Ver proyectos
                     </button>
-                    <button class="neon-button" data-section="skills">
+                    <button class="neon-button" data-section="skills" aria-label="Ver todas las habilidades">
                         Ver habilidades
                     </button>
                 </div>
@@ -349,7 +356,7 @@
                         <i class="bi bi-github"></i>
                         <span class="tooltip-text">Ver Perfil</span>
                     </a>
-                    <a href="./assets/docs/carta_recomendación-adalid_martinez.pdf" class="tooltip neon" download>
+                    <a href="./assets/docs/carta_recomendación-adalid_martinez.pdf" class="tooltip neon" download aria-label="Descargar carta de recomendación">
                         <i class="bi bi-envelope-paper-heart"></i>
                         <span class="tooltip-text">Recomendada</span>
                     </a>
@@ -395,7 +402,7 @@
         </section>
 
         <!-- FOOTER -->
-        <footer role="contentinfo" id="footer-global" hidden>
+        <footer role="contentinfo" id="footer-global" aria-label="Información de copyright">
             <p>&copy; 2026 Adalid Martínez Álvarez · CC BY-ND 4.0</p>
         </footer>
     </main>

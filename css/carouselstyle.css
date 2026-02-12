@@ -103,6 +103,9 @@ a[data-title]:hover::after {
 }
 
 @media (max-width:440px) {
+    .bodycardfame{
+        margin-top: 0;
+    }
 
     .carousel-wrapperfame {
         height: 70vh;

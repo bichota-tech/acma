@@ -211,8 +211,9 @@ a.navbar-brand-symbol {
   text-decoration: none;
   font-size: clamp(1.1rem, 3vw, 1.2rem);
 }
-.bi.bi-download{
-  margin-right:.5rem;
+
+.bi.bi-download {
+  margin-right: .5rem;
 }
 
 .nav-menu a::after {
@@ -399,7 +400,7 @@ main {
   font-weight: 700;
   color: var(--color-acento-primario);
   letter-spacing: 1px;
-  margin-bottom: .5rem;
+  margin-bottom: 2rem;
   height: 70px;
 }
 
@@ -420,7 +421,7 @@ main {
 }
 
 .neon-button {
-  
+
   background: transparent;
   color: var(--text-main);
   border: 2px solid var(--color-acento-primario);
@@ -539,7 +540,7 @@ main {
 @media (max-width:800px) {
   .see-more {
     flex-direction: column;
-    bottom: clamp(2rem, 7vh, 5rem);
+    bottom: clamp(2rem, 10vh, 5rem);
   }
 }
 
@@ -784,7 +785,7 @@ section#skills {
 
 @media(max-width:440px) {
   section#skills {
-    margin-top: 2rem;
+    margin-top: 0;
   }
 
   .skills-spotlight {
@@ -922,7 +923,7 @@ section#skills {
 section#sobre-mi {
   position: absolute;
   color: var(--text-main);
-  margin-top: 1rem;
+  margin-top: 0;
 }
 
 .about-container {
@@ -936,27 +937,27 @@ section#sobre-mi {
 }
 
 .name-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .initial {
-    font-size: 40px;
-    font-weight: 500;
-    color: #fd0800;
-    line-height: 1;
+  font-size: 40px;
+  font-weight: 500;
+  color: #fd0800;
+  line-height: 1;
 }
 
 .svg-text {
-    width: 160px;
-    height: 70px;
-    display: block;
+  width: 160px;
+  height: 70px;
+  display: block;
 }
 
 
-.about-description{
+.about-description {
   content: "";
   display: none;
   align-items: center;
@@ -975,8 +976,14 @@ section#sobre-mi {
   gap: 1rem;
 }
 
-.about-container .see-more{
-  bottom:15%;
+.about-container .see-more {
+  bottom: 15%;
+}
+
+@media(max-width:440px) {
+  .about-container .see-more {
+    bottom: 8%;
+  }
 }
 
 /* =======================
@@ -1125,7 +1132,7 @@ footer#footer-global {
   margin-top: 4rem;
   padding: .5rem;
   text-align: center;
-  background:var(--color-oscuro-transp,rgba(0, 0, 0, 0.5));
+  background: var(--color-oscuro-transp, rgba(0, 0, 0, 0.5));
   border-top: 1px solid rgba(253, 8, 0, 0.3);
   bottom: 0;
   z-index: 1000;

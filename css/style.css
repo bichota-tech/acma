@@ -737,12 +737,12 @@ section#skills {
 
   .skills-spotlight {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
-    align-items: stretch;
+    align-items: center;
     padding-top: 2rem;
     gap: 2rem;
+    
   }
 
   .skill-selector {
@@ -751,7 +751,7 @@ section#skills {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 90%;
     height: auto;
     /* dejar que crezca según contenido */
     overflow-y: visible;

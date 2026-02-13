@@ -230,7 +230,7 @@ video:hover {
 .project-modal {
     position: fixed;
     inset: 0;
-    z-index: 999;
+    z-index: 1000;
     text-align: center;
     top: 0;
     display: flex;

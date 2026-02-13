@@ -216,7 +216,12 @@ class ACMAPortfolio {
     this.links.forEach(link => {
       const isActive = link.getAttribute('data-section') === target;
       link.classList.toggle('active', isActive);
-      link.setAttribute('aria-current', isActive ? 'page' : 'false');
+      if (isActive) { 
+        link.setAttribute('aria-current', 'page');
+      }
+        else {
+          link.removeAttribute('aria-current');
+        }
     });
 
     // Cambiar secciones visibles

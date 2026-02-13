@@ -200,6 +200,15 @@ document.addEventListener('DOMContentLoaded', () => {
   new PortfolioEffects();
 });
 
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden && window.portfolioEffects?.typedInstance){
+    window.portfolioEffects.typedInstance.stop();
+  } else{
+    window.portfolioEffects?.typedInstance.start();
+  }
+});
+
+
 // Reducir movimiento para usuarios con preferencias de movimiento reducido
 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   // Desactivar animaciones si es necesario

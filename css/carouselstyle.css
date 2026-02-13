@@ -6,9 +6,7 @@
     --color-acento-primario-brillo: #fd0800;
     --color-acento-secundario: #3AB7BF;
     --color-acento-dark: #298288;
-    /* --bg-main:var(--color-fondo-oscuro);
-    --bg-surface:var(--color-fondo-oscuro);
-    --text-main: var(--color-fondo-claro); */
+    --modal-shadow:#298288b2;
 }
 
 html[data-theme='light'] {
@@ -18,6 +16,7 @@ html[data-theme='light'] {
     --text-main: var(--color-fondo-oscuro);
     --text-muted: rgba(30, 31, 34, 0.7);
     --border-soft: rgba(0, 0, 0, 0.15);
+    --modal-shadow:#0a0a0ae3;
 }
 
 .bodycardfame {
@@ -262,7 +261,7 @@ video:hover {
     color: var(--text-main);
     border-radius: 30px;
     padding: 2rem;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 20px var(--modal-shadow);
     animation: modalIn 0.3s ease;
 }
 

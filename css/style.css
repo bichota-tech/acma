@@ -1008,22 +1008,45 @@ section#sobre-mi {
 
 .card {
   background: var(--color-oscuro-transp);
-  box-shadow: 0 4px 24px var(--color-oscuro-alto);
+  box-shadow: 2px 4px 10px var(--color-acento-secundario-alto);
   padding: 4rem 4rem 2rem;
   border-radius: 1rem;
   text-align: center;
   position: relative;
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: absolute;
+  bottom: 30%;
+  top: -30%;
+  left: 30%;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 0.75rem;
+  transform-style: preserve-3d;
+  transition: transform 2s ease-in-out;
 }
 
 .card_img {
-  width: 120px;
-  margin: 0 auto 0.75rem;
+  width: 100%;
+  height: auto;
+  margin: 0;
   border-radius: 50%;
   border: 2px solid var(--color-acento-secundario);
   position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  inset: 0;
+  backface-visibility: hidden;
+  object-fit: contain;
+}
+
+.card_img.back {
+  transform: rotateY(180deg);
+}
+
+section#contacto.active .card:hover .card-inner {
+  transition: transform 3s ease-in-out;
+  transform: rotateY(540deg);
 }
 
 .card_name {
@@ -1063,7 +1086,7 @@ section#sobre-mi {
   transition: transform .5s cubic-bezier(0.2, 0.9, 0.2, 1.2);
   transition: scale .1s ease, color .3s ease;
   transform: translateY(1.1rem) scale(1);
-  color: var(--color-acento-primario);
+  color:  var(--color-acento-primario);
 }
 
 .button_social a:hover {

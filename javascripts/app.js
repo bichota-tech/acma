@@ -279,13 +279,15 @@ function toggleFooter(sectionId) {
 
 
 // Inicializar la aplicación cuando el DOM esté listo
+let app;
 document.addEventListener('DOMContentLoaded', () => {
-  new ACMAPortfolio();
+  app = new ACMAPortfolio();
 });
 
 // Manejar navegación con el botón atrás/adelante del navegador
 window.addEventListener('popstate', (e) => {
   const section = e.state?.section || 'inicio';
-  const app = new ACMAPortfolio();
-  app.navigateTo(section);
+  if (app) {
+    app.navigateTo(section);
+  }
 });

@@ -1033,7 +1033,7 @@ section#sobre-mi {
   height: auto;
   margin: 0;
   border-radius: 50%;
-  border: 2px solid var(--color-acento-secundario);
+  border: 2px solid var(--color-acento-secundario-alto);
   position: absolute;
   inset: 0;
   backface-visibility: hidden;

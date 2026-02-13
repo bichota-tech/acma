@@ -1054,15 +1054,22 @@ section#sobre-mi {
 
 .button_social {
   display: flex;
-  column-gap: 0.25rem;
+  column-gap: 0.4rem;
   z-index: 1;
 }
 
 .button_social a {
   font-size: 1.55rem;
-  color: var(--color-acento-primario-brillo);
   transition: transform .5s cubic-bezier(0.2, 0.9, 0.2, 1.2);
-  transform: translateY(1.1rem);
+  transition: scale .1s ease, color .3s ease;
+  transform: translateY(1.1rem) scale(1);
+  color: var(--color-acento-primario);
+}
+
+.button_social a:hover {
+  animation: pulse 2s infinite ease-in-out;
+  color: var(--color-acento-primario-brillo);
+  scale: .9;
 }
 
 .button_social a:nth-child(1) {

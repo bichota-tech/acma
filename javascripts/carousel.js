@@ -324,7 +324,10 @@ function setupEventListeners() {
  */
 function handleKeyboardEvent(e) {
   if (isTransitioning) return;
-  
+
+  // Si el modal está abierto, no navegar el carrusel
+  if (!modal.classList.contains('hidden')) return;
+
   switch (e.key) {
     case 'ArrowRight':
       e.preventDefault();
@@ -335,13 +338,18 @@ function handleKeyboardEvent(e) {
       prevCard();
       break;
     case 'Enter':
-      // Activar el link solo si hay una card activa
+      e.preventDefault();
+
       const activeCard = cards[currentIndex];
-      const link = activeCard.querySelector('a');
-      if (link) {
-        link.click();
-      }
+      if (!activeCard) return;
+
+      const projectKey = activeCard.dataset.project;
+      if (!projectKey) return;
+
+      openProjectModal(projectKey);
       break;
+
+      
   }
 }
 

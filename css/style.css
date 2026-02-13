@@ -131,7 +131,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .8rem;
+  padding: .5rem;
   border-radius: 30px;
   margin-top: 1.5rem;
   background: var(--color-oscuro-transp);

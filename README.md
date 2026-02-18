@@ -1,10 +1,26 @@
-# ACMA — Portfolio Frontend SPA (en aprendizaje continuo / learning in progress)
+# ACMA — Portfolio Frontend SPA
 
-Portfolio web profesional construido como **Single Page Application (SPA)** sin frameworks.  
-El objetivo es demostrar fundamentos sólidos de frontend: **arquitectura clara, accesibilidad, rendimiento y SEO técnico**, mientras sigo mejorando prácticas reales de desarrollo.
+> **⚠️ NOTA IMPORTANTE / IMPORTANT NOTICE**  
+> 
+> **🎉 Este proyecto ha evolucionado a Vue 3 / This project has evolved to Vue 3**  
+> 
+> La nueva versión con Vue 3, Vite, Pinia y Vue Router está disponible en:  
+> The new version with Vue 3, Vite, Pinia and Vue Router is available at:  
+> 
+> **→ [acma-portfolio-vue](https://github.com/bichota-tech/acma-portfolio-vue)**  
+> 
+> Este repositorio se mantiene como referencia de la implementación original en JavaScript vanilla.  
+> This repository is maintained as a reference of the original vanilla JavaScript implementation.
 
-Professional web portfolio built as a **Single Page Application (SPA)** without frameworks.  
-The goal is to showcase solid frontend fundamentals: **clear architecture, accessibility, performance, and technical SEO**, while continuously improving real‑world development practices.
+---
+
+## 📖 Sobre esta versión / About this version
+
+**Portfolio web profesional construido como Single Page Application (SPA) sin frameworks.**  
+El objetivo es demostrar fundamentos sólidos de frontend: **arquitectura clara, accesibilidad, rendimiento y SEO técnico**, usando únicamente JavaScript vanilla.
+
+**Professional web portfolio built as a Single Page Application (SPA) without frameworks.**  
+The goal is to showcase solid frontend fundamentals: **clear architecture, accessibility, performance, and technical SEO**, using only vanilla JavaScript.
 
 **Demo:** https://portfolio-blue-iota-62.vercel.app/
 
@@ -132,11 +148,20 @@ index.html
 
 ---
 
-## 🔮 Próximas mejoras / Next steps
-- Tests básicos (unitarios) / basic tests
-- Internacionalización (ES/EN) / i18n
-- Blog con contenido en markdown / markdown blog
-- Mejorar formulario de contacto / improve contact form
+## 🔮 Evolución del proyecto / Project evolution
+
+### ✅ Completado / Completed
+Este proyecto alcanzó sus objetivos de aprendizaje con JavaScript vanilla y ahora ha evolucionado a:
+
+This project achieved its learning objectives with vanilla JavaScript and has now evolved to:
+
+**→ [acma-portfolio-vue](https://github.com/bichota-tech/acma-portfolio-vue)** — Versión Vue 3 con:
+- Vue 3 + Composition API
+- Vite (build tool moderno)
+- Vue Router (enrutamiento)
+- Pinia (gestión de estado)
+- Testing con Vitest
+- Linting moderno (ESLint + Oxlint)
 
 ---
 

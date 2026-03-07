@@ -982,6 +982,7 @@ section#sobre-mi {
 
 @media(max-width:440px) {
   .about-container .see-more {
+    display: none;
     bottom: 8%;
   }
 }

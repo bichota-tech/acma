@@ -959,11 +959,11 @@ section#sobre-mi {
 
 .about-description {
   content: "";
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   max-width: 700px;
-  font-weight: 600;
+  font-weight: 500;
   font-size: clamp(1rem, 3vw, 1.2rem);
   padding-bottom: 2.5rem;
 }
